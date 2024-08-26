@@ -13,14 +13,8 @@ def print_message(params):
     """
     Print message.
 
-    :param message: message text
-    :type message: str
-    :param v_shift: vertical shift
-    :type v_shift: int
-    :param h_shift: horizontal shift
-    :type h_shift: int
-    :param confirm: confirm flag
-    :type confirm: bool
+    :param params: parameters
+    :type params: dict
     :return: None
     """
     print(MESSAGE_TEMPLATE.format(params["method"], params["cups"], params["coffee"], params["water"], params["coffee_ratio"], params["water_ratio"]))
