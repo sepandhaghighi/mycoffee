@@ -4,6 +4,7 @@
 MY_COFFEE_VERSION = "0.1"
 INPUT_ERROR_MESSAGE = "[Error] Wrong input"
 INPUT_EXAMPLE = "Example: mycoffee --method=v60"
+EXIT_MESSAGE = "See you. Bye!"
 MESSAGE_TEMPLATE = """
 
 Method: `{0}`
