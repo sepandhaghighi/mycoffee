@@ -3,10 +3,10 @@
 
 MY_COFFEE_VERSION = "0.1"
 INPUT_ERROR_MESSAGE = "[Error] Wrong input"
-INPUT_EXAMPLE = "Example: mycoffee --method=v60 "
+INPUT_EXAMPLE = "Example: mycoffee --method=v60"
 MESSAGE_TEMPLATE = """
 
-Method: {0}
+Method: `{0}`
 
 Cups: {1}
 
