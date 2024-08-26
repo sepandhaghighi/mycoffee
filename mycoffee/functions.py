@@ -17,7 +17,10 @@ def print_message(params):
     :return: None
     """
     tprint("MyCoffee", font="bulbhead")
-    print(MESSAGE_TEMPLATE.format(params["method"], params["cups"], params["coffee"], params["water"], params["coffee_ratio"], params["water_ratio"]))
+    info = params["info"]
+    if len(info) > 0:
+        info = "Info: {0}".format(info)
+    print(MESSAGE_TEMPLATE.format(params["method"], params["cups"], params["coffee"], params["water"], params["coffee_ratio"], params["water_ratio"], info))
 
 
 
@@ -50,7 +53,7 @@ def show_methods_list():
             METHODS_LIST_TEMPLATE.format(
                 i,
                 method,
-                METHODS_MAP[method]['message']))
+                METHODS_MAP[method]['info']))
 
 
 def load_params(args):
