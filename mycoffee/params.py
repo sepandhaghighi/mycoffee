@@ -16,13 +16,15 @@ Water: {3} ml
 Ratio: {4}/{5}
 """
 
+METHODS_LIST_TEMPLATE = "{0}. `{1}` - {2}"
 
 
 DEFAULT_PARAMS = {
     "cups": 1,
     "water": 0,
     "coffee_ratio": 1,
-    "water_ratio": 1
+    "water_ratio": 1,
+    "message": ""
 
 }
 
@@ -31,5 +33,6 @@ METHODS_MAP = {
         "coffee_ratio": 3,
         "water_ratio": 50,
         "water": 242,
+        "message": "V60 method"
     }
 }

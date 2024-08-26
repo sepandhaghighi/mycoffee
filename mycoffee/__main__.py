@@ -18,6 +18,7 @@ def main():
     parser.add_argument('--water_ratio', help='water ratio', type=float)
     parser.add_argument('--water', help='water', type=float)
     parser.add_argument('--cups', help='cups', type=int)
+    parser.add_argument('--methods-list', help='methods list', nargs="?", const=1)
     parser.add_argument('--version', help='version', nargs="?", const=1)
     args = parser.parse_args()
     try:
