@@ -84,16 +84,18 @@ def clear_screen():
         os.system('clear')
 
 
-def coffee_calc(params):
+def coffee_calc(params, digit=3):
     """
     Calculate coffee.
 
     :param params: parameters
     :type params: dict
+    :param digit: rounding digit
+    :type digit: int
     :return: coffee amount as float
     """
     coffee = params["water"] * params["coffee_ratio"] / params["water_ratio"]
-    return coffee
+    return round(coffee, digit)
 
 
 def run(args):
