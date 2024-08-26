@@ -5,7 +5,6 @@ import sys
 import time
 from mycoffee.params import MESSAGE_TEMPLATE
 from mycoffee.params import DEFAULT_PARAMS, METHODS_MAP
-
 from art import tprint
 
 
@@ -17,6 +16,7 @@ def print_message(params):
     :type params: dict
     :return: None
     """
+    tprint("MyCoffee", font="bulbhead")
     print(MESSAGE_TEMPLATE.format(params["method"], params["cups"], params["coffee"], params["water"], params["coffee_ratio"], params["water_ratio"]))
 
 
