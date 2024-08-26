@@ -23,7 +23,7 @@ def print_message(params):
     :type confirm: bool
     :return: None
     """
-    print(MESSAGE_TEMPLATE.format(params["method"], params["cups"], "0", params["water"], params["coffee_ratio"], params["water_ratio"]))
+    print(MESSAGE_TEMPLATE.format(params["method"], params["cups"], params["coffee"], params["water"], params["coffee_ratio"], params["water_ratio"]))
 
 
 
@@ -87,6 +87,18 @@ def clear_screen():
         os.system('clear')
 
 
+def coffee_calc(params):
+    """
+    Calculate coffee.
+
+    :param params: parameters
+    :type params: dict
+    :return: coffee amount as float
+    """
+    coffee = params["water"] * params["coffee_ratio"] / params["water_ratio"]
+    return coffee
+
+
 def run(args):
     """
     Run program.
@@ -96,4 +108,6 @@ def run(args):
     :return: None
     """
     params = load_params(args)
+    coffee = coffee_calc(params)
+    params["coffee"] = coffee
     print_message(params)
