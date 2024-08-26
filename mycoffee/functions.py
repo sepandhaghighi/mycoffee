@@ -18,8 +18,8 @@ def print_message(params):
     """
     tprint("MyCoffee", font="bulbhead")
     info = params["info"]
-    if len(info) > 0:
-        info = "Info: {0}".format(info)
+    if len(info) == 0:
+        info = "Nothing :)"
     print(MESSAGE_TEMPLATE.format(params["method"], params["cups"], params["coffee"], params["water"], params["coffee_ratio"], params["water_ratio"], info))
 
 

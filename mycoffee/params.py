@@ -16,7 +16,7 @@ Water: {3} ml
 
 Ratio: {4}/{5}
 
-{6}
+Info: {6}
 """
 
 METHODS_LIST_TEMPLATE = "{0}. `{1}` - {2}"
