@@ -13,7 +13,7 @@ Coffee :{2}
 
 Water: {3}
 
-Ratio: {4}
+Ratio: {4}/{5}
 """
 
 
@@ -21,13 +21,15 @@ Ratio: {4}
 DEFAULT_PARAMS = {
     "cups": 1,
     "water": 0,
-    "ratio": "1:1",
+    "coffee_ratio": 1,
+    "water_ratio": 1
 
 }
 
 METHODS_MAP = {
     "v60": {
-        "ratio": "3:50",
+        "coffee_ratio": 3,
+        "water_ratio": 50,
         "water": 242,
     }
 }

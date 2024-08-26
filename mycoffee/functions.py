@@ -23,8 +23,7 @@ def print_message(params):
     :type confirm: bool
     :return: None
     """
-    print(params)
-    print(MESSAGE_TEMPLATE.format(params["method"], params["cups"], "0", params["water"], params["ratio"]))
+    print(MESSAGE_TEMPLATE.format(params["method"], params["cups"], "0", params["water"], params["coffee_ratio"], params["water_ratio"]))
 
 
 
