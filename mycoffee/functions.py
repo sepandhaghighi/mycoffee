@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 """mycoffee functions."""
-import os
-import sys
-import time
 from mycoffee.params import MESSAGE_TEMPLATE, METHODS_LIST_TEMPLATE
 from mycoffee.params import MY_COFFEE_VERSION, DEFAULT_PARAMS, METHODS_MAP
 from art import tprint
@@ -70,18 +67,6 @@ def load_params(args):
                 params[item] = getattr(args, item)
     params["method"] = args.method
     return params
-
-
-def clear_screen():
-    """
-    Clear screen function.
-
-    :return: None
-    """
-    if sys.platform == "win32":
-        os.system('cls')
-    else:
-        os.system('clear')
 
 
 def coffee_calc(params, digit=3):
