@@ -9,9 +9,9 @@ Method: {0}
 
 Cups: {1}
 
-Coffee :{2}
+Coffee: {2} gr
 
-Water: {3}
+Water: {3} ml
 
 Ratio: {4}/{5}
 """
