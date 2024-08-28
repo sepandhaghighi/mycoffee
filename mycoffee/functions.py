@@ -1,11 +1,7 @@
 # -*- coding: utf-8 -*-
 """mycoffee functions."""
-import os
-import sys
-import time
-from mycoffee.params import MESSAGE_TEMPLATE
-from mycoffee.params import DEFAULT_PARAMS, METHODS_MAP
-
+from mycoffee.params import MESSAGE_TEMPLATE, METHODS_LIST_TEMPLATE
+from mycoffee.params import MY_COFFEE_VERSION, DEFAULT_PARAMS, METHODS_MAP
 from art import tprint
 
 
@@ -13,18 +9,15 @@ def print_message(params):
     """
     Print message.
 
-    :param message: message text
-    :type message: str
-    :param v_shift: vertical shift
-    :type v_shift: int
-    :param h_shift: horizontal shift
-    :type h_shift: int
-    :param confirm: confirm flag
-    :type confirm: bool
+    :param params: parameters
+    :type params: dict
     :return: None
     """
-    print(params)
-    print(MESSAGE_TEMPLATE.format(params["method"], params["cups"], "0", params["water"], params["ratio"]))
+    tprint("MyCoffee", font="bulbhead")
+    info = params["info"]
+    if len(info) == 0:
+        info = "Nothing :)"
+    print(MESSAGE_TEMPLATE.format(params["method"], params["cups"], params["coffee"], params["water"], params["coffee_ratio"], params["water_ratio"], info))
 
 
 
@@ -45,19 +38,19 @@ def load_method_params(method_name):
     return method_params
 
 
-def show_programs_list():
+def show_methods_list():
     """
-    Show programs list.
+    Show methods list.
 
     :return: None
     """
-    print("Programs list:\n")
-    for i, program in enumerate(sorted(PROGRAMS_MAP), 1):
+    print("Methods list:\n")
+    for i, method in enumerate(sorted(METHODS_MAP), 1):
         print(
-            PROGRAMS_LIST_TEMPLATE.format(
+            METHODS_LIST_TEMPLATE.format(
                 i,
-                program,
-                PROGRAMS_MAP[program]['message']))
+                method,
+                METHODS_MAP[method]['info']))
 
 
 def load_params(args):
@@ -76,16 +69,18 @@ def load_params(args):
     return params
 
 
-def clear_screen():
+def coffee_calc(params, digit=3):
     """
-    Clear screen function.
+    Calculate coffee.
 
-    :return: None
+    :param params: parameters
+    :type params: dict
+    :param digit: rounding digit
+    :type digit: int
+    :return: coffee amount as float
     """
-    if sys.platform == "win32":
-        os.system('cls')
-    else:
-        os.system('clear')
+    coffee = params["water"] * params["coffee_ratio"] / params["water_ratio"]
+    return round(coffee, digit)
 
 
 def run(args):
@@ -96,5 +91,12 @@ def run(args):
     :type args: argparse.Namespace
     :return: None
     """
-    params = load_params(args)
-    print_message(params)
+    if args.version:
+        print(MY_COFFEE_VERSION)
+    elif args.methods_list:
+        show_methods_list()
+    else:
+        params = load_params(args)
+        coffee = coffee_calc(params)
+        params["coffee"] = coffee
+        print_message(params)
