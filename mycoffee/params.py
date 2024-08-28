@@ -64,4 +64,11 @@ METHODS_MAP = {
         "water": 120,
         "info": "French press method"
     }
+    ,
+    "siphon": {
+        "coffee_ratio": 1,
+        "water_ratio": 15,
+        "water": 240,
+        "info": "Siphon method"
+    }
 }
