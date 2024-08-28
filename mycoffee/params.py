@@ -45,4 +45,11 @@ METHODS_MAP = {
         "water": 242,
         "info": "V60 method"
     }
+    ,
+    "espresso": {
+        "coffee_ratio": 1,
+        "water_ratio": 2,
+        "water": 36,
+        "info": "Espresso method"
+    }
 }
