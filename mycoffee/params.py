@@ -57,5 +57,11 @@ METHODS_MAP = {
         "water_ratio": 15,
         "water": 240,
         "info": "Chemex method"
+    },
+    "french-press": {
+        "coffee_ratio": 1,
+        "water_ratio": 15,
+        "water": 120,
+        "info": "French press method"
     }
 }
