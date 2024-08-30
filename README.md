@@ -194,8 +194,12 @@ Just fill an issue and describe it. We'll check it ASAP!
 
 ## References
 
-<blockquote>1- </blockquote>
-
+<blockquote>1- <a href="https://honestcoffeeguide.com/coffee-to-water-ratio-calculator/">Coffee to water ratio calculator</a></blockquote>
+<blockquote>2- <a href="https://www.origincoffee.co.uk/blogs/journal/brewing-at-home-v60">V60 Brew Guide</a></blockquote>
+<blockquote>3- <a href="https://unionroasted.com/blogs/brewing-guides/chemex-pour-over">How to Brew Coffee with a Chemex</a></blockquote>
+<blockquote>4- <a href="https://www.illy.com/en-us/coffee/coffee-preparation/how-to-use-a-french-press">Using French press for perfect coffee</a></blockquote>
+<blockquote>5- <a href="https://www.haymancoffee.com/blogs/coffee-blog/how-to-brew-the-perfect-cup-of-siphon-coffee">How to Brew the Perfect Cup of Siphon Coffee</a></blockquote>
+<blockquote>6- <a href="https://home.lamarzoccousa.com/using-espresso-brew-ratios/">Using Espresso Brew Ratios</a></blockquote>
 
 ## Show Your Support
 								
