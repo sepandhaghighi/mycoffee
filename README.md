@@ -197,13 +197,13 @@ Just fill an issue and describe it. We'll check it ASAP!
 <blockquote>1- </blockquote>
 
 
-## Show your support
+## Show Your Support
 								
-<h3>Star this repo</h3>					
+<h3>Star This Repo</h3>					
 
 Give a ⭐️ if this project helped you!
 
-<h3>Donate to our project</h3>	
+<h3>Donate to Our Project</h3>	
 
 <h4>Bitcoin</h4>
 1KtNLEEeUbTEK9PdN6Ya3ZAKXaqoKUuxCy
