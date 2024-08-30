@@ -38,7 +38,7 @@ FILES = {
         "bug_report.yml"): ISSUE_TEMPLATE_ITEMS,
 }
 
-TEST_NUMBER = len(FILES)
+TEST_NUMBER = len(FILES) + 1
 
 
 def print_result(failed=False):
