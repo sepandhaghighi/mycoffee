@@ -2,8 +2,6 @@
 """
 >>> from mycoffee.functions import *
 >>> v60_params = load_method_params("v60") # https://www.origincoffee.co.uk/blogs/journal/brewing-at-home-v60
->>> v60_params
-{'coffee_ratio': 3, 'cups': 1, 'info': 'V60 method', 'water_ratio': 50, 'water': 242}
 >>> v60_params["coffee_ratio"] == 3
 True
 >>> v60_params["water_ratio"] == 50

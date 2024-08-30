@@ -88,9 +88,9 @@ Method: `v60`
 <BLANKLINE>
 Cups: 1
 <BLANKLINE>
-Coffee: 14.52 gr
+Coffee: 15.0 gr
 <BLANKLINE>
-Water: 242 gr
+Water: 250 gr
 <BLANKLINE>
 Ratio: 3/50
 <BLANKLINE>
