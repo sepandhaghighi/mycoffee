@@ -5,7 +5,7 @@ import sys
 import codecs
 
 Failed = 0
-VERSION = "1.3"
+VERSION = "0.1"
 
 README_ITEMS = [
     "[Version {0}](https://github.com/sepandhaghighi/mycoffee/archive/v{0}.zip)",
@@ -38,7 +38,7 @@ FILES = {
         "bug_report.yml"): ISSUE_TEMPLATE_ITEMS,
 }
 
-TEST_NUMBER = len(FILES.keys()) + 1
+TEST_NUMBER = len(FILES)
 
 
 def print_result(failed=False):
