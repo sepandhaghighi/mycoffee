@@ -42,7 +42,7 @@ METHODS_MAP = {
     "v60": {
         "coffee_ratio": 3,
         "water_ratio": 50,
-        "water": 242,
+        "water": 250,
         "info": "V60 method"
     }
     ,
