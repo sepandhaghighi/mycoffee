@@ -96,4 +96,24 @@ Ratio: 3/50
 <BLANKLINE>
 Info: V60 method
 <BLANKLINE>
+>>> args = parser.parse_args(["--method", 'v60', "--water-ratio", '500', "--coffee-ratio", '23', "--water", '5000'])
+>>> params = load_params(args)
+>>> params["water"]
+5000.0
+>>> params["water_ratio"]
+500
+>>> params["coffee_ratio"]
+23
+>>> params["method"]
+'v60'
+>>> args = parser.parse_args(["--methods-list"])
+>>> run(args)
+Methods list:
+<BLANKLINE>
+1. `chemex` - Chemex method
+2. `custom` - Custom brewing method
+3. `espresso` - Espresso method
+4. `french-press` - French press method
+5. `siphon` - Siphon method
+6. `v60` - V60 method
 """
