@@ -1,0 +1,50 @@
+# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: CI
+
+on: [push, pull_request]
+
+env:
+  TEST_PYTHON_VERSION: 3.9
+  TEST_OS: 'ubuntu-20.04'
+
+jobs:
+  build:
+
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-20.04, windows-2022, macOS-13]
+        python-version: [3.6, 3.7, 3.8, 3.9, 3.10.0, 3.11.0, 3.12.0]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Installation
+      run: |
+        python -m pip install --upgrade pip
+        pip install .
+    - name: First test
+      run: |
+        mycoffee --version
+    - name: Install dev-requirements
+      run: |
+        python otherfiles/requirements-splitter.py
+        pip install --upgrade --upgrade-strategy=only-if-needed -r test-requirements.txt
+    - name: Version check
+      run: |
+        python otherfiles/version_check.py
+      if: matrix.python-version == env.TEST_PYTHON_VERSION
+    - name: Test with pytest
+      run: |
+        python -m pytest test --cov=mycoffee --cov-report=term
+    - name: Other tests
+      run: |
+        python -m vulture mycoffee/ setup.py --min-confidence 65 --exclude=__init__.py --sort-by-size
+        python -m bandit -r mycoffee -s B311
+        python -m pydocstyle --match-dir=mycoffee -v
+      if: matrix.python-version == env.TEST_PYTHON_VERSION
