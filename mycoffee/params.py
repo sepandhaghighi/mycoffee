@@ -13,7 +13,7 @@ Cups: {1}
 
 Coffee: {2} gr
 
-Water: {3} ml
+Water: {3} gr
 
 Ratio: {4}/{5}
 

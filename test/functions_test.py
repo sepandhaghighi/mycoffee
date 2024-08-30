@@ -18,7 +18,7 @@ Cups: 2
 <BLANKLINE>
 Coffee: 30 gr
 <BLANKLINE>
-Water: 500 ml
+Water: 500 gr
 <BLANKLINE>
 Ratio: 3/50
 <BLANKLINE>
@@ -39,7 +39,7 @@ Cups: 2
 <BLANKLINE>
 Coffee: 30 gr
 <BLANKLINE>
-Water: 500 ml
+Water: 500 gr
 <BLANKLINE>
 Ratio: 3/50
 <BLANKLINE>
@@ -90,7 +90,7 @@ Cups: 1
 <BLANKLINE>
 Coffee: 14.52 gr
 <BLANKLINE>
-Water: 242 ml
+Water: 242 gr
 <BLANKLINE>
 Ratio: 3/50
 <BLANKLINE>
