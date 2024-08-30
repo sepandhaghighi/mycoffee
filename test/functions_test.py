@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """
+>>> import argparse
 >>> from mycoffee.functions import *
+>>> from mycoffee.params import *
 >>> test_params = {"method":"v60", "cups":2, "coffee":30, "water":500, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method"}
 >>> print_message(test_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
@@ -59,4 +61,38 @@ Methods list:
 20.1
 >>> coffee_calc(test_params, digit=0)
 20.0
+>>> parser = argparse.ArgumentParser()
+>>> parser.add_argument('--method', help='brewing method', type=str, choices=sorted(METHODS_MAP), default="custom")
+>>> parser.add_argument('--info', help='brewing method info', type=str)
+>>> parser.add_argument('--coffee-ratio', help='coffee ratio', type=int)
+>>> parser.add_argument('--water-ratio', help='water ratio', type=int)
+>>> parser.add_argument('--water', help='water(ml)', type=float)
+>>> parser.add_argument('--cups', help='number of cups', type=int)
+>>> parser.add_argument('--methods-list', help='brewing methods list', nargs="?", const=1)
+>>> parser.add_argument('--version', help='version', nargs="?", const=1)
+>>> args = parser.parse_args({"--version":True})
+>>> run(args)
+0.1
+>>>
+>>> args = parser.parse_args()
+>>> run(args)
+ __  __  _  _   ___  _____  ____  ____  ____  ____
+(  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
+ )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
+(_/\/\_) (__)  \___)(_____)(__)  (__)  (____)(____)
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+Method: `custom`
+<BLANKLINE>
+Cups: 1
+<BLANKLINE>
+Coffee: 14.118 gr
+<BLANKLINE>
+Water: 240 ml
+<BLANKLINE>
+Ratio: 1/17
+<BLANKLINE>
+Info: Custom brewing method
+<BLANKLINE>
 """
