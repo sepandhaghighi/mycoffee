@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ## [0.1] - 2024-xx-xx
 ### Added
-- 5 new methods:
+- 5 new methods
 	1. V60
 	2. Espresso
 	3. Chemex

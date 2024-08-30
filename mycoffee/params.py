@@ -13,7 +13,7 @@ Cups: {1}
 
 Coffee: {2} gr
 
-Water: {3} ml
+Water: {3} gr
 
 Ratio: {4}/{5}
 
@@ -42,7 +42,7 @@ METHODS_MAP = {
     "v60": {
         "coffee_ratio": 3,
         "water_ratio": 50,
-        "water": 242,
+        "water": 250,
         "info": "V60 method"
     }
     ,

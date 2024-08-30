@@ -1,6 +1,6 @@
 # MyCoffee Release Instructions
 
-#### Last Update: 2024-08-25
+**Last Update: 2024-08-30**
 
 1. Create the `release` branch under `dev`
 2. Update all version tags
@@ -9,6 +9,7 @@
 	3. `SECURITY.md`
 	4. `otherfiles/version_check.py`
 	5. `mycoffee/params.py`
+	6. `test/functions_test.py`
 3. Update `CHANGELOG.md`
 	1. Add a new header under `Unreleased` section (Example: `## [0.1] - 2022-08-17`)
 	2. Add a new compare link to the end of the file (Example: `[0.2]: https://github.com/sepandhaghighi/mycoffee/compare/v0.1...v0.2`)
