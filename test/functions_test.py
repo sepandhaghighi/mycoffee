@@ -24,6 +24,7 @@ Ratio: 3/50
 <BLANKLINE>
 Info: V60 method
 <BLANKLINE>
+>>> test_params = {"method":"v60", "cups":2, "coffee":30, "water":500, "coffee_ratio": 3, "water_ratio":50, "info":""}
 >>> print_message(test_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
@@ -62,19 +63,19 @@ Methods list:
 >>> coffee_calc(test_params, digit=0)
 20.0
 >>> parser = argparse.ArgumentParser()
->>> parser.add_argument('--method', help='brewing method', type=str, choices=sorted(METHODS_MAP), default="custom")
->>> parser.add_argument('--info', help='brewing method info', type=str)
->>> parser.add_argument('--coffee-ratio', help='coffee ratio', type=int)
->>> parser.add_argument('--water-ratio', help='water ratio', type=int)
->>> parser.add_argument('--water', help='water(ml)', type=float)
->>> parser.add_argument('--cups', help='number of cups', type=int)
->>> parser.add_argument('--methods-list', help='brewing methods list', nargs="?", const=1)
->>> parser.add_argument('--version', help='version', nargs="?", const=1)
+>>> _ = parser.add_argument('--method', help='brewing method', type=str, choices=sorted(METHODS_MAP), default="custom")
+>>> _ = parser.add_argument('--info', help='brewing method info', type=str)
+>>> _ = parser.add_argument('--coffee-ratio', help='coffee ratio', type=int)
+>>> _ = parser.add_argument('--water-ratio', help='water ratio', type=int)
+>>> _ = parser.add_argument('--water', help='water(ml)', type=float)
+>>> _ = parser.add_argument('--cups', help='number of cups', type=int)
+>>> _ = parser.add_argument('--methods-list', help='brewing methods list', nargs="?", const=1)
+>>> _ = parser.add_argument('--version', help='version', nargs="?", const=1)
 >>> args = parser.parse_args({"--version":True})
 >>> run(args)
 0.1
 >>>
->>> args = parser.parse_args()
+>>> args = parser.parse_args(["--method", 'v60'])
 >>> run(args)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
@@ -83,16 +84,16 @@ Methods list:
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
-Method: `custom`
+Method: `v60`
 <BLANKLINE>
 Cups: 1
 <BLANKLINE>
-Coffee: 14.118 gr
+Coffee: 14.52 gr
 <BLANKLINE>
-Water: 240 ml
+Water: 242 ml
 <BLANKLINE>
-Ratio: 1/17
+Ratio: 3/50
 <BLANKLINE>
-Info: Custom brewing method
+Info: V60 method
 <BLANKLINE>
 """
