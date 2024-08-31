@@ -31,6 +31,7 @@ jobs:
     - name: First test
       run: |
         mycoffee --version
+        mycoffee --method=chemex --water=20 --cups=3 --coffee-ratio=2 --water-ratio=37
     - name: Install dev-requirements
       run: |
         python otherfiles/requirements-splitter.py
