@@ -3,6 +3,9 @@
 <br/>
 <a href="https://badge.fury.io/py/mycoffee"><img src="https://badge.fury.io/py/mycoffee.svg" alt="PyPI version" height="18"></a>
 <a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3"></a>
+<a href="https://codecov.io/gh/sepandhaghighi/mycoffee" > 
+ <img src="https://codecov.io/gh/sepandhaghighi/mycoffee/graph/badge.svg?token=ZelznFDSPA"/> 
+ </a>
 </div>			
 				
 ## Overview	
