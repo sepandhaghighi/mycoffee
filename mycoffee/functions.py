@@ -17,8 +17,15 @@ def print_message(params):
     info = params["info"]
     if len(info) == 0:
         info = "Nothing :)"
-    print(MESSAGE_TEMPLATE.format(params["method"], params["cups"], params["coffee"], params["water"], params["coffee_ratio"], params["water_ratio"], info))
-
+    print(
+        MESSAGE_TEMPLATE.format(
+            params["method"],
+            params["cups"],
+            params["coffee"],
+            params["water"],
+            params["coffee_ratio"],
+            params["water_ratio"],
+            info))
 
 
 def load_method_params(method_name):
@@ -64,7 +71,7 @@ def load_params(args):
     params = load_method_params(args.method)
     for item in params:
         if getattr(args, item) is not None:
-                params[item] = getattr(args, item)
+            params[item] = getattr(args, item)
     params["method"] = args.method
     return params
 
