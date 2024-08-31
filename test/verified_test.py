@@ -46,8 +46,6 @@ True
 True
 >>> french_press_params["water_ratio"] == 15
 True
->>> french_press_params["water"] == 240
-False
 >>> french_press_params["water"] == 120
 True
 >>> french_press_coffee = coffee_calc(french_press_params)

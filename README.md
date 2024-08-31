@@ -1,6 +1,5 @@
 <div align="center">
-<img src="https://github.com/sepandhaghighi/mycoffee/raw/main/otherfiles/logo.png" width="500">
-<h1>MyCoffee: ??</h1>
+<h1>MyCoffee: Brew Perfect Coffee Right from Your Terminal</h1>
 <br/>
 <a href="https://badge.fury.io/py/mycoffee"><img src="https://badge.fury.io/py/mycoffee.svg" alt="PyPI version" height="18"></a>
 <a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3"></a>
@@ -9,7 +8,7 @@
 ## Overview	
 
 <p align="justify">					
-<strong>MyCoffee</strong> ??.
+<strong>MyCoffee</strong> is a command-line tool for coffee enthusiasts who love brewing with precision. It helps you calculate the perfect coffee-to-water ratio for various brewing methods, ensuring you brew your ideal cup every time—right from your terminal.
 </p>
 
 <table>
@@ -67,9 +66,115 @@
 
 ### Version
 
-```console
-mycoffee --version
+```shell
+> mycoffee --version
+
+0.1
 ```
+
+### Method
+
+```shell
+> mycoffee --method=v60
+ __  __  _  _   ___  _____  ____  ____  ____  ____
+(  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
+ )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
+(_/\/\_) (__)  \___)(_____)(__)  (__)  (____)(____)
+
+
+
+Method: `v60`
+
+Cups: 1
+
+Coffee: 15.0 gr
+
+Water: 250 gr
+
+Ratio: 3/50
+
+Info: V60 method
+```
+
+* [Methods List](https://github.com/sepandhaghighi/mycoffee/blob/main/METHODS.md)
+* `mycoffee --methods-list`
+
+### Customize
+
+```shell
+> mycoffee --method=chemex --water=20 --cups=3 --coffee-ratio=2 --water-ratio=37
+
+ __  __  _  _   ___  _____  ____  ____  ____  ____
+(  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
+ )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
+(_/\/\_) (__)  \___)(_____)(__)  (__)  (____)(____)
+
+
+
+Method: `chemex`
+
+Cups: 3
+
+Coffee: 1.081 gr
+
+Water: 20.0 gr
+
+Ratio: 2/37
+
+Info: Chemex method
+```
+
+## Parameters
+
+<table>
+  <thead>
+    <tr>
+      <th align="center">Parameter</th>
+      <th align="center">Description</th>
+      <th align="center">Type</th>
+      <th align="center">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center"><code>--method</code></td>
+      <td align="center">Specifies the coffee brewing method</td>
+      <td align="center">String</td>
+      <td align="center"><code>custom</code></td>
+    </tr>
+    <tr>
+      <td align="center"><code>--water</code></td>
+      <td align="center">Sets the amount of water in each cup</td>
+      <td align="center">Float</td>
+      <td align="center"><code>240</code></td>
+    </tr>
+    <tr>
+      <td align="center"><code>--cups</code></td>
+      <td align="center">Indicates the number of cups</td>
+      <td align="center">Integer</td>
+      <td align="center"><code>1</code></td>
+    </tr>
+    <tr>
+      <td align="center"><code>--coffee-ratio</code></td>
+      <td align="center">Coefficient for the coffee component in the ratio</td>
+      <td align="center">Integer</td>
+      <td align="center"><code>1</code></td>
+    </tr>
+    <tr>
+      <td align="center"><code>--water-ratio</code></td>
+      <td align="center">Coefficient for the water component in the ratio</td>
+      <td align="center">Integer</td>
+      <td align="center"><code>17</code></td>
+    </tr>
+    <tr>
+      <td align="center"><code>--info</code></td>
+      <td align="center">Provides information about the brewing method</td>
+      <td align="center">String</td>
+      <td align="center"><code>Custom brewing method</code></td>
+    </tr>
+  </tbody>
+</table>
+
 
 
 ## Issues & Bug Reports			
@@ -81,16 +186,20 @@ Just fill an issue and describe it. We'll check it ASAP!
 
 ## References
 
-<blockquote>1- </blockquote>
+<blockquote>1- <a href="https://honestcoffeeguide.com/coffee-to-water-ratio-calculator/">Coffee to water ratio calculator</a></blockquote>
+<blockquote>2- <a href="https://www.origincoffee.co.uk/blogs/journal/brewing-at-home-v60">V60 Brew Guide</a></blockquote>
+<blockquote>3- <a href="https://unionroasted.com/blogs/brewing-guides/chemex-pour-over">How to Brew Coffee with a Chemex</a></blockquote>
+<blockquote>4- <a href="https://www.illy.com/en-us/coffee/coffee-preparation/how-to-use-a-french-press">Using French press for perfect coffee</a></blockquote>
+<blockquote>5- <a href="https://www.haymancoffee.com/blogs/coffee-blog/how-to-brew-the-perfect-cup-of-siphon-coffee">How to Brew the Perfect Cup of Siphon Coffee</a></blockquote>
+<blockquote>6- <a href="https://home.lamarzoccousa.com/using-espresso-brew-ratios/">Using Espresso Brew Ratios</a></blockquote>
 
-
-## Show your support
+## Show Your Support
 								
-<h3>Star this repo</h3>					
+<h3>Star This Repo</h3>					
 
 Give a ⭐️ if this project helped you!
 
-<h3>Donate to our project</h3>	
+<h3>Donate to Our Project</h3>	
 
 <h4>Bitcoin</h4>
 1KtNLEEeUbTEK9PdN6Ya3ZAKXaqoKUuxCy
