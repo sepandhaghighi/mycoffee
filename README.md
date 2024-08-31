@@ -87,9 +87,9 @@ Method: `v60`
 
 Cups: 1
 
-Coffee: 14.52 gr
+Coffee: 15.0 gr
 
-Water: 242 ml
+Water: 250 gr
 
 Ratio: 3/50
 
@@ -117,7 +117,7 @@ Cups: 3
 
 Coffee: 1.081 gr
 
-Water: 20.0 ml
+Water: 20.0 gr
 
 Ratio: 2/37
 
