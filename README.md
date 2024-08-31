@@ -132,7 +132,6 @@ Info: Chemex method
       <th align="center">Parameter</th>
       <th align="center">Description</th>
       <th align="center">Type</th>
-      <th align="center">Required</th>
       <th align="center">Default</th>
     </tr>
   </thead>
@@ -141,47 +140,40 @@ Info: Chemex method
       <td align="center"><code>--method</code></td>
       <td align="center">Specifies the coffee brewing method</td>
       <td align="center">String</td>
-      <td align="center">No</td>
       <td align="center"><code>custom</code></td>
     </tr>
     <tr>
       <td align="center"><code>--water</code></td>
       <td align="center">Sets the amount of water in each cup</td>
       <td align="center">Float</td>
-      <td align="center">No</td>
       <td align="center"><code>240</code></td>
     </tr>
     <tr>
       <td align="center"><code>--cups</code></td>
       <td align="center">Indicates the number of cups</td>
       <td align="center">Integer</td>
-      <td align="center">No</td>
       <td align="center"><code>1</code></td>
     </tr>
     <tr>
       <td align="center"><code>--coffee-ratio</code></td>
       <td align="center">Coefficient for the coffee component in the ratio</td>
       <td align="center">Integer</td>
-      <td align="center">No</td>
       <td align="center"><code>1</code></td>
     </tr>
     <tr>
       <td align="center"><code>--water-ratio</code></td>
       <td align="center">Coefficient for the water component in the ratio</td>
       <td align="center">Integer</td>
-      <td align="center">No</td>
       <td align="center"><code>17</code></td>
     </tr>
     <tr>
       <td align="center"><code>--info</code></td>
       <td align="center">Provides information about the brewing method</td>
       <td align="center">String</td>
-      <td align="center">No</td>
       <td align="center"><code>Custom brewing method</code></td>
     </tr>
   </tbody>
 </table>
-
 
 
 
