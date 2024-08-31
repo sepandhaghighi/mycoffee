@@ -23,14 +23,14 @@ def read_description():
             description += c.read()
         return description
     except Exception:
-        return '''MyCoffee: Brew Perfect Coffee Right from Your Terminal'''
+        return '''Brew Perfect Coffee Right from Your Terminal'''
 
 
 setup(
     name='mycoffee',
     packages=['mycoffee'],
     version='0.1',
-    description='MyCoffee: Brew Perfect Coffee Right from Your Terminal',
+    description='Brew Perfect Coffee Right from Your Terminal',
     long_description=read_description(),
     long_description_content_type='text/markdown',
     include_package_data=True,
@@ -38,7 +38,7 @@ setup(
     author_email='me@sepand.tech',
     url='https://github.com/sepandhaghighi/mycoffee',
     download_url='https://github.com/sepandhaghighi/mycoffee/tarball/v0.1',
-    keywords="python3 python ratio coffee",
+    keywords="python3 python ratio coffee terminal",
     project_urls={
         'Source': 'https://github.com/sepandhaghighi/mycoffee'
     },
