@@ -31,6 +31,7 @@ jobs:
     - name: First test
       run: |
         mycoffee --version
+        mycoffee --method=chemex --water=20 --cups=3 --coffee-ratio=2 --water-ratio=37
     - name: Install dev-requirements
       run: |
         python otherfiles/requirements-splitter.py
@@ -48,3 +49,9 @@ jobs:
         python -m bandit -r mycoffee -s B311
         python -m pydocstyle --match-dir=mycoffee -v
       if: matrix.python-version == env.TEST_PYTHON_VERSION
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v4
+      with:
+          fail_ci_if_error: true
+          token: ${{ secrets.CODECOV_TOKEN }}
+      if: matrix.python-version == env.TEST_PYTHON_VERSION && matrix.os == env.TEST_OS

@@ -1,8 +1,11 @@
 <div align="center">
 <h1>MyCoffee: Brew Perfect Coffee Right from Your Terminal</h1>
 <br/>
-<a href="https://badge.fury.io/py/mycoffee"><img src="https://badge.fury.io/py/mycoffee.svg" alt="PyPI version" height="18"></a>
 <a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3"></a>
+<a href="https://badge.fury.io/py/mycoffee"><img src="https://badge.fury.io/py/mycoffee.svg" alt="PyPI version" height="18"></a>
+<a href="https://codecov.io/gh/sepandhaghighi/mycoffee" > 
+ <img src="https://codecov.io/gh/sepandhaghighi/mycoffee/graph/badge.svg?token=ZelznFDSPA"/> 
+ </a>
 </div>			
 				
 ## Overview	
@@ -41,9 +44,9 @@
 <table>
 	<tr> 
 		<td align="center">Code Quality</td>
-		<td align="center"></td>
-		<td align="center"></td>
-		<td align="center"></td>
+		<td align="center"><a href="https://www.codefactor.io/repository/github/sepandhaghighi/mycoffee"><img src="https://www.codefactor.io/repository/github/sepandhaghighi/mycoffee/badge" alt="CodeFactor"></a></td>
+		<td align="center"><a href="https://codebeat.co/projects/github-com-sepandhaghighi-mycoffee-main"><img alt="codebeat badge" src="https://codebeat.co/badges/8cb2671b-7640-4ac7-bb3e-823bb26a2db2" /></a></td>
+		<td align="center"><a href="https://app.codacy.com/gh/sepandhaghighi/mycoffee/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade"><img src="https://app.codacy.com/project/badge/Grade/ac0a8041879042d4a7925272ea3f7ba5"/></a></td>
 	</tr>
 </table>
 

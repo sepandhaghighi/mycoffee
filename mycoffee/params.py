@@ -44,8 +44,7 @@ METHODS_MAP = {
         "water_ratio": 50,
         "water": 250,
         "info": "V60 method"
-    }
-    ,
+    },
     "espresso": {
         "coffee_ratio": 1,
         "water_ratio": 2,
@@ -63,8 +62,7 @@ METHODS_MAP = {
         "water_ratio": 15,
         "water": 120,
         "info": "French press method"
-    }
-    ,
+    },
     "siphon": {
         "coffee_ratio": 1,
         "water_ratio": 15,
