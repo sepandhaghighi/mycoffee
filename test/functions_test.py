@@ -51,12 +51,17 @@ True
 >>> show_methods_list()
 Methods list:
 <BLANKLINE>
-1. `chemex` - Chemex method
-2. `custom` - Custom brewing method
-3. `espresso` - Espresso method
-4. `french-press` - French press method
-5. `siphon` - Siphon method
-6. `v60` - V60 method
+1. `auto-drip` - Auto drip method
+2. `chemex` - Chemex method
+3. `cold-brew` - Cold brew method
+4. `cold-brew-conc` - Cold brew(concentrate) method
+5. `custom` - Custom brewing method
+6. `espresso` - Espresso method
+7. `french-press` - French press method
+8. `moka-pot` - Moka pot method
+9. `pour-over` - Pour-over method
+10. `siphon` - Siphon method
+11. `v60` - V60 method
 >>> test_params = {"method":"v60", "cups":2, "coffee":30, "water":335, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method"}
 >>> coffee_calc(test_params)
 20.1
