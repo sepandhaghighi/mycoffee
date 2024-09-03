@@ -193,6 +193,11 @@ Just fill an issue and describe it. We'll check it ASAP!
 <blockquote>4- <a href="https://www.illy.com/en-us/coffee/coffee-preparation/how-to-use-a-french-press">Using French press for perfect coffee</a></blockquote>
 <blockquote>5- <a href="https://www.haymancoffee.com/blogs/coffee-blog/how-to-brew-the-perfect-cup-of-siphon-coffee">How to Brew the Perfect Cup of Siphon Coffee</a></blockquote>
 <blockquote>6- <a href="https://home.lamarzoccousa.com/using-espresso-brew-ratios/">Using Espresso Brew Ratios</a></blockquote>
+<blockquote>7- <a href="https://www.nicolebattefeld.com/post/best-recipes-2022">My Best Coffee Recipes of 2022</a></blockquote>
+<blockquote>8- <a href="https://wonderstate.com/pages/auto-drip">Auto Drip Brewing Guide</a></blockquote>
+<blockquote>9- <a href="https://counterculturecoffee.com/blogs/counter-culture-coffee/guide-to-cold-brew">Guide To Cold Brew</a></blockquote>
+<blockquote>10- <a href="https://www.thespruceeats.com/cold-brew-concentrate-recipe-5197494">Cold Brew Concentrate Recipe</a></blockquote>
+<blockquote>11- <a href="https://bakedbrewedbeautiful.com/how-to-make-coffee-in-moka-pot/">How to Make Coffee in a Moka Pot</a></blockquote>
 
 ## Show Your Support
 								
