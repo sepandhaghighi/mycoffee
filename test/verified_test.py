@@ -58,8 +58,8 @@ True
 True
 >>> pour_over_params["water"] == 240
 True
->>> french_press_coffee = coffee_calc(french_press_params)
->>> french_press_coffee == 16
+>>> pour_over_coffee = coffee_calc(pour_over_params)
+>>> pour_over_coffee == 16
 True
 >>> auto_drip_params = load_method_params("auto-drip") # https://wonderstate.com/pages/auto-drip
 >>> auto_drip_params["coffee_ratio"] == 1
@@ -78,7 +78,7 @@ True
 True
 >>> cold_brew_params["water"] == 242
 True
->>> cold_brew_coffee = cold_brew_coffee(cold_brew_params)
+>>> cold_brew_coffee = coffee_calc(cold_brew_params)
 >>> cold_brew_coffee == 22
 True
 >>> cold_brew_conc_params = load_method_params("cold-brew-conc") # https://www.thespruceeats.com/cold-brew-concentrate-recipe-5197494
@@ -88,7 +88,7 @@ True
 True
 >>> cold_brew_conc_params["water"] == 120
 True
->>> cold_brew_conc_coffee = cold_brew_conc_coffee(cold_brew_conc_params)
+>>> cold_brew_conc_coffee = coffee_calc(cold_brew_conc_params)
 >>> cold_brew_conc_coffee == 24
 True
 >>> moka_pot_params = load_method_params("moka-pot") # https://bakedbrewedbeautiful.com/how-to-make-coffee-in-moka-pot
