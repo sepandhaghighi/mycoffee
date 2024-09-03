@@ -54,7 +54,7 @@ Methods list:
 1. `auto-drip` - Auto drip method
 2. `chemex` - Chemex method
 3. `cold-brew` - Cold brew method
-4. `cold-brew-conc` - Cold brew(concentrate) method
+4. `cold-brew-conc` - Cold brew concentrate method
 5. `custom` - Custom brewing method
 6. `espresso` - Espresso method
 7. `french-press` - French press method
@@ -118,7 +118,7 @@ Methods list:
 1. `auto-drip` - Auto drip method
 2. `chemex` - Chemex method
 3. `cold-brew` - Cold brew method
-4. `cold-brew-conc` - Cold brew(concentrate) method
+4. `cold-brew-conc` - Cold brew concentrate method
 5. `custom` - Custom brewing method
 6. `espresso` - Espresso method
 7. `french-press` - French press method

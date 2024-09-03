@@ -91,7 +91,7 @@ METHODS_MAP = {
         "coffee_ratio": 1,
         "water_ratio": 5,
         "water": 120,
-        "info": "Cold brew(concentrate) method"
+        "info": "Cold brew concentrate method"
     },
     "moka-pot": {
         "coffee_ratio": 1,
