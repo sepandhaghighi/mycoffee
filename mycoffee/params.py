@@ -68,5 +68,35 @@ METHODS_MAP = {
         "water_ratio": 15,
         "water": 240,
         "info": "Siphon method"
+    },
+    "pour-over": {
+        "coffee_ratio": 1,
+        "water_ratio": 15,
+        "water": 240,
+        "info": "Pour-over method"
+    },
+    "auto-drip": {
+        "coffee_ratio": 1,
+        "water_ratio": 16,
+        "water": 128,
+        "info": "Auto drip method"
+    },
+    "cold-brew": {
+        "coffee_ratio": 1,
+        "water_ratio": 11,
+        "water": 242,
+        "info": "Cold brew method"
+    },
+    "cold-brew-conc": {
+        "coffee_ratio": 1,
+        "water_ratio": 5,
+        "water": 120,
+        "info": "Cold brew(concentrate) method"
+    },
+    "moka-pot": {
+        "coffee_ratio": 1,
+        "water_ratio": 10,
+        "water": 60,
+        "info": "Moka pot method"
     }
 }
