@@ -72,7 +72,7 @@
 		<td>>=0.2</td>
 	</tr>
 	<tr align="center">
-		<td>Cold brew(concentrate)</td>
+		<td>Cold brew concentrate</td>
 		<td><code>cold-brew-conc</code></td>
 		<td>1/5</td>
 		<td>120</td>

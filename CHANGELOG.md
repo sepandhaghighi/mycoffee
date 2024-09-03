@@ -5,6 +5,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- 5 new methods
+	1. Pour-over
+	2. Auto drip
+	3. Cold brew
+	4. Cold brew concentrate
+	5. Moka pot
 ## [0.1] - 2024-09-02
 ### Added
 - 6 new methods
