@@ -65,7 +65,7 @@ Methods list:
 >>> test_params = {"method":"v60", "cups":2, "coffee":30, "water":335, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method"}
 >>> coffee_calc(test_params)
 20.1
->>> coffee_calc(test_params, digit=0)
+>>> coffee_calc(test_params, digits=0)
 20
 >>> is_int(12.1)
 False
