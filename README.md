@@ -158,13 +158,13 @@ Info: Chemex method
     <tr>
       <td align="center"><code>--coffee-ratio</code></td>
       <td align="center">Coefficient for the coffee component in the ratio</td>
-      <td align="center">Integer</td>
+      <td align="center">Float</td>
       <td align="center"><code>1</code></td>
     </tr>
     <tr>
       <td align="center"><code>--water-ratio</code></td>
       <td align="center">Coefficient for the water component in the ratio</td>
-      <td align="center">Integer</td>
+      <td align="center">Float</td>
       <td align="center"><code>17</code></td>
     </tr>
     <tr>
