@@ -89,20 +89,20 @@ def load_params(args):
     return params
 
 
-def coffee_calc(params, digit=3):
+def coffee_calc(params, digits=3):
     """
     Calculate coffee.
 
     :param params: parameters
     :type params: dict
-    :param digit: rounding digit
-    :type digit: int
+    :param digits: number of digits up to which the given number is to be rounded
+    :type digits: int
     :return: coffee amount as float
     """
     coffee = params["water"] * params["coffee_ratio"] / params["water_ratio"]
-    if is_int(coffee) or digit == 0:
+    if is_int(coffee) or digits == 0:
         return int(coffee)
-    return round(coffee, digit)
+    return round(coffee, digits)
 
 
 def run(args):
