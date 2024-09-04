@@ -4,6 +4,17 @@ from mycoffee.params import MESSAGE_TEMPLATE, METHODS_LIST_TEMPLATE
 from mycoffee.params import MY_COFFEE_VERSION, DEFAULT_PARAMS, METHODS_MAP
 from art import tprint
 
+def is_int(number):
+    """
+    Check that input number is int or not.
+
+    :param number: input number
+    :type number: float or int
+    :return: result as bool
+    """
+    if int(number) == number:
+        return True
+    return False
 
 def print_message(params):
     """
@@ -87,6 +98,8 @@ def coffee_calc(params, digit=3):
     :return: coffee amount as float
     """
     coffee = params["water"] * params["coffee_ratio"] / params["water_ratio"]
+    if is_int(coffee):
+        return coffee
     return round(coffee, digit)
 
 
