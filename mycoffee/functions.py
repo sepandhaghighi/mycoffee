@@ -4,6 +4,7 @@ from mycoffee.params import MESSAGE_TEMPLATE, METHODS_LIST_TEMPLATE
 from mycoffee.params import MY_COFFEE_VERSION, DEFAULT_PARAMS, METHODS_MAP
 from art import tprint
 
+
 def is_int(number):
     """
     Check that input number is int or not.
@@ -15,6 +16,7 @@ def is_int(number):
     if int(number) == number:
         return True
     return False
+
 
 def print_message(params):
     """
