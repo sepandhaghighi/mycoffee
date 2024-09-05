@@ -100,9 +100,10 @@ def coffee_calc(params, digits=3):
     :return: coffee amount as float
     """
     coffee = params["water"] * params["coffee_ratio"] / params["water_ratio"]
-    if is_int(coffee) or digits == 0:
-        return int(coffee)
-    return round(coffee, digits)
+    coffee = round(coffee, digits)
+    if is_int(coffee):
+        coffee = int(coffee)
+    return coffee
 
 
 def run(args):
