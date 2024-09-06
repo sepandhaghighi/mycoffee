@@ -65,8 +65,16 @@ Methods list:
 >>> test_params = {"method":"v60", "cups":2, "coffee":30, "water":335, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method"}
 >>> coffee_calc(test_params)
 20.1
->>> coffee_calc(test_params, digit=0)
-20.0
+>>> coffee_calc(test_params, digits=0)
+20
+>>> is_int(12.1)
+False
+>>> is_int(12.123)
+False
+>>> is_int(12.0)
+True
+>>> is_int(15)
+True
 >>> parser = argparse.ArgumentParser()
 >>> _ = parser.add_argument('--method', help='brewing method', type=str, choices=sorted(METHODS_MAP), default="custom")
 >>> _ = parser.add_argument('--info', help='brewing method info', type=str)
@@ -93,7 +101,7 @@ Method: `v60`
 <BLANKLINE>
 Cups: 1
 <BLANKLINE>
-Coffee: 15.0 gr
+Coffee: 15 gr
 <BLANKLINE>
 Water: 250 gr
 <BLANKLINE>

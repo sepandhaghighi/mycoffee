@@ -12,6 +12,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 	3. Cold brew
 	4. Cold brew concentrate
 	5. Moka pot
+- `is_int` function
+### Changed
+- `README.md` updated
+- `--coffee-ratio` type changed from `int` to `float`
+- `--water-ratio` type changed from `int` to `float`
+- `coffee_calc` function updated
 ## [0.1] - 2024-09-02
 ### Added
 - 6 new methods
