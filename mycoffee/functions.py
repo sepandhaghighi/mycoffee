@@ -103,6 +103,8 @@ def filter_params(params, digits=3):
         params["water_ratio"] = int(params["water_ratio"])
     if is_int(params["coffee_ratio"]):
         params["coffee_ratio"] = int(params["coffee_ratio"])
+    if is_int(params["water"]):
+        params["water"] = int(params["water"])
     if len(params["info"]) == 0:
         params["info"] = "Nothing :)"
     return params
