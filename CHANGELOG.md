@@ -20,7 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `--water-ratio` type changed from `int` to `float`
 - `coffee_calc` function updated
 - `print_message` function updated
-- 
+- Test system modified
 ## [0.1] - 2024-09-02
 ### Added
 - 6 new methods
