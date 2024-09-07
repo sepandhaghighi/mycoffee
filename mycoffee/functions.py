@@ -113,20 +113,15 @@ def filter_params(params, digits=3):
 
 
 
-def coffee_calc(params, digits=3):
+def coffee_calc(params):
     """
     Calculate coffee.
 
     :param params: parameters
     :type params: dict
-    :param digits: number of digits up to which the given number is to be rounded
-    :type digits: int
     :return: coffee amount as float
     """
     coffee = params["water"] * params["coffee_ratio"] / params["water_ratio"]
-    coffee = round(coffee, digits)
-    if is_int(coffee):
-        coffee = int(coffee)
     return coffee
 
 
