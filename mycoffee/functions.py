@@ -136,6 +136,6 @@ def run(args):
         show_methods_list()
     else:
         params = load_params(args)
-        coffee = coffee_calc(params)
-        params["coffee"] = coffee
+        params["coffee"] = coffee_calc(params)
+        params = filter_params(params)
         print_message(params)
