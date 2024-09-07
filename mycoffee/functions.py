@@ -27,9 +27,6 @@ def print_message(params):
     :return: None
     """
     tprint("MyCoffee", font="bulbhead")
-    info = params["info"]
-    if len(info) == 0:
-        info = "Nothing :)"
     print(
         MESSAGE_TEMPLATE.format(
             params["method"],
@@ -38,7 +35,7 @@ def print_message(params):
             params["water"],
             params["coffee_ratio"],
             params["water_ratio"],
-            info))
+            params["info"]))
 
 
 def load_method_params(method_name):
