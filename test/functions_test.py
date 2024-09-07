@@ -146,8 +146,8 @@ Info: V60 method
 500
 >>> params["coffee_ratio"]
 23
->>> params["water_ratio"]
-500
+>>> params["water"]
+5000
 >>> args = parser.parse_args(["--methods-list"])
 >>> run(args)
 Methods list:
