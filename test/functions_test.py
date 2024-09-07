@@ -25,6 +25,7 @@ Ratio: 3/50
 Info: V60 method
 <BLANKLINE>
 >>> test_params = {"method":"v60", "cups":2, "coffee":30, "water":500, "coffee_ratio": 3, "water_ratio":50, "info":""}
+>>> test_params = filter_params(test_params)
 >>> print_message(test_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
@@ -65,8 +66,26 @@ Methods list:
 >>> test_params = {"method":"v60", "cups":2, "coffee":30, "water":335, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method"}
 >>> coffee_calc(test_params)
 20.1
->>> coffee_calc(test_params, digits=0)
+>>> test_params = {"method":"v60", "cups":2, "coffee":20.0, "water":335, "coffee_ratio": 3.0, "water_ratio":50.0, "info":""}
+>>> test_params = filter_params(test_params)
+>>> test_params["coffee"]
 20
+>>> test_params["water_ratio"]
+50
+>>> test_params["coffee_ratio"]
+3
+>>> test_params["info"]
+'Nothing :)'
+>>> test_params = {"method":"v60", "cups":2, "coffee":20.12345, "water":335, "coffee_ratio": 3.12345, "water_ratio":50.12345, "info":""}
+>>> test_params = filter_params(test_params, digits=2)
+>>> test_params["coffee"]
+20.12
+>>> test_params["coffee_ratio"]
+3.12345
+>>> test_params["water_ratio"]
+50.12345
+>>> test_params["water"]
+335
 >>> is_int(12.1)
 False
 >>> is_int(12.123)
@@ -78,8 +97,8 @@ True
 >>> parser = argparse.ArgumentParser()
 >>> _ = parser.add_argument('--method', help='brewing method', type=str, choices=sorted(METHODS_MAP), default="custom")
 >>> _ = parser.add_argument('--info', help='brewing method info', type=str)
->>> _ = parser.add_argument('--coffee-ratio', help='coffee ratio', type=int)
->>> _ = parser.add_argument('--water-ratio', help='water ratio', type=int)
+>>> _ = parser.add_argument('--coffee-ratio', help='coffee ratio', type=float)
+>>> _ = parser.add_argument('--water-ratio', help='water ratio', type=float)
 >>> _ = parser.add_argument('--water', help='water(ml)', type=float)
 >>> _ = parser.add_argument('--cups', help='number of cups', type=int)
 >>> _ = parser.add_argument('--methods-list', help='brewing methods list', nargs="?", const=1)
