@@ -108,8 +108,6 @@ def filter_params(params, digits=3):
     return params
 
 
-
-
 def coffee_calc(params):
     """
     Calculate coffee.
