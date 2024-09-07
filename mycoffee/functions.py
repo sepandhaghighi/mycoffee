@@ -89,6 +89,30 @@ def load_params(args):
     return params
 
 
+def filter_params(params, digits=3):
+    """
+    Filter params.
+
+    :param params: parameters
+    :type params: dict
+    :param digits: number of digits up to which the given number is to be rounded
+    :type digits: int
+    :return: filtered parameters as dict
+    """
+    params["coffee"] = round(params["coffee"], digits)
+    if is_int(params["coffee"]):
+        params["coffee"] = int(params["coffee"])
+    if is_int(params["water_ratio"]):
+        params["water_ratio"] = int(params["water_ratio"])
+    if is_int(params["coffee_ratio"]):
+        params["coffee_ratio"] = int(params["coffee_ratio"])
+    if len(params["info"]) == 0:
+        params["info"] = "Nothing :)"
+    return params
+
+
+
+
 def coffee_calc(params, digits=3):
     """
     Calculate coffee.
