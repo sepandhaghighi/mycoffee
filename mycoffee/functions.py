@@ -110,7 +110,7 @@ def filter_params(params, digits=3):
     return params
 
 
-def coffee_calc(params):
+def calc_coffee(params):
     """
     Calculate coffee.
 
@@ -136,6 +136,6 @@ def run(args):
         show_methods_list()
     else:
         params = load_params(args)
-        params["coffee"] = coffee_calc(params)
+        params["coffee"] = calc_coffee(params)
         params = filter_params(params)
         print_message(params)

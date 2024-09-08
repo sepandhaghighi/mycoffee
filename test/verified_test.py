@@ -8,7 +8,7 @@ True
 True
 >>> v60_params["water"] == 250
 True
->>> v60_coffee = coffee_calc(v60_params)
+>>> v60_coffee = calc_coffee(v60_params)
 >>> v60_coffee == 15
 True
 >>> chemex_params = load_method_params("chemex") # https://honestcoffeeguide.com/coffee-to-water-ratio-calculator
@@ -18,7 +18,7 @@ True
 True
 >>> chemex_params["water"] == 240
 True
->>> chemex_coffee = coffee_calc(chemex_params)
+>>> chemex_coffee = calc_coffee(chemex_params)
 >>> chemex_coffee == 16
 True
 >>> espresso_params = load_method_params("espresso") # https://honestcoffeeguide.com/coffee-to-water-ratio-calculator
@@ -28,7 +28,7 @@ True
 True
 >>> espresso_params["water"] == 36
 True
->>> espresso_coffee = coffee_calc(espresso_params)
+>>> espresso_coffee = calc_coffee(espresso_params)
 >>> espresso_coffee == 18
 True
 >>> siphon_params = load_method_params("siphon") # https://bluebottlecoffee.com/us/eng/brew-guides/siphon
@@ -38,7 +38,7 @@ True
 True
 >>> siphon_params["water"] == 240
 True
->>> siphon_coffee = coffee_calc(siphon_params)
+>>> siphon_coffee = calc_coffee(siphon_params)
 >>> siphon_coffee == 16
 True
 >>> french_press_params = load_method_params("french-press") # https://useandcares.hamiltonbeach.com/files/840230401.pdf
@@ -48,7 +48,7 @@ True
 True
 >>> french_press_params["water"] == 120
 True
->>> french_press_coffee = coffee_calc(french_press_params)
+>>> french_press_coffee = calc_coffee(french_press_params)
 >>> french_press_coffee == 8
 True
 >>> pour_over_params = load_method_params("pour-over") # https://www.nicolebattefeld.com/post/best-recipes-2022
@@ -58,7 +58,7 @@ True
 True
 >>> pour_over_params["water"] == 240
 True
->>> pour_over_coffee = coffee_calc(pour_over_params)
+>>> pour_over_coffee = calc_coffee(pour_over_params)
 >>> pour_over_coffee == 16
 True
 >>> auto_drip_params = load_method_params("auto-drip") # https://wonderstate.com/pages/auto-drip
@@ -68,7 +68,7 @@ True
 True
 >>> auto_drip_params["water"] == 128
 True
->>> auto_drip_coffee = coffee_calc(auto_drip_params)
+>>> auto_drip_coffee = calc_coffee(auto_drip_params)
 >>> auto_drip_coffee == 8
 True
 >>> cold_brew_params = load_method_params("cold-brew") # https://counterculturecoffee.com/blogs/counter-culture-coffee/guide-to-cold-brew
@@ -78,7 +78,7 @@ True
 True
 >>> cold_brew_params["water"] == 242
 True
->>> cold_brew_coffee = coffee_calc(cold_brew_params)
+>>> cold_brew_coffee = calc_coffee(cold_brew_params)
 >>> cold_brew_coffee == 22
 True
 >>> cold_brew_conc_params = load_method_params("cold-brew-conc") # https://www.thespruceeats.com/cold-brew-concentrate-recipe-5197494
@@ -88,7 +88,7 @@ True
 True
 >>> cold_brew_conc_params["water"] == 120
 True
->>> cold_brew_conc_coffee = coffee_calc(cold_brew_conc_params)
+>>> cold_brew_conc_coffee = calc_coffee(cold_brew_conc_params)
 >>> cold_brew_conc_coffee == 24
 True
 >>> moka_pot_params = load_method_params("moka-pot") # https://bakedbrewedbeautiful.com/how-to-make-coffee-in-moka-pot
@@ -98,7 +98,7 @@ True
 True
 >>> moka_pot_params["water"] == 60
 True
->>> moka_pot_coffee = coffee_calc(moka_pot_params)
+>>> moka_pot_coffee = calc_coffee(moka_pot_params)
 >>> moka_pot_coffee == 6
 True
 """
