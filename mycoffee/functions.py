@@ -27,9 +27,6 @@ def print_message(params):
     :return: None
     """
     tprint("MyCoffee", font="bulbhead")
-    info = params["info"]
-    if len(info) == 0:
-        info = "Nothing :)"
     print(
         MESSAGE_TEMPLATE.format(
             params["method"],
@@ -38,7 +35,7 @@ def print_message(params):
             params["water"],
             params["coffee_ratio"],
             params["water_ratio"],
-            info))
+            params["info"]))
 
 
 def load_method_params(method_name):
@@ -89,20 +86,39 @@ def load_params(args):
     return params
 
 
-def coffee_calc(params, digits=3):
+def filter_params(params, digits=3):
     """
-    Calculate coffee.
+    Filter params.
 
     :param params: parameters
     :type params: dict
     :param digits: number of digits up to which the given number is to be rounded
     :type digits: int
+    :return: filtered parameters as dict
+    """
+    params["coffee"] = round(params["coffee"], digits)
+    if is_int(params["coffee"]):
+        params["coffee"] = int(params["coffee"])
+    if is_int(params["water_ratio"]):
+        params["water_ratio"] = int(params["water_ratio"])
+    if is_int(params["coffee_ratio"]):
+        params["coffee_ratio"] = int(params["coffee_ratio"])
+    if is_int(params["water"]):
+        params["water"] = int(params["water"])
+    if len(params["info"]) == 0:
+        params["info"] = "Nothing :)"
+    return params
+
+
+def coffee_calc(params):
+    """
+    Calculate coffee.
+
+    :param params: parameters
+    :type params: dict
     :return: coffee amount as float
     """
     coffee = params["water"] * params["coffee_ratio"] / params["water_ratio"]
-    coffee = round(coffee, digits)
-    if is_int(coffee):
-        coffee = int(coffee)
     return coffee
 
 
@@ -120,6 +136,6 @@ def run(args):
         show_methods_list()
     else:
         params = load_params(args)
-        coffee = coffee_calc(params)
-        params["coffee"] = coffee
+        params["coffee"] = coffee_calc(params)
+        params = filter_params(params)
         print_message(params)
