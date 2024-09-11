@@ -18,7 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `README.md` updated
 - `--coffee-ratio` type changed from `int` to `float`
 - `--water-ratio` type changed from `int` to `float`
-- `coffee_calc` function updated
+- `coffee_calc` function renamed to `calc_coffee`
 - `print_message` function updated
 - Test system modified
 ## [0.1] - 2024-09-02

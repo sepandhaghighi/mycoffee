@@ -64,7 +64,7 @@ Methods list:
 10. `siphon` - Siphon method
 11. `v60` - V60 method
 >>> test_params = {"method":"v60", "cups":2, "coffee":30, "water":335, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method"}
->>> coffee_calc(test_params)
+>>> calc_coffee(test_params)
 20.1
 >>> test_params = {"method":"v60", "cups":2, "coffee":20.0, "water":335.0, "coffee_ratio": 3.0, "water_ratio":50.0, "info":""}
 >>> test_params = filter_params(test_params)
@@ -132,7 +132,7 @@ Info: V60 method
 <BLANKLINE>
 >>> args = parser.parse_args(["--method", 'v60', "--water-ratio", '500', "--coffee-ratio", '23', "--water", '5000'])
 >>> params = load_params(args)
->>> params["coffee"] = coffee_calc(params)
+>>> params["coffee"] = calc_coffee(params)
 >>> params["water"]
 5000.0
 >>> params["water_ratio"]

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """mycoffee functions."""
-from mycoffee.params import MESSAGE_TEMPLATE, METHODS_LIST_TEMPLATE
+from mycoffee.params import MESSAGE_TEMPLATE, METHODS_LIST_TEMPLATE, EMPTY_INFO
 from mycoffee.params import MY_COFFEE_VERSION, DEFAULT_PARAMS, METHODS_MAP
 from art import tprint
 
@@ -106,11 +106,11 @@ def filter_params(params, digits=3):
     if is_int(params["water"]):
         params["water"] = int(params["water"])
     if len(params["info"]) == 0:
-        params["info"] = "Nothing :)"
+        params["info"] = EMPTY_INFO
     return params
 
 
-def coffee_calc(params):
+def calc_coffee(params):
     """
     Calculate coffee.
 
@@ -136,6 +136,6 @@ def run(args):
         show_methods_list()
     else:
         params = load_params(args)
-        params["coffee"] = coffee_calc(params)
+        params["coffee"] = calc_coffee(params)
         params = filter_params(params)
         print_message(params)
