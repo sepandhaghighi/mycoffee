@@ -75,7 +75,6 @@ body:
         - Python 3.8
         - Python 3.7
         - Python 3.6
-        - Python 3.5
       default: 1
     validations:
       required: true
@@ -85,6 +84,7 @@ body:
       label: MyCoffee version
       description: Which version of MyCoffee are you using?
       options:
+        - MyCoffee 0.2
         - MyCoffee 0.1
       default: 0
     validations:
