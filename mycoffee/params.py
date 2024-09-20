@@ -117,5 +117,11 @@ METHODS_MAP = {
         "water_ratio": 10,
         "water": 50,
         "info": "Turkish method"
+    },
+    "cupping": {
+        "coffee_ratio": 11,
+        "water_ratio": 200,
+        "water": 150,
+        "info": "Cupping method"
     }
 }
