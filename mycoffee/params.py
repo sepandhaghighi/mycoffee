@@ -58,6 +58,12 @@ METHODS_MAP = {
         "water": 18,
         "info": "Ristretto method"
     },
+    "lungo": {
+        "coffee_ratio": 1,
+        "water_ratio": 4,
+        "water": 72,
+        "info": "Lungo method"
+    },
     "chemex": {
         "coffee_ratio": 1,
         "water_ratio": 15,
