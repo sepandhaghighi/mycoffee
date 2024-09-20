@@ -111,5 +111,11 @@ METHODS_MAP = {
         "water_ratio": 10,
         "water": 60,
         "info": "Moka pot method"
+    },
+    "turkish": {
+        "coffee_ratio": 1,
+        "water_ratio": 10,
+        "water": 50,
+        "info": "Turkish method"
     }
 }
