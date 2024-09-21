@@ -85,6 +85,34 @@
 		<td>60</td>
 		<td>>=0.2</td>
 	</tr>
+	<tr align="center">
+		<td>Ristretto</td>
+		<td><code>ristretto</code></td>
+		<td>1/1</td>
+		<td>18</td>
+		<td>>=0.3</td>
+	</tr>
+	<tr align="center">
+		<td>Lungo</td>
+		<td><code>lungo</code></td>
+		<td>1/4</td>
+		<td>72</td>
+		<td>>=0.3</td>
+	</tr>
+	<tr align="center">
+		<td>Turkish</td>
+		<td><code>turkish</code></td>
+		<td>1/10</td>
+		<td>50</td>
+		<td>>=0.3</td>
+	</tr>
+	<tr align="center">
+		<td>Cupping</td>
+		<td><code>cupping</code></td>
+		<td>11/200</td>
+		<td>150</td>
+		<td>>=0.3</td>
+	</tr>
 </table>
 
 
