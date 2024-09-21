@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - Logo
+- 4 new methods
+	1. Ristretto
+	2. Lungo
+	3. Turkish
+	4. Cupping
 ## [0.2] - 2024-09-17
 ### Added
 - 5 new methods

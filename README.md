@@ -199,6 +199,8 @@ Just fill an issue and describe it. We'll check it ASAP!
 <blockquote>9- <a href="https://counterculturecoffee.com/blogs/counter-culture-coffee/guide-to-cold-brew">Guide To Cold Brew</a></blockquote>
 <blockquote>10- <a href="https://www.thespruceeats.com/cold-brew-concentrate-recipe-5197494">Cold Brew Concentrate Recipe</a></blockquote>
 <blockquote>11- <a href="https://bakedbrewedbeautiful.com/how-to-make-coffee-in-moka-pot/">How to Make Coffee in a Moka Pot</a></blockquote>
+<blockquote>12- <a href="https://www.drinktrade.com/blogs/education/how-to-make-turkish-coffee">How to Make Turkish Coffee at Home</a></blockquote>
+<blockquote>13- <a href="https://www.horshamcoffeeroaster.co.uk/pages/how-to-cup-coffee">How to Cup Coffee</a></blockquote>
 
 ## Show Your Support
 								

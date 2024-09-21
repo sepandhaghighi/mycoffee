@@ -101,4 +101,44 @@ True
 >>> moka_pot_coffee = calc_coffee(moka_pot_params)
 >>> moka_pot_coffee == 6
 True
+>>> ristretto_params = load_method_params("ristretto") # https://honestcoffeeguide.com/coffee-to-water-ratio-calculator
+>>> ristretto_params["coffee_ratio"] == 1
+True
+>>> ristretto_params["water_ratio"] == 1
+True
+>>> ristretto_params["water"] == 18
+True
+>>> ristretto_coffee = calc_coffee(ristretto_params)
+>>> ristretto_coffee == 18
+True
+>>> lungo_params = load_method_params("lungo") # https://honestcoffeeguide.com/coffee-to-water-ratio-calculator
+>>> lungo_params["coffee_ratio"] == 1
+True
+>>> lungo_params["water_ratio"] == 4
+True
+>>> lungo_params["water"] == 72
+True
+>>> lungo_coffee = calc_coffee(lungo_params)
+>>> lungo_coffee == 18
+True
+>>> turkish_params = load_method_params("turkish") # https://www.drinktrade.com/blogs/education/how-to-make-turkish-coffee
+>>> turkish_params["coffee_ratio"] == 1
+True
+>>> turkish_params["water_ratio"] == 10
+True
+>>> turkish_params["water"] == 50
+True
+>>> turkish_coffee = calc_coffee(turkish_params)
+>>> turkish_coffee == 5
+True
+>>> cupping_params = load_method_params("cupping") # https://www.horshamcoffeeroaster.co.uk/pages/how-to-cup-coffee
+>>> cupping_params["coffee_ratio"] == 11
+True
+>>> cupping_params["water_ratio"] == 200
+True
+>>> cupping_params["water"] == 150
+True
+>>> cupping_coffee = calc_coffee(cupping_params)
+>>> cupping_coffee == 8.25
+True
 """

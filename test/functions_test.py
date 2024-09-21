@@ -56,13 +56,17 @@ Methods list:
 2. `chemex` - Chemex method
 3. `cold-brew` - Cold brew method
 4. `cold-brew-conc` - Cold brew concentrate method
-5. `custom` - Custom brewing method
-6. `espresso` - Espresso method
-7. `french-press` - French press method
-8. `moka-pot` - Moka pot method
-9. `pour-over` - Pour-over method
-10. `siphon` - Siphon method
-11. `v60` - V60 method
+5. `cupping` - Cupping method
+6. `custom` - Custom brewing method
+7. `espresso` - Espresso method
+8. `french-press` - French press method
+9. `lungo` - Lungo method
+10. `moka-pot` - Moka pot method
+11. `pour-over` - Pour-over method
+12. `ristretto` - Ristretto method
+13. `siphon` - Siphon method
+14. `turkish` - Turkish method
+15. `v60` - V60 method
 >>> test_params = {"method":"v60", "cups":2, "coffee":30, "water":335, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method"}
 >>> calc_coffee(test_params)
 20.1
@@ -156,11 +160,15 @@ Methods list:
 2. `chemex` - Chemex method
 3. `cold-brew` - Cold brew method
 4. `cold-brew-conc` - Cold brew concentrate method
-5. `custom` - Custom brewing method
-6. `espresso` - Espresso method
-7. `french-press` - French press method
-8. `moka-pot` - Moka pot method
-9. `pour-over` - Pour-over method
-10. `siphon` - Siphon method
-11. `v60` - V60 method
+5. `cupping` - Cupping method
+6. `custom` - Custom brewing method
+7. `espresso` - Espresso method
+8. `french-press` - French press method
+9. `lungo` - Lungo method
+10. `moka-pot` - Moka pot method
+11. `pour-over` - Pour-over method
+12. `ristretto` - Ristretto method
+13. `siphon` - Siphon method
+14. `turkish` - Turkish method
+15. `v60` - V60 method
 """

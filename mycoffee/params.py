@@ -52,6 +52,18 @@ METHODS_MAP = {
         "water": 36,
         "info": "Espresso method"
     },
+    "ristretto": {
+        "coffee_ratio": 1,
+        "water_ratio": 1,
+        "water": 18,
+        "info": "Ristretto method"
+    },
+    "lungo": {
+        "coffee_ratio": 1,
+        "water_ratio": 4,
+        "water": 72,
+        "info": "Lungo method"
+    },
     "chemex": {
         "coffee_ratio": 1,
         "water_ratio": 15,
@@ -99,5 +111,17 @@ METHODS_MAP = {
         "water_ratio": 10,
         "water": 60,
         "info": "Moka pot method"
+    },
+    "turkish": {
+        "coffee_ratio": 1,
+        "water_ratio": 10,
+        "water": 50,
+        "info": "Turkish method"
+    },
+    "cupping": {
+        "coffee_ratio": 11,
+        "water_ratio": 200,
+        "water": 150,
+        "info": "Cupping method"
     }
 }
