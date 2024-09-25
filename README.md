@@ -201,6 +201,10 @@ Just fill an issue and describe it. We'll check it ASAP!
 <blockquote>11- <a href="https://bakedbrewedbeautiful.com/how-to-make-coffee-in-moka-pot/">How to Make Coffee in a Moka Pot</a></blockquote>
 <blockquote>12- <a href="https://www.drinktrade.com/blogs/education/how-to-make-turkish-coffee">How to Make Turkish Coffee at Home</a></blockquote>
 <blockquote>13- <a href="https://www.horshamcoffeeroaster.co.uk/pages/how-to-cup-coffee">How to Cup Coffee</a></blockquote>
+<blockquote>14- <a href="https://aeroprecipe.com/recipes/tetsu-kasuya-aeropress-recipe">Tetsu Kasuya AeroPress Recipe</a></blockquote>
+<blockquote>15- <a href="https://aeroprecipe.com/recipes/all-about-the-intervals">All about the intervals</a></blockquote>
+<blockquote>16- <a href="https://squaremileblog.com/brew-guide-clever-dripper/">Clever Dripper; Square Mile Coffee</a></blockquote>
+<blockquote>17- <a href="https://www.seattlecoffeegear.com/pages/product-resource/aero-press-product-resources">AeroPress Product User Manuals</a></blockquote>
 
 ## Show Your Support
 								
