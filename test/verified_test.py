@@ -179,6 +179,6 @@ True
 >>> steep_and_release_params["water"] == 255
 True
 >>> steep_and_release_coffee = calc_coffee(steep_and_release_params)
->>> steep_and_release_coffee == 15.937
+>>> steep_and_release_coffee == 15.9375
 True
 """
