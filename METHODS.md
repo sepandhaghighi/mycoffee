@@ -113,6 +113,34 @@
 		<td>150</td>
 		<td>>=0.3</td>
 	</tr>
+	<tr align="center">
+		<td>AeroPress standard</td>
+		<td><code>aero-press</code></td>
+		<td>1/15</td>
+		<td>135</td>
+		<td>>=0.4</td>
+	</tr>
+	<tr align="center">
+		<td>AeroPress concentrate</td>
+		<td><code>aero-press-conc</code></td>
+		<td>1/6</td>
+		<td>90</td>
+		<td>>=0.4</td>
+	</tr>
+	<tr align="center">
+		<td>AeroPress inverted</td>
+		<td><code>aero-press-inv</code></td>
+		<td>1/12</td>
+		<td>132</td>
+		<td>>=0.4</td>
+	</tr>
+	<tr align="center">
+		<td>Steep-and-release</td>
+		<td><code>steep-and-release</code></td>
+		<td>1/16</td>
+		<td>255</td>
+		<td>>=0.4</td>
+	</tr>
 </table>
 
 
