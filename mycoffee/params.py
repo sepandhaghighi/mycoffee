@@ -123,5 +123,29 @@ METHODS_MAP = {
         "water_ratio": 200,
         "water": 150,
         "info": "Cupping method"
+    },
+    "aero-press": {
+        "coffee_ratio": 1,
+        "water_ratio": 15,
+        "water": 135,
+        "info": "AeroPress standard method"
+    },
+    "aero-press-conc": {
+        "coffee_ratio": 1,
+        "water_ratio": 6,
+        "water": 90,
+        "info": "AeroPress concentrate method"
+    },
+    "aero-press-inv": {
+        "coffee_ratio": 1,
+        "water_ratio": 12,
+        "water": 132,
+        "info": "AeroPress inverted method"
+    },
+    "steep-and-release": {
+        "coffee_ratio": 1,
+        "water_ratio": 16,
+        "water": 255,
+        "info": "Steep-and-release method"
     }
 }
