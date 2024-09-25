@@ -52,21 +52,25 @@ True
 >>> show_methods_list()
 Methods list:
 <BLANKLINE>
-1. `auto-drip` - Auto drip method
-2. `chemex` - Chemex method
-3. `cold-brew` - Cold brew method
-4. `cold-brew-conc` - Cold brew concentrate method
-5. `cupping` - Cupping method
-6. `custom` - Custom brewing method
-7. `espresso` - Espresso method
-8. `french-press` - French press method
-9. `lungo` - Lungo method
-10. `moka-pot` - Moka pot method
-11. `pour-over` - Pour-over method
-12. `ristretto` - Ristretto method
-13. `siphon` - Siphon method
-14. `turkish` - Turkish method
-15. `v60` - V60 method
+1. `aero-press` - AeroPress standard method
+2. `aero-press-conc` - AeroPress concentrate method
+3. `aero-press-inv` - AeroPress inverted method
+4. `auto-drip` - Auto drip method
+5. `chemex` - Chemex method
+6. `cold-brew` - Cold brew method
+7. `cold-brew-conc` - Cold brew concentrate method
+8. `cupping` - Cupping method
+9. `custom` - Custom brewing method
+10. `espresso` - Espresso method
+11. `french-press` - French press method
+12. `lungo` - Lungo method
+13. `moka-pot` - Moka pot method
+14. `pour-over` - Pour-over method
+15. `ristretto` - Ristretto method
+16. `siphon` - Siphon method
+17. `steep-and-release` - Steep-and-release method
+18. `turkish` - Turkish method
+19. `v60` - V60 method
 >>> test_params = {"method":"v60", "cups":2, "coffee":30, "water":335, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method"}
 >>> calc_coffee(test_params)
 20.1
@@ -156,19 +160,23 @@ Info: V60 method
 >>> run(args)
 Methods list:
 <BLANKLINE>
-1. `auto-drip` - Auto drip method
-2. `chemex` - Chemex method
-3. `cold-brew` - Cold brew method
-4. `cold-brew-conc` - Cold brew concentrate method
-5. `cupping` - Cupping method
-6. `custom` - Custom brewing method
-7. `espresso` - Espresso method
-8. `french-press` - French press method
-9. `lungo` - Lungo method
-10. `moka-pot` - Moka pot method
-11. `pour-over` - Pour-over method
-12. `ristretto` - Ristretto method
-13. `siphon` - Siphon method
-14. `turkish` - Turkish method
-15. `v60` - V60 method
+1. `aero-press` - AeroPress standard method
+2. `aero-press-conc` - AeroPress concentrate method
+3. `aero-press-inv` - AeroPress inverted method
+4. `auto-drip` - Auto drip method
+5. `chemex` - Chemex method
+6. `cold-brew` - Cold brew method
+7. `cold-brew-conc` - Cold brew concentrate method
+8. `cupping` - Cupping method
+9. `custom` - Custom brewing method
+10. `espresso` - Espresso method
+11. `french-press` - French press method
+12. `lungo` - Lungo method
+13. `moka-pot` - Moka pot method
+14. `pour-over` - Pour-over method
+15. `ristretto` - Ristretto method
+16. `siphon` - Siphon method
+17. `steep-and-release` - Steep-and-release method
+18. `turkish` - Turkish method
+19. `v60` - V60 method
 """
