@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- 4 new methods
+	1. AeroPress standard
+	2. AeroPress concentrate
+	3. AeroPress inverted
+	4. Steep-and-release
 ## [0.3] - 2024-09-24
 ### Added
 - Logo
