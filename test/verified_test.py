@@ -141,4 +141,44 @@ True
 >>> cupping_coffee = calc_coffee(cupping_params)
 >>> cupping_coffee == 8.25
 True
+>>> aero_press_params = load_method_params("aero-press") # https://aeroprecipe.com/recipes/tetsu-kasuya-aeropress-recipe
+>>> aero_press_params["coffee_ratio"] == 1
+True
+>>> aero_press_params["water_ratio"] == 15
+True
+>>> aero_press_params["water"] == 135
+True
+>>> aero_press_coffee = calc_coffee(aero_press_params)
+>>> aero_press_coffee == 9
+True
+>>> aero_press_conc_params = load_method_params("aero-press-conc") # https://www.seattlecoffeegear.com/pages/product-resource/aero-press-product-resources
+>>> aero_press_conc_params["coffee_ratio"] == 1
+True
+>>> aero_press_conc_params["water_ratio"] == 6
+True
+>>> aero_press_conc_params["water"] == 90
+True
+>>> aero_press_conc_coffee = calc_coffee(aero_press_conc_params)
+>>> aero_press_conc_coffee == 15
+True
+>>> aero_press_inv_params = load_method_params("aero-press-inv") # https://aeroprecipe.com/recipes/all-about-the-intervals
+>>> aero_press_inv_params["coffee_ratio"] == 1
+True
+>>> aero_press_inv_params["water_ratio"] == 12
+True
+>>> aero_press_inv_params["water"] == 132
+True
+>>> aero_press_inv_coffee = calc_coffee(aero_press_inv_params)
+>>> aero_press_inv_coffee == 11
+True
+>>> steep_and_release_params = load_method_params("steep-and-release") # https://squaremileblog.com/brew-guide-clever-dripper/
+>>> steep_and_release_params["coffee_ratio"] == 1
+True
+>>> steep_and_release_params["water_ratio"] == 16
+True
+>>> steep_and_release_params["water"] == 255
+True
+>>> steep_and_release_coffee = calc_coffee(steep_and_release_params)
+>>> steep_and_release_coffee == 15.937
+True
 """
