@@ -11,6 +11,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 	2. AeroPress concentrate
 	3. AeroPress inverted
 	4. Steep-and-release
+- `--digits` argument
+### Changed
+- `README.md` updated
+- Test system modified
+- `filter_params` function updated
 ## [0.3] - 2024-09-24
 ### Added
 - Logo
