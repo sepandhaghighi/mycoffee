@@ -18,6 +18,7 @@ def main():
     parser.add_argument('--water-ratio', help='coefficient for the water component in the ratio', type=float)
     parser.add_argument('--water', help='amount of water in each cup (gr)', type=float)
     parser.add_argument('--cups', help='number of cups', type=int)
+    parser.add_argument('--digits', help='number of digits up to which the given number is to be rounded', type=int, default=3)
     parser.add_argument('--methods-list', help='brewing methods list', nargs="?", const=1)
     parser.add_argument('--version', help='version', nargs="?", const=1)
     args = parser.parse_args()
