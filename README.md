@@ -174,7 +174,7 @@ Info: Chemex method
       <td align="center">String</td>
       <td align="center"><code>Custom brewing method</code></td>
     </tr>
-	<tr>
+    <tr>
       <td align="center"><code>--digits</code></td>
       <td align="center">Number of digits up to which the result is to be rounded</td>
       <td align="center">Integer</td>
