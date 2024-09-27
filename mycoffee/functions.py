@@ -86,16 +86,15 @@ def load_params(args):
     return params
 
 
-def filter_params(params, digits=3):
+def filter_params(params):
     """
     Filter params.
 
     :param params: parameters
     :type params: dict
-    :param digits: number of digits up to which the given number is to be rounded
-    :type digits: int
     :return: filtered parameters as dict
     """
+    digits = params["digits"]
     params["coffee"] = round(params["coffee"], digits)
     if is_int(params["coffee"]):
         params["coffee"] = int(params["coffee"])
