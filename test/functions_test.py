@@ -24,7 +24,7 @@ Ratio: 3/50
 <BLANKLINE>
 Info: V60 method
 <BLANKLINE>
->>> test_params = {"method":"v60", "cups":2, "coffee":30, "water":500, "coffee_ratio": 3, "water_ratio":50, "info":""}
+>>> test_params = {"method":"v60", "cups":2, "coffee":30, "water":500, "coffee_ratio": 3, "water_ratio":50, "info":"", "digits":3}
 >>> test_params = filter_params(test_params)
 >>> print_message(test_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
@@ -74,7 +74,7 @@ Methods list:
 >>> test_params = {"method":"v60", "cups":2, "coffee":30, "water":335, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method"}
 >>> calc_coffee(test_params)
 20.1
->>> test_params = {"method":"v60", "cups":2, "coffee":20.0, "water":335.0, "coffee_ratio": 3.0, "water_ratio":50.0, "info":""}
+>>> test_params = {"method":"v60", "cups":2, "coffee":20.0, "water":335.0, "coffee_ratio": 3.0, "water_ratio":50.0, "info":"", "digits":3}
 >>> test_params = filter_params(test_params)
 >>> test_params["coffee"]
 20
@@ -86,8 +86,8 @@ Methods list:
 335
 >>> test_params["info"]
 'Nothing :)'
->>> test_params = {"method":"v60", "cups":2, "coffee":20.12345, "water":335.12345, "coffee_ratio": 3.12345, "water_ratio":50.12345, "info":""}
->>> test_params = filter_params(test_params, digits=2)
+>>> test_params = {"method":"v60", "cups":2, "coffee":20.12345, "water":335.12345, "coffee_ratio": 3.12345, "water_ratio":50.12345, "info":"", "digits":2}
+>>> test_params = filter_params(test_params)
 >>> test_params["coffee"]
 20.12
 >>> test_params["coffee_ratio"]
@@ -111,6 +111,7 @@ True
 >>> _ = parser.add_argument('--water-ratio', help='water ratio', type=float)
 >>> _ = parser.add_argument('--water', help='water(ml)', type=float)
 >>> _ = parser.add_argument('--cups', help='number of cups', type=int)
+>>> _ = parser.add_argument('--digits', help='number of digits up to which the given number is to be rounded', type=int, default=3)
 >>> _ = parser.add_argument('--methods-list', help='brewing methods list', nargs="?", const=1)
 >>> _ = parser.add_argument('--version', help='version', nargs="?", const=1)
 >>> args = parser.parse_args({"--version":True})
