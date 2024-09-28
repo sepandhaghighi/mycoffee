@@ -176,7 +176,7 @@ Info: Chemex method
     </tr>
     <tr>
       <td align="center"><code>--digits</code></td>
-      <td align="center">Number of digits up to which the result is to be rounded</td>
+      <td align="center">Number of digits up to which the result is rounded</td>
       <td align="center">Integer</td>
       <td align="center"><code>3</code></td>
     </tr>

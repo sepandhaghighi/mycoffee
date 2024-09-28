@@ -20,7 +20,7 @@ def main():
     parser.add_argument('--cups', help='number of cups', type=int)
     parser.add_argument(
         '--digits',
-        help='number of digits up to which the result is to be rounded',
+        help='number of digits up to which the result is rounded',
         type=int,
         default=3)
     parser.add_argument('--methods-list', help='brewing methods list', nargs="?", const=1)
