@@ -179,6 +179,8 @@ Info: V60 method
 255
 >>> params["coffee"]
 15.9
+>>> params["digits"]
+1
 >>> args = parser.parse_args(["--methods-list"])
 >>> run(args)
 Methods list:
