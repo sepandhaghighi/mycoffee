@@ -53,13 +53,13 @@
 ## Installation		
 
 ### Source Code
-- Download [Version 0.3](https://github.com/sepandhaghighi/mycoffee/archive/v0.3.zip) or [Latest Source](https://github.com/sepandhaghighi/mycoffee/archive/dev.zip)
+- Download [Version 0.4](https://github.com/sepandhaghighi/mycoffee/archive/v0.4.zip) or [Latest Source](https://github.com/sepandhaghighi/mycoffee/archive/dev.zip)
 - `pip install .`				
 
 ### PyPI
 
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
-- `pip install mycoffee==0.3`						
+- `pip install mycoffee==0.4`						
 
 
 ## Usage
@@ -71,7 +71,7 @@
 ```shell
 > mycoffee --version
 
-0.3
+0.4
 ```
 
 ### Method

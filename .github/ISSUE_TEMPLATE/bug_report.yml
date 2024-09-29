@@ -84,6 +84,7 @@ body:
       label: MyCoffee version
       description: Which version of MyCoffee are you using?
       options:
+        - MyCoffee 0.4
         - MyCoffee 0.3
         - MyCoffee 0.2
         - MyCoffee 0.1
