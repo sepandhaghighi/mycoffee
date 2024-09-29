@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """mycoffee params."""
 
-MY_COFFEE_VERSION = "0.3"
+MY_COFFEE_VERSION = "0.4"
 INPUT_ERROR_MESSAGE = "[Error] Wrong input"
 INPUT_EXAMPLE = "Example: mycoffee --method=v60"
 EXIT_MESSAGE = "See you. Bye!"
