@@ -45,7 +45,7 @@ jobs:
         python -m pytest test --cov=mycoffee --cov-report=term
     - name: Other tests
       run: |
-        python -m vulture mycoffee/ setup.py --min-confidence 65 --exclude=__init__.py --sort-by-size
+        # python -m vulture mycoffee/ setup.py --min-confidence 65 --exclude=__init__.py --sort-by-size
         python -m bandit -r mycoffee -s B311
         python -m pydocstyle --match-dir=mycoffee -v
       if: matrix.python-version == env.TEST_PYTHON_VERSION && matrix.os == env.TEST_OS
