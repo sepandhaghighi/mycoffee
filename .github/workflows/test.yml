@@ -6,7 +6,7 @@ name: CI
 on: [push, pull_request]
 
 env:
-  TEST_PYTHON_VERSION: 3.9
+  TEST_PYTHON_VERSION: 3.10.0
   TEST_OS: 'ubuntu-20.04'
 
 jobs:
@@ -48,7 +48,7 @@ jobs:
         python -m vulture mycoffee/ setup.py --min-confidence 65 --exclude=__init__.py --sort-by-size
         python -m bandit -r mycoffee -s B311
         python -m pydocstyle --match-dir=mycoffee -v
-      if: matrix.python-version == env.TEST_PYTHON_VERSION
+      if: matrix.python-version == env.TEST_PYTHON_VERSION && matrix.os == env.TEST_OS
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v4
       with:
