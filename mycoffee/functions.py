@@ -110,6 +110,7 @@ def filter_params(params):
         params["info"] = EMPTY_INFO
     return params
 
+
 def check_ratio_limits(params):
     """
     Check ratio limits.
