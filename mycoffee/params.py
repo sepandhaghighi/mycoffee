@@ -3,6 +3,7 @@
 
 MY_COFFEE_VERSION = "0.4"
 INPUT_ERROR_MESSAGE = "[Error] Wrong input"
+RATIO_WARNING_MESSAGE = "[Warning] The ratio is not within the standard range. For this method, the ratio can be anywhere between {0} and {1}"
 INPUT_EXAMPLE = "Example: mycoffee --method=v60"
 EXIT_MESSAGE = "See you. Bye!"
 EMPTY_INFO = "Nothing :)"
