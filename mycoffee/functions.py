@@ -123,7 +123,7 @@ def check_ratio_limits(params):
         ratio_lower_limit = METHODS_MAP[method]["ratio_lower_limit"]
         ratio_upper_limit = METHODS_MAP[method]["ratio_upper_limit"]
         if ratio < ratio_lower_limit or ratio > ratio_upper_limit:
-            print(RATIO_WARNING_MESSAGE.format(str(ratio_lower_limit), str(ratio_upper_limit)))
+            print(RATIO_WARNING_MESSAGE.format(method, str(ratio_lower_limit), str(ratio_upper_limit)))
 
 
 def calc_coffee(params):
