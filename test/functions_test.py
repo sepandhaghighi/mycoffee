@@ -46,6 +46,29 @@ Ratio: 3/50
 <BLANKLINE>
 Info: Nothing :)
 <BLANKLINE>
+>>> test_params = {"method":"v60", "cups":2, "coffee":3, "water":500, "coffee_ratio": 6, "water_ratio":1000, "info":"", "digits":3}
+>>> test_params = filter_params(test_params)
+>>> print_message(test_params)
+ __  __  _  _   ___  _____  ____  ____  ____  ____
+(  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
+ )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
+(_/\/\_) (__)  \___)(_____)(__)  (__)  (____)(____)
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+Method: `v60`
+<BLANKLINE>
+Cups: 2
+<BLANKLINE>
+Coffee: 3 gr
+<BLANKLINE>
+Water: 500 gr
+<BLANKLINE>
+Ratio: 6/1000
+<BLANKLINE>
+Info: Nothing :)
+<BLANKLINE>
+[Warning] The ratio is not within the standard range. For `v60`, the ratio can be anywhere between `1/18` and `1/14`
 >>> chemex_params = load_method_params("chemex")
 >>> chemex_params == {'info': 'Chemex method', 'water': 240, 'cups': 1, 'coffee_ratio': 1, 'water_ratio': 15, 'digits': 3}
 True

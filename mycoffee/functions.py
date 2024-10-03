@@ -37,6 +37,7 @@ def print_message(params):
             params["coffee_ratio"],
             params["water_ratio"],
             params["info"]))
+    check_ratio_limits(params)
 
 
 def load_method_params(method_name):
@@ -155,4 +156,3 @@ def run(args):
         params["coffee"] = calc_coffee(params)
         params = filter_params(params)
         print_message(params)
-        check_ratio_limits(params)
