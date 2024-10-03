@@ -54,15 +54,15 @@ METHODS_MAP = {
     "espresso": {
         "coffee_ratio": 1,
         "water_ratio": 2,
-        "ratio_lower_limit": Fraction(1, 2.5),
-        "ratio_upper_limit": Fraction(1, 1.5),
+        "ratio_lower_limit": Fraction(2, 5),
+        "ratio_upper_limit": Fraction(2, 3),
         "water": 36,
         "info": "Espresso method"
     },
     "ristretto": {
         "coffee_ratio": 1,
         "water_ratio": 1,
-        "ratio_lower_limit": Fraction(1, 1.5),
+        "ratio_lower_limit": Fraction(2, 3),
         "ratio_upper_limit": Fraction(1, 1),
         "water": 18,
         "info": "Ristretto method"
@@ -71,15 +71,15 @@ METHODS_MAP = {
         "coffee_ratio": 1,
         "water_ratio": 4,
         "ratio_lower_limit": Fraction(1, 4),
-        "ratio_upper_limit": Fraction(1, 2.5),
+        "ratio_upper_limit": Fraction(2, 5),
         "water": 72,
         "info": "Lungo method"
     },
     "chemex": {
         "coffee_ratio": 1,
         "water_ratio": 15,
-        "ratio_lower_limit": 1/21,
-        "ratio_upper_limit": 1/10,
+        "ratio_lower_limit": Fraction(1, 21),
+        "ratio_upper_limit": Fraction(1, 10),
         "water": 240,
         "info": "Chemex method"
     },
