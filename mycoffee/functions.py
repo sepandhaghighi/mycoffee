@@ -2,6 +2,7 @@
 """mycoffee functions."""
 from mycoffee.params import MESSAGE_TEMPLATE, METHODS_LIST_TEMPLATE, EMPTY_INFO
 from mycoffee.params import MY_COFFEE_VERSION, DEFAULT_PARAMS, METHODS_MAP
+from mycoffee.params import RATIO_WARNING_MESSAGE
 from art import tprint
 
 
@@ -36,6 +37,7 @@ def print_message(params):
             params["coffee_ratio"],
             params["water_ratio"],
             params["info"]))
+    check_ratio_limits(params)
 
 
 def load_method_params(method_name):
@@ -107,6 +109,23 @@ def filter_params(params):
     if len(params["info"]) == 0:
         params["info"] = EMPTY_INFO
     return params
+
+
+def check_ratio_limits(params):
+    """
+    Check ratio limits.
+
+    :param params: parameters
+    :type params: dict
+    :return: None
+    """
+    method = params["method"]
+    if "ratio_lower_limit" in METHODS_MAP[method] and "ratio_upper_limit" in METHODS_MAP[method]:
+        ratio = params["coffee_ratio"] / params["water_ratio"]
+        ratio_lower_limit = METHODS_MAP[method]["ratio_lower_limit"]
+        ratio_upper_limit = METHODS_MAP[method]["ratio_upper_limit"]
+        if ratio < ratio_lower_limit or ratio > ratio_upper_limit:
+            print(RATIO_WARNING_MESSAGE.format(method, str(ratio_lower_limit), str(ratio_upper_limit)))
 
 
 def calc_coffee(params):
