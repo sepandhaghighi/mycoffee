@@ -19,9 +19,9 @@ def is_int(number):
     return False
 
 
-def print_message(params):
+def print_result(params):
     """
-    Print message.
+    Print result.
 
     :param params: parameters
     :type params: dict
@@ -161,4 +161,4 @@ def run(args):
         params = load_params(args)
         params["coffee"] = calc_coffee(params)
         params = filter_params(params)
-        print_message(params)
+        print_result(params)
