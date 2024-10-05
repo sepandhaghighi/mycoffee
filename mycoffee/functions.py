@@ -27,17 +27,21 @@ def print_message(params):
     :type params: dict
     :return: None
     """
+    method = params["method"]
     tprint("MyCoffee", font="bulbhead")
     print(
         MESSAGE_TEMPLATE.format(
-            params["method"],
+            method,
             params["cups"],
             params["coffee"],
             params["water"],
             params["coffee_ratio"],
             params["water_ratio"],
             params["info"]))
-    check_ratio_limits(params)
+    if check_ratio_limits(params):
+        ratio_lower_limit = METHODS_MAP[method]["ratio_lower_limit"]
+        ratio_upper_limit = METHODS_MAP[method]["ratio_upper_limit"]
+        print(RATIO_WARNING_MESSAGE.format(method, str(ratio_lower_limit), str(ratio_upper_limit)))
 
 
 def load_method_params(method_name):
@@ -117,7 +121,7 @@ def check_ratio_limits(params):
 
     :param params: parameters
     :type params: dict
-    :return: result as bool(True: The ratio is out of range)
+    :return: result as bool (True: The ratio is out of range)
     """
     method = params["method"]
     if "ratio_lower_limit" in METHODS_MAP[method] and "ratio_upper_limit" in METHODS_MAP[method]:
