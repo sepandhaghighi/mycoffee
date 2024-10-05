@@ -121,7 +121,7 @@ def check_ratio_limits(params):
 
     :param params: parameters
     :type params: dict
-    :return: result as bool (True: The ratio is out of range)
+    :return: result as bool (True --> the ratio is out of range)
     """
     method = params["method"]
     if "ratio_lower_limit" in METHODS_MAP[method] and "ratio_upper_limit" in METHODS_MAP[method]:
