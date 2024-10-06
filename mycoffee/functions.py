@@ -19,25 +19,29 @@ def is_int(number):
     return False
 
 
-def print_message(params):
+def print_result(params):
     """
-    Print message.
+    Print result.
 
     :param params: parameters
     :type params: dict
     :return: None
     """
+    method = params["method"]
     tprint("MyCoffee", font="bulbhead")
     print(
         MESSAGE_TEMPLATE.format(
-            params["method"],
+            method,
             params["cups"],
             params["coffee"],
             params["water"],
             params["coffee_ratio"],
             params["water_ratio"],
             params["info"]))
-    check_ratio_limits(params)
+    if not check_ratio_limits(params):
+        ratio_lower_limit = METHODS_MAP[method]["ratio_lower_limit"]
+        ratio_upper_limit = METHODS_MAP[method]["ratio_upper_limit"]
+        print(RATIO_WARNING_MESSAGE.format(method, str(ratio_lower_limit), str(ratio_upper_limit)))
 
 
 def load_method_params(method_name):
@@ -117,7 +121,7 @@ def check_ratio_limits(params):
 
     :param params: parameters
     :type params: dict
-    :return: None
+    :return: result as bool (False --> the ratio is out of range)
     """
     method = params["method"]
     if "ratio_lower_limit" in METHODS_MAP[method] and "ratio_upper_limit" in METHODS_MAP[method]:
@@ -125,7 +129,8 @@ def check_ratio_limits(params):
         ratio_lower_limit = METHODS_MAP[method]["ratio_lower_limit"]
         ratio_upper_limit = METHODS_MAP[method]["ratio_upper_limit"]
         if ratio < ratio_lower_limit or ratio > ratio_upper_limit:
-            print(RATIO_WARNING_MESSAGE.format(method, str(ratio_lower_limit), str(ratio_upper_limit)))
+            return False
+    return True
 
 
 def calc_coffee(params):
@@ -156,4 +161,4 @@ def run(args):
         params = load_params(args)
         params["coffee"] = calc_coffee(params)
         params = filter_params(params)
-        print_message(params)
+        print_result(params)

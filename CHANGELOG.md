@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `check_ratio_limits` function
 ### Changed
 - Test system modified
+- `print_message` function renamed to `print_result`
 ## [0.4] - 2024-10-01
 ### Added
 - 4 new methods
