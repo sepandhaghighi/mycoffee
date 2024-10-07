@@ -29,7 +29,7 @@ def read_description():
 setup(
     name='mycoffee',
     packages=['mycoffee'],
-    version='0.4',
+    version='0.5',
     description='Brew Perfect Coffee Right from Your Terminal',
     long_description=read_description(),
     long_description_content_type='text/markdown',
@@ -37,7 +37,7 @@ setup(
     author='Sepand Haghighi',
     author_email='me@sepand.tech',
     url='https://github.com/sepandhaghighi/mycoffee',
-    download_url='https://github.com/sepandhaghighi/mycoffee/tarball/v0.4',
+    download_url='https://github.com/sepandhaghighi/mycoffee/tarball/v0.5',
     keywords="python3 python ratio coffee terminal",
     project_urls={
         'Source': 'https://github.com/sepandhaghighi/mycoffee'
@@ -45,7 +45,7 @@ setup(
     install_requires=get_requires(),
     python_requires='>=3.6',
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
         'Natural Language :: English',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
