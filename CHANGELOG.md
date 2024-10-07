@@ -5,6 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [0.5] - 2024-10-08
 ### Added
 - Ratio upper limit
 - Ratio lower limit
@@ -59,7 +60,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 	5. Siphon
 	6. Custom
 
-[Unreleased]: https://github.com/sepandhaghighi/mycoffee/compare/v0.4...dev
+[Unreleased]: https://github.com/sepandhaghighi/mycoffee/compare/v0.5...dev
+[0.5]: https://github.com/sepandhaghighi/mycoffee/compare/v0.4...v0.5
 [0.4]: https://github.com/sepandhaghighi/mycoffee/compare/v0.3...v0.4
 [0.3]: https://github.com/sepandhaghighi/mycoffee/compare/v0.2...v0.3
 [0.2]: https://github.com/sepandhaghighi/mycoffee/compare/v0.1...v0.2
