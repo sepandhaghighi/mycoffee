@@ -141,7 +141,7 @@ def calc_coffee(params):
     :type params: dict
     :return: coffee amount as float
     """
-    coffee = params["water"] * params["coffee_ratio"] / params["water_ratio"]
+    coffee = params["cups"] * params["water"] * params["coffee_ratio"] / params["water_ratio"]
     return coffee
 
 
