@@ -191,6 +191,8 @@ Info: V60 method
 23
 >>> params["water"]
 5000
+>>> params["cups"]
+1
 >>> args = parser.parse_args(["--method", 'steep-and-release', "--digits", '1'])
 >>> params = load_params(args)
 >>> params["coffee"] = calc_coffee(params)
@@ -214,6 +216,8 @@ Info: V60 method
 >>> params["coffee"]
 15.9
 >>> params["digits"]
+1
+>>> params["cups"]
 1
 >>> args = parser.parse_args(["--method", 'steep-and-release', "--digits", '1', "--cups", '3'])
 >>> params = load_params(args)
@@ -239,6 +243,8 @@ Info: V60 method
 47.8
 >>> params["digits"]
 1
+>>> params["cups"]
+3
 >>> args = parser.parse_args(["--methods-list"])
 >>> run(args)
 Methods list:
