@@ -104,7 +104,7 @@ Methods list:
 19. `v60` - V60 method
 >>> test_params = {"method":"v60", "cups":2, "coffee":30, "water":335, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method"}
 >>> calc_coffee(test_params)
-20.1
+40.2
 >>> test_params = {"method":"v60", "cups":2, "coffee":20.0, "water":335.0, "coffee_ratio": 3.0, "water_ratio":50.0, "info":"", "digits":3}
 >>> test_params = filter_params(test_params)
 >>> test_params["coffee"]
