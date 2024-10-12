@@ -117,7 +117,7 @@ Method: `chemex`
 
 Cups: 3
 
-Coffee: 1.081 gr
+Coffee: 3.243 gr
 
 Water: 20 gr
 
