@@ -3,7 +3,7 @@
 >>> import argparse
 >>> from mycoffee.functions import *
 >>> from mycoffee.params import *
->>> test_params = {"method":"v60", "cups":2, "coffee":30, "water":500, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method"}
+>>> test_params = {"method":"v60", "cups":2, "coffee":60, "water":500, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method"}
 >>> print_result(test_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
@@ -16,7 +16,7 @@ Method: `v60`
 <BLANKLINE>
 Cups: 2
 <BLANKLINE>
-Coffee: 30 gr
+Coffee: 60 gr
 <BLANKLINE>
 Water: 500 gr
 <BLANKLINE>
@@ -24,7 +24,7 @@ Ratio: 3/50
 <BLANKLINE>
 Info: V60 method
 <BLANKLINE>
->>> test_params = {"method":"v60", "cups":2, "coffee":30, "water":500, "coffee_ratio": 3, "water_ratio":50, "info":"", "digits":3}
+>>> test_params = {"method":"v60", "cups":2, "coffee":60, "water":500, "coffee_ratio": 3, "water_ratio":50, "info":"", "digits":3}
 >>> test_params = filter_params(test_params)
 >>> check_ratio_limits(test_params) == True
 True
@@ -40,7 +40,7 @@ Method: `v60`
 <BLANKLINE>
 Cups: 2
 <BLANKLINE>
-Coffee: 30 gr
+Coffee: 60 gr
 <BLANKLINE>
 Water: 500 gr
 <BLANKLINE>
@@ -48,7 +48,7 @@ Ratio: 3/50
 <BLANKLINE>
 Info: Nothing :)
 <BLANKLINE>
->>> test_params = {"method":"v60", "cups":2, "coffee":3, "water":500, "coffee_ratio": 6, "water_ratio":1000, "info":"", "digits":3}
+>>> test_params = {"method":"v60", "cups":2, "coffee":6.0, "water":500, "coffee_ratio": 6, "water_ratio":1000, "info":"", "digits":3}
 >>> test_params = filter_params(test_params)
 >>> check_ratio_limits(test_params) == False
 True
@@ -64,7 +64,7 @@ Method: `v60`
 <BLANKLINE>
 Cups: 2
 <BLANKLINE>
-Coffee: 3 gr
+Coffee: 6 gr
 <BLANKLINE>
 Water: 500 gr
 <BLANKLINE>
@@ -73,7 +73,7 @@ Ratio: 6/1000
 Info: Nothing :)
 <BLANKLINE>
 [Warning] The ratio is not within the standard range. For `v60`, the ratio can be anywhere between `1/18` and `1/14`
->>> test_params = {"method":"custom", "cups":2, "coffee":3, "water":500, "coffee_ratio": 6, "water_ratio":1000, "info":"", "digits":3}
+>>> test_params = {"method":"custom", "cups":2, "coffee":6.0, "water":500, "coffee_ratio": 6, "water_ratio":1000, "info":"", "digits":3}
 >>> test_params = filter_params(test_params)
 >>> check_ratio_limits(test_params) == True
 True
@@ -102,13 +102,16 @@ Methods list:
 17. `steep-and-release` - Steep-and-release method
 18. `turkish` - Turkish method
 19. `v60` - V60 method
->>> test_params = {"method":"v60", "cups":2, "coffee":30, "water":335, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method"}
+>>> test_params = {"method":"v60", "cups":1, "water":335, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method"}
 >>> calc_coffee(test_params)
 20.1
->>> test_params = {"method":"v60", "cups":2, "coffee":20.0, "water":335.0, "coffee_ratio": 3.0, "water_ratio":50.0, "info":"", "digits":3}
+>>> test_params = {"method":"v60", "cups":2, "water":335, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method"}
+>>> calc_coffee(test_params)
+40.2
+>>> test_params = {"method":"v60", "cups":2, "coffee":40.2, "water":335.0, "coffee_ratio": 3.0, "water_ratio":50.0, "info":"", "digits":3}
 >>> test_params = filter_params(test_params)
 >>> test_params["coffee"]
-20
+40.2
 >>> test_params["water_ratio"]
 50
 >>> test_params["coffee_ratio"]
@@ -117,10 +120,10 @@ Methods list:
 335
 >>> test_params["info"]
 'Nothing :)'
->>> test_params = {"method":"v60", "cups":2, "coffee":20.12345, "water":335.12345, "coffee_ratio": 3.12345, "water_ratio":50.12345, "info":"", "digits":2}
+>>> test_params = {"method":"v60", "cups":2, "coffee":41.76653202852158, "water":335.12345, "coffee_ratio": 3.12345, "water_ratio":50.12345, "info":"", "digits":2}
 >>> test_params = filter_params(test_params)
 >>> test_params["coffee"]
-20.12
+41.77
 >>> test_params["coffee_ratio"]
 3.12345
 >>> test_params["water_ratio"]
@@ -188,6 +191,8 @@ Info: V60 method
 23
 >>> params["water"]
 5000
+>>> params["cups"]
+1
 >>> args = parser.parse_args(["--method", 'steep-and-release', "--digits", '1'])
 >>> params = load_params(args)
 >>> params["coffee"] = calc_coffee(params)
@@ -212,6 +217,34 @@ Info: V60 method
 15.9
 >>> params["digits"]
 1
+>>> params["cups"]
+1
+>>> args = parser.parse_args(["--method", 'steep-and-release', "--digits", '1', "--cups", '3'])
+>>> params = load_params(args)
+>>> params["coffee"] = calc_coffee(params)
+>>> params["water"]
+255
+>>> params["coffee"]
+47.8125
+>>> params["water_ratio"]
+16
+>>> params["coffee_ratio"]
+1
+>>> params["method"]
+'steep-and-release'
+>>> params = filter_params(params)
+>>> params["water_ratio"]
+16
+>>> params["coffee_ratio"]
+1
+>>> params["water"]
+255
+>>> params["coffee"]
+47.8
+>>> params["digits"]
+1
+>>> params["cups"]
+3
 >>> args = parser.parse_args(["--methods-list"])
 >>> run(args)
 Methods list:
