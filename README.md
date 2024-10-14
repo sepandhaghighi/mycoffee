@@ -182,7 +182,7 @@ Info: Chemex method
       <td align="center">Integer</td>
       <td align="center"><code>3</code></td>
     </tr>
-	<tr>
+    <tr>
       <td align="center"><code>--coffee-unit</code></td>
       <td align="center">Coffee unit</td>
       <td align="center">String</td>
