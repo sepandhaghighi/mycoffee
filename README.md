@@ -103,7 +103,7 @@ Info: V60 method
 
 ### Customize
 
-⚠️ You can run `mycoffee --coffee-units-list` to view the supported coffee units list
+⚠️ You can run `mycoffee --coffee-units-list` to view the supported coffee units
 
 ```shell
 > mycoffee --method=chemex --water=20 --cups=3 --coffee-ratio=2 --water-ratio=37 --coffee-unit=g
