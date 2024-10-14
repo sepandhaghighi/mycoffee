@@ -147,6 +147,7 @@ True
 >>> _ = parser.add_argument('--cups', help='number of cups', type=int)
 >>> _ = parser.add_argument('--digits', help='number of digits up to which the result is rounded', type=int, default=3)
 >>> _ = parser.add_argument('--coffee-unit', help='coffee unit', type=str, choices=sorted(COFFEE_UNITS_MAP), default="g")
+>>> _ = parser.add_argument('--coffee-units-list', help='coffee units list', nargs="?", const=1)
 >>> _ = parser.add_argument('--methods-list', help='brewing methods list', nargs="?", const=1)
 >>> _ = parser.add_argument('--version', help='version', nargs="?", const=1)
 >>> args = parser.parse_args({"--version":True})
@@ -295,4 +296,13 @@ Methods list:
 17. `steep-and-release` - Steep-and-release method
 18. `turkish` - Turkish method
 19. `v60` - V60 method
+>>> args = parser.parse_args(["--coffee-units-list"])
+>>> run(args)
+Coffee units list:
+<BLANKLINE>
+1. `g` - gram
+2. `kg` - kilogram
+3. `lb` - pound
+4. `mg` - milligram
+5. `oz` - ounce
 """
