@@ -7,7 +7,7 @@
 		<th>Ratio(Recommended)</th>
 		<th>Ratio(Lower Limit)</th>
 		<th>Ratio(Upper Limit)</th>
-		<th>Water(gr)</th>
+		<th>Water(g)</th>
 		<th>Version</th>
 	</tr>
 	<tr align="center">
