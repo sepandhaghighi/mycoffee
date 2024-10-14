@@ -142,7 +142,9 @@ def calc_coffee(params):
     :return: coffee amount as float
     """
     coffee = params["cups"] * params["water"] * params["coffee_ratio"] / params["water_ratio"]
+    coffee = coffee * COFFEE_UNITS_MAP[params["coffee_unit"]]["rate"]
     return coffee
+
 
 
 def run(args):
