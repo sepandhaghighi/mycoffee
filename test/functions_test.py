@@ -246,6 +246,32 @@ Info: V60 method
 1
 >>> params["cups"]
 3
+>>> args = parser.parse_args(["--method", 'steep-and-release', "--digits", '1', "--cups", '3', "--coffee-unit", "oz"])
+>>> params = load_params(args)
+>>> params["coffee"] = calc_coffee(params)
+>>> params["water"]
+255
+>>> params["coffee"]
+1.6865363057343752
+>>> params["water_ratio"]
+16
+>>> params["coffee_ratio"]
+1
+>>> params["method"]
+'steep-and-release'
+>>> params = filter_params(params)
+>>> params["water_ratio"]
+16
+>>> params["coffee_ratio"]
+1
+>>> params["water"]
+255
+>>> params["coffee"]
+1.7
+>>> params["digits"]
+1
+>>> params["cups"]
+3
 >>> args = parser.parse_args(["--methods-list"])
 >>> run(args)
 Methods list:
