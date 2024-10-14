@@ -102,6 +102,14 @@ Methods list:
 17. `steep-and-release` - Steep-and-release method
 18. `turkish` - Turkish method
 19. `v60` - V60 method
+>>> show_coffee_units_list()
+Coffee units list:
+<BLANKLINE>
+1. `g` - gram
+2. `kg` - kilogram
+3. `lb` - pound
+4. `mg` - milligram
+5. `oz` - ounce
 >>> test_params = {"method":"v60", "cups":1, "water":335, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method", 'coffee_unit': 'g'}
 >>> calc_coffee(test_params)
 20.1
