@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - `show_coffee_units_list` function
-`--coffee-unit` argument
+- `--coffee-unit` argument
 ### Changed
 - Test system modified
 - Cups bug fixed
