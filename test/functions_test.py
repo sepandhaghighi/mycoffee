@@ -16,9 +16,9 @@ Method: `v60`
 <BLANKLINE>
 Cups: 2
 <BLANKLINE>
-Coffee: 60 gr
+Coffee: 60 g
 <BLANKLINE>
-Water: 500 gr
+Water: 500 g
 <BLANKLINE>
 Ratio: 3/50
 <BLANKLINE>
@@ -40,9 +40,9 @@ Method: `v60`
 <BLANKLINE>
 Cups: 2
 <BLANKLINE>
-Coffee: 60 gr
+Coffee: 60 g
 <BLANKLINE>
-Water: 500 gr
+Water: 500 g
 <BLANKLINE>
 Ratio: 3/50
 <BLANKLINE>
@@ -64,9 +64,9 @@ Method: `v60`
 <BLANKLINE>
 Cups: 2
 <BLANKLINE>
-Coffee: 6 gr
+Coffee: 6 g
 <BLANKLINE>
-Water: 500 gr
+Water: 500 g
 <BLANKLINE>
 Ratio: 6/1000
 <BLANKLINE>
@@ -166,9 +166,9 @@ Method: `v60`
 <BLANKLINE>
 Cups: 1
 <BLANKLINE>
-Coffee: 15 gr
+Coffee: 15 g
 <BLANKLINE>
-Water: 250 gr
+Water: 250 g
 <BLANKLINE>
 Ratio: 3/50
 <BLANKLINE>
