@@ -77,6 +77,21 @@ def show_methods_list():
                 METHODS_MAP[method]['info']))
 
 
+def show_coffee_units_list():
+    """
+    Show coffee units list.
+
+    :return: None
+    """
+    print("Coffee units list:\n")
+    for i, unit in enumerate(sorted(COFFEE_UNITS_MAP), 1):
+        print(
+            METHODS_LIST_TEMPLATE.format(
+                i,
+                unit,
+                COFFEE_UNITS_MAP[unit]['name']))
+
+
 def load_params(args):
     """
     Load params.
@@ -159,6 +174,8 @@ def run(args):
         print(MY_COFFEE_VERSION)
     elif args.methods_list:
         show_methods_list()
+    elif args.coffee_units_list:
+        show_coffee_units_list()
     else:
         params = load_params(args)
         params["coffee"] = calc_coffee(params)
