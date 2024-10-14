@@ -190,5 +190,10 @@ METHODS_MAP = {
     }
 }
 
-COFFEE_UNITS_MAP = {"g":{"name":"gram", "rate":1}, "oz":{"name":"ounce", "rate":0.03527396195}, "lb":{"name":"pound", "rate":0.00220462262185}, "mg":{"name":"milligram", "rate":1000},
-                    "kg":{"name":"kilogram", "rate":0.001}}
+COFFEE_UNITS_MAP = {
+    "g": {
+        "name": "gram", "rate": 1}, "oz": {
+            "name": "ounce", "rate": 0.03527396195}, "lb": {
+                "name": "pound", "rate": 0.00220462262185}, "mg": {
+                    "name": "milligram", "rate": 1000}, "kg": {
+                        "name": "kilogram", "rate": 0.001}}

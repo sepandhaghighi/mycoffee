@@ -146,7 +146,6 @@ def calc_coffee(params):
     return coffee
 
 
-
 def run(args):
     """
     Run program.
