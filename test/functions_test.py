@@ -78,7 +78,7 @@ Info: Nothing :)
 >>> check_ratio_limits(test_params) == True
 True
 >>> chemex_params = load_method_params("chemex")
->>> chemex_params == {'info': 'Chemex method', 'water': 240, 'cups': 1, 'coffee_ratio': 1, 'water_ratio': 15, 'digits': 3}
+>>> chemex_params == {'info': 'Chemex method', 'water': 240, 'cups': 1, 'coffee_ratio': 1, 'water_ratio': 15, 'digits': 3, 'coffee_unit': 'g'}
 True
 >>> show_methods_list()
 Methods list:
@@ -102,13 +102,13 @@ Methods list:
 17. `steep-and-release` - Steep-and-release method
 18. `turkish` - Turkish method
 19. `v60` - V60 method
->>> test_params = {"method":"v60", "cups":1, "water":335, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method"}
+>>> test_params = {"method":"v60", "cups":1, "water":335, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method", 'coffee_unit': 'g'}
 >>> calc_coffee(test_params)
 20.1
->>> test_params = {"method":"v60", "cups":2, "water":335, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method"}
+>>> test_params = {"method":"v60", "cups":2, "water":335, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method", 'coffee_unit': 'g'}
 >>> calc_coffee(test_params)
 40.2
->>> test_params = {"method":"v60", "cups":2, "coffee":40.2, "water":335.0, "coffee_ratio": 3.0, "water_ratio":50.0, "info":"", "digits":3}
+>>> test_params = {"method":"v60", "cups":2, "coffee":40.2, "water":335.0, "coffee_ratio": 3.0, "water_ratio":50.0, "info":"", "digits":3, 'coffee_unit': 'g'}
 >>> test_params = filter_params(test_params)
 >>> test_params["coffee"]
 40.2
@@ -120,7 +120,7 @@ Methods list:
 335
 >>> test_params["info"]
 'Nothing :)'
->>> test_params = {"method":"v60", "cups":2, "coffee":41.76653202852158, "water":335.12345, "coffee_ratio": 3.12345, "water_ratio":50.12345, "info":"", "digits":2}
+>>> test_params = {"method":"v60", "cups":2, "coffee":41.76653202852158, "water":335.12345, "coffee_ratio": 3.12345, "water_ratio":50.12345, "info":"", "digits":2, 'coffee_unit': 'g'}
 >>> test_params = filter_params(test_params)
 >>> test_params["coffee"]
 41.77

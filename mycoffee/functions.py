@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """mycoffee functions."""
 from mycoffee.params import MESSAGE_TEMPLATE, METHODS_LIST_TEMPLATE, EMPTY_INFO
-from mycoffee.params import MY_COFFEE_VERSION, DEFAULT_PARAMS, METHODS_MAP
+from mycoffee.params import MY_COFFEE_VERSION, DEFAULT_PARAMS, METHODS_MAP, COFFEE_UNITS_MAP
 from mycoffee.params import RATIO_WARNING_MESSAGE
 from art import tprint
 
