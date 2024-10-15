@@ -255,4 +255,32 @@ True
 True
 >>> METHODS_MAP["steep-and-release"]["ratio_lower_limit"] == Fraction(1, 17)
 True
+>>> custom_params = load_method_params("custom")
+>>> custom_params["coffee_ratio"] == 1
+True
+>>> custom_params["water_ratio"] == 17
+True
+>>> custom_params["water"] == 240
+True
+>>> custom_params["coffee_unit"] == "g"
+True
+>>> custom_coffee_g = calc_coffee(custom_params)
+>>> custom_coffee_g == 14.117647058823529
+True
+>>> custom_params["coffee_unit"] = "oz" # https://www.rapidtables.com/convert/weight/gram-to-ounce.html?x=14.117647058823529
+>>> custom_coffee_oz = calc_coffee(custom_params)
+>>> custom_coffee_oz == 0.4979853451764706
+True
+>>> custom_params["coffee_unit"] = "lb" # https://www.rapidtables.com/convert/weight/gram-to-pound.html?x=14.117647058823529
+>>> custom_coffee_lb = calc_coffee(custom_params)
+>>> custom_coffee_lb == 0.03112408407317647
+True
+>>> custom_params["coffee_unit"] = "mg" # https://www.rapidtables.com/convert/weight/gram-to-mg.html?x=14.117647058823529
+>>> custom_coffee_mg = calc_coffee(custom_params)
+>>> custom_coffee_mg == 14117.64705882353
+True
+>>> custom_params["coffee_unit"] = "kg" # https://www.rapidtables.com/convert/weight/gram-to-kg.html?x=14.117647058823529
+>>> custom_coffee_kg = calc_coffee(custom_params)
+>>> custom_coffee_kg == 0.01411764705882353
+True
 """

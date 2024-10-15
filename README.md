@@ -89,9 +89,9 @@ Method: `v60`
 
 Cups: 1
 
-Coffee: 15 gr
+Coffee: 15 g
 
-Water: 250 gr
+Water: 250 g
 
 Ratio: 3/50
 
@@ -103,8 +103,10 @@ Info: V60 method
 
 ### Customize
 
+⚠️ You can run `mycoffee --coffee-units-list` to view the supported coffee units
+
 ```shell
-> mycoffee --method=chemex --water=20 --cups=3 --coffee-ratio=2 --water-ratio=37
+> mycoffee --method=chemex --water=20 --cups=3 --coffee-ratio=2 --water-ratio=37 --coffee-unit=g
 
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
@@ -117,9 +119,9 @@ Method: `chemex`
 
 Cups: 3
 
-Coffee: 3.243 gr
+Coffee: 3.243 g
 
-Water: 20 gr
+Water: 20 g
 
 Ratio: 2/37
 
@@ -180,6 +182,12 @@ Info: Chemex method
       <td align="center">Integer</td>
       <td align="center"><code>3</code></td>
     </tr>
+    <tr>
+      <td align="center"><code>--coffee-unit</code></td>
+      <td align="center">Coffee unit</td>
+      <td align="center">String</td>
+      <td align="center"><code>g</code></td>
+    </tr>
   </tbody>
 </table>
 
@@ -211,6 +219,7 @@ Just fill an issue and describe it. We'll check it ASAP!
 <blockquote>15- <a href="https://aeroprecipe.com/recipes/all-about-the-intervals">All about the intervals</a></blockquote>
 <blockquote>16- <a href="https://squaremileblog.com/brew-guide-clever-dripper/">Clever Dripper; Square Mile Coffee</a></blockquote>
 <blockquote>17- <a href="https://www.seattlecoffeegear.com/pages/product-resource/aero-press-product-resources">AeroPress Product User Manuals</a></blockquote>
+<blockquote>18- <a href="https://www.rapidtables.com/convert/weight/index.html">RapidTables - Weight Converter</a></blockquote>
 
 ## Show Your Support
 								

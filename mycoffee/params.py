@@ -14,9 +14,9 @@ Method: `{0}`
 
 Cups: {1}
 
-Coffee: {2} gr
+Coffee: {2} {7}
 
-Water: {3} gr
+Water: {3} g
 
 Ratio: {4}/{5}
 
@@ -31,6 +31,7 @@ DEFAULT_PARAMS = {
     "water": 0,
     "coffee_ratio": 1,
     "water_ratio": 1,
+    "coffee_unit": "g",
     "digits": 3,
     "info": ""
 
@@ -187,4 +188,12 @@ METHODS_MAP = {
         "water": 255,
         "info": "Steep-and-release method"
     }
+}
+
+COFFEE_UNITS_MAP = {
+    "g": {"name": "gram", "rate": 1},
+    "oz": {"name": "ounce", "rate": 0.03527396195},
+    "lb": {"name": "pound", "rate": 0.00220462262185},
+    "mg": {"name": "milligram", "rate": 1000},
+    "kg": {"name": "kilogram", "rate": 0.001},
 }

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """mycoffee functions."""
 from mycoffee.params import MESSAGE_TEMPLATE, METHODS_LIST_TEMPLATE, EMPTY_INFO
-from mycoffee.params import MY_COFFEE_VERSION, DEFAULT_PARAMS, METHODS_MAP
+from mycoffee.params import MY_COFFEE_VERSION, DEFAULT_PARAMS, METHODS_MAP, COFFEE_UNITS_MAP
 from mycoffee.params import RATIO_WARNING_MESSAGE
 from art import tprint
 
@@ -37,7 +37,8 @@ def print_result(params):
             params["water"],
             params["coffee_ratio"],
             params["water_ratio"],
-            params["info"]))
+            params["info"],
+            params["coffee_unit"]))
     if not check_ratio_limits(params):
         ratio_lower_limit = METHODS_MAP[method]["ratio_lower_limit"]
         ratio_upper_limit = METHODS_MAP[method]["ratio_upper_limit"]
@@ -74,6 +75,21 @@ def show_methods_list():
                 i,
                 method,
                 METHODS_MAP[method]['info']))
+
+
+def show_coffee_units_list():
+    """
+    Show coffee units list.
+
+    :return: None
+    """
+    print("Coffee units list:\n")
+    for i, unit in enumerate(sorted(COFFEE_UNITS_MAP), 1):
+        print(
+            METHODS_LIST_TEMPLATE.format(
+                i,
+                unit,
+                COFFEE_UNITS_MAP[unit]['name']))
 
 
 def load_params(args):
@@ -142,6 +158,7 @@ def calc_coffee(params):
     :return: coffee amount as float
     """
     coffee = params["cups"] * params["water"] * params["coffee_ratio"] / params["water_ratio"]
+    coffee = coffee * COFFEE_UNITS_MAP[params["coffee_unit"]]["rate"]
     return coffee
 
 
@@ -157,6 +174,8 @@ def run(args):
         print(MY_COFFEE_VERSION)
     elif args.methods_list:
         show_methods_list()
+    elif args.coffee_units_list:
+        show_coffee_units_list()
     else:
         params = load_params(args)
         params["coffee"] = calc_coffee(params)
