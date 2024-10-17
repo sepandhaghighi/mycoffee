@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Cups bug fixed
 - `calc_coffee` function updated
 - `README.md` updated
+- `Python 3.13` added to `test.yml`
 ## [0.5] - 2024-10-08
 ### Added
 - Ratio upper limit
