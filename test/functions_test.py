@@ -160,7 +160,7 @@ True
 >>> _ = parser.add_argument('--version', help='version', nargs="?", const=1)
 >>> args = parser.parse_args({"--version":True})
 >>> run(args)
-0.5
+0.6
 >>>
 >>> args = parser.parse_args(["--method", 'v60'])
 >>> run(args)
