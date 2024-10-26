@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+### Changed
+- GitHub actions are limited to the `dev` and `main` branches
 ## [0.6] - 2024-10-18
 ### Added
 - `show_coffee_units_list` function
