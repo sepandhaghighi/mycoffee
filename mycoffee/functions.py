@@ -149,6 +149,7 @@ def check_ratio_limits(params):
             return False
     return True
 
+
 def convert_coffee(coffee, unit):
     """
     Convert coffee unit.
