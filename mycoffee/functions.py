@@ -160,7 +160,7 @@ def convert_coffee(coffee, unit):
     :return: converted coffee amount as float/int
     """
     coffee = coffee * COFFEE_UNITS_MAP[unit]["rate"]
-    if unit == "beans":
+    if unit == "cb":
         coffee = math.ceil(coffee)
     return coffee
 
