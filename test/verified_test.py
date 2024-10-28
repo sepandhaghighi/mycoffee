@@ -283,4 +283,8 @@ True
 >>> custom_coffee_kg = calc_coffee(custom_params)
 >>> custom_coffee_kg == 0.01411764705882353
 True
+>>> custom_params["coffee_unit"] = "beans" # https://honestcoffeeguide.com/whole-bean-to-ground-coffee-ratio/
+>>> custom_coffee_beans = calc_coffee(custom_params)
+>>> custom_coffee_beans == 107
+True
 """
