@@ -3,6 +3,10 @@
 >>> import argparse
 >>> from mycoffee.functions import *
 >>> from mycoffee.params import *
+>>> convert_coffee(122, "g")
+122
+>>> convert_coffee(122, "cb")
+921
 >>> test_params = {"method":"v60", "cups":2, "coffee":60, "water":500, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method", "coffee_unit": "g"}
 >>> print_result(test_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
