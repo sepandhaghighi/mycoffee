@@ -155,9 +155,9 @@ def convert_coffee(coffee, unit):
 
     :param coffee: coffee amount
     :type coffee: float
-    :param unit: unit
+    :param unit: coffee unit
     :type unit: str
-    :return: converted amount as float/int
+    :return: converted coffee amount as float/int
     """
     coffee = coffee * COFFEE_UNITS_MAP[unit]["rate"]
     if unit == "bean":
