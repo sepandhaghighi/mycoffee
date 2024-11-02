@@ -220,6 +220,7 @@ Just fill an issue and describe it. We'll check it ASAP!
 <blockquote>16- <a href="https://squaremileblog.com/brew-guide-clever-dripper/">Clever Dripper; Square Mile Coffee</a></blockquote>
 <blockquote>17- <a href="https://www.seattlecoffeegear.com/pages/product-resource/aero-press-product-resources">AeroPress Product User Manuals</a></blockquote>
 <blockquote>18- <a href="https://www.rapidtables.com/convert/weight/index.html">RapidTables - Weight Converter</a></blockquote>
+<blockquote>19- <a href="https://honestcoffeeguide.com/whole-bean-to-ground-coffee-ratio/">Whole bean to ground coffee calculator</a></blockquote>
 
 ## Show Your Support
 								
