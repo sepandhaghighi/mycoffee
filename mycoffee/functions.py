@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """mycoffee functions."""
+import math
 from mycoffee.params import MESSAGE_TEMPLATE, METHODS_LIST_TEMPLATE, EMPTY_INFO
 from mycoffee.params import MY_COFFEE_VERSION, DEFAULT_PARAMS, METHODS_MAP, COFFEE_UNITS_MAP
 from mycoffee.params import RATIO_WARNING_MESSAGE
@@ -149,6 +150,22 @@ def check_ratio_limits(params):
     return True
 
 
+def convert_coffee(coffee, unit):
+    """
+    Convert coffee unit.
+
+    :param coffee: coffee amount
+    :type coffee: float
+    :param unit: coffee unit
+    :type unit: str
+    :return: converted coffee amount as float/int
+    """
+    coffee = coffee * COFFEE_UNITS_MAP[unit]["rate"]
+    if unit == "cb":
+        coffee = math.ceil(coffee)
+    return coffee
+
+
 def calc_coffee(params):
     """
     Calculate coffee.
@@ -158,7 +175,7 @@ def calc_coffee(params):
     :return: coffee amount as float
     """
     coffee = params["cups"] * params["water"] * params["coffee_ratio"] / params["water_ratio"]
-    coffee = coffee * COFFEE_UNITS_MAP[params["coffee_unit"]]["rate"]
+    coffee = convert_coffee(coffee, params["coffee_unit"])
     return coffee
 
 

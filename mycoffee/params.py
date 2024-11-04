@@ -196,4 +196,5 @@ COFFEE_UNITS_MAP = {
     "lb": {"name": "pound", "rate": 0.00220462262185},
     "mg": {"name": "milligram", "rate": 1000},
     "kg": {"name": "kilogram", "rate": 0.001},
+    "cb": {"name": "coffee beans", "rate": 7.5471698},
 }

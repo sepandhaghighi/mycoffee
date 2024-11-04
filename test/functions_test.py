@@ -3,6 +3,10 @@
 >>> import argparse
 >>> from mycoffee.functions import *
 >>> from mycoffee.params import *
+>>> convert_coffee(122, "g")
+122
+>>> convert_coffee(122, "cb")
+921
 >>> test_params = {"method":"v60", "cups":2, "coffee":60, "water":500, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method", "coffee_unit": "g"}
 >>> print_result(test_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
@@ -105,11 +109,12 @@ Methods list:
 >>> show_coffee_units_list()
 Coffee units list:
 <BLANKLINE>
-1. `g` - gram
-2. `kg` - kilogram
-3. `lb` - pound
-4. `mg` - milligram
-5. `oz` - ounce
+1. `cb` - coffee beans
+2. `g` - gram
+3. `kg` - kilogram
+4. `lb` - pound
+5. `mg` - milligram
+6. `oz` - ounce
 >>> test_params = {"method":"v60", "cups":1, "water":335, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method", 'coffee_unit': 'g'}
 >>> calc_coffee(test_params)
 20.1
@@ -308,9 +313,10 @@ Methods list:
 >>> run(args)
 Coffee units list:
 <BLANKLINE>
-1. `g` - gram
-2. `kg` - kilogram
-3. `lb` - pound
-4. `mg` - milligram
-5. `oz` - ounce
+1. `cb` - coffee beans
+2. `g` - gram
+3. `kg` - kilogram
+4. `lb` - pound
+5. `mg` - milligram
+6. `oz` - ounce
 """

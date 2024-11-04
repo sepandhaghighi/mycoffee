@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
+- 1 new coffee unit
+	1. Coffee beans (`cb`)
+- `convert_coffee` function
 ### Changed
 - GitHub actions are limited to the `dev` and `main` branches
 ## [0.6] - 2024-10-18
