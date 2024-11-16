@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
-- 4 new coffee unit
+- 4 new coffee units
 	1. Coffee beans (`cb`)
 	2. Tablespoon (`tbsp`)
 	3. Teaspoon (`tsp`)
