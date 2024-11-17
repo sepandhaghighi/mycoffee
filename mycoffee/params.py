@@ -197,4 +197,7 @@ COFFEE_UNITS_MAP = {
     "mg": {"name": "milligram", "rate": 1000},
     "kg": {"name": "kilogram", "rate": 0.001},
     "cb": {"name": "coffee beans", "rate": 7.5471698},
+    "tbsp": {"name": "tablespoon", "rate": 0.18528},
+    "tsp": {"name": "teaspoon", "rate": 0.55585},
+    "dsp": {"name": "dessertspoon", "rate": 0.27792},
 }

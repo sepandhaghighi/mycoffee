@@ -287,4 +287,16 @@ True
 >>> custom_coffee_cb = calc_coffee(custom_params)
 >>> custom_coffee_cb == 107
 True
+>>> custom_params["coffee_unit"] = "tbsp" # https://www.howmany.wiki/wv/
+>>> custom_coffee_tbsp = calc_coffee(custom_params)
+>>> custom_coffee_tbsp == 2.6157176470588235
+True
+>>> custom_params["coffee_unit"] = "tsp" # https://www.howmany.wiki/wv/
+>>> custom_coffee_tsp = calc_coffee(custom_params)
+>>> custom_coffee_tsp == 7.847294117647058
+True
+>>> custom_params["coffee_unit"] = "dsp" # https://www.howmany.wiki/wv/
+>>> custom_coffee_dsp = calc_coffee(custom_params)
+>>> custom_coffee_dsp == 3.923576470588235
+True
 """
