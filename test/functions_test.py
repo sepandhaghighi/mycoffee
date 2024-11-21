@@ -110,14 +110,15 @@ Methods list:
 Coffee units list:
 <BLANKLINE>
 1. `cb` - coffee beans
-2. `dsp` - dessertspoon
-3. `g` - gram
-4. `kg` - kilogram
-5. `lb` - pound
-6. `mg` - milligram
-7. `oz` - ounce
-8. `tbsp` - tablespoon
-9. `tsp` - teaspoon
+2. `cup` - cup
+3. `dsp` - dessertspoon
+4. `g` - gram
+5. `kg` - kilogram
+6. `lb` - pound
+7. `mg` - milligram
+8. `oz` - ounce
+9. `tbsp` - tablespoon
+10. `tsp` - teaspoon
 >>> test_params = {"method":"v60", "cups":1, "water":335, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method", 'coffee_unit': 'g'}
 >>> calc_coffee(test_params)
 20.1
@@ -317,12 +318,13 @@ Methods list:
 Coffee units list:
 <BLANKLINE>
 1. `cb` - coffee beans
-2. `dsp` - dessertspoon
-3. `g` - gram
-4. `kg` - kilogram
-5. `lb` - pound
-6. `mg` - milligram
-7. `oz` - ounce
-8. `tbsp` - tablespoon
-9. `tsp` - teaspoon
+2. `cup` - cup
+3. `dsp` - dessertspoon
+4. `g` - gram
+5. `kg` - kilogram
+6. `lb` - pound
+7. `mg` - milligram
+8. `oz` - ounce
+9. `tbsp` - tablespoon
+10. `tsp` - teaspoon
 """

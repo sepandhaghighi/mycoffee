@@ -299,4 +299,8 @@ True
 >>> custom_coffee_dsp = calc_coffee(custom_params)
 >>> custom_coffee_dsp == 3.923576470588235
 True
+>>> custom_params["coffee_unit"] = "cup" # https://www.howmany.wiki/wv/
+>>> custom_coffee_cup = calc_coffee(custom_params)
+>>> custom_coffee_cup == 0.16348235294117647
+True
 """
