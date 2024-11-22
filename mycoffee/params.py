@@ -32,6 +32,7 @@ DEFAULT_PARAMS = {
     "coffee_ratio": 1,
     "water_ratio": 1,
     "coffee_unit": "g",
+    "water_unit": "g",
     "digits": 3,
     "info": ""
 

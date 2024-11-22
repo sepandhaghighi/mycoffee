@@ -105,6 +105,8 @@ def load_params(args):
     for item in params:
         if getattr(args, item) is not None:
             params[item] = getattr(args, item)
+            if item == "water":
+                params["water"] = convert_water(water=params["water"], unit=params["water_unit"], reverse=True)
     params["method"] = args.method
     return params
 
@@ -119,6 +121,7 @@ def filter_params(params):
     """
     digits = params["digits"]
     params["coffee"] = round(params["coffee"], digits)
+    params["water"] = round(params["water"], digits)
     if is_int(params["coffee"]):
         params["coffee"] = int(params["coffee"])
     if is_int(params["water_ratio"]):
@@ -215,5 +218,6 @@ def run(args):
     else:
         params = load_params(args)
         params["coffee"] = calc_coffee(params)
+        params["water"] = convert_water(water=params["water"], unit=params["water_unit"])
         params = filter_params(params)
         print_result(params)
