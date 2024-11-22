@@ -11,6 +11,8 @@
 1
 >>> convert_water(1, "kg")
 0.001
+>>> convert_water(1, "kg", False)
+0.001
 >>> convert_water(1, "kg", True)
 1000.0
 >>> test_params = {"method":"v60", "cups":2, "coffee":60, "water":500, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method", "coffee_unit": "g"}
