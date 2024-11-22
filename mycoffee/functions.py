@@ -166,6 +166,25 @@ def convert_coffee(coffee, unit):
     return coffee
 
 
+def convert_water(water, unit, reverse=False):
+    """
+    Convert water unit.
+
+    :param water: water amount
+    :type water: float
+    :param unit: water unit
+    :type unit: str
+    :param reverse: reverse convert flag
+    :type reverse: bool
+    :return: converted water amount as float/int
+    """
+    rate = WATER_UNITS_MAP[unit]["rate"]
+    if reverse:
+        rate = 1/rate
+    water = water * rate
+    return water
+
+
 def calc_coffee(params):
     """
     Calculate coffee.
