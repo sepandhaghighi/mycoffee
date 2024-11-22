@@ -190,7 +190,7 @@ Info: Chemex method
       <td align="center">String</td>
       <td align="center"><code>g</code></td>
     </tr>
-	<tr>
+    <tr>
       <td align="center"><code>--water-unit</code></td>
       <td align="center">Water unit</td>
       <td align="center">String</td>
