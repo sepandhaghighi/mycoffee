@@ -82,7 +82,7 @@ Info: Nothing :)
 >>> check_ratio_limits(test_params) == True
 True
 >>> chemex_params = load_method_params("chemex")
->>> chemex_params == {'info': 'Chemex method', 'water': 240, 'cups': 1, 'coffee_ratio': 1, 'water_ratio': 15, 'digits': 3, 'coffee_unit': 'g'}
+>>> chemex_params == {'info': 'Chemex method', 'water': 240, 'cups': 1, 'coffee_ratio': 1, 'water_ratio': 15, 'digits': 3, 'coffee_unit': 'g', 'water_unit': 'g'}
 True
 >>> show_methods_list()
 Methods list:
@@ -146,7 +146,7 @@ Coffee units list:
 >>> test_params["water_ratio"]
 50.12345
 >>> test_params["water"]
-335.12345
+335.12
 >>> is_int(12.1)
 False
 >>> is_int(12.123)
@@ -164,6 +164,7 @@ True
 >>> _ = parser.add_argument('--cups', help='number of cups', type=int)
 >>> _ = parser.add_argument('--digits', help='number of digits up to which the result is rounded', type=int, default=3)
 >>> _ = parser.add_argument('--coffee-unit', help='coffee unit', type=str, choices=sorted(COFFEE_UNITS_MAP), default="g")
+>>> _ = parser.add_argument('--water-unit', help='water unit', type=str, choices=sorted(WATER_UNITS_MAP), default="g")
 >>> _ = parser.add_argument('--coffee-units-list', help='coffee units list', nargs="?", const=1)
 >>> _ = parser.add_argument('--methods-list', help='brewing methods list', nargs="?", const=1)
 >>> _ = parser.add_argument('--version', help='version', nargs="?", const=1)
