@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """mycoffee main."""
-from mycoffee.params import METHODS_MAP, COFFEE_UNITS_MAP, WATER_UNITS_MAP, EXIT_MESSAGE
+from mycoffee.params import METHODS_MAP, EXIT_MESSAGE
+from mycoffee.params import COFFEE_UNITS_MAP, WATER_UNITS_MAP
 from mycoffee.functions import run
 import argparse
 
