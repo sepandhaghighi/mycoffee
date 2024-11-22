@@ -230,6 +230,8 @@ def run(args):
         show_methods_list()
     elif args.coffee_units_list:
         show_coffee_units_list()
+    elif args.water_units_list:
+        show_water_units_list()
     else:
         params = load_params(args)
         params["coffee"] = calc_coffee(params)

@@ -345,7 +345,6 @@ Coffee units list:
 10. `tsp` - teaspoon
 >>> args = parser.parse_args(["--water-units-list"])
 >>> run(args)
->>> show_water_units_list()
 Water units list:
 <BLANKLINE>
 1. `g` - gram
