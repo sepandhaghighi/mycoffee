@@ -231,6 +231,7 @@ Just fill an issue and describe it. We'll check it ASAP!
 <blockquote>19- <a href="https://honestcoffeeguide.com/whole-bean-to-ground-coffee-ratio/">Whole bean to ground coffee calculator</a></blockquote>
 <blockquote>20- <a href="https://www.howmany.wiki/wv/">Weight to Volume Converter for Recipes</a></blockquote>
 <blockquote>21- <a href="https://chamberlaincoffee.com/blogs/inspiration/how-much-coffee-per-cup-this-is-how-you-get-it-right">How Much Coffee per Cup?</a></blockquote>
+<blockquote>22- <a href="https://www.calculator.net/weight-calculator.html">Weight Calculator</a></blockquote>
 
 ## Show Your Support
 								
