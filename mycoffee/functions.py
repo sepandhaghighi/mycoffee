@@ -2,7 +2,8 @@
 """mycoffee functions."""
 import math
 from mycoffee.params import MESSAGE_TEMPLATE, METHODS_LIST_TEMPLATE, EMPTY_INFO
-from mycoffee.params import MY_COFFEE_VERSION, DEFAULT_PARAMS, METHODS_MAP, COFFEE_UNITS_MAP
+from mycoffee.params import MY_COFFEE_VERSION, DEFAULT_PARAMS
+from mycoffee.params import METHODS_MAP, COFFEE_UNITS_MAP, WATER_UNITS_MAP
 from mycoffee.params import RATIO_WARNING_MESSAGE
 from art import tprint
 
@@ -39,7 +40,8 @@ def print_result(params):
             params["coffee_ratio"],
             params["water_ratio"],
             params["info"],
-            params["coffee_unit"]))
+            params["coffee_unit"],
+            params["water_unit"]))
     if not check_ratio_limits(params):
         ratio_lower_limit = METHODS_MAP[method]["ratio_lower_limit"]
         ratio_upper_limit = METHODS_MAP[method]["ratio_upper_limit"]
@@ -93,6 +95,21 @@ def show_coffee_units_list():
                 COFFEE_UNITS_MAP[unit]['name']))
 
 
+def show_water_units_list():
+    """
+    Show water units list.
+
+    :return: None
+    """
+    print("Water units list:\n")
+    for i, unit in enumerate(sorted(WATER_UNITS_MAP), 1):
+        print(
+            METHODS_LIST_TEMPLATE.format(
+                i,
+                unit,
+                WATER_UNITS_MAP[unit]['name']))
+
+
 def load_params(args):
     """
     Load params.
@@ -105,6 +122,8 @@ def load_params(args):
     for item in params:
         if getattr(args, item) is not None:
             params[item] = getattr(args, item)
+    if getattr(args, "water") is not None:
+        params["water"] = convert_water(params["water"], params["water_unit"], True)
     params["method"] = args.method
     return params
 
@@ -119,6 +138,7 @@ def filter_params(params):
     """
     digits = params["digits"]
     params["coffee"] = round(params["coffee"], digits)
+    params["water"] = round(params["water"], digits)
     if is_int(params["coffee"]):
         params["coffee"] = int(params["coffee"])
     if is_int(params["water_ratio"]):
@@ -166,6 +186,25 @@ def convert_coffee(coffee, unit):
     return coffee
 
 
+def convert_water(water, unit, reverse=False):
+    """
+    Convert water unit.
+
+    :param water: water amount
+    :type water: float
+    :param unit: water unit
+    :type unit: str
+    :param reverse: reverse convert flag
+    :type reverse: bool
+    :return: converted water amount as float/int
+    """
+    rate = WATER_UNITS_MAP[unit]["rate"]
+    if reverse:
+        rate = 1 / rate
+    water = water * rate
+    return water
+
+
 def calc_coffee(params):
     """
     Calculate coffee.
@@ -193,8 +232,11 @@ def run(args):
         show_methods_list()
     elif args.coffee_units_list:
         show_coffee_units_list()
+    elif args.water_units_list:
+        show_water_units_list()
     else:
         params = load_params(args)
         params["coffee"] = calc_coffee(params)
+        params["water"] = convert_water(params["water"], params["water_unit"])
         params = filter_params(params)
         print_result(params)

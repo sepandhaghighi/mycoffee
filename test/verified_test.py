@@ -303,4 +303,24 @@ True
 >>> custom_coffee_cup = calc_coffee(custom_params)
 >>> custom_coffee_cup == 0.16348235294117647
 True
+>>> convert_water(240, "g") == 240 # https://www.calculator.net/weight-calculator.html
+True
+>>> convert_water(240, "g", True) == 240.0 # https://www.calculator.net/weight-calculator.html
+True
+>>> convert_water(240, "kg") == 0.24 # https://www.calculator.net/weight-calculator.html
+True
+>>> convert_water(240, "kg", True) == 240000.0 # https://www.calculator.net/weight-calculator.html
+True
+>>> convert_water(240, "mg") == 240000 # https://www.calculator.net/weight-calculator.html
+True
+>>> convert_water(240, "mg", True) == 0.24 # https://www.calculator.net/weight-calculator.html
+True
+>>> convert_water(240, "oz") == 8.465750868 # https://www.calculator.net/weight-calculator.html
+True
+>>> convert_water(240, "oz", True) == 6803.885549919067 # https://www.calculator.net/weight-calculator.html
+True
+>>> convert_water(240, "lb") == 0.5291094292440001 # https://www.calculator.net/weight-calculator.html
+True
+>>> convert_water(240, "lb", True) == 108862.16879993954 # https://www.calculator.net/weight-calculator.html
+True
 """

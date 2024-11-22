@@ -16,7 +16,7 @@ Cups: {1}
 
 Coffee: {2} {7}
 
-Water: {3} g
+Water: {3} {8}
 
 Ratio: {4}/{5}
 
@@ -32,6 +32,7 @@ DEFAULT_PARAMS = {
     "coffee_ratio": 1,
     "water_ratio": 1,
     "coffee_unit": "g",
+    "water_unit": "g",
     "digits": 3,
     "info": ""
 
@@ -201,4 +202,12 @@ COFFEE_UNITS_MAP = {
     "tsp": {"name": "teaspoon", "rate": 0.55585},
     "dsp": {"name": "dessertspoon", "rate": 0.27792},
     "cup": {"name": "cup", "rate": 0.01158},
+}
+
+WATER_UNITS_MAP = {
+    "g": {"name": "gram", "rate": 1},
+    "oz": {"name": "ounce", "rate": 0.03527396195},
+    "lb": {"name": "pound", "rate": 0.00220462262185},
+    "mg": {"name": "milligram", "rate": 1000},
+    "kg": {"name": "kilogram", "rate": 0.001}
 }

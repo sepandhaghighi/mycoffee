@@ -105,8 +105,10 @@ Info: V60 method
 
 ⚠️ You can run `mycoffee --coffee-units-list` to view the supported coffee units
 
+⚠️ You can run `mycoffee --water-units-list` to view the supported water units
+
 ```shell
-> mycoffee --method=chemex --water=20 --cups=3 --coffee-ratio=2 --water-ratio=37 --coffee-unit=g
+> mycoffee --method=chemex --water=20 --cups=3 --coffee-ratio=2 --water-ratio=37 --coffee-unit=g --water-unit=g
 
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
@@ -188,6 +190,12 @@ Info: Chemex method
       <td align="center">String</td>
       <td align="center"><code>g</code></td>
     </tr>
+    <tr>
+      <td align="center"><code>--water-unit</code></td>
+      <td align="center">Water unit</td>
+      <td align="center">String</td>
+      <td align="center"><code>g</code></td>
+    </tr>
   </tbody>
 </table>
 
@@ -223,6 +231,7 @@ Just fill an issue and describe it. We'll check it ASAP!
 <blockquote>19- <a href="https://honestcoffeeguide.com/whole-bean-to-ground-coffee-ratio/">Whole bean to ground coffee calculator</a></blockquote>
 <blockquote>20- <a href="https://www.howmany.wiki/wv/">Weight to Volume Converter for Recipes</a></blockquote>
 <blockquote>21- <a href="https://chamberlaincoffee.com/blogs/inspiration/how-much-coffee-per-cup-this-is-how-you-get-it-right">How Much Coffee per Cup?</a></blockquote>
+<blockquote>22- <a href="https://www.calculator.net/weight-calculator.html">Weight Calculator</a></blockquote>
 
 ## Show Your Support
 								
