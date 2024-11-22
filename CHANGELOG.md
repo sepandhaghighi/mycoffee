@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - 1 new coffee unit
 	1. Cup (`cup`)
+- `convert_water` function
+- `show_water_units_list` function
+- `--water-unit` argument
+### Changed
+- Test system modified
+- `README.md` updated
 ## [0.7] - 2024-11-21
 ### Added
 - 4 new coffee units
