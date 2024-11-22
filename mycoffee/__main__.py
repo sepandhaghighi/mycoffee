@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """mycoffee main."""
-from mycoffee.params import METHODS_MAP, COFFEE_UNITS_MAP, EXIT_MESSAGE
+from mycoffee.params import METHODS_MAP, COFFEE_UNITS_MAP, WATER_UNITS_MAP, EXIT_MESSAGE
 from mycoffee.functions import run
 import argparse
 
@@ -24,6 +24,7 @@ def main():
         type=int,
         default=3)
     parser.add_argument('--coffee-unit', help='coffee unit', type=str, choices=sorted(COFFEE_UNITS_MAP), default="g")
+    parser.add_argument('--water-unit', help='water unit', type=str, choices=sorted(WATER_UNITS_MAP), default="g")
     parser.add_argument('--coffee-units-list', help='coffee units list', nargs="?", const=1)
     parser.add_argument('--methods-list', help='brewing methods list', nargs="?", const=1)
     parser.add_argument('--version', help='version', nargs="?", const=1)
