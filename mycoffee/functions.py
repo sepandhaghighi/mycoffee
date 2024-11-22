@@ -40,7 +40,8 @@ def print_result(params):
             params["coffee_ratio"],
             params["water_ratio"],
             params["info"],
-            params["coffee_unit"]))
+            params["coffee_unit"],
+            params["water_unit"]))
     if not check_ratio_limits(params):
         ratio_lower_limit = METHODS_MAP[method]["ratio_lower_limit"]
         ratio_upper_limit = METHODS_MAP[method]["ratio_upper_limit"]

@@ -16,7 +16,7 @@ Cups: {1}
 
 Coffee: {2} {7}
 
-Water: {3} g
+Water: {3} {8}
 
 Ratio: {4}/{5}
 
