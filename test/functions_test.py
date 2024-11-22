@@ -7,6 +7,12 @@
 122
 >>> convert_coffee(122, "cb")
 921
+>>> convert_water(1, "g")
+1
+>>> convert_water(1, "kg")
+0.001
+>>> convert_water(1, "kg", True)
+1000.0
 >>> test_params = {"method":"v60", "cups":2, "coffee":60, "water":500, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method", "coffee_unit": "g"}
 >>> print_result(test_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
