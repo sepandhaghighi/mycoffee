@@ -121,7 +121,7 @@ def load_params(args):
         if getattr(args, item) is not None:
             params[item] = getattr(args, item)
             if item == "water":
-                params["water"] = convert_water(water=params["water"], unit=params["water_unit"], reverse=True)
+                params["water"] = convert_water(params["water"], params["water_unit"], True)
     params["method"] = args.method
     return params
 
@@ -235,6 +235,6 @@ def run(args):
     else:
         params = load_params(args)
         params["coffee"] = calc_coffee(params)
-        params["water"] = convert_water(water=params["water"], unit=params["water_unit"])
+        params["water"] = convert_water(params["water"], params["water_unit"])
         params = filter_params(params)
         print_result(params)
