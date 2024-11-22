@@ -93,6 +93,21 @@ def show_coffee_units_list():
                 COFFEE_UNITS_MAP[unit]['name']))
 
 
+def show_water_units_list():
+    """
+    Show water units list.
+
+    :return: None
+    """
+    print("Water units list:\n")
+    for i, unit in enumerate(sorted(WATER_UNITS_MAP), 1):
+        print(
+            METHODS_LIST_TEMPLATE.format(
+                i,
+                unit,
+                WATER_UNITS_MAP[unit]['name']))
+
+
 def load_params(args):
     """
     Load params.
