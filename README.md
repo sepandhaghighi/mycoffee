@@ -64,7 +64,7 @@
 
 ## Usage
 
-⚠️ You can use `mycoffee` or `python -m mycoffee` to run this program
+ℹ️ You can use `mycoffee` or `python -m mycoffee` to run this program
 
 ### Version
 
@@ -103,9 +103,9 @@ Info: V60 method
 
 ### Customize
 
-⚠️ You can run `mycoffee --coffee-units-list` to view the supported coffee units
+ℹ️ You can run `mycoffee --coffee-units-list` to view the supported coffee units
 
-⚠️ You can run `mycoffee --water-units-list` to view the supported water units
+ℹ️ You can run `mycoffee --water-units-list` to view the supported water units
 
 ```shell
 > mycoffee --method=chemex --water=20 --cups=3 --coffee-ratio=2 --water-ratio=37 --coffee-unit=g --water-unit=g
