@@ -198,7 +198,7 @@ def convert_water(water, unit, reverse=False):
     """
     rate = WATER_UNITS_MAP[unit]["rate"]
     if reverse:
-        rate = 1/rate
+        rate = 1 / rate
     water = water * rate
     return water
 
