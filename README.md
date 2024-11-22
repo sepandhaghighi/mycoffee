@@ -105,8 +105,10 @@ Info: V60 method
 
 ⚠️ You can run `mycoffee --coffee-units-list` to view the supported coffee units
 
+⚠️ You can run `mycoffee --water-units-list` to view the supported water units
+
 ```shell
-> mycoffee --method=chemex --water=20 --cups=3 --coffee-ratio=2 --water-ratio=37 --coffee-unit=g
+> mycoffee --method=chemex --water=20 --cups=3 --coffee-ratio=2 --water-ratio=37 --coffee-unit=g --water-unit=g
 
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
@@ -185,6 +187,12 @@ Info: Chemex method
     <tr>
       <td align="center"><code>--coffee-unit</code></td>
       <td align="center">Coffee unit</td>
+      <td align="center">String</td>
+      <td align="center"><code>g</code></td>
+    </tr>
+	<tr>
+      <td align="center"><code>--water-unit</code></td>
+      <td align="center">Water unit</td>
       <td align="center">String</td>
       <td align="center"><code>g</code></td>
     </tr>
