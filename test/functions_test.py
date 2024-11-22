@@ -125,6 +125,14 @@ Coffee units list:
 8. `oz` - ounce
 9. `tbsp` - tablespoon
 10. `tsp` - teaspoon
+>>> show_water_units_list()
+Water units list:
+<BLANKLINE>
+1. `g` - gram
+2. `kg` - kilogram
+3. `lb` - pound
+4. `mg` - milligram
+5. `oz` - ounce
 >>> test_params = {"method":"v60", "cups":1, "water":335, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method", 'coffee_unit': 'g'}
 >>> calc_coffee(test_params)
 20.1
@@ -172,6 +180,7 @@ True
 >>> _ = parser.add_argument('--coffee-unit', help='coffee unit', type=str, choices=sorted(COFFEE_UNITS_MAP), default="g")
 >>> _ = parser.add_argument('--water-unit', help='water unit', type=str, choices=sorted(WATER_UNITS_MAP), default="g")
 >>> _ = parser.add_argument('--coffee-units-list', help='coffee units list', nargs="?", const=1)
+>>> _ = parser.add_argument('--water-units-list', help='water units list', nargs="?", const=1)
 >>> _ = parser.add_argument('--methods-list', help='brewing methods list', nargs="?", const=1)
 >>> _ = parser.add_argument('--version', help='version', nargs="?", const=1)
 >>> args = parser.parse_args({"--version":True})
@@ -334,4 +343,14 @@ Coffee units list:
 8. `oz` - ounce
 9. `tbsp` - tablespoon
 10. `tsp` - teaspoon
+>>> args = parser.parse_args(["--water-units-list"])
+>>> run(args)
+>>> show_water_units_list()
+Water units list:
+<BLANKLINE>
+1. `g` - gram
+2. `kg` - kilogram
+3. `lb` - pound
+4. `mg` - milligram
+5. `oz` - ounce
 """
