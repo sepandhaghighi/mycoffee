@@ -122,8 +122,8 @@ def load_params(args):
     for item in params:
         if getattr(args, item) is not None:
             params[item] = getattr(args, item)
-            if item == "water":
-                params["water"] = convert_water(params["water"], params["water_unit"], True)
+    if getattr(args, "water") is not None:
+        params["water"] = convert_water(params["water"], params["water_unit"], True)
     params["method"] = args.method
     return params
 
