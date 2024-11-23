@@ -38,7 +38,7 @@ setup(
     author_email='me@sepand.tech',
     url='https://github.com/sepandhaghighi/mycoffee',
     download_url='https://github.com/sepandhaghighi/mycoffee/tarball/v0.7',
-    keywords="python3 python ratio coffee terminal",
+    keywords="coffee ratio terminal brew cli",
     project_urls={
         'Source': 'https://github.com/sepandhaghighi/mycoffee'
     },
