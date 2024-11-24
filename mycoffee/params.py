@@ -206,6 +206,7 @@ COFFEE_UNITS_MAP = {
 
 WATER_UNITS_MAP = {
     "g": {"name": "gram", "rate": 1},
+    "ml": {"name": "milliliter", "rate": 1},
     "l": {"name": "liter", "rate": 0.001},
     "oz": {"name": "ounce", "rate": 0.03527396195},
     "lb": {"name": "pound", "rate": 0.00220462262185},
