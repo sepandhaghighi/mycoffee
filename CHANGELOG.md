@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - 1 new coffee unit
 	1. Cup (`cup`)
+- 6 new coffee units
+	1. Milliliter (`ml`)
+	2. Liter (`l`)
+	3. Ounce (`oz`)
+	4. Pound (`lb`)
+	5. Milligram (`mg`)
+	6. Kilogram (`kg`)
 - `convert_water` function
 - `show_water_units_list` function
 - `--water-unit` argument
