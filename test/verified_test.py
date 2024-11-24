@@ -323,4 +323,12 @@ True
 True
 >>> convert_water(240, "lb", True) == 108862.16879993954 # https://www.calculator.net/weight-calculator.html
 True
+>>> convert_water(1, "ml") == 1 # https://www.howmany.wiki/wv/
+True
+>>> convert_water(1, "ml", True) == 1.0 # https://www.howmany.wiki/wv/
+True
+>>> convert_water(1, "l") == 0.001 # https://www.howmany.wiki/wv/
+True
+>>> convert_water(1, "l", True) == 1000.0 # https://www.howmany.wiki/wv/
+True
 """
