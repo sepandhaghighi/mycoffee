@@ -156,9 +156,11 @@ Water units list:
 <BLANKLINE>
 1. `g` - gram
 2. `kg` - kilogram
-3. `lb` - pound
-4. `mg` - milligram
-5. `oz` - ounce
+3. `l` - liter
+4. `lb` - pound
+5. `mg` - milligram
+6. `ml` - milliliter
+7. `oz` - ounce
 >>> test_params = {"method":"v60", "cups":1, "water":335, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method", 'coffee_unit': 'g'}
 >>> calc_coffee(test_params)
 20.1
@@ -398,7 +400,9 @@ Water units list:
 <BLANKLINE>
 1. `g` - gram
 2. `kg` - kilogram
-3. `lb` - pound
-4. `mg` - milligram
-5. `oz` - ounce
+3. `l` - liter
+4. `lb` - pound
+5. `mg` - milligram
+6. `ml` - milliliter
+7. `oz` - ounce
 """
