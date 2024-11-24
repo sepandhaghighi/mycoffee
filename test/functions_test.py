@@ -141,7 +141,7 @@ Methods list:
 >>> show_coffee_units_list()
 Coffee units list:
 <BLANKLINE>
-1. `cb` - coffee beans
+1. `cb` - coffee bean
 2. `cup` - cup
 3. `dsp` - dessertspoon
 4. `g` - gram
@@ -382,7 +382,7 @@ Methods list:
 >>> run(args)
 Coffee units list:
 <BLANKLINE>
-1. `cb` - coffee beans
+1. `cb` - coffee bean
 2. `cup` - cup
 3. `dsp` - dessertspoon
 4. `g` - gram

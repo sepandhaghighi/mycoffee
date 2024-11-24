@@ -3,14 +3,14 @@
 <h1>MyCoffee: Brew Perfect Coffee Right from Your Terminal</h1>
 <br/>
 <a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3"></a>
-<a href="https://badge.fury.io/py/mycoffee"><img src="https://badge.fury.io/py/mycoffee.svg" alt="PyPI version" height="18"></a>
+<a href="https://badge.fury.io/py/mycoffee"><img src="https://badge.fury.io/py/mycoffee.svg" alt="PyPI version"></a>
 <a href="https://codecov.io/gh/sepandhaghighi/mycoffee" ><img src="https://codecov.io/gh/sepandhaghighi/mycoffee/graph/badge.svg?token=ZelznFDSPA"></a>
 </div>			
 				
 ## Overview	
 
 <p align="justify">					
-<strong>MyCoffee</strong> is a command-line tool for coffee enthusiasts who love brewing with precision. It helps you calculate the perfect coffee-to-water ratio for various brewing methods, ensuring you brew your ideal cup every time—right from your terminal.
+<strong>MyCoffee</strong> is a command-line tool for coffee enthusiasts who love brewing with precision. It helps you calculate the perfect coffee-to-water ratio for various brewing methods, ensuring you brew your ideal cup every time-right from your terminal.
 </p>
 
 <table>
@@ -64,7 +64,7 @@
 
 ## Usage
 
-⚠️ You can use `mycoffee` or `python -m mycoffee` to run this program
+ℹ️ You can use `mycoffee` or `python -m mycoffee` to run this program
 
 ### Version
 
@@ -103,9 +103,9 @@ Info: V60 method
 
 ### Customize
 
-⚠️ You can run `mycoffee --coffee-units-list` to view the supported coffee units
+ℹ️ You can run `mycoffee --coffee-units-list` to view the supported coffee units
 
-⚠️ You can run `mycoffee --water-units-list` to view the supported water units
+ℹ️ You can run `mycoffee --water-units-list` to view the supported water units
 
 ```shell
 > mycoffee --method=chemex --water=20 --cups=3 --coffee-ratio=2 --water-ratio=37 --coffee-unit=g --water-unit=g
