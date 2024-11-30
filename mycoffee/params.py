@@ -211,5 +211,8 @@ WATER_UNITS_MAP = {
     "oz": {"name": "ounce", "rate": 0.03527396195},
     "lb": {"name": "pound", "rate": 0.00220462262185},
     "mg": {"name": "milligram", "rate": 1000},
-    "kg": {"name": "kilogram", "rate": 0.001}
+    "kg": {"name": "kilogram", "rate": 0.001},
+    "tbsp": {"name": "tablespoon", "rate": 0.067628},
+    "tsp": {"name": "teaspoon", "rate": 0.20288},
+    "dsp": {"name": "dessertspoon", "rate": 0.10144},
 }
