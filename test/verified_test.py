@@ -331,4 +331,16 @@ True
 True
 >>> convert_water(240, "l", True) == 240000.0 # https://www.howmany.wiki/wv/
 True
+>>> convert_water(240, "tbsp") == 16.230719999999998 # https://www.howmany.wiki/wv/
+True
+>>> convert_water(240, "tbsp", True) == 3548.8259300881296 # https://www.howmany.wiki/wv/
+True
+>>> convert_water(240, "tsp") == 48.6912 # https://www.howmany.wiki/wv/
+True
+>>> convert_water(240, "tsp", True) == 1182.9652996845425 # https://www.howmany.wiki/wv/
+True
+>>> convert_water(240, "dsp") == 24.3456 # https://www.howmany.wiki/wv/
+True
+>>> convert_water(240, "dsp", True) == 2365.930599369085 # https://www.howmany.wiki/wv/
+True
 """
