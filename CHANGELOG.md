@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- 3 new water units
+	1. Tablespoon (`tbsp`)
+	2. Teaspoon (`tsp`)
+	3. Dessertspoon (`dsp`)
 ## [0.8] - 2024-11-29
 ### Added
 - 1 new coffee unit
