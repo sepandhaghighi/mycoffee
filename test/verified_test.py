@@ -343,4 +343,8 @@ True
 True
 >>> convert_water(240, "dsp", True) == 2365.930599369085 # https://www.howmany.wiki/wv/
 True
+>>> convert_water(240, "cup") == 1.014432 # https://www.howmany.wiki/wv/
+True
+>>> convert_water(240, "cup", True) == 56780.54320052995 # https://www.howmany.wiki/wv/
+True
 """

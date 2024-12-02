@@ -6,10 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
-- 3 new water units
+- 4 new water units
 	1. Tablespoon (`tbsp`)
 	2. Teaspoon (`tsp`)
 	3. Dessertspoon (`dsp`)
+	4. Cup (`cup`)
 ## [0.8] - 2024-11-29
 ### Added
 - 1 new coffee unit
