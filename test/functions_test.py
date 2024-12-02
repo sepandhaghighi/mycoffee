@@ -154,16 +154,17 @@ Coffee units list:
 >>> show_water_units_list()
 Water units list:
 <BLANKLINE>
-1. `dsp` - dessertspoon
-2. `g` - gram
-3. `kg` - kilogram
-4. `l` - liter
-5. `lb` - pound
-6. `mg` - milligram
-7. `ml` - milliliter
-8. `oz` - ounce
-9. `tbsp` - tablespoon
-10. `tsp` - teaspoon
+1. `cup` - cup
+2. `dsp` - dessertspoon
+3. `g` - gram
+4. `kg` - kilogram
+5. `l` - liter
+6. `lb` - pound
+7. `mg` - milligram
+8. `ml` - milliliter
+9. `oz` - ounce
+10. `tbsp` - tablespoon
+11. `tsp` - teaspoon
 >>> test_params = {"method":"v60", "cups":1, "water":335, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method", 'coffee_unit': 'g'}
 >>> calc_coffee(test_params)
 20.1
@@ -401,14 +402,15 @@ Coffee units list:
 >>> run(args)
 Water units list:
 <BLANKLINE>
-1. `dsp` - dessertspoon
-2. `g` - gram
-3. `kg` - kilogram
-4. `l` - liter
-5. `lb` - pound
-6. `mg` - milligram
-7. `ml` - milliliter
-8. `oz` - ounce
-9. `tbsp` - tablespoon
-10. `tsp` - teaspoon
+1. `cup` - cup
+2. `dsp` - dessertspoon
+3. `g` - gram
+4. `kg` - kilogram
+5. `l` - liter
+6. `lb` - pound
+7. `mg` - milligram
+8. `ml` - milliliter
+9. `oz` - ounce
+10. `tbsp` - tablespoon
+11. `tsp` - teaspoon
 """
