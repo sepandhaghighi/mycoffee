@@ -216,4 +216,5 @@ WATER_UNITS_MAP = {
     "tsp": {"name": "teaspoon", "rate": 0.20288},
     "dsp": {"name": "dessertspoon", "rate": 0.10144},
     "cup": {"name": "cup", "rate": 0.0042268},
+    "pt": {"name": "pint", "rate": 0.00211338},
 }
