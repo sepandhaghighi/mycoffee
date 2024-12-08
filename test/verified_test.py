@@ -347,4 +347,8 @@ True
 True
 >>> convert_water(240, "cup", True) == 56780.54320052995 # https://www.howmany.wiki/wv/
 True
+>>> round(convert_water(240, "pt"), 5) == 0.50721 # https://www.inchcalculator.com/convert/milliliter-to-pint/
+True
+>>> int(convert_water(240, "pt", True)) == 113562 # https://www.inchcalculator.com/convert/milliliter-to-pint/
+True
 """
