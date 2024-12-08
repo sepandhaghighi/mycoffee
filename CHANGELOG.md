@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- 1 new water unit
+	1. Pint (`pt`)
 ## [0.9] - 2024-12-06
 ### Added
 - 4 new water units
