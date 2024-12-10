@@ -351,4 +351,8 @@ True
 True
 >>> int(convert_water(240, "pt", True)) == 113562 # https://www.inchcalculator.com/convert/milliliter-to-pint/
 True
+>>> round(convert_water(240, "qt"), 4) == 0.2536 # https://www.inchcalculator.com/convert/volume/
+True
+>>> int(convert_water(240, "qt", True)) == 227124 # https://www.inchcalculator.com/convert/volume/
+True
 """
