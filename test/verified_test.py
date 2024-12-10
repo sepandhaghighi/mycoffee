@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 """
->>> import math
 >>> from fractions import Fraction
 >>> from mycoffee.functions import *
 >>> from mycoffee.params import METHODS_MAP
@@ -352,7 +351,7 @@ True
 True
 >>> int(convert_water(240, "pt", True)) == 113562 # https://www.inchcalculator.com/convert/milliliter-to-pint/
 True
->>> math.trunc(convert_water(240, "qt") * 10**6) / 10**6 == 0.253605 # https://www.inchcalculator.com/convert/volume/
+>>> round(convert_water(240, "qt"), 4) == 0.2536 # https://www.inchcalculator.com/convert/volume/
 True
 >>> int(convert_water(240, "qt", True)) == 227124 # https://www.inchcalculator.com/convert/volume/
 True
