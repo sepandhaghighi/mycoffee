@@ -6,9 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
-- 2 new water unit
+- 2 new water units
 	1. Pint (`pt`)
-	2. Quart (``)
+	2. Quart (`qt`)
 ## [0.9] - 2024-12-06
 ### Added
 - 4 new water units
