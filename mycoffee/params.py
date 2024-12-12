@@ -218,4 +218,5 @@ WATER_UNITS_MAP = {
     "cup": {"name": "cup", "rate": 0.0042268},
     "pt": {"name": "pint", "rate": 0.00211338},
     "qt": {"name": "quart", "rate": 0.00105669},
+    "fl oz": {"name": "fluid ounce", "rate": 0.033814},
 }
