@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 	1. Pint (`pt`)
 	2. Quart (`qt`)
 	3. Fluid Ounce (`fl oz`)
+### Changed
+- `README.md` updated
 ## [0.9] - 2024-12-06
 ### Added
 - 4 new water units
