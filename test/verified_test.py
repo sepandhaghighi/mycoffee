@@ -355,4 +355,8 @@ True
 True
 >>> int(convert_water(240, "qt", True)) == 227124 # https://www.inchcalculator.com/convert/volume/
 True
+>>> round(convert_water(240, "fl oz"), 5) ==  8.11536 # https://www.inchcalculator.com/convert/milligram-to-fluid-ounce/
+True
+>>> round(convert_water(240, "fl oz", True), 2) ==  7097.65 # https://www.inchcalculator.com/convert/milligram-to-fluid-ounce/
+True
 """
