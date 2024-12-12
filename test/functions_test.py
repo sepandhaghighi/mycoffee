@@ -156,17 +156,18 @@ Water units list:
 <BLANKLINE>
 1. `cup` - cup
 2. `dsp` - dessertspoon
-3. `g` - gram
-4. `kg` - kilogram
-5. `l` - liter 
-6. `lb` - pound
-7. `mg` - milligram
-8. `ml` - milliliter
-9. `oz` - ounce
-10. `pt` - pint
-11. `qt` - quart
-12. `tbsp` - tablespoon
-13. `tsp` - teaspoon
+3. `fl oz` - fluid ounce
+4. `g` - gram
+5. `kg` - kilogram
+6. `l` - liter 
+7. `lb` - pound
+8. `mg` - milligram
+9. `ml` - milliliter
+10. `oz` - ounce
+11. `pt` - pint
+12. `qt` - quart
+13. `tbsp` - tablespoon
+14. `tsp` - teaspoon
 >>> test_params = {"method":"v60", "cups":1, "water":335, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method", 'coffee_unit': 'g'}
 >>> calc_coffee(test_params)
 20.1
@@ -406,15 +407,16 @@ Water units list:
 <BLANKLINE>
 1. `cup` - cup
 2. `dsp` - dessertspoon
-3. `g` - gram
-4. `kg` - kilogram
-5. `l` - liter 
-6. `lb` - pound
-7. `mg` - milligram
-8. `ml` - milliliter
-9. `oz` - ounce
-10. `pt` - pint
-11. `qt` - quart
-12. `tbsp` - tablespoon
-13. `tsp` - teaspoon
+3. `fl oz` - fluid ounce
+4. `g` - gram
+5. `kg` - kilogram
+6. `l` - liter 
+7. `lb` - pound
+8. `mg` - milligram
+9. `ml` - milliliter
+10. `oz` - ounce
+11. `pt` - pint
+12. `qt` - quart
+13. `tbsp` - tablespoon
+14. `tsp` - teaspoon
 """
