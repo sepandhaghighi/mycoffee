@@ -3,6 +3,7 @@
 <h1>MyCoffee: Brew Perfect Coffee Right from Your Terminal</h1>
 <br/>
 <a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3"></a>
+<a href="https://github.com/sepandhaghighi/mycoffee"><img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/sepandhaghighi/mycoffee"></a>
 <a href="https://badge.fury.io/py/mycoffee"><img src="https://badge.fury.io/py/mycoffee.svg" alt="PyPI version"></a>
 <a href="https://codecov.io/gh/sepandhaghighi/mycoffee" ><img src="https://codecov.io/gh/sepandhaghighi/mycoffee/graph/badge.svg?token=ZelznFDSPA"></a>
 </div>			
@@ -232,6 +233,7 @@ Just fill an issue and describe it. We'll check it ASAP!
 <blockquote>20- <a href="https://www.howmany.wiki/wv/">Weight to Volume Converter for Recipes</a></blockquote>
 <blockquote>21- <a href="https://chamberlaincoffee.com/blogs/inspiration/how-much-coffee-per-cup-this-is-how-you-get-it-right">How Much Coffee per Cup?</a></blockquote>
 <blockquote>22- <a href="https://www.calculator.net/weight-calculator.html">Weight Calculator</a></blockquote>
+<blockquote>23- <a href="https://www.inchcalculator.com/convert/volume/">Volume Conversion Calculator - Inch Calculator</a></blockquote>
 
 ## Show Your Support
 								

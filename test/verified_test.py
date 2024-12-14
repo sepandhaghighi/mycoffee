@@ -349,14 +349,14 @@ True
 True
 >>> round(convert_water(240, "pt"), 5) == 0.50721 # https://www.inchcalculator.com/convert/milliliter-to-pint/
 True
->>> int(convert_water(240, "pt", True)) == 113562 # https://www.inchcalculator.com/convert/milliliter-to-pint/
+>>> int(convert_water(240, "pt", True)) == 113562 # https://www.inchcalculator.com/convert/pint-to-milliliter/
 True
->>> round(convert_water(240, "qt"), 4) == 0.2536 # https://www.inchcalculator.com/convert/volume/
+>>> round(convert_water(240, "qt"), 4) == 0.2536 # https://www.inchcalculator.com/convert/milliliter-to-quart/
 True
->>> int(convert_water(240, "qt", True)) == 227124 # https://www.inchcalculator.com/convert/volume/
+>>> int(convert_water(240, "qt", True)) == 227124 # https://www.inchcalculator.com/convert/quart-to-milliliter/
 True
->>> round(convert_water(240, "fl oz"), 5) ==  8.11536 # https://www.inchcalculator.com/convert/milligram-to-fluid-ounce/
+>>> round(convert_water(240, "fl oz"), 5) ==  8.11536 # https://www.inchcalculator.com/convert/milliliter-to-fluid-ounce/
 True
->>> round(convert_water(240, "fl oz", True), 2) ==  7097.65 # https://www.inchcalculator.com/convert/milligram-to-fluid-ounce/
+>>> round(convert_water(240, "fl oz", True), 2) ==  7097.65 # https://www.inchcalculator.com/convert/fluid-ounce-to-milliliter/
 True
 """
