@@ -166,8 +166,9 @@ Water units list:
 10. `oz` - ounce
 11. `pt` - pint
 12. `qt` - quart
-13. `tbsp` - tablespoon
-14. `tsp` - teaspoon
+13. `t oz` - troy ounce
+14. `tbsp` - tablespoon
+15. `tsp` - teaspoon
 >>> test_params = {"method":"v60", "cups":1, "water":335, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method", 'coffee_unit': 'g'}
 >>> calc_coffee(test_params)
 20.1
@@ -417,6 +418,7 @@ Water units list:
 10. `oz` - ounce
 11. `pt` - pint
 12. `qt` - quart
-13. `tbsp` - tablespoon
-14. `tsp` - teaspoon
+13. `t oz` - troy ounce
+14. `tbsp` - tablespoon
+15. `tsp` - teaspoon
 """
