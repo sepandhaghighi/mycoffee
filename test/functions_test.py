@@ -149,8 +149,9 @@ Coffee units list:
 6. `lb` - pound
 7. `mg` - milligram
 8. `oz` - ounce
-9. `tbsp` - tablespoon
-10. `tsp` - teaspoon
+9. `t oz` - troy ounce
+10. `tbsp` - tablespoon
+11. `tsp` - teaspoon
 >>> show_water_units_list()
 Water units list:
 <BLANKLINE>
@@ -400,8 +401,9 @@ Coffee units list:
 6. `lb` - pound
 7. `mg` - milligram
 8. `oz` - ounce
-9. `tbsp` - tablespoon
-10. `tsp` - teaspoon
+9. `t oz` - troy ounce
+10. `tbsp` - tablespoon
+11. `tsp` - teaspoon
 >>> args = parser.parse_args(["--water-units-list"])
 >>> run(args)
 Water units list:
