@@ -202,6 +202,7 @@ COFFEE_UNITS_MAP = {
     "tsp": {"name": "teaspoon", "rate": 0.55585},
     "dsp": {"name": "dessertspoon", "rate": 0.27792},
     "cup": {"name": "cup", "rate": 0.01158},
+    "t oz": {"name": "troy ounce", "rate": 0.032151},
 }
 
 WATER_UNITS_MAP = {
