@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - 1 new water unit
 	1. Troy Ounce (`t oz`)
+- 1 new coffee unit
+	1. Troy Ounce (`t oz`)
 ## [1.0] - 2024-12-17
 ### Added
 - 3 new water units
