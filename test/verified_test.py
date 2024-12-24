@@ -359,4 +359,10 @@ True
 True
 >>> round(convert_water(240, "fl oz", True), 2) ==  7097.65 # https://www.inchcalculator.com/convert/fluid-ounce-to-milliliter/
 True
+>>> round(convert_water(240, "t oz"), 4) == 7.7162 # https://www.metric-conversions.org/weight/grams-to-troy-ounces.htm
+True
+>>> round(convert_water(240, "t oz", True), 1) == 7464.8 # https://www.metric-conversions.org/weight/troy-ounces-to-grams.htm
+True
+>>> round(convert_coffee(240, "t oz"), 4) == 7.7162 # https://www.metric-conversions.org/weight/grams-to-troy-ounces.htm
+True
 """
