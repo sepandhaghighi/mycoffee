@@ -365,4 +365,10 @@ True
 True
 >>> round(convert_coffee(240, "t oz"), 4) == 7.7162 # https://www.metric-conversions.org/weight/grams-to-troy-ounces.htm
 True
+>>> round(convert_coffee(240, "gr"), 1) == 3703.8 # https://www.metric-conversions.org/weight/grams-to-grains.htm
+True
+>>> round(convert_water(240, "gr"), 1) == 3703.8 # https://www.metric-conversions.org/weight/grams-to-grains.htm
+True
+>>> round(convert_water(240, "gr", True), 3) == 15.552 # https://www.metric-conversions.org/weight/grains-to-grams.htm
+True
 """
