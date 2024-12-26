@@ -142,36 +142,38 @@ Methods list:
 Coffee units list:
 <BLANKLINE>
 1. `cb` - coffee bean
-2. `cup` - cup
-3. `dsp` - dessertspoon
-4. `g` - gram
-5. `gr` - grain
-6. `kg` - kilogram
-7. `lb` - pound
-8. `mg` - milligram
-9. `oz` - ounce
-10. `t oz` - troy ounce
-11. `tbsp` - tablespoon
-12. `tsp` - teaspoon
+2. `ct` - carat
+3. `cup` - cup
+4. `dsp` - dessertspoon
+5. `g` - gram
+6. `gr` - grain
+7. `kg` - kilogram
+8. `lb` - pound
+9. `mg` - milligram
+10. `oz` - ounce
+11. `t oz` - troy ounce
+12. `tbsp` - tablespoon
+13. `tsp` - teaspoon
 >>> show_water_units_list()
 Water units list:
 <BLANKLINE>
-1. `cup` - cup
-2. `dsp` - dessertspoon
-3. `fl oz` - fluid ounce
-4. `g` - gram
-5. `gr` - grain
-6. `kg` - kilogram
-7. `l` - liter 
-8. `lb` - pound
-9. `mg` - milligram
-10. `ml` - milliliter
-11. `oz` - ounce
-12. `pt` - pint
-13. `qt` - quart
-14. `t oz` - troy ounce
-15. `tbsp` - tablespoon
-16. `tsp` - teaspoon
+1. `ct` - carat
+2. `cup` - cup
+3. `dsp` - dessertspoon
+4. `fl oz` - fluid ounce
+5. `g` - gram
+6. `gr` - grain
+7. `kg` - kilogram
+8. `l` - liter 
+9. `lb` - pound
+10. `mg` - milligram
+11. `ml` - milliliter
+12. `oz` - ounce
+13. `pt` - pint
+14. `qt` - quart
+15. `t oz` - troy ounce
+16. `tbsp` - tablespoon
+17. `tsp` - teaspoon
 >>> test_params = {"method":"v60", "cups":1, "water":335, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method", 'coffee_unit': 'g'}
 >>> calc_coffee(test_params)
 20.1
@@ -396,35 +398,37 @@ Methods list:
 Coffee units list:
 <BLANKLINE>
 1. `cb` - coffee bean
-2. `cup` - cup
-3. `dsp` - dessertspoon
-4. `g` - gram
-5. `gr` - grain
-6. `kg` - kilogram
-7. `lb` - pound
-8. `mg` - milligram
-9. `oz` - ounce
-10. `t oz` - troy ounce
-11. `tbsp` - tablespoon
-12. `tsp` - teaspoon
+2. `ct` - carat
+3. `cup` - cup
+4. `dsp` - dessertspoon
+5. `g` - gram
+6. `gr` - grain
+7. `kg` - kilogram
+8. `lb` - pound
+9. `mg` - milligram
+10. `oz` - ounce
+11. `t oz` - troy ounce
+12. `tbsp` - tablespoon
+13. `tsp` - teaspoon
 >>> args = parser.parse_args(["--water-units-list"])
 >>> run(args)
 Water units list:
 <BLANKLINE>
-1. `cup` - cup
-2. `dsp` - dessertspoon
-3. `fl oz` - fluid ounce
-4. `g` - gram
-5. `gr` - grain
-6. `kg` - kilogram
-7. `l` - liter 
-8. `lb` - pound
-9. `mg` - milligram
-10. `ml` - milliliter
-11. `oz` - ounce
-12. `pt` - pint
-13. `qt` - quart
-14. `t oz` - troy ounce
-15. `tbsp` - tablespoon
-16. `tsp` - teaspoon
+1. `ct` - carat
+2. `cup` - cup
+3. `dsp` - dessertspoon
+4. `fl oz` - fluid ounce
+5. `g` - gram
+6. `gr` - grain
+7. `kg` - kilogram
+8. `l` - liter 
+9. `lb` - pound
+10. `mg` - milligram
+11. `ml` - milliliter
+12. `oz` - ounce
+13. `pt` - pint
+14. `qt` - quart
+15. `t oz` - troy ounce
+16. `tbsp` - tablespoon
+17. `tsp` - teaspoon
 """
