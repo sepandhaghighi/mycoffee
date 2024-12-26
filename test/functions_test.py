@@ -145,13 +145,14 @@ Coffee units list:
 2. `cup` - cup
 3. `dsp` - dessertspoon
 4. `g` - gram
-5. `kg` - kilogram
-6. `lb` - pound
-7. `mg` - milligram
-8. `oz` - ounce
-9. `t oz` - troy ounce
-10. `tbsp` - tablespoon
-11. `tsp` - teaspoon
+5. `gr` - grain
+6. `kg` - kilogram
+7. `lb` - pound
+8. `mg` - milligram
+9. `oz` - ounce
+10. `t oz` - troy ounce
+11. `tbsp` - tablespoon
+12. `tsp` - teaspoon
 >>> show_water_units_list()
 Water units list:
 <BLANKLINE>
@@ -159,17 +160,18 @@ Water units list:
 2. `dsp` - dessertspoon
 3. `fl oz` - fluid ounce
 4. `g` - gram
-5. `kg` - kilogram
-6. `l` - liter 
-7. `lb` - pound
-8. `mg` - milligram
-9. `ml` - milliliter
-10. `oz` - ounce
-11. `pt` - pint
-12. `qt` - quart
-13. `t oz` - troy ounce
-14. `tbsp` - tablespoon
-15. `tsp` - teaspoon
+5. `gr` - grain
+6. `kg` - kilogram
+7. `l` - liter 
+8. `lb` - pound
+9. `mg` - milligram
+10. `ml` - milliliter
+11. `oz` - ounce
+12. `pt` - pint
+13. `qt` - quart
+14. `t oz` - troy ounce
+15. `tbsp` - tablespoon
+16. `tsp` - teaspoon
 >>> test_params = {"method":"v60", "cups":1, "water":335, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method", 'coffee_unit': 'g'}
 >>> calc_coffee(test_params)
 20.1
@@ -397,13 +399,14 @@ Coffee units list:
 2. `cup` - cup
 3. `dsp` - dessertspoon
 4. `g` - gram
-5. `kg` - kilogram
-6. `lb` - pound
-7. `mg` - milligram
-8. `oz` - ounce
-9. `t oz` - troy ounce
-10. `tbsp` - tablespoon
-11. `tsp` - teaspoon
+5. `gr` - grain
+6. `kg` - kilogram
+7. `lb` - pound
+8. `mg` - milligram
+9. `oz` - ounce
+10. `t oz` - troy ounce
+11. `tbsp` - tablespoon
+12. `tsp` - teaspoon
 >>> args = parser.parse_args(["--water-units-list"])
 >>> run(args)
 Water units list:
@@ -412,15 +415,16 @@ Water units list:
 2. `dsp` - dessertspoon
 3. `fl oz` - fluid ounce
 4. `g` - gram
-5. `kg` - kilogram
-6. `l` - liter 
-7. `lb` - pound
-8. `mg` - milligram
-9. `ml` - milliliter
-10. `oz` - ounce
-11. `pt` - pint
-12. `qt` - quart
-13. `t oz` - troy ounce
-14. `tbsp` - tablespoon
-15. `tsp` - teaspoon
+5. `gr` - grain
+6. `kg` - kilogram
+7. `l` - liter 
+8. `lb` - pound
+9. `mg` - milligram
+10. `ml` - milliliter
+11. `oz` - ounce
+12. `pt` - pint
+13. `qt` - quart
+14. `t oz` - troy ounce
+15. `tbsp` - tablespoon
+16. `tsp` - teaspoon
 """
