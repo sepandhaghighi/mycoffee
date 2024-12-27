@@ -371,4 +371,10 @@ True
 True
 >>> round(convert_water(240, "gr", True), 3) == 15.552 # https://www.metric-conversions.org/weight/grains-to-grams.htm
 True
+>>> round(convert_coffee(240, "ct"), 1) == 1200.0 # https://www.metric-conversions.org/weight/grams-to-carats.htm
+True
+>>> round(convert_water(240, "ct"), 1) == 1200.0 # https://www.metric-conversions.org/weight/grams-to-carats.htm
+True
+>>> round(convert_water(240, "ct", True), 1) == 48.0 # https://www.metric-conversions.org/weight/carats-to-grams.htm
+True
 """
