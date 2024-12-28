@@ -377,4 +377,8 @@ True
 True
 >>> round(convert_water(240, "ct", True), 1) == 48.0 # https://www.metric-conversions.org/weight/carats-to-grams.htm
 True
+>>> round(convert_water(240, "cc"), 1) == 240.0 # https://www.metric-conversions.org/volume/milliliters-to-cubic-centimeters.htm
+True
+>>> round(convert_water(240, "cc", True), 1) == 240.0 # https://www.metric-conversions.org/volume/cubic-centimeters-to-milliliters.htm
+True
 """
