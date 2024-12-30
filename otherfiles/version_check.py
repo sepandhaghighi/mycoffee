@@ -5,7 +5,7 @@ import sys
 import codecs
 
 Failed = 0
-VERSION = "1.0"
+VERSION = "1.1"
 
 README_ITEMS = [
     "[Version {0}](https://github.com/sepandhaghighi/mycoffee/archive/v{0}.zip)",
