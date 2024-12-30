@@ -381,4 +381,8 @@ True
 True
 >>> round(convert_water(240, "cc", True), 1) == 240.0 # https://www.metric-conversions.org/volume/cubic-centimeters-to-milliliters.htm
 True
+>>> round(convert_water(240, "cl"), 1) == 24.0 # https://www.metric-conversions.org/volume/milliliters-to-centiliters.htm
+True
+>>> round(convert_water(240, "cl", True), 1) == 2400.0 # https://www.metric-conversions.org/volume/centiliters-to-milliliters.htm
+True
 """

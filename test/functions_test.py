@@ -158,23 +158,24 @@ Coffee units list:
 Water units list:
 <BLANKLINE>
 1. `cc` - cubic centimeter
-2. `ct` - carat
-3. `cup` - cup
-4. `dsp` - dessertspoon
-5. `fl oz` - fluid ounce
-6. `g` - gram
-7. `gr` - grain
-8. `kg` - kilogram
-9. `l` - liter
-10. `lb` - pound
-11. `mg` - milligram
-12. `ml` - milliliter
-13. `oz` - ounce
-14. `pt` - pint
-15. `qt` - quart
-16. `t oz` - troy ounce
-17. `tbsp` - tablespoon
-18. `tsp` - teaspoon
+2. `cl` - centiliter
+3. `ct` - carat
+4. `cup` - cup
+5. `dsp` - dessertspoon
+6. `fl oz` - fluid ounce
+7. `g` - gram
+8. `gr` - grain
+9. `kg` - kilogram
+10. `l` - liter
+11. `lb` - pound
+12. `mg` - milligram
+13. `ml` - milliliter
+14. `oz` - ounce
+15. `pt` - pint
+16. `qt` - quart
+17. `t oz` - troy ounce
+18. `tbsp` - tablespoon
+19. `tsp` - teaspoon
 >>> test_params = {"method":"v60", "cups":1, "water":335, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method", 'coffee_unit': 'g'}
 >>> calc_coffee(test_params)
 20.1
@@ -416,21 +417,22 @@ Coffee units list:
 Water units list:
 <BLANKLINE>
 1. `cc` - cubic centimeter
-2. `ct` - carat
-3. `cup` - cup
-4. `dsp` - dessertspoon
-5. `fl oz` - fluid ounce
-6. `g` - gram
-7. `gr` - grain
-8. `kg` - kilogram
-9. `l` - liter
-10. `lb` - pound
-11. `mg` - milligram
-12. `ml` - milliliter
-13. `oz` - ounce
-14. `pt` - pint
-15. `qt` - quart
-16. `t oz` - troy ounce
-17. `tbsp` - tablespoon
-18. `tsp` - teaspoon
+2. `cl` - centiliter
+3. `ct` - carat
+4. `cup` - cup
+5. `dsp` - dessertspoon
+6. `fl oz` - fluid ounce
+7. `g` - gram
+8. `gr` - grain
+9. `kg` - kilogram
+10. `l` - liter
+11. `lb` - pound
+12. `mg` - milligram
+13. `ml` - milliliter
+14. `oz` - ounce
+15. `pt` - pint
+16. `qt` - quart
+17. `t oz` - troy ounce
+18. `tbsp` - tablespoon
+19. `tsp` - teaspoon
 """

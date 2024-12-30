@@ -6,15 +6,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
-- 4 new water units
+- 5 new water units
 	1. Troy Ounce (`t oz`)
 	2. Grain (`gr`)
 	3. Carats (`ct`)
 	4. Cubic Centimeters (`cc`)
+	5. Centiliters (`cl`)
 - 3 new coffee units
 	1. Troy Ounce (`t oz`)
 	2. Grain (`gr`)
 	3. Carats (`ct`)
+### Changed
+- `README.md` updated
 ## [1.0] - 2024-12-17
 ### Added
 - 3 new water units
