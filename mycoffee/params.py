@@ -205,6 +205,7 @@ COFFEE_UNITS_MAP = {
     "t oz": {"name": "troy ounce", "rate": 0.032151},
     "gr": {"name": "grain", "rate": 15.4324},
     "ct": {"name": "carat", "rate": 5},
+    "t lb": {"name": "troy pound", "rate": 0.0026792289},
 }
 
 WATER_UNITS_MAP = {
@@ -227,4 +228,5 @@ WATER_UNITS_MAP = {
     "t oz": {"name": "troy ounce", "rate": 0.032151},
     "gr": {"name": "grain", "rate": 15.4324},
     "ct": {"name": "carat", "rate": 5},
+    "t lb": {"name": "troy pound", "rate": 0.0026792289},
 }
