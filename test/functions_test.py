@@ -151,9 +151,10 @@ Coffee units list:
 8. `lb` - pound
 9. `mg` - milligram
 10. `oz` - ounce
-11. `t oz` - troy ounce
-12. `tbsp` - tablespoon
-13. `tsp` - teaspoon
+11. `t lb` - troy pound
+12. `t oz` - troy ounce
+13. `tbsp` - tablespoon
+14. `tsp` - teaspoon
 >>> show_water_units_list()
 Water units list:
 <BLANKLINE>
@@ -173,9 +174,10 @@ Water units list:
 14. `oz` - ounce
 15. `pt` - pint
 16. `qt` - quart
-17. `t oz` - troy ounce
-18. `tbsp` - tablespoon
-19. `tsp` - teaspoon
+17. `t lb` - troy pound
+18. `t oz` - troy ounce
+19. `tbsp` - tablespoon
+20. `tsp` - teaspoon
 >>> test_params = {"method":"v60", "cups":1, "water":335, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method", 'coffee_unit': 'g'}
 >>> calc_coffee(test_params)
 20.1
@@ -409,9 +411,10 @@ Coffee units list:
 8. `lb` - pound
 9. `mg` - milligram
 10. `oz` - ounce
-11. `t oz` - troy ounce
-12. `tbsp` - tablespoon
-13. `tsp` - teaspoon
+11. `t lb` - troy pound
+12. `t oz` - troy ounce
+13. `tbsp` - tablespoon
+14. `tsp` - teaspoon
 >>> args = parser.parse_args(["--water-units-list"])
 >>> run(args)
 Water units list:
@@ -432,7 +435,8 @@ Water units list:
 14. `oz` - ounce
 15. `pt` - pint
 16. `qt` - quart
-17. `t oz` - troy ounce
-18. `tbsp` - tablespoon
-19. `tsp` - teaspoon
+17. `t lb` - troy pound
+18. `t oz` - troy ounce
+19. `tbsp` - tablespoon
+20. `tsp` - teaspoon
 """

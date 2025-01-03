@@ -385,4 +385,10 @@ True
 True
 >>> round(convert_water(240, "cl", True), 1) == 2400.0 # https://www.metric-conversions.org/volume/centiliters-to-milliliters.htm
 True
+>>> round(convert_coffee(240, "t lb"), 3) == 0.643 # https://www.metric-conversions.org/weight/grams-to-troy-pounds.htm
+True
+>>> round(convert_water(240, "t lb"), 3) == 0.643 # https://www.metric-conversions.org/weight/grams-to-troy-pounds.htm
+True
+>>> round(convert_water(240, "t lb", True), 1) == 89578.0 # https://www.metric-conversions.org/weight/troy-pounds-to-grams.htm
+True
 """
