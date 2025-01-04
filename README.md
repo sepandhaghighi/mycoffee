@@ -96,6 +96,8 @@ Water: 250 g
 
 Ratio: 3/50
 
+Grind: 550 um
+
 Info: V60 method
 ```
 
@@ -109,7 +111,7 @@ Info: V60 method
 ℹ️ You can run `mycoffee --water-units-list` to view the supported water units
 
 ```shell
-> mycoffee --method=chemex --water=20 --cups=3 --coffee-ratio=2 --water-ratio=37 --coffee-unit=g --water-unit=g
+> mycoffee --method=chemex --water=20 --cups=3 --coffee-ratio=2 --water-ratio=37 --coffee-unit=g --water-unit=g --grind=750
 
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
@@ -127,6 +129,8 @@ Coffee: 3.243 g
 Water: 20 g
 
 Ratio: 2/37
+
+Grind: 750 um
 
 Info: Chemex method
 ```
@@ -160,6 +164,12 @@ Info: Chemex method
       <td align="center">Indicates the number of cups</td>
       <td align="center">Integer</td>
       <td align="center"><code>1</code></td>
+    </tr>
+	<tr>
+      <td align="center"><code>--grind</code></td>
+      <td align="center">Grind size (um)</td>
+      <td align="center">Integer</td>
+      <td align="center"><code>700</code></td>
     </tr>
     <tr>
       <td align="center"><code>--coffee-ratio</code></td>
