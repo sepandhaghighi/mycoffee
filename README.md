@@ -165,7 +165,7 @@ Info: Chemex method
       <td align="center">Integer</td>
       <td align="center"><code>1</code></td>
     </tr>
-	<tr>
+    <tr>
       <td align="center"><code>--grind</code></td>
       <td align="center">Grind size (um)</td>
       <td align="center">Integer</td>
