@@ -20,6 +20,8 @@ Water: {3} {8}
 
 Ratio: {4}/{5}
 
+Grind: {8} um
+
 Info: {6}
 """
 
