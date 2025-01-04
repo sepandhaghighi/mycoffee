@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - 1 new coffee unit
 	1. Troy Pounds (`t lb`)
 - `--grind` argument
+### Changed
+- `README.md` updated
 ## [1.1] - 2025-01-02
 ### Added
 - 5 new water units
