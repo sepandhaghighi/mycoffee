@@ -245,6 +245,7 @@ Just fill an issue and describe it. We'll check it ASAP!
 <blockquote>22- <a href="https://www.calculator.net/weight-calculator.html">Weight Calculator</a></blockquote>
 <blockquote>23- <a href="https://www.inchcalculator.com/convert/volume/">Volume Conversion Calculator - Inch Calculator</a></blockquote>
 <blockquote>24- <a href="https://www.metric-conversions.org/">Metric Conversion Charts and Calculators</a></blockquote>
+<blockquote>25- <a href="https://honestcoffeeguide.com/coffee-grind-size-chart">Coffee grind size chart</a></blockquote>
 
 ## Show Your Support
 								
