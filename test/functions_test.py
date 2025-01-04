@@ -114,7 +114,7 @@ Info: Nothing :)
 >>> check_ratio_limits(test_params) == True
 True
 >>> chemex_params = load_method_params("chemex")
->>> chemex_params == {'info': 'Chemex method', 'water': 240, 'cups': 1, 'coffee_ratio': 1, 'water_ratio': 15, 'digits': 3, 'coffee_unit': 'g', 'water_unit': 'g'}
+>>> chemex_params == {'info': 'Chemex method', 'water': 240, 'cups': 1, 'coffee_ratio': 1, 'water_ratio': 15, 'digits': 3, 'coffee_unit': 'g', 'water_unit': 'g', 'grind': 670}
 True
 >>> show_methods_list()
 Methods list:
@@ -221,6 +221,7 @@ True
 >>> _ = parser.add_argument('--water-ratio', help='water ratio', type=float)
 >>> _ = parser.add_argument('--water', help='water(ml)', type=float)
 >>> _ = parser.add_argument('--cups', help='number of cups', type=int)
+>>> _ = parser.add_argument('--grind', help='grind size (um)', type=int)
 >>> _ = parser.add_argument('--digits', help='number of digits up to which the result is rounded', type=int, default=3)
 >>> _ = parser.add_argument('--coffee-unit', help='coffee unit', type=str, choices=sorted(COFFEE_UNITS_MAP), default="g")
 >>> _ = parser.add_argument('--water-unit', help='water unit', type=str, choices=sorted(WATER_UNITS_MAP), default="g")
