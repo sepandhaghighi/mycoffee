@@ -17,6 +17,10 @@ True
 True
 >>> METHODS_MAP["v60"]["ratio_lower_limit"] == Fraction(1, 18)
 True
+>>> METHODS_MAP["v60"]["grind_upper_limit"] == 700
+True
+>>> METHODS_MAP["v60"]["grind_lower_limit"] == 400
+True
 >>> v60_params["grind"] == 550 # https://honestcoffeeguide.com/coffee-grind-size-chart/#v60
 True
 >>> chemex_params = load_method_params("chemex") # https://honestcoffeeguide.com/coffee-to-water-ratio-calculator
@@ -32,6 +36,10 @@ True
 >>> METHODS_MAP["chemex"]["ratio_upper_limit"] == Fraction(1, 10)
 True
 >>> METHODS_MAP["chemex"]["ratio_lower_limit"] == Fraction(1, 21)
+True
+>>> METHODS_MAP["chemex"]["grind_upper_limit"] == 930
+True
+>>> METHODS_MAP["chemex"]["grind_lower_limit"] == 410
 True
 >>> chemex_params["grind"] == 670 # https://honestcoffeeguide.com/coffee-grind-size-chart/#pourover
 True
@@ -49,6 +57,10 @@ True
 True
 >>> METHODS_MAP["espresso"]["ratio_lower_limit"] == Fraction(2, 5)
 True
+>>> METHODS_MAP["espresso"]["grind_upper_limit"] == 380
+True
+>>> METHODS_MAP["espresso"]["grind_lower_limit"] == 180
+True
 >>> espresso_params["grind"] == 280 # https://honestcoffeeguide.com/coffee-grind-size-chart/#espresso
 True
 >>> siphon_params = load_method_params("siphon") # https://bluebottlecoffee.com/us/eng/brew-guides/siphon
@@ -64,6 +76,10 @@ True
 >>> METHODS_MAP["siphon"]["ratio_upper_limit"] == Fraction(1, 12)
 True
 >>> METHODS_MAP["siphon"]["ratio_lower_limit"] == Fraction(1, 16)
+True
+>>> METHODS_MAP["siphon"]["grind_upper_limit"] == 800
+True
+>>> METHODS_MAP["siphon"]["grind_lower_limit"] == 375
 True
 >>> siphon_params["grind"] == 588 # https://honestcoffeeguide.com/coffee-grind-size-chart/#siphon
 True
@@ -81,6 +97,10 @@ True
 True
 >>> METHODS_MAP["french-press"]["ratio_lower_limit"] == Fraction(1, 18)
 True
+>>> METHODS_MAP["french-press"]["grind_upper_limit"] == 1300
+True
+>>> METHODS_MAP["french-press"]["grind_lower_limit"] == 690
+True
 >>> french_press_params["grind"] == 995 # https://honestcoffeeguide.com/coffee-grind-size-chart/#french-press
 True
 >>> pour_over_params = load_method_params("pour-over") # https://www.nicolebattefeld.com/post/best-recipes-2022
@@ -96,6 +116,10 @@ True
 >>> METHODS_MAP["pour-over"]["ratio_upper_limit"] == Fraction(1, 14)
 True
 >>> METHODS_MAP["pour-over"]["ratio_lower_limit"] == Fraction(1, 16)
+True
+>>> METHODS_MAP["pour-over"]["grind_upper_limit"] == 930
+True
+>>> METHODS_MAP["pour-over"]["grind_lower_limit"] == 410
 True
 >>> pour_over_params["grind"] == 670 # https://honestcoffeeguide.com/coffee-grind-size-chart/#pourover
 True
@@ -113,6 +137,10 @@ True
 True
 >>> METHODS_MAP["auto-drip"]["ratio_lower_limit"] == Fraction(1, 17)
 True
+>>> METHODS_MAP["auto-drip"]["grind_upper_limit"] == 900
+True
+>>> METHODS_MAP["auto-drip"]["grind_lower_limit"] == 300
+True
 >>> auto_drip_params["grind"] == 600 # https://honestcoffeeguide.com/coffee-grind-size-chart/#filter-coffee-machine
 True
 >>> cold_brew_params = load_method_params("cold-brew") # https://counterculturecoffee.com/blogs/counter-culture-coffee/guide-to-cold-brew
@@ -128,6 +156,10 @@ True
 >>> METHODS_MAP["cold-brew"]["ratio_upper_limit"] == Fraction(1, 8)
 True
 >>> METHODS_MAP["cold-brew"]["ratio_lower_limit"] == Fraction(1, 15)
+True
+>>> METHODS_MAP["cold-brew"]["grind_upper_limit"] == 1400
+True
+>>> METHODS_MAP["cold-brew"]["grind_lower_limit"] == 800
 True
 >>> cold_brew_params["grind"] == 1100 # https://honestcoffeeguide.com/coffee-grind-size-chart/#cold-brew
 True
@@ -145,6 +177,10 @@ True
 True
 >>> METHODS_MAP["cold-brew-conc"]["ratio_lower_limit"] == Fraction(1, 6)
 True
+>>> METHODS_MAP["cold-brew-conc"]["grind_upper_limit"] == 1400
+True
+>>> METHODS_MAP["cold-brew-conc"]["grind_lower_limit"] == 800
+True
 >>> cold_brew_conc_params["grind"] == 1100 # https://honestcoffeeguide.com/coffee-grind-size-chart/#cold-brew
 True
 >>> moka_pot_params = load_method_params("moka-pot") # https://bakedbrewedbeautiful.com/how-to-make-coffee-in-moka-pot
@@ -160,6 +196,10 @@ True
 >>> METHODS_MAP["moka-pot"]["ratio_upper_limit"] == Fraction(1, 7)
 True
 >>> METHODS_MAP["moka-pot"]["ratio_lower_limit"] == Fraction(1, 12)
+True
+>>> METHODS_MAP["moka-pot"]["grind_upper_limit"] == 660
+True
+>>> METHODS_MAP["moka-pot"]["grind_lower_limit"] == 360
 True
 >>> moka_pot_params["grind"] == 510 # https://honestcoffeeguide.com/coffee-grind-size-chart/#moka-pot
 True
@@ -177,6 +217,10 @@ True
 True
 >>> METHODS_MAP["ristretto"]["ratio_lower_limit"] == Fraction(2, 3)
 True
+>>> METHODS_MAP["ristretto"]["grind_upper_limit"] == 380
+True
+>>> METHODS_MAP["ristretto"]["grind_lower_limit"] == 180
+True
 >>> ristretto_params["grind"] == 280 # https://honestcoffeeguide.com/coffee-grind-size-chart/#espresso
 True
 >>> lungo_params = load_method_params("lungo") # https://honestcoffeeguide.com/coffee-to-water-ratio-calculator
@@ -192,6 +236,10 @@ True
 >>> METHODS_MAP["lungo"]["ratio_upper_limit"] == Fraction(2, 5)
 True
 >>> METHODS_MAP["lungo"]["ratio_lower_limit"] == Fraction(1, 4)
+True
+>>> METHODS_MAP["lungo"]["grind_upper_limit"] == 380
+True
+>>> METHODS_MAP["lungo"]["grind_lower_limit"] == 180
 True
 >>> lungo_params["grind"] == 280 # https://honestcoffeeguide.com/coffee-grind-size-chart/#espresso
 True
@@ -209,6 +257,10 @@ True
 True
 >>> METHODS_MAP["turkish"]["ratio_lower_limit"] == Fraction(1, 12)
 True
+>>> METHODS_MAP["turkish"]["grind_upper_limit"] == 220
+True
+>>> METHODS_MAP["turkish"]["grind_lower_limit"] == 40
+True
 >>> turkish_params["grind"] == 130 # https://honestcoffeeguide.com/coffee-grind-size-chart/#turkish-coffee
 True
 >>> cupping_params = load_method_params("cupping") # https://www.horshamcoffeeroaster.co.uk/pages/how-to-cup-coffee
@@ -224,6 +276,10 @@ True
 >>> METHODS_MAP["cupping"]["ratio_upper_limit"] == Fraction(1, 17)
 True
 >>> METHODS_MAP["cupping"]["ratio_lower_limit"] == Fraction(1, 19)
+True
+>>> METHODS_MAP["cupping"]["grind_upper_limit"] == 850
+True
+>>> METHODS_MAP["cupping"]["grind_lower_limit"] == 460
 True
 >>> cupping_params["grind"] == 655 # https://honestcoffeeguide.com/coffee-grind-size-chart/#cupping
 True
@@ -241,6 +297,10 @@ True
 True
 >>> METHODS_MAP["aero-press"]["ratio_lower_limit"] == Fraction(1, 18)
 True
+>>> METHODS_MAP["aero-press"]["grind_upper_limit"] == 960
+True
+>>> METHODS_MAP["aero-press"]["grind_lower_limit"] == 320
+True
 >>> aero_press_params["grind"] == 640 # https://honestcoffeeguide.com/coffee-grind-size-chart/#aeropress
 True
 >>> aero_press_conc_params = load_method_params("aero-press-conc") # https://www.seattlecoffeegear.com/pages/product-resource/aero-press-product-resources
@@ -256,6 +316,10 @@ True
 >>> METHODS_MAP["aero-press-conc"]["ratio_upper_limit"] == Fraction(1, 5)
 True
 >>> METHODS_MAP["aero-press-conc"]["ratio_lower_limit"] == Fraction(1, 7)
+True
+>>> METHODS_MAP["aero-press-conc"]["grind_upper_limit"] == 960
+True
+>>> METHODS_MAP["aero-press-conc"]["grind_lower_limit"] == 320
 True
 >>> aero_press_conc_params["grind"] == 640 # https://honestcoffeeguide.com/coffee-grind-size-chart/#aeropress
 True
@@ -273,6 +337,10 @@ True
 True
 >>> METHODS_MAP["aero-press-inv"]["ratio_lower_limit"] == Fraction(1, 14)
 True
+>>> METHODS_MAP["aero-press-inv"]["grind_upper_limit"] == 960
+True
+>>> METHODS_MAP["aero-press-inv"]["grind_lower_limit"] == 320
+True
 >>> aero_press_inv_params["grind"] == 640 # https://honestcoffeeguide.com/coffee-grind-size-chart/#aeropress
 True
 >>> steep_and_release_params = load_method_params("steep-and-release") # https://squaremileblog.com/brew-guide-clever-dripper/
@@ -288,6 +356,10 @@ True
 >>> METHODS_MAP["steep-and-release"]["ratio_upper_limit"] == Fraction(1, 14)
 True
 >>> METHODS_MAP["steep-and-release"]["ratio_lower_limit"] == Fraction(1, 17)
+True
+>>> METHODS_MAP["steep-and-release"]["grind_upper_limit"] == 825
+True
+>>> METHODS_MAP["steep-and-release"]["grind_lower_limit"] == 450
 True
 >>> steep_and_release_params["grind"] == 638 # https://honestcoffeeguide.com/coffee-grind-size-chart/#steepandrelease
 True
