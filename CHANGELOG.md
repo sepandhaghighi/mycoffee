@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - 1 new coffee unit
 	1. Troy Pounds (`t lb`)
 - `--grind` argument
+- Grind upper limit
+- Grind lower limit
+- `check_grind_limits` function
 ### Changed
 - `README.md` updated
 ## [1.1] - 2025-01-02
