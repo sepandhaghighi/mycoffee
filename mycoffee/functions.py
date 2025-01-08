@@ -171,6 +171,24 @@ def check_ratio_limits(params):
     return True
 
 
+def check_grind_limits(params):
+    """
+    Check grind limits.
+
+    :param params: parameters
+    :type params: dict
+    :return: result as bool (False --> the grind is out of range)
+    """
+    method = params["method"]
+    if "grind_lower_limit" in METHODS_MAP[method] and "grind_upper_limit" in METHODS_MAP[method]:
+        grind = params["grind"]
+        grind_lower_limit = METHODS_MAP[method]["grind_lower_limit"]
+        grind_upper_limit = METHODS_MAP[method]["grind_upper_limit"]
+        if grind < grind_lower_limit or grind > grind_upper_limit:
+            return False
+    return True
+
+
 def convert_coffee(coffee, unit):
     """
     Convert coffee unit.
