@@ -4,7 +4,7 @@ import math
 from mycoffee.params import MESSAGE_TEMPLATE, METHODS_LIST_TEMPLATE, EMPTY_INFO
 from mycoffee.params import MY_COFFEE_VERSION, DEFAULT_PARAMS
 from mycoffee.params import METHODS_MAP, COFFEE_UNITS_MAP, WATER_UNITS_MAP
-from mycoffee.params import RATIO_WARNING_MESSAGE
+from mycoffee.params import RATIO_WARNING_MESSAGE, GRIND_WARNING_MESSAGE
 from art import tprint
 
 
@@ -47,6 +47,10 @@ def print_result(params):
         ratio_lower_limit = METHODS_MAP[method]["ratio_lower_limit"]
         ratio_upper_limit = METHODS_MAP[method]["ratio_upper_limit"]
         print(RATIO_WARNING_MESSAGE.format(method, str(ratio_lower_limit), str(ratio_upper_limit)))
+    if not check_grind_limits(params):
+        grind_lower_limit = METHODS_MAP[method]["grind_lower_limit"]
+        grind_upper_limit = METHODS_MAP[method]["grind_upper_limit"]
+        print(GRIND_WARNING_MESSAGE.format(method, str(grind_lower_limit), str(grind_upper_limit)))
 
 
 def load_method_params(method_name):
