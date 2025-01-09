@@ -1,5 +1,7 @@
 # Methods List
 
+**Last Update: 2025-01-10**
+
 <table>
 	<tr align="center">
 		<th>Title</th>
@@ -222,5 +224,12 @@
 		<td>>=0.4</td>
 	</tr>
 </table>
+
+**Notes**:
+
+- *LL: Lower Limit*
+- *UL: Upper Limit*
+- *g: gram*
+- *um: micrometer*
 
 
