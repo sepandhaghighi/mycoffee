@@ -4,11 +4,11 @@
 	<tr align="center">
 		<th>Title</th>
 		<th>Code</th>
-		<th>Ratio(Recommended)</th>
-		<th>Ratio(Lower Limit)</th>
-		<th>Ratio(Upper Limit)</th>
-		<th>Grind(Lower Limit)</th>
-		<th>Grind(Upper Limit)</th>
+		<th>Ratio</th>
+		<th>Ratio-LL</th>
+		<th>Ratio-UL</th>
+		<th>Grind-LL(um)</th>
+		<th>Grind-UL(um)</th>
 		<th>Water(g)</th>
 		<th>Version</th>
 	</tr>
