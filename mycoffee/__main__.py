@@ -17,7 +17,7 @@ def main():
     parser.add_argument('--info', help='information about the brewing method', type=str)
     parser.add_argument('--coffee-ratio', help='coefficient for the coffee component in the ratio', type=float)
     parser.add_argument('--water-ratio', help='coefficient for the water component in the ratio', type=float)
-    parser.add_argument('--water', help='amount of water in each cup (gr)', type=float)
+    parser.add_argument('--water', help='amount of water in each cup', type=float)
     parser.add_argument('--cups', help='number of cups', type=int)
     parser.add_argument('--grind', help='grind size (um)', type=int)
     parser.add_argument(
