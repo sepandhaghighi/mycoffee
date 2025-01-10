@@ -265,6 +265,7 @@ COFFEE_UNITS_MAP = {
     "gr": {"name": "grain", "rate": 15.4324},
     "ct": {"name": "carat", "rate": 5},
     "t lb": {"name": "troy pound", "rate": 0.0026792289},
+    "dwt": {"name": "pennyweight", "rate": 0.643015},
 }
 
 WATER_UNITS_MAP = {
@@ -288,4 +289,5 @@ WATER_UNITS_MAP = {
     "gr": {"name": "grain", "rate": 15.4324},
     "ct": {"name": "carat", "rate": 5},
     "t lb": {"name": "troy pound", "rate": 0.0026792289},
+    "dwt": {"name": "pennyweight", "rate": 0.643015},
 }
