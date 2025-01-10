@@ -499,4 +499,10 @@ True
 True
 >>> round(convert_water(240, "t lb", True), 1) == 89578.0 # https://www.metric-conversions.org/weight/troy-pounds-to-grams.htm
 True
+>>> round(convert_coffee(240, "dwt"), 2) == 154.32 # https://www.metric-conversions.org/weight/grams-to-pennyweights.htm
+True
+>>> round(convert_water(240, "dwt"), 2) == 154.32 # https://www.metric-conversions.org/weight/grams-to-pennyweights.htm
+True
+>>> round(convert_water(240, "dwt", True), 2) == 373.24 # https://www.metric-conversions.org/weight/pennyweights-to-grams.htm
+True
 """

@@ -219,16 +219,17 @@ Coffee units list:
 2. `ct` - carat
 3. `cup` - cup
 4. `dsp` - dessertspoon
-5. `g` - gram
-6. `gr` - grain
-7. `kg` - kilogram
-8. `lb` - pound
-9. `mg` - milligram
-10. `oz` - ounce
-11. `t lb` - troy pound
-12. `t oz` - troy ounce
-13. `tbsp` - tablespoon
-14. `tsp` - teaspoon
+5. `dwt` - pennyweight
+6. `g` - gram
+7. `gr` - grain
+8. `kg` - kilogram
+9. `lb` - pound
+10. `mg` - milligram
+11. `oz` - ounce
+12. `t lb` - troy pound
+13. `t oz` - troy ounce
+14. `tbsp` - tablespoon
+15. `tsp` - teaspoon
 >>> show_water_units_list()
 Water units list:
 <BLANKLINE>
@@ -237,21 +238,22 @@ Water units list:
 3. `ct` - carat
 4. `cup` - cup
 5. `dsp` - dessertspoon
-6. `fl oz` - fluid ounce
-7. `g` - gram
-8. `gr` - grain
-9. `kg` - kilogram
-10. `l` - liter
-11. `lb` - pound
-12. `mg` - milligram
-13. `ml` - milliliter
-14. `oz` - ounce
-15. `pt` - pint
-16. `qt` - quart
-17. `t lb` - troy pound
-18. `t oz` - troy ounce
-19. `tbsp` - tablespoon
-20. `tsp` - teaspoon
+6. `dwt` - pennyweight
+7. `fl oz` - fluid ounce
+8. `g` - gram
+9. `gr` - grain
+10. `kg` - kilogram
+11. `l` - liter
+12. `lb` - pound
+13. `mg` - milligram
+14. `ml` - milliliter
+15. `oz` - ounce
+16. `pt` - pint
+17. `qt` - quart
+18. `t lb` - troy pound
+19. `t oz` - troy ounce
+20. `tbsp` - tablespoon
+21. `tsp` - teaspoon
 >>> test_params = {"method":"v60", "cups":1, "water":335, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method", 'coffee_unit': 'g'}
 >>> calc_coffee(test_params)
 20.1
@@ -482,16 +484,17 @@ Coffee units list:
 2. `ct` - carat
 3. `cup` - cup
 4. `dsp` - dessertspoon
-5. `g` - gram
-6. `gr` - grain
-7. `kg` - kilogram
-8. `lb` - pound
-9. `mg` - milligram
-10. `oz` - ounce
-11. `t lb` - troy pound
-12. `t oz` - troy ounce
-13. `tbsp` - tablespoon
-14. `tsp` - teaspoon
+5. `dwt` - pennyweight
+6. `g` - gram
+7. `gr` - grain
+8. `kg` - kilogram
+9. `lb` - pound
+10. `mg` - milligram
+11. `oz` - ounce
+12. `t lb` - troy pound
+13. `t oz` - troy ounce
+14. `tbsp` - tablespoon
+15. `tsp` - teaspoon
 >>> args = parser.parse_args(["--water-units-list"])
 >>> run(args)
 Water units list:
@@ -501,19 +504,20 @@ Water units list:
 3. `ct` - carat
 4. `cup` - cup
 5. `dsp` - dessertspoon
-6. `fl oz` - fluid ounce
-7. `g` - gram
-8. `gr` - grain
-9. `kg` - kilogram
-10. `l` - liter
-11. `lb` - pound
-12. `mg` - milligram
-13. `ml` - milliliter
-14. `oz` - ounce
-15. `pt` - pint
-16. `qt` - quart
-17. `t lb` - troy pound
-18. `t oz` - troy ounce
-19. `tbsp` - tablespoon
-20. `tsp` - teaspoon
+6. `dwt` - pennyweight
+7. `fl oz` - fluid ounce
+8. `g` - gram
+9. `gr` - grain
+10. `kg` - kilogram
+11. `l` - liter
+12. `lb` - pound
+13. `mg` - milligram
+14. `ml` - milliliter
+15. `oz` - ounce
+16. `pt` - pint
+17. `qt` - quart
+18. `t lb` - troy pound
+19. `t oz` - troy ounce
+20. `tbsp` - tablespoon
+21. `tsp` - teaspoon
 """

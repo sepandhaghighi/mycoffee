@@ -6,10 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
-- 1 new water unit
+- 2 new water units
 	1. Troy Pounds (`t lb`)
-- 1 new coffee unit
+	2. Pennyweight (`dwt`)
+- 2 new coffee units
 	1. Troy Pounds (`t lb`)
+	2. Pennyweight (`dwt`)
 - `--grind` argument
 - Grind upper limit
 - Grind lower limit
