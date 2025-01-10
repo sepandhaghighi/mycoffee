@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `check_grind_limits` function
 ### Changed
 - `README.md` updated
+- `METHODS.md` updated
 ## [1.1] - 2025-01-02
 ### Added
 - 5 new water units
