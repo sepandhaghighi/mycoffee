@@ -297,7 +297,7 @@ True
 >>> _ = parser.add_argument('--info', help='brewing method info', type=str)
 >>> _ = parser.add_argument('--coffee-ratio', help='coffee ratio', type=float)
 >>> _ = parser.add_argument('--water-ratio', help='water ratio', type=float)
->>> _ = parser.add_argument('--water', help='water(ml)', type=float)
+>>> _ = parser.add_argument('--water', help='water', type=float)
 >>> _ = parser.add_argument('--cups', help='number of cups', type=int)
 >>> _ = parser.add_argument('--grind', help='grind size (um)', type=int)
 >>> _ = parser.add_argument('--digits', help='number of digits up to which the result is rounded', type=int, default=3)
