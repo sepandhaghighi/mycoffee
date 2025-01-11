@@ -2,7 +2,7 @@
 """mycoffee params."""
 from fractions import Fraction
 
-MY_COFFEE_VERSION = "1.1"
+MY_COFFEE_VERSION = "1.2"
 INPUT_ERROR_MESSAGE = "[Error] Wrong input"
 RATIO_WARNING_MESSAGE = "[Warning] The ratio is not within the standard range. For `{0}`, the ratio can be anywhere between `{1}` and `{2}`"
 GRIND_WARNING_MESSAGE = "[Warning] The grind size is not within the standard range. For `{0}`, the grind size can be anywhere between `{1} um` and `{2} um`"
