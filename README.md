@@ -111,7 +111,7 @@ Info: V60 method
 ℹ️ You can run `mycoffee --water-units-list` to view the supported water units
 
 ```shell
-> mycoffee --method=chemex --water=20 --cups=3 --coffee-ratio=2 --water-ratio=37 --coffee-unit=g --water-unit=g --grind=750
+> mycoffee --method=chemex --water=20 --cups=3 --coffee-ratio=2 --water-ratio=37 --coffee-unit="t oz" --water-unit="fl oz" --grind=750
 
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
@@ -124,9 +124,9 @@ Method: `chemex`
 
 Cups: 3
 
-Coffee: 3.243 g
+Coffee: 3.084 t oz
 
-Water: 20 g
+Water: 20 fl oz
 
 Ratio: 2/37
 
