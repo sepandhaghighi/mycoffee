@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """mycoffee functions."""
 import math
-from fractions import Fraction
 from mycoffee.params import MESSAGE_TEMPLATE, METHODS_LIST_TEMPLATE, EMPTY_INFO
 from mycoffee.params import MY_COFFEE_VERSION, DEFAULT_PARAMS
 from mycoffee.params import METHODS_MAP, COFFEE_UNITS_MAP, WATER_UNITS_MAP
@@ -168,9 +167,9 @@ def check_ratio_limits(params):
     """
     method = params["method"]
     if "ratio_lower_limit" in METHODS_MAP[method] and "ratio_upper_limit" in METHODS_MAP[method]:
-        ratio = Fraction(params["coffee_ratio"], params["water_ratio"])
-        ratio_lower_limit = METHODS_MAP[method]["ratio_lower_limit"]
-        ratio_upper_limit = METHODS_MAP[method]["ratio_upper_limit"]
+        ratio = params["coffee_ratio"] / params["water_ratio"]
+        ratio_lower_limit = float(METHODS_MAP[method]["ratio_lower_limit"])
+        ratio_upper_limit = float(METHODS_MAP[method]["ratio_upper_limit"])
         if ratio < ratio_lower_limit or ratio > ratio_upper_limit:
             return False
     return True
