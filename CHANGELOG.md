@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Changed
 - `README.md` updated
+- `check_ratio_limits` function bug fixed
 ## [1.2] - 2025-01-13
 ### Added
 - 2 new water units
