@@ -40,9 +40,9 @@ Info: V60 method
 <BLANKLINE>
 >>> test_params = {"method":"v60", "cups":2, "coffee":60, "water":500, "coffee_ratio": 3, "water_ratio":50, "info":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 600}
 >>> test_params = filter_params(test_params)
->>> check_ratio_limits(test_params) == True
+>>> check_ratio_limits(test_params)
 True
->>> check_grind_limits(test_params) == True
+>>> check_grind_limits(test_params)
 True
 >>> print_result(test_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
@@ -68,9 +68,9 @@ Info: Nothing :)
 <BLANKLINE>
 >>> test_params = {"method":"v60", "cups":2, "coffee":60, "water":0.5, "coffee_ratio": 3, "water_ratio":50, "info":"", "digits":3, "coffee_unit": "g", "water_unit": "kg", "grind": 700}
 >>> test_params = filter_params(test_params)
->>> check_ratio_limits(test_params) == True
+>>> check_ratio_limits(test_params)
 True
->>> check_grind_limits(test_params) == True
+>>> check_grind_limits(test_params)
 True
 >>> print_result(test_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
@@ -96,9 +96,9 @@ Info: Nothing :)
 <BLANKLINE>
 >>> test_params = {"method":"v60", "cups":2, "coffee":6.0, "water":500, "coffee_ratio": 6, "water_ratio":1000, "info":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 500}
 >>> test_params = filter_params(test_params)
->>> check_ratio_limits(test_params) == False
-True
->>> check_grind_limits(test_params) == True
+>>> check_ratio_limits(test_params)
+False
+>>> check_grind_limits(test_params)
 True
 >>> print_result(test_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
@@ -125,10 +125,10 @@ Info: Nothing :)
 [Warning] The ratio is not within the standard range. For `v60`, the ratio can be anywhere between `1/18` and `1/14`
 >>> test_params = {"method":"v60", "cups":2, "coffee":27.7, "water":500, "coffee_ratio": 1, "water_ratio":18, "info":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 1400}
 >>> test_params = filter_params(test_params)
->>> check_ratio_limits(test_params) == True
+>>> check_ratio_limits(test_params)
 True
->>> check_grind_limits(test_params) == False
-True
+>>> check_grind_limits(test_params)
+False
 >>> print_result(test_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
@@ -154,10 +154,10 @@ Info: Nothing :)
 [Warning] The grind size is not within the standard range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
 >>> test_params = {"method":"v60", "cups":2, "coffee":27.7, "water":500, "coffee_ratio": 1, "water_ratio":18, "info":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 20}
 >>> test_params = filter_params(test_params)
->>> check_ratio_limits(test_params) == True
+>>> check_ratio_limits(test_params)
 True
->>> check_grind_limits(test_params) == False
-True
+>>> check_grind_limits(test_params)
+False
 >>> print_result(test_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
@@ -183,21 +183,21 @@ Info: Nothing :)
 [Warning] The grind size is not within the standard range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
 >>> test_params = {"method":"custom", "cups":2, "coffee":6.0, "water":500, "coffee_ratio": 6, "water_ratio":1000, "info":"", "digits":3, "coffee_unit": "g"}
 >>> test_params = filter_params(test_params)
->>> check_ratio_limits(test_params) == True
+>>> check_ratio_limits(test_params)
 True
->>> check_grind_limits(test_params) == True
+>>> check_grind_limits(test_params)
 True
 >>> test_params = {"method":"v60", "cups":2, "coffee":27.7, "water":500, "coffee_ratio": 1.2, "water_ratio":18.4, "info":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 20}
 >>> test_params = filter_params(test_params)
->>> check_ratio_limits(test_params) == True
+>>> check_ratio_limits(test_params)
 True
->>> check_grind_limits(test_params) == False
-True
+>>> check_grind_limits(test_params)
+False
 >>> test_params = {"method":"v60", "cups":2, "coffee":27.7, "water":500, "coffee_ratio": 1.2, "water_ratio":50.1, "info":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 20}
->>> check_ratio_limits(test_params) == False
-True
->>> check_grind_limits(test_params) == False
-True
+>>> check_ratio_limits(test_params)
+False
+>>> check_grind_limits(test_params)
+False
 >>> chemex_params = load_method_params("chemex")
 >>> chemex_params == {'info': 'Chemex method', 'water': 240, 'cups': 1, 'coffee_ratio': 1, 'water_ratio': 15, 'digits': 3, 'coffee_unit': 'g', 'water_unit': 'g', 'grind': 670}
 True
