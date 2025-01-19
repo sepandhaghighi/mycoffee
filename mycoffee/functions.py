@@ -31,6 +31,7 @@ def print_result(params):
     """
     method = params["method"]
     tprint("MyCoffee", font="bulbhead")
+    grind_type = get_grind_type(params["grind"])
     print(
         MESSAGE_TEMPLATE.format(
             method,
@@ -42,7 +43,8 @@ def print_result(params):
             params["info"],
             params["coffee_unit"],
             params["water_unit"],
-            params["grind"]))
+            params["grind"],
+            grind_type))
     if not check_ratio_limits(params):
         ratio_lower_limit = METHODS_MAP[method]["ratio_lower_limit"]
         ratio_upper_limit = METHODS_MAP[method]["ratio_upper_limit"]
