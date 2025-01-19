@@ -54,6 +54,7 @@ def print_result(params):
         grind_upper_limit = METHODS_MAP[method]["grind_upper_limit"]
         print(GRIND_WARNING_MESSAGE.format(method, str(grind_lower_limit), str(grind_upper_limit)))
 
+
 def get_grind_type(grind):
     """
     Return grind type.
@@ -75,6 +76,7 @@ def get_grind_type(grind):
     elif grind <= 1200:
         return "Coarse"
     return "Extra-Coarse"
+
 
 def load_method_params(method_name):
     """
