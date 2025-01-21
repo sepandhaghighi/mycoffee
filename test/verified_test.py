@@ -505,4 +505,18 @@ True
 True
 >>> round(convert_water(240, "dwt", True), 2) == 373.24 # https://www.metric-conversions.org/weight/pennyweights-to-grams.htm
 True
+>>> get_grind_type(100) == "Extra-Fine" # https://honestcoffeeguide.com/coffee-grind-size-chart/
+True
+>>> get_grind_type(300) == "Fine" # https://honestcoffeeguide.com/coffee-grind-size-chart/
+True
+>>> get_grind_type(500) == "Medium-Fine" # https://honestcoffeeguide.com/coffee-grind-size-chart/
+True
+>>> get_grind_type(700) == "Medium" # https://honestcoffeeguide.com/coffee-grind-size-chart/
+True
+>>> get_grind_type(900) == "Medium-Coarse" # https://honestcoffeeguide.com/coffee-grind-size-chart/
+True
+>>> get_grind_type(1100) == "Coarse" # https://honestcoffeeguide.com/coffee-grind-size-chart/
+True
+>>> get_grind_type(1300) == "Extra-Coarse" # https://honestcoffeeguide.com/coffee-grind-size-chart/
+True
 """

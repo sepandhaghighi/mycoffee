@@ -21,7 +21,7 @@ Water: {3} {8}
 
 Ratio: {4}/{5}
 
-Grind: {9} um
+Grind: {9} um ({10})
 
 Info: {6}
 """

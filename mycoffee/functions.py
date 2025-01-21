@@ -31,6 +31,7 @@ def print_result(params):
     """
     method = params["method"]
     tprint("MyCoffee", font="bulbhead")
+    grind_type = get_grind_type(params["grind"])
     print(
         MESSAGE_TEMPLATE.format(
             method,
@@ -42,7 +43,8 @@ def print_result(params):
             params["info"],
             params["coffee_unit"],
             params["water_unit"],
-            params["grind"]))
+            params["grind"],
+            grind_type))
     if not check_ratio_limits(params):
         ratio_lower_limit = METHODS_MAP[method]["ratio_lower_limit"]
         ratio_upper_limit = METHODS_MAP[method]["ratio_upper_limit"]
@@ -51,6 +53,29 @@ def print_result(params):
         grind_lower_limit = METHODS_MAP[method]["grind_lower_limit"]
         grind_upper_limit = METHODS_MAP[method]["grind_upper_limit"]
         print(GRIND_WARNING_MESSAGE.format(method, str(grind_lower_limit), str(grind_upper_limit)))
+
+
+def get_grind_type(grind):
+    """
+    Return grind type.
+
+    :param grind: grind size
+    :type grind: int
+    :return: grind type as str
+    """
+    if grind <= 200:
+        return "Extra-Fine"
+    elif grind <= 400:
+        return "Fine"
+    elif grind <= 600:
+        return "Medium-Fine"
+    elif grind <= 800:
+        return "Medium"
+    elif grind <= 1000:
+        return "Medium-Coarse"
+    elif grind <= 1200:
+        return "Coarse"
+    return "Extra-Coarse"
 
 
 def load_method_params(method_name):

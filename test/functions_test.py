@@ -15,6 +15,8 @@
 0.001
 >>> convert_water(1, "kg", True)
 1000.0
+>>> get_grind_type(100)
+'Extra-Fine'
 >>> test_params = {"method":"v60", "cups":2, "coffee":60, "water":500, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method", "coffee_unit": "g", "water_unit": "g", "grind": 500}
 >>> print_result(test_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
@@ -34,7 +36,7 @@ Water: 500 g
 <BLANKLINE>
 Ratio: 3/50
 <BLANKLINE>
-Grind: 500 um
+Grind: 500 um (Medium-Fine)
 <BLANKLINE>
 Info: V60 method
 <BLANKLINE>
@@ -62,7 +64,7 @@ Water: 500 g
 <BLANKLINE>
 Ratio: 3/50
 <BLANKLINE>
-Grind: 600 um
+Grind: 600 um (Medium-Fine)
 <BLANKLINE>
 Info: Nothing :)
 <BLANKLINE>
@@ -90,7 +92,7 @@ Water: 0.5 kg
 <BLANKLINE>
 Ratio: 3/50
 <BLANKLINE>
-Grind: 700 um
+Grind: 700 um (Medium)
 <BLANKLINE>
 Info: Nothing :)
 <BLANKLINE>
@@ -118,7 +120,7 @@ Water: 500 g
 <BLANKLINE>
 Ratio: 6/1000
 <BLANKLINE>
-Grind: 500 um
+Grind: 500 um (Medium-Fine)
 <BLANKLINE>
 Info: Nothing :)
 <BLANKLINE>
@@ -147,7 +149,7 @@ Water: 500 g
 <BLANKLINE>
 Ratio: 1/18
 <BLANKLINE>
-Grind: 1400 um
+Grind: 1400 um (Extra-Coarse)
 <BLANKLINE>
 Info: Nothing :)
 <BLANKLINE>
@@ -176,7 +178,7 @@ Water: 500 g
 <BLANKLINE>
 Ratio: 1/18
 <BLANKLINE>
-Grind: 20 um
+Grind: 20 um (Extra-Fine)
 <BLANKLINE>
 Info: Nothing :)
 <BLANKLINE>
@@ -339,7 +341,7 @@ Water: 250 g
 <BLANKLINE>
 Ratio: 3/50
 <BLANKLINE>
-Grind: 550 um
+Grind: 550 um (Medium-Fine)
 <BLANKLINE>
 Info: V60 method
 <BLANKLINE>
