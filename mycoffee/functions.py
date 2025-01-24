@@ -9,38 +9,38 @@ from mycoffee.params import RATIO_WARNING_MESSAGE, GRIND_WARNING_MESSAGE
 from mycoffee.params import POSITIVE_INTEGER_ERROR_MESSAGE, POSITIVE_FLOAT_ERROR_MESSAGE
 from art import tprint
 
-def validate_positive_int(value):
+def validate_positive_int(string):
     """
-    Validate that the input is a positive integer.
+    Validate that the input string is a positive integer.
 
-    :param value: input value
-    :type value: any
-    :return: the validated positive integer or argparse.ArgumentTypeError
+    :param string: input string
+    :type string: str
+    :return: the validated positive integer or raise argparse.ArgumentTypeError
     """
     try:
-        number = int(value)
+        number = int(string)
         if number <= 0:
             raise Exception
         return number
     except Exception:
-        raise argparse.ArgumentTypeError(POSITIVE_INTEGER_ERROR_MESSAGE.format(value=value))
+        raise argparse.ArgumentTypeError(POSITIVE_INTEGER_ERROR_MESSAGE.format(string=string))
 
 
-def validate_positive_float(value):
+def validate_positive_float(string):
     """
-    Validate that the input is a positive float.
+    Validate that the input string is a positive float.
 
-    :param value: input value
-    :type value: any
-    :return: the validated positive float or argparse.ArgumentTypeError
+    :param string: input string
+    :type string: str
+    :return: the validated positive float or raise argparse.ArgumentTypeError
     """
     try:
-        number = float(value)
+        number = float(string)
         if number <= 0:
             raise Exception
         return number
     except Exception:
-        raise argparse.ArgumentTypeError(POSITIVE_FLOAT_ERROR_MESSAGE.format(value=value))
+        raise argparse.ArgumentTypeError(POSITIVE_FLOAT_ERROR_MESSAGE.format(string=string))
 
 
 def is_int(number):
