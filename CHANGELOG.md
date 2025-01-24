@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - `get_grind_type` function
+- `validate_positive_int` function
+- `validate_positive_float` function
 ### Changed
 - `README.md` updated
 - `check_ratio_limits` function bug fixed
