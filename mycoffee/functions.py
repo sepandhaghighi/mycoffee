@@ -9,6 +9,7 @@ from mycoffee.params import RATIO_WARNING_MESSAGE, GRIND_WARNING_MESSAGE
 from mycoffee.params import POSITIVE_INTEGER_ERROR_MESSAGE, POSITIVE_FLOAT_ERROR_MESSAGE
 from art import tprint
 
+
 def validate_positive_int(string):
     """
     Validate that the input string is a positive integer.

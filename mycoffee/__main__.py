@@ -15,8 +15,14 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--method', help='brewing method', type=str, choices=sorted(METHODS_MAP), default="custom")
     parser.add_argument('--info', help='information about the brewing method', type=str)
-    parser.add_argument('--coffee-ratio', help='coefficient for the coffee component in the ratio', type=validate_positive_float)
-    parser.add_argument('--water-ratio', help='coefficient for the water component in the ratio', type=validate_positive_float)
+    parser.add_argument(
+        '--coffee-ratio',
+        help='coefficient for the coffee component in the ratio',
+        type=validate_positive_float)
+    parser.add_argument(
+        '--water-ratio',
+        help='coefficient for the water component in the ratio',
+        type=validate_positive_float)
     parser.add_argument('--water', help='amount of water in each cup', type=validate_positive_float)
     parser.add_argument('--cups', help='number of cups', type=validate_positive_int)
     parser.add_argument('--grind', help='grind size (um)', type=validate_positive_int)
