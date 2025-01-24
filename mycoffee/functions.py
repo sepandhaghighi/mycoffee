@@ -6,6 +6,7 @@ from mycoffee.params import MESSAGE_TEMPLATE, METHODS_LIST_TEMPLATE, EMPTY_INFO
 from mycoffee.params import MY_COFFEE_VERSION, DEFAULT_PARAMS
 from mycoffee.params import METHODS_MAP, COFFEE_UNITS_MAP, WATER_UNITS_MAP
 from mycoffee.params import RATIO_WARNING_MESSAGE, GRIND_WARNING_MESSAGE
+from mycoffee.params import POSITIVE_INTEGER_ERROR_MESSAGE, POSITIVE_FLOAT_ERROR_MESSAGE
 from art import tprint
 
 def validate_positive_int(value):
@@ -22,7 +23,7 @@ def validate_positive_int(value):
             raise Exception
         return number
     except Exception:
-        raise argparse.ArgumentTypeError("invalid positive-int value: '{value}'".format(value=value))
+        raise argparse.ArgumentTypeError(POSITIVE_INTEGER_ERROR_MESSAGE.format(value=value))
 
 
 def validate_positive_float(value):
@@ -39,7 +40,7 @@ def validate_positive_float(value):
             raise Exception
         return number
     except Exception:
-        raise argparse.ArgumentTypeError("invalid positive-float value: '{value}'".format(value=value))
+        raise argparse.ArgumentTypeError(POSITIVE_FLOAT_ERROR_MESSAGE.format(value=value))
 
 
 def is_int(number):
