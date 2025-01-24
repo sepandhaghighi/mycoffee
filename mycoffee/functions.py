@@ -8,13 +8,13 @@ from mycoffee.params import METHODS_MAP, COFFEE_UNITS_MAP, WATER_UNITS_MAP
 from mycoffee.params import RATIO_WARNING_MESSAGE, GRIND_WARNING_MESSAGE
 from art import tprint
 
-def positive_int(value):
+def validate_positive_int(value):
     """
     Validate that the input is a positive integer.
 
-    :param value: Input value
+    :param value: input value
     :type value: any
-    :return: the validated positive integer or argparse.ArgumentTypeError: if the input is not a positive integer
+    :return: the validated positive integer or argparse.ArgumentTypeError
     """
     try:
         number = int(value)
@@ -23,6 +23,23 @@ def positive_int(value):
         return number
     except Exception:
         raise argparse.ArgumentTypeError("invalid positive-int value: '{value}'".format(value=value))
+
+
+def validate_positive_float(value):
+    """
+    Validate that the input is a positive float.
+
+    :param value: input value
+    :type value: any
+    :return: the validated positive float or argparse.ArgumentTypeError
+    """
+    try:
+        number = float(value)
+        if number <= 0:
+            raise Exception
+        return number
+    except Exception:
+        raise argparse.ArgumentTypeError("invalid positive-float value: '{value}'".format(value=value))
 
 
 def is_int(number):
