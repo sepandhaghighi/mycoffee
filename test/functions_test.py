@@ -533,6 +533,8 @@ Water units list:
 19. `t oz` - troy ounce
 20. `tbsp` - tablespoon
 21. `tsp` - teaspoon
+>>> validate_positive_int("2")
+2
 >>> validate_positive_int("2.0")
 Traceback (most recent call last):
     ...
@@ -549,4 +551,18 @@ argparse.ArgumentTypeError: invalid positive-int value: '-20'
 Traceback (most recent call last):
     ...
 argparse.ArgumentTypeError: invalid positive-int value: '0'
+>>> validate_positive_float("2")
+2.0
+>>> validate_positive_float("0")
+Traceback (most recent call last):
+    ...
+argparse.ArgumentTypeError: invalid positive-float value: '0'
+>>> validate_positive_float("-20")
+Traceback (most recent call last):
+    ...
+argparse.ArgumentTypeError: invalid positive-float value: '-20'
+>>> validate_positive_float("a")
+Traceback (most recent call last):
+    ...
+argparse.ArgumentTypeError: invalid positive-float value: 'a'
 """
