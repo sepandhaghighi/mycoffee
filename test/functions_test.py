@@ -311,7 +311,7 @@ True
 >>> _ = parser.add_argument('--water', help='water', type=validate_positive_float)
 >>> _ = parser.add_argument('--cups', help='number of cups', type=validate_positive_int)
 >>> _ = parser.add_argument('--grind', help='grind size (um)', type=validate_positive_int)
->>> _ = parser.add_argument('--digits', help='number of digits up to which the result is rounded', type=validate_positive_int, default=3)
+>>> _ = parser.add_argument('--digits', help='number of digits up to which the result is rounded', type=int, default=3)
 >>> _ = parser.add_argument('--coffee-unit', help='coffee unit', type=str, choices=sorted(COFFEE_UNITS_MAP), default="g")
 >>> _ = parser.add_argument('--water-unit', help='water unit', type=str, choices=sorted(WATER_UNITS_MAP), default="g")
 >>> _ = parser.add_argument('--coffee-units-list', help='coffee units list', nargs="?", const=1)

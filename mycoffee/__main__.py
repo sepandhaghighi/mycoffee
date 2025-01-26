@@ -29,7 +29,7 @@ def main():
     parser.add_argument(
         '--digits',
         help='number of digits up to which the result is rounded',
-        type=validate_positive_int,
+        type=int,
         default=3)
     parser.add_argument('--coffee-unit', help='coffee unit', type=str, choices=sorted(COFFEE_UNITS_MAP), default="g")
     parser.add_argument('--water-unit', help='water unit', type=str, choices=sorted(WATER_UNITS_MAP), default="g")
