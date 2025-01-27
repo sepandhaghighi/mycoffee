@@ -538,31 +538,31 @@ Water units list:
 >>> validate_positive_int("2.0")
 Traceback (most recent call last):
     ...
-argparse.ArgumentTypeError: invalid positive-int value: '2.0'
+argparse.ArgumentTypeError: invalid positive int value: '2.0'
 >>> validate_positive_int("a")
 Traceback (most recent call last):
     ...
-argparse.ArgumentTypeError: invalid positive-int value: 'a'
+argparse.ArgumentTypeError: invalid positive int value: 'a'
 >>> validate_positive_int("-20")
 Traceback (most recent call last):
     ...
-argparse.ArgumentTypeError: invalid positive-int value: '-20'
+argparse.ArgumentTypeError: invalid positive int value: '-20'
 >>> validate_positive_int("0")
 Traceback (most recent call last):
     ...
-argparse.ArgumentTypeError: invalid positive-int value: '0'
+argparse.ArgumentTypeError: invalid positive int value: '0'
 >>> validate_positive_float("2")
 2.0
 >>> validate_positive_float("0")
 Traceback (most recent call last):
     ...
-argparse.ArgumentTypeError: invalid positive-float value: '0'
+argparse.ArgumentTypeError: invalid positive float value: '0'
 >>> validate_positive_float("-20")
 Traceback (most recent call last):
     ...
-argparse.ArgumentTypeError: invalid positive-float value: '-20'
+argparse.ArgumentTypeError: invalid positive float value: '-20'
 >>> validate_positive_float("a")
 Traceback (most recent call last):
     ...
-argparse.ArgumentTypeError: invalid positive-float value: 'a'
+argparse.ArgumentTypeError: invalid positive float value: 'a'
 """
