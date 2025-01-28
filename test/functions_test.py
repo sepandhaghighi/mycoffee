@@ -306,11 +306,11 @@ True
 >>> parser = argparse.ArgumentParser()
 >>> _ = parser.add_argument('--method', help='brewing method', type=str, choices=sorted(METHODS_MAP), default="custom")
 >>> _ = parser.add_argument('--info', help='brewing method info', type=str)
->>> _ = parser.add_argument('--coffee-ratio', help='coffee ratio', type=float)
->>> _ = parser.add_argument('--water-ratio', help='water ratio', type=float)
->>> _ = parser.add_argument('--water', help='water', type=float)
->>> _ = parser.add_argument('--cups', help='number of cups', type=int)
->>> _ = parser.add_argument('--grind', help='grind size (um)', type=int)
+>>> _ = parser.add_argument('--coffee-ratio', help='coffee ratio', type=validate_positive_float)
+>>> _ = parser.add_argument('--water-ratio', help='water ratio', type=validate_positive_float)
+>>> _ = parser.add_argument('--water', help='water', type=validate_positive_float)
+>>> _ = parser.add_argument('--cups', help='number of cups', type=validate_positive_int)
+>>> _ = parser.add_argument('--grind', help='grind size (um)', type=validate_positive_int)
 >>> _ = parser.add_argument('--digits', help='number of digits up to which the result is rounded', type=int, default=3)
 >>> _ = parser.add_argument('--coffee-unit', help='coffee unit', type=str, choices=sorted(COFFEE_UNITS_MAP), default="g")
 >>> _ = parser.add_argument('--water-unit', help='water unit', type=str, choices=sorted(WATER_UNITS_MAP), default="g")
@@ -533,4 +533,36 @@ Water units list:
 19. `t oz` - troy ounce
 20. `tbsp` - tablespoon
 21. `tsp` - teaspoon
+>>> validate_positive_int("2")
+2
+>>> validate_positive_int("2.0")
+Traceback (most recent call last):
+    ...
+argparse.ArgumentTypeError: invalid positive int value: '2.0'
+>>> validate_positive_int("a")
+Traceback (most recent call last):
+    ...
+argparse.ArgumentTypeError: invalid positive int value: 'a'
+>>> validate_positive_int("-20")
+Traceback (most recent call last):
+    ...
+argparse.ArgumentTypeError: invalid positive int value: '-20'
+>>> validate_positive_int("0")
+Traceback (most recent call last):
+    ...
+argparse.ArgumentTypeError: invalid positive int value: '0'
+>>> validate_positive_float("2")
+2.0
+>>> validate_positive_float("0")
+Traceback (most recent call last):
+    ...
+argparse.ArgumentTypeError: invalid positive float value: '0'
+>>> validate_positive_float("-20")
+Traceback (most recent call last):
+    ...
+argparse.ArgumentTypeError: invalid positive float value: '-20'
+>>> validate_positive_float("a")
+Traceback (most recent call last):
+    ...
+argparse.ArgumentTypeError: invalid positive float value: 'a'
 """

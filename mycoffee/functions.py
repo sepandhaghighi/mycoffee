@@ -1,11 +1,47 @@
 # -*- coding: utf-8 -*-
 """mycoffee functions."""
 import math
+import argparse
 from mycoffee.params import MESSAGE_TEMPLATE, METHODS_LIST_TEMPLATE, EMPTY_INFO
 from mycoffee.params import MY_COFFEE_VERSION, DEFAULT_PARAMS
 from mycoffee.params import METHODS_MAP, COFFEE_UNITS_MAP, WATER_UNITS_MAP
 from mycoffee.params import RATIO_WARNING_MESSAGE, GRIND_WARNING_MESSAGE
+from mycoffee.params import POSITIVE_INTEGER_ERROR_MESSAGE, POSITIVE_FLOAT_ERROR_MESSAGE
 from art import tprint
+
+
+def validate_positive_int(string):
+    """
+    Validate that the input string is a positive integer.
+
+    :param string: input string
+    :type string: str
+    :return: the validated positive integer or raise argparse.ArgumentTypeError
+    """
+    try:
+        number = int(string)
+        if number <= 0:
+            raise Exception
+        return number
+    except Exception:
+        raise argparse.ArgumentTypeError(POSITIVE_INTEGER_ERROR_MESSAGE.format(string=string))
+
+
+def validate_positive_float(string):
+    """
+    Validate that the input string is a positive float.
+
+    :param string: input string
+    :type string: str
+    :return: the validated positive float or raise argparse.ArgumentTypeError
+    """
+    try:
+        number = float(string)
+        if number <= 0:
+            raise Exception
+        return number
+    except Exception:
+        raise argparse.ArgumentTypeError(POSITIVE_FLOAT_ERROR_MESSAGE.format(string=string))
 
 
 def is_int(number):

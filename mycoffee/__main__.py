@@ -2,7 +2,7 @@
 """mycoffee main."""
 from mycoffee.params import METHODS_MAP, EXIT_MESSAGE
 from mycoffee.params import COFFEE_UNITS_MAP, WATER_UNITS_MAP
-from mycoffee.functions import run
+from mycoffee.functions import run, validate_positive_int, validate_positive_float
 import argparse
 
 
@@ -15,11 +15,17 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--method', help='brewing method', type=str, choices=sorted(METHODS_MAP), default="custom")
     parser.add_argument('--info', help='information about the brewing method', type=str)
-    parser.add_argument('--coffee-ratio', help='coefficient for the coffee component in the ratio', type=float)
-    parser.add_argument('--water-ratio', help='coefficient for the water component in the ratio', type=float)
-    parser.add_argument('--water', help='amount of water in each cup', type=float)
-    parser.add_argument('--cups', help='number of cups', type=int)
-    parser.add_argument('--grind', help='grind size (um)', type=int)
+    parser.add_argument(
+        '--coffee-ratio',
+        help='coefficient for the coffee component in the ratio',
+        type=validate_positive_float)
+    parser.add_argument(
+        '--water-ratio',
+        help='coefficient for the water component in the ratio',
+        type=validate_positive_float)
+    parser.add_argument('--water', help='amount of water in each cup', type=validate_positive_float)
+    parser.add_argument('--cups', help='number of cups', type=validate_positive_int)
+    parser.add_argument('--grind', help='grind size (um)', type=validate_positive_int)
     parser.add_argument(
         '--digits',
         help='number of digits up to which the result is rounded',
