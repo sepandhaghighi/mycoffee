@@ -6,29 +6,29 @@ MY_COFFEE_VERSION = "1.2"
 INPUT_ERROR_MESSAGE = "[Error] Wrong input"
 POSITIVE_INTEGER_ERROR_MESSAGE = "invalid positive int value: '{string}'"
 POSITIVE_FLOAT_ERROR_MESSAGE = "invalid positive float value: '{string}'"
-RATIO_WARNING_MESSAGE = "[Warning] The ratio is not within the standard range. For `{0}`, the ratio can be anywhere between `{1}` and `{2}`"
-GRIND_WARNING_MESSAGE = "[Warning] The grind size is not within the standard range. For `{0}`, the grind size can be anywhere between `{1} um` and `{2} um`"
+RATIO_WARNING_MESSAGE = "[Warning] The ratio is not within the standard range. For `{method}`, the ratio can be anywhere between `{lower_limit}` and `{upper_limit}`"
+GRIND_WARNING_MESSAGE = "[Warning] The grind size is not within the standard range. For `{method}`, the grind size can be anywhere between `{lower_limit} um` and `{upper_limit} um`"
 INPUT_EXAMPLE = "Example: mycoffee --method=v60"
 EXIT_MESSAGE = "See you. Bye!"
 EMPTY_INFO = "Nothing :)"
 MESSAGE_TEMPLATE = """
 
-Method: `{0}`
+Method: `{method}`
 
-Cups: {1}
+Cups: {cups}
 
-Coffee: {2} {7}
+Coffee: {coffee} {coffee_unit}
 
-Water: {3} {8}
+Water: {water} {water_unit}
 
-Ratio: {4}/{5}
+Ratio: {coffee_ratio}/{water_ratio}
 
-Grind: {9} um ({10})
+Grind: {grind_size} um ({grind_type})
 
-Info: {6}
+Info: {info}
 """
 
-METHODS_LIST_TEMPLATE = "{0}. `{1}` - {2}"
+METHODS_LIST_TEMPLATE = "{index}. `{item}` - {data}"
 
 
 DEFAULT_PARAMS = {

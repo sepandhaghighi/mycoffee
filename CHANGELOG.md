@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - `README.md` updated
 - `check_ratio_limits` function bug fixed
+- String templates modified
 - Test system modified
 ## [1.2] - 2025-01-13
 ### Added
