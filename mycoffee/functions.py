@@ -141,9 +141,9 @@ def show_methods_list():
     for i, method in enumerate(sorted(METHODS_MAP), 1):
         print(
             METHODS_LIST_TEMPLATE.format(
-                i,
-                method,
-                METHODS_MAP[method]['info']))
+                index=i,
+                item=method,
+                data=METHODS_MAP[method]['info']))
 
 
 def show_coffee_units_list():
@@ -156,9 +156,9 @@ def show_coffee_units_list():
     for i, unit in enumerate(sorted(COFFEE_UNITS_MAP), 1):
         print(
             METHODS_LIST_TEMPLATE.format(
-                i,
-                unit,
-                COFFEE_UNITS_MAP[unit]['name']))
+                index=i,
+                item=unit,
+                data=COFFEE_UNITS_MAP[unit]['name']))
 
 
 def show_water_units_list():
@@ -171,9 +171,9 @@ def show_water_units_list():
     for i, unit in enumerate(sorted(WATER_UNITS_MAP), 1):
         print(
             METHODS_LIST_TEMPLATE.format(
-                i,
-                unit,
-                WATER_UNITS_MAP[unit]['name']))
+                index=i,
+                item=unit,
+                data=WATER_UNITS_MAP[unit]['name']))
 
 
 def load_params(args):

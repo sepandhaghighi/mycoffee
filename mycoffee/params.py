@@ -28,7 +28,7 @@ Grind: {grind_size} um ({grind_type})
 Info: {info}
 """
 
-METHODS_LIST_TEMPLATE = "{0}. `{1}` - {2}"
+METHODS_LIST_TEMPLATE = "{index}. `{item}` - {data}"
 
 
 DEFAULT_PARAMS = {
