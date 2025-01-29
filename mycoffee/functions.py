@@ -84,11 +84,11 @@ def print_result(params):
     if not check_ratio_limits(params):
         ratio_lower_limit = METHODS_MAP[method]["ratio_lower_limit"]
         ratio_upper_limit = METHODS_MAP[method]["ratio_upper_limit"]
-        print(RATIO_WARNING_MESSAGE.format(method, str(ratio_lower_limit), str(ratio_upper_limit)))
+        print(RATIO_WARNING_MESSAGE.format(method=method, ratio_lower_limit=str(ratio_lower_limit), ratio_upper_limit=str(ratio_upper_limit)))
     if not check_grind_limits(params):
         grind_lower_limit = METHODS_MAP[method]["grind_lower_limit"]
         grind_upper_limit = METHODS_MAP[method]["grind_upper_limit"]
-        print(GRIND_WARNING_MESSAGE.format(method, str(grind_lower_limit), str(grind_upper_limit)))
+        print(GRIND_WARNING_MESSAGE.format(method=method, grind_lower_limit=str(grind_lower_limit), grind_upper_limit=str(grind_upper_limit)))
 
 
 def get_grind_type(grind):
