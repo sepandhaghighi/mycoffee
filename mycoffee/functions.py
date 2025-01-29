@@ -70,17 +70,17 @@ def print_result(params):
     grind_type = get_grind_type(params["grind"])
     print(
         MESSAGE_TEMPLATE.format(
-            method,
-            params["cups"],
-            params["coffee"],
-            params["water"],
-            params["coffee_ratio"],
-            params["water_ratio"],
-            params["info"],
-            params["coffee_unit"],
-            params["water_unit"],
-            params["grind"],
-            grind_type))
+            method = method,
+            cups = params["cups"],
+            coffee = params["coffee"],
+            water = params["water"],
+            coffee_ratio = params["coffee_ratio"],
+            water_ratio = params["water_ratio"],
+            info = params["info"],
+            coffee_unit = params["coffee_unit"],
+            water_unit = params["water_unit"],
+            grind_size = params["grind"],
+            grind_type = grind_type))
     if not check_ratio_limits(params):
         ratio_lower_limit = METHODS_MAP[method]["ratio_lower_limit"]
         ratio_upper_limit = METHODS_MAP[method]["ratio_upper_limit"]

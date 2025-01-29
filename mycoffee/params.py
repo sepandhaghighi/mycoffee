@@ -13,19 +13,19 @@ EXIT_MESSAGE = "See you. Bye!"
 EMPTY_INFO = "Nothing :)"
 MESSAGE_TEMPLATE = """
 
-Method: `{0}`
+Method: `{method}`
 
-Cups: {1}
+Cups: {cups}
 
-Coffee: {2} {7}
+Coffee: {coffee} {coffee_unit}
 
-Water: {3} {8}
+Water: {water} {water_unit}
 
-Ratio: {4}/{5}
+Ratio: {coffee_ratio}/{water_ratio}
 
-Grind: {9} um ({10})
+Grind: {grind_size} um ({grind_type})
 
-Info: {6}
+Info: {info}
 """
 
 METHODS_LIST_TEMPLATE = "{0}. `{1}` - {2}"
