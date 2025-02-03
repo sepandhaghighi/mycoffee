@@ -98,7 +98,7 @@ Ratio: 3/50
 
 Grind: 550 um
 
-Info: V60 method
+Message: V60 method
 ```
 
 * [Methods List](https://github.com/sepandhaghighi/mycoffee/blob/main/METHODS.md)
@@ -132,7 +132,7 @@ Ratio: 2/37
 
 Grind: 750 um
 
-Info: Chemex method
+Message: Chemex method
 ```
 
 ## Parameters
@@ -184,8 +184,8 @@ Info: Chemex method
       <td align="center"><code>17</code></td>
     </tr>
     <tr>
-      <td align="center"><code>--info</code></td>
-      <td align="center">Provides information about the brewing method</td>
+      <td align="center"><code>--message</code></td>
+      <td align="center">Extra information about the brewing method</td>
       <td align="center">String</td>
       <td align="center"><code>Custom brewing method</code></td>
     </tr>

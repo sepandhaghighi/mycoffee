@@ -305,7 +305,7 @@ True
 True
 >>> parser = argparse.ArgumentParser()
 >>> _ = parser.add_argument('--method', help='brewing method', type=str, choices=sorted(METHODS_MAP), default="custom")
->>> _ = parser.add_argument('--message', help='brewing method message', type=str)
+>>> _ = parser.add_argument('--message', help='extra information about the brewing method', type=str)
 >>> _ = parser.add_argument('--coffee-ratio', help='coffee ratio', type=validate_positive_float)
 >>> _ = parser.add_argument('--water-ratio', help='water ratio', type=validate_positive_float)
 >>> _ = parser.add_argument('--water', help='water', type=validate_positive_float)
