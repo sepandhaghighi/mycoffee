@@ -17,7 +17,7 @@
 1000.0
 >>> get_grind_type(100)
 'Extra-Fine'
->>> test_params = {"method":"v60", "cups":2, "coffee":60, "water":500, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method", "coffee_unit": "g", "water_unit": "g", "grind": 500}
+>>> test_params = {"method":"v60", "cups":2, "coffee":60, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", "coffee_unit": "g", "water_unit": "g", "grind": 500}
 >>> print_result(test_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
@@ -38,9 +38,9 @@ Ratio: 3/50
 <BLANKLINE>
 Grind: 500 um (Medium-Fine)
 <BLANKLINE>
-Info: V60 method
+Message: V60 method
 <BLANKLINE>
->>> test_params = {"method":"v60", "cups":2, "coffee":60, "water":500, "coffee_ratio": 3, "water_ratio":50, "info":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 600}
+>>> test_params = {"method":"v60", "cups":2, "coffee":60, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 600}
 >>> test_params = filter_params(test_params)
 >>> check_ratio_limits(test_params)
 True
@@ -66,9 +66,9 @@ Ratio: 3/50
 <BLANKLINE>
 Grind: 600 um (Medium-Fine)
 <BLANKLINE>
-Info: Nothing :)
+Message: Nothing :)
 <BLANKLINE>
->>> test_params = {"method":"v60", "cups":2, "coffee":60, "water":0.5, "coffee_ratio": 3, "water_ratio":50, "info":"", "digits":3, "coffee_unit": "g", "water_unit": "kg", "grind": 700}
+>>> test_params = {"method":"v60", "cups":2, "coffee":60, "water":0.5, "coffee_ratio": 3, "water_ratio":50, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "kg", "grind": 700}
 >>> test_params = filter_params(test_params)
 >>> check_ratio_limits(test_params)
 True
@@ -94,9 +94,9 @@ Ratio: 3/50
 <BLANKLINE>
 Grind: 700 um (Medium)
 <BLANKLINE>
-Info: Nothing :)
+Message: Nothing :)
 <BLANKLINE>
->>> test_params = {"method":"v60", "cups":2, "coffee":6.0, "water":500, "coffee_ratio": 6, "water_ratio":1000, "info":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 500}
+>>> test_params = {"method":"v60", "cups":2, "coffee":6.0, "water":500, "coffee_ratio": 6, "water_ratio":1000, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 500}
 >>> test_params = filter_params(test_params)
 >>> check_ratio_limits(test_params)
 False
@@ -122,10 +122,10 @@ Ratio: 6/1000
 <BLANKLINE>
 Grind: 500 um (Medium-Fine)
 <BLANKLINE>
-Info: Nothing :)
+Message: Nothing :)
 <BLANKLINE>
 [Warning] The ratio is not within the standard range. For `v60`, the ratio can be anywhere between `1/18` and `1/14`
->>> test_params = {"method":"v60", "cups":2, "coffee":27.7, "water":500, "coffee_ratio": 1, "water_ratio":18, "info":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 1400}
+>>> test_params = {"method":"v60", "cups":2, "coffee":27.7, "water":500, "coffee_ratio": 1, "water_ratio":18, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 1400}
 >>> test_params = filter_params(test_params)
 >>> check_ratio_limits(test_params)
 True
@@ -151,10 +151,10 @@ Ratio: 1/18
 <BLANKLINE>
 Grind: 1400 um (Extra-Coarse)
 <BLANKLINE>
-Info: Nothing :)
+Message: Nothing :)
 <BLANKLINE>
 [Warning] The grind size is not within the standard range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
->>> test_params = {"method":"v60", "cups":2, "coffee":27.7, "water":500, "coffee_ratio": 1, "water_ratio":18, "info":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 20}
+>>> test_params = {"method":"v60", "cups":2, "coffee":27.7, "water":500, "coffee_ratio": 1, "water_ratio":18, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 20}
 >>> test_params = filter_params(test_params)
 >>> check_ratio_limits(test_params)
 True
@@ -180,28 +180,28 @@ Ratio: 1/18
 <BLANKLINE>
 Grind: 20 um (Extra-Fine)
 <BLANKLINE>
-Info: Nothing :)
+Message: Nothing :)
 <BLANKLINE>
 [Warning] The grind size is not within the standard range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
->>> test_params = {"method":"custom", "cups":2, "coffee":6.0, "water":500, "coffee_ratio": 6, "water_ratio":1000, "info":"", "digits":3, "coffee_unit": "g"}
+>>> test_params = {"method":"custom", "cups":2, "coffee":6.0, "water":500, "coffee_ratio": 6, "water_ratio":1000, "message":"", "digits":3, "coffee_unit": "g"}
 >>> test_params = filter_params(test_params)
 >>> check_ratio_limits(test_params)
 True
 >>> check_grind_limits(test_params)
 True
->>> test_params = {"method":"v60", "cups":2, "coffee":27.7, "water":500, "coffee_ratio": 1.2, "water_ratio":18.4, "info":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 20}
+>>> test_params = {"method":"v60", "cups":2, "coffee":27.7, "water":500, "coffee_ratio": 1.2, "water_ratio":18.4, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 20}
 >>> test_params = filter_params(test_params)
 >>> check_ratio_limits(test_params)
 True
 >>> check_grind_limits(test_params)
 False
->>> test_params = {"method":"v60", "cups":2, "coffee":27.7, "water":500, "coffee_ratio": 1.2, "water_ratio":50.1, "info":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 20}
+>>> test_params = {"method":"v60", "cups":2, "coffee":27.7, "water":500, "coffee_ratio": 1.2, "water_ratio":50.1, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 20}
 >>> check_ratio_limits(test_params)
 False
 >>> check_grind_limits(test_params)
 False
 >>> chemex_params = load_method_params("chemex")
->>> chemex_params == {'info': 'Chemex method', 'water': 240, 'cups': 1, 'coffee_ratio': 1, 'water_ratio': 15, 'digits': 3, 'coffee_unit': 'g', 'water_unit': 'g', 'grind': 670}
+>>> chemex_params == {'message': 'Chemex method', 'water': 240, 'cups': 1, 'coffee_ratio': 1, 'water_ratio': 15, 'digits': 3, 'coffee_unit': 'g', 'water_unit': 'g', 'grind': 670}
 True
 >>> show_methods_list()
 Methods list:
@@ -267,13 +267,13 @@ Water units list:
 19. `t oz` - troy ounce
 20. `tbsp` - tablespoon
 21. `tsp` - teaspoon
->>> test_params = {"method":"v60", "cups":1, "water":335, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method", 'coffee_unit': 'g'}
+>>> test_params = {"method":"v60", "cups":1, "water":335, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", 'coffee_unit': 'g'}
 >>> calc_coffee(test_params)
 20.1
->>> test_params = {"method":"v60", "cups":2, "water":335, "coffee_ratio": 3, "water_ratio":50, "info":"V60 method", 'coffee_unit': 'g'}
+>>> test_params = {"method":"v60", "cups":2, "water":335, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", 'coffee_unit': 'g'}
 >>> calc_coffee(test_params)
 40.2
->>> test_params = {"method":"v60", "cups":2, "coffee":40.2, "water":335.0, "coffee_ratio": 3.0, "water_ratio":50.0, "info":"", "digits":3, 'coffee_unit': 'g'}
+>>> test_params = {"method":"v60", "cups":2, "coffee":40.2, "water":335.0, "coffee_ratio": 3.0, "water_ratio":50.0, "message":"", "digits":3, 'coffee_unit': 'g'}
 >>> test_params = filter_params(test_params)
 >>> test_params["coffee"]
 40.2
@@ -283,9 +283,9 @@ Water units list:
 3
 >>> test_params["water"]
 335
->>> test_params["info"]
+>>> test_params["message"]
 'Nothing :)'
->>> test_params = {"method":"v60", "cups":2, "coffee":41.76653202852158, "water":335.12345, "coffee_ratio": 3.12345, "water_ratio":50.12345, "info":"", "digits":2, 'coffee_unit': 'g'}
+>>> test_params = {"method":"v60", "cups":2, "coffee":41.76653202852158, "water":335.12345, "coffee_ratio": 3.12345, "water_ratio":50.12345, "message":"", "digits":2, 'coffee_unit': 'g'}
 >>> test_params = filter_params(test_params)
 >>> test_params["coffee"]
 41.77
@@ -305,7 +305,7 @@ True
 True
 >>> parser = argparse.ArgumentParser()
 >>> _ = parser.add_argument('--method', help='brewing method', type=str, choices=sorted(METHODS_MAP), default="custom")
->>> _ = parser.add_argument('--info', help='brewing method info', type=str)
+>>> _ = parser.add_argument('--message', help='brewing method message', type=str)
 >>> _ = parser.add_argument('--coffee-ratio', help='coffee ratio', type=validate_positive_float)
 >>> _ = parser.add_argument('--water-ratio', help='water ratio', type=validate_positive_float)
 >>> _ = parser.add_argument('--water', help='water', type=validate_positive_float)
@@ -343,7 +343,7 @@ Ratio: 3/50
 <BLANKLINE>
 Grind: 550 um (Medium-Fine)
 <BLANKLINE>
-Info: V60 method
+Message: V60 method
 <BLANKLINE>
 >>> args = parser.parse_args(["--method", 'v60', "--water-ratio", '500', "--coffee-ratio", '23', "--water", '5000'])
 >>> params = load_params(args)
