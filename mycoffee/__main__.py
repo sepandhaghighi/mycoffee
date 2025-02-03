@@ -14,7 +14,7 @@ def main():
     """
     parser = argparse.ArgumentParser()
     parser.add_argument('--method', help='brewing method', type=str, choices=sorted(METHODS_MAP), default="custom")
-    parser.add_argument('--info', help='information about the brewing method', type=str)
+    parser.add_argument('--message', help='message', type=str)
     parser.add_argument(
         '--coffee-ratio',
         help='coefficient for the coffee component in the ratio',
