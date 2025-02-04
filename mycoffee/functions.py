@@ -2,7 +2,7 @@
 """mycoffee functions."""
 import math
 import argparse
-from mycoffee.params import MESSAGE_TEMPLATE, METHODS_LIST_TEMPLATE, EMPTY_INFO
+from mycoffee.params import MESSAGE_TEMPLATE, METHODS_LIST_TEMPLATE, EMPTY_MESSAGE
 from mycoffee.params import MY_COFFEE_VERSION, DEFAULT_PARAMS
 from mycoffee.params import METHODS_MAP, COFFEE_UNITS_MAP, WATER_UNITS_MAP
 from mycoffee.params import RATIO_WARNING_MESSAGE, GRIND_WARNING_MESSAGE
@@ -76,7 +76,7 @@ def print_result(params):
             water=params["water"],
             coffee_ratio=params["coffee_ratio"],
             water_ratio=params["water_ratio"],
-            info=params["info"],
+            message=params["message"],
             coffee_unit=params["coffee_unit"],
             water_unit=params["water_unit"],
             grind_size=params["grind"],
@@ -151,7 +151,7 @@ def show_methods_list():
             METHODS_LIST_TEMPLATE.format(
                 index=i,
                 item=method,
-                data=METHODS_MAP[method]['info']))
+                data=METHODS_MAP[method]['message']))
 
 
 def show_coffee_units_list():
@@ -221,8 +221,8 @@ def filter_params(params):
         params["coffee_ratio"] = int(params["coffee_ratio"])
     if is_int(params["water"]):
         params["water"] = int(params["water"])
-    if len(params["info"]) == 0:
-        params["info"] = EMPTY_INFO
+    if len(params["message"]) == 0:
+        params["message"] = EMPTY_MESSAGE
     return params
 
 

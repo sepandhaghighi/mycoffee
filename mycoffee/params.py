@@ -10,7 +10,7 @@ RATIO_WARNING_MESSAGE = "[Warning] The ratio is not within the standard range. F
 GRIND_WARNING_MESSAGE = "[Warning] The grind size is not within the standard range. For `{method}`, the grind size can be anywhere between `{lower_limit} um` and `{upper_limit} um`"
 INPUT_EXAMPLE = "Example: mycoffee --method=v60"
 EXIT_MESSAGE = "See you. Bye!"
-EMPTY_INFO = "Nothing :)"
+EMPTY_MESSAGE = "Nothing :)"
 MESSAGE_TEMPLATE = """
 
 Method: `{method}`
@@ -25,7 +25,7 @@ Ratio: {coffee_ratio}/{water_ratio}
 
 Grind: {grind_size} um ({grind_type})
 
-Info: {info}
+Message: {message}
 """
 
 METHODS_LIST_TEMPLATE = "{index}. `{item}` - {data}"
@@ -40,7 +40,7 @@ DEFAULT_PARAMS = {
     "coffee_unit": "g",
     "water_unit": "g",
     "digits": 3,
-    "info": ""
+    "message": ""
 
 }
 
@@ -50,7 +50,7 @@ METHODS_MAP = {
         "water_ratio": 17,
         "grind": 700,
         "water": 240,
-        "info": "Custom brewing method"
+        "message": "Custom brewing method"
     },
     "v60": {
         "coffee_ratio": 3,
@@ -61,7 +61,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 18),
         "ratio_upper_limit": Fraction(1, 14),
         "water": 250,
-        "info": "V60 method"
+        "message": "V60 method"
     },
     "espresso": {
         "coffee_ratio": 1,
@@ -72,7 +72,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(2, 5),
         "ratio_upper_limit": Fraction(2, 3),
         "water": 36,
-        "info": "Espresso method"
+        "message": "Espresso method"
     },
     "ristretto": {
         "coffee_ratio": 1,
@@ -83,7 +83,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(2, 3),
         "ratio_upper_limit": Fraction(1, 1),
         "water": 18,
-        "info": "Ristretto method"
+        "message": "Ristretto method"
     },
     "lungo": {
         "coffee_ratio": 1,
@@ -94,7 +94,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 4),
         "ratio_upper_limit": Fraction(2, 5),
         "water": 72,
-        "info": "Lungo method"
+        "message": "Lungo method"
     },
     "chemex": {
         "coffee_ratio": 1,
@@ -105,7 +105,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 21),
         "ratio_upper_limit": Fraction(1, 10),
         "water": 240,
-        "info": "Chemex method"
+        "message": "Chemex method"
     },
     "french-press": {
         "coffee_ratio": 1,
@@ -116,7 +116,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 18),
         "ratio_upper_limit": Fraction(1, 12),
         "water": 120,
-        "info": "French press method"
+        "message": "French press method"
     },
     "siphon": {
         "coffee_ratio": 1,
@@ -127,7 +127,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 16),
         "ratio_upper_limit": Fraction(1, 12),
         "water": 240,
-        "info": "Siphon method"
+        "message": "Siphon method"
     },
     "pour-over": {
         "coffee_ratio": 1,
@@ -138,7 +138,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 16),
         "ratio_upper_limit": Fraction(1, 14),
         "water": 240,
-        "info": "Pour-over method"
+        "message": "Pour-over method"
     },
     "auto-drip": {
         "coffee_ratio": 1,
@@ -149,7 +149,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 17),
         "ratio_upper_limit": Fraction(1, 14),
         "water": 128,
-        "info": "Auto drip method"
+        "message": "Auto drip method"
     },
     "cold-brew": {
         "coffee_ratio": 1,
@@ -160,7 +160,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 15),
         "ratio_upper_limit": Fraction(1, 8),
         "water": 242,
-        "info": "Cold brew method"
+        "message": "Cold brew method"
     },
     "cold-brew-conc": {
         "coffee_ratio": 1,
@@ -171,7 +171,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 6),
         "ratio_upper_limit": Fraction(1, 4),
         "water": 120,
-        "info": "Cold brew concentrate method"
+        "message": "Cold brew concentrate method"
     },
     "moka-pot": {
         "coffee_ratio": 1,
@@ -182,7 +182,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 12),
         "ratio_upper_limit": Fraction(1, 7),
         "water": 60,
-        "info": "Moka pot method"
+        "message": "Moka pot method"
     },
     "turkish": {
         "coffee_ratio": 1,
@@ -193,7 +193,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 12),
         "ratio_upper_limit": Fraction(1, 8),
         "water": 50,
-        "info": "Turkish method"
+        "message": "Turkish method"
     },
     "cupping": {
         "coffee_ratio": 11,
@@ -204,7 +204,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 19),
         "ratio_upper_limit": Fraction(1, 17),
         "water": 150,
-        "info": "Cupping method"
+        "message": "Cupping method"
     },
     "aero-press": {
         "coffee_ratio": 1,
@@ -215,7 +215,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 18),
         "ratio_upper_limit": Fraction(1, 12),
         "water": 135,
-        "info": "AeroPress standard method"
+        "message": "AeroPress standard method"
     },
     "aero-press-conc": {
         "coffee_ratio": 1,
@@ -226,7 +226,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 7),
         "ratio_upper_limit": Fraction(1, 5),
         "water": 90,
-        "info": "AeroPress concentrate method"
+        "message": "AeroPress concentrate method"
     },
     "aero-press-inv": {
         "coffee_ratio": 1,
@@ -237,7 +237,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 14),
         "ratio_upper_limit": Fraction(1, 10),
         "water": 132,
-        "info": "AeroPress inverted method"
+        "message": "AeroPress inverted method"
     },
     "steep-and-release": {
         "coffee_ratio": 1,
@@ -248,7 +248,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 17),
         "ratio_upper_limit": Fraction(1, 14),
         "water": 255,
-        "info": "Steep-and-release method"
+        "message": "Steep-and-release method"
     }
 }
 
