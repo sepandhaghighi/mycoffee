@@ -23,6 +23,12 @@ True
 True
 >>> v60_params["grind"] == 550 # https://honestcoffeeguide.com/coffee-grind-size-chart/#v60
 True
+>>> METHODS_MAP["v60"]["temperature_upper_limit"] == 95 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+True
+>>> METHODS_MAP["v60"]["temperature_lower_limit"] == 85 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+True
+>>> v60_params["temperature"] == 91 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+True
 >>> chemex_params = load_method_params("chemex") # https://honestcoffeeguide.com/coffee-to-water-ratio-calculator
 >>> chemex_params["coffee_ratio"] == 1
 True
@@ -42,6 +48,12 @@ True
 >>> METHODS_MAP["chemex"]["grind_lower_limit"] == 410
 True
 >>> chemex_params["grind"] == 670 # https://honestcoffeeguide.com/coffee-grind-size-chart/#pourover
+True
+>>> METHODS_MAP["chemex"]["temperature_upper_limit"] == 95 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+True
+>>> METHODS_MAP["chemex"]["temperature_lower_limit"] == 85 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+True
+>>> chemex_params["temperature"] == 94 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
 True
 >>> espresso_params = load_method_params("espresso") # https://honestcoffeeguide.com/coffee-to-water-ratio-calculator
 >>> espresso_params["coffee_ratio"] == 1
@@ -63,6 +75,12 @@ True
 True
 >>> espresso_params["grind"] == 280 # https://honestcoffeeguide.com/coffee-grind-size-chart/#espresso
 True
+>>> METHODS_MAP["espresso"]["temperature_upper_limit"] == 95 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+True
+>>> METHODS_MAP["espresso"]["temperature_lower_limit"] == 85 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+True
+>>> espresso_params["temperature"] == 92 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+True
 >>> siphon_params = load_method_params("siphon") # https://bluebottlecoffee.com/us/eng/brew-guides/siphon
 >>> siphon_params["coffee_ratio"] == 1
 True
@@ -82,6 +100,12 @@ True
 >>> METHODS_MAP["siphon"]["grind_lower_limit"] == 375
 True
 >>> siphon_params["grind"] == 588 # https://honestcoffeeguide.com/coffee-grind-size-chart/#siphon
+True
+>>> METHODS_MAP["siphon"]["temperature_upper_limit"] == 94 # https://unionroasted.com/blogs/brewing-guides/syphon
+True
+>>> METHODS_MAP["siphon"]["temperature_lower_limit"] == 91 # https://unionroasted.com/blogs/brewing-guides/syphon
+True
+>>> siphon_params["temperature"] == 93 # https://unionroasted.com/blogs/brewing-guides/syphon
 True
 >>> french_press_params = load_method_params("french-press") # https://useandcares.hamiltonbeach.com/files/840230401.pdf
 >>> french_press_params["coffee_ratio"] == 1
@@ -103,6 +127,12 @@ True
 True
 >>> french_press_params["grind"] == 995 # https://honestcoffeeguide.com/coffee-grind-size-chart/#french-press
 True
+>>> METHODS_MAP["french-press"]["temperature_upper_limit"] == 95 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+True
+>>> METHODS_MAP["french-press"]["temperature_lower_limit"] == 85 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+True
+>>> french_press_params["temperature"] == 90 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+True
 >>> pour_over_params = load_method_params("pour-over") # https://www.nicolebattefeld.com/post/best-recipes-2022
 >>> pour_over_params["coffee_ratio"] == 1
 True
@@ -122,6 +152,12 @@ True
 >>> METHODS_MAP["pour-over"]["grind_lower_limit"] == 410
 True
 >>> pour_over_params["grind"] == 670 # https://honestcoffeeguide.com/coffee-grind-size-chart/#pourover
+True
+>>> METHODS_MAP["pour-over"]["temperature_upper_limit"] == 93  # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+True
+>>> METHODS_MAP["pour-over"]["temperature_lower_limit"] == 90 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+True
+>>> pour_over_params["temperature"] == 92 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
 True
 >>> auto_drip_params = load_method_params("auto-drip") # https://wonderstate.com/pages/auto-drip
 >>> auto_drip_params["coffee_ratio"] == 1
@@ -143,6 +179,12 @@ True
 True
 >>> auto_drip_params["grind"] == 600 # https://honestcoffeeguide.com/coffee-grind-size-chart/#filter-coffee-machine
 True
+>>> METHODS_MAP["auto-drip"]["temperature_upper_limit"] == 96  # https://counterculturecoffee.com/blogs/counter-culture-coffee/guide-to-home-coffee-makers
+True
+>>> METHODS_MAP["auto-drip"]["temperature_lower_limit"] == 90 # https://counterculturecoffee.com/blogs/counter-culture-coffee/guide-to-home-coffee-makers
+True
+>>> auto_drip_params["temperature"] == 93 # https://counterculturecoffee.com/blogs/counter-culture-coffee/guide-to-home-coffee-makers
+True
 >>> cold_brew_params = load_method_params("cold-brew") # https://counterculturecoffee.com/blogs/counter-culture-coffee/guide-to-cold-brew
 >>> cold_brew_params["coffee_ratio"] == 1
 True
@@ -162,6 +204,12 @@ True
 >>> METHODS_MAP["cold-brew"]["grind_lower_limit"] == 800
 True
 >>> cold_brew_params["grind"] == 1100 # https://honestcoffeeguide.com/coffee-grind-size-chart/#cold-brew
+True
+>>> METHODS_MAP["cold-brew"]["temperature_upper_limit"] == 40 # https://perfectdailygrind.com/2021/07/can-you-brew-coffee-with-warm-water
+True
+>>> METHODS_MAP["cold-brew"]["temperature_lower_limit"] == 0 # https://perfectdailygrind.com/2021/07/can-you-brew-coffee-with-warm-water
+True
+>>> cold_brew_params["temperature"] == 20 # https://perfectdailygrind.com/2021/07/can-you-brew-coffee-with-warm-water
 True
 >>> cold_brew_conc_params = load_method_params("cold-brew-conc") # https://www.thespruceeats.com/cold-brew-concentrate-recipe-5197494
 >>> cold_brew_conc_params["coffee_ratio"] == 1
@@ -183,6 +231,12 @@ True
 True
 >>> cold_brew_conc_params["grind"] == 1100 # https://honestcoffeeguide.com/coffee-grind-size-chart/#cold-brew
 True
+>>> METHODS_MAP["cold-brew-conc"]["temperature_upper_limit"] == 40 # https://perfectdailygrind.com/2021/07/can-you-brew-coffee-with-warm-water
+True
+>>> METHODS_MAP["cold-brew-conc"]["temperature_lower_limit"] == 0 # https://perfectdailygrind.com/2021/07/can-you-brew-coffee-with-warm-water
+True
+>>> cold_brew_conc_params["temperature"] == 20 # https://perfectdailygrind.com/2021/07/can-you-brew-coffee-with-warm-water
+True
 >>> moka_pot_params = load_method_params("moka-pot") # https://bakedbrewedbeautiful.com/how-to-make-coffee-in-moka-pot
 >>> moka_pot_params["coffee_ratio"] == 1
 True
@@ -202,6 +256,12 @@ True
 >>> METHODS_MAP["moka-pot"]["grind_lower_limit"] == 360
 True
 >>> moka_pot_params["grind"] == 510 # https://honestcoffeeguide.com/coffee-grind-size-chart/#moka-pot
+True
+>>> METHODS_MAP["moka-pot"]["temperature_upper_limit"] == 95 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+True
+>>> METHODS_MAP["moka-pot"]["temperature_lower_limit"] == 85 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+True
+>>> moka_pot_params["temperature"] == 93 # https://honestcoffeeguide.com/what-temperature-to-brew-a-moka-pot
 True
 >>> ristretto_params = load_method_params("ristretto") # https://honestcoffeeguide.com/coffee-to-water-ratio-calculator
 >>> ristretto_params["coffee_ratio"] == 1
@@ -223,6 +283,12 @@ True
 True
 >>> ristretto_params["grind"] == 280 # https://honestcoffeeguide.com/coffee-grind-size-chart/#espresso
 True
+>>> METHODS_MAP["ristretto"]["temperature_upper_limit"] == 95 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+True
+>>> METHODS_MAP["ristretto"]["temperature_lower_limit"] == 85 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+True
+>>> ristretto_params["temperature"] == 92 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+True
 >>> lungo_params = load_method_params("lungo") # https://honestcoffeeguide.com/coffee-to-water-ratio-calculator
 >>> lungo_params["coffee_ratio"] == 1
 True
@@ -242,6 +308,12 @@ True
 >>> METHODS_MAP["lungo"]["grind_lower_limit"] == 180
 True
 >>> lungo_params["grind"] == 280 # https://honestcoffeeguide.com/coffee-grind-size-chart/#espresso
+True
+>>> METHODS_MAP["lungo"]["temperature_upper_limit"] == 95 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+True
+>>> METHODS_MAP["lungo"]["temperature_lower_limit"] == 85 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+True
+>>> lungo_params["temperature"] == 92 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
 True
 >>> turkish_params = load_method_params("turkish") # https://www.drinktrade.com/blogs/education/how-to-make-turkish-coffee
 >>> turkish_params["coffee_ratio"] == 1
@@ -263,6 +335,12 @@ True
 True
 >>> turkish_params["grind"] == 130 # https://honestcoffeeguide.com/coffee-grind-size-chart/#turkish-coffee
 True
+>>> METHODS_MAP["turkish"]["temperature_upper_limit"] == 95 # https://ravecoffee.co.uk/blogs/news/how-to-brew-coffee-using-an-ibrik-cezve-for-turkish-style-coffee
+True
+>>> METHODS_MAP["turkish"]["temperature_lower_limit"] == 90 # https://ravecoffee.co.uk/blogs/news/how-to-brew-coffee-using-an-ibrik-cezve-for-turkish-style-coffee
+True
+>>> turkish_params["temperature"] == 90 # https://ravecoffee.co.uk/blogs/news/how-to-brew-coffee-using-an-ibrik-cezve-for-turkish-style-coffee
+True
 >>> cupping_params = load_method_params("cupping") # https://www.horshamcoffeeroaster.co.uk/pages/how-to-cup-coffee
 >>> cupping_params["coffee_ratio"] == 11
 True
@@ -282,6 +360,12 @@ True
 >>> METHODS_MAP["cupping"]["grind_lower_limit"] == 460
 True
 >>> cupping_params["grind"] == 655 # https://honestcoffeeguide.com/coffee-grind-size-chart/#cupping
+True
+>>> METHODS_MAP["cupping"]["temperature_upper_limit"] == 95 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+True
+>>> METHODS_MAP["cupping"]["temperature_lower_limit"] == 85 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+True
+>>> cupping_params["temperature"] == 93 # https://www.diffordsguide.com/g/1113/coffee/cupping
 True
 >>> aero_press_params = load_method_params("aero-press") # https://aeroprecipe.com/recipes/tetsu-kasuya-aeropress-recipe
 >>> aero_press_params["coffee_ratio"] == 1
@@ -303,6 +387,12 @@ True
 True
 >>> aero_press_params["grind"] == 640 # https://honestcoffeeguide.com/coffee-grind-size-chart/#aeropress
 True
+>>> METHODS_MAP["aero-press"]["temperature_upper_limit"] == 95 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+True
+>>> METHODS_MAP["aero-press"]["temperature_lower_limit"] == 90 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+True
+>>> aero_press_params["temperature"] == 93 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+True
 >>> aero_press_conc_params = load_method_params("aero-press-conc") # https://www.seattlecoffeegear.com/pages/product-resource/aero-press-product-resources
 >>> aero_press_conc_params["coffee_ratio"] == 1
 True
@@ -322,6 +412,12 @@ True
 >>> METHODS_MAP["aero-press-conc"]["grind_lower_limit"] == 320
 True
 >>> aero_press_conc_params["grind"] == 640 # https://honestcoffeeguide.com/coffee-grind-size-chart/#aeropress
+True
+>>> METHODS_MAP["aero-press-conc"]["temperature_upper_limit"] == 95 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+True
+>>> METHODS_MAP["aero-press-conc"]["temperature_lower_limit"] == 90 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+True
+>>> aero_press_conc_params["temperature"] == 93 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
 True
 >>> aero_press_inv_params = load_method_params("aero-press-inv") # https://aeroprecipe.com/recipes/all-about-the-intervals
 >>> aero_press_inv_params["coffee_ratio"] == 1
@@ -343,6 +439,12 @@ True
 True
 >>> aero_press_inv_params["grind"] == 640 # https://honestcoffeeguide.com/coffee-grind-size-chart/#aeropress
 True
+>>> METHODS_MAP["aero-press-inv"]["temperature_upper_limit"] == 95 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+True
+>>> METHODS_MAP["aero-press-inv"]["temperature_lower_limit"] == 90 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+True
+>>> aero_press_inv_params["temperature"] == 93 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+True
 >>> steep_and_release_params = load_method_params("steep-and-release") # https://squaremileblog.com/brew-guide-clever-dripper/
 >>> steep_and_release_params["coffee_ratio"] == 1
 True
@@ -362,6 +464,12 @@ True
 >>> METHODS_MAP["steep-and-release"]["grind_lower_limit"] == 450
 True
 >>> steep_and_release_params["grind"] == 638 # https://honestcoffeeguide.com/coffee-grind-size-chart/#steepandrelease
+True
+>>> METHODS_MAP["steep-and-release"]["temperature_upper_limit"] == 95 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+True
+>>> METHODS_MAP["steep-and-release"]["temperature_lower_limit"] == 85 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+True
+>>> steep_and_release_params["temperature"] == 93 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
 True
 >>> custom_params = load_method_params("custom")
 >>> custom_params["coffee_ratio"] == 1

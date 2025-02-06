@@ -80,6 +80,7 @@ def print_result(params):
             coffee_unit=params["coffee_unit"],
             water_unit=params["water_unit"],
             grind_size=params["grind"],
+            temperature=params["temperature"],
             grind_type=grind_type))
     if not check_ratio_limits(params):
         ratio_lower_limit = METHODS_MAP[method]["ratio_lower_limit"]
