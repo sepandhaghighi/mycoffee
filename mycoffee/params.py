@@ -25,6 +25,8 @@ Ratio: {coffee_ratio}/{water_ratio}
 
 Grind: {grind_size} um ({grind_type})
 
+Temperature: {temperature} C
+
 Message: {message}
 """
 
