@@ -175,6 +175,12 @@ Message: Chemex method
       <td align="center">Integer</td>
       <td align="center"><code>700</code></td>
     </tr>
+	<tr>
+      <td align="center"><code>--temperature</code></td>
+      <td align="center">Brewing temperature (C)</td>
+      <td align="center">Integer</td>
+      <td align="center"><code>90</code></td>
+    </tr>
     <tr>
       <td align="center"><code>--coffee-ratio</code></td>
       <td align="center">Coefficient for the coffee component in the ratio</td>
