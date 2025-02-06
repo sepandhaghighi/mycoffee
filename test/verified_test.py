@@ -101,9 +101,9 @@ True
 True
 >>> siphon_params["grind"] == 588 # https://honestcoffeeguide.com/coffee-grind-size-chart/#siphon
 True
->>> METHODS_MAP["sihpon"]["temperature_upper_limit"] == 94 # https://unionroasted.com/blogs/brewing-guides/syphon
+>>> METHODS_MAP["siphon"]["temperature_upper_limit"] == 94 # https://unionroasted.com/blogs/brewing-guides/syphon
 True
->>> METHODS_MAP["sihpon"]["temperature_lower_limit"] == 91 # https://unionroasted.com/blogs/brewing-guides/syphon
+>>> METHODS_MAP["siphon"]["temperature_lower_limit"] == 91 # https://unionroasted.com/blogs/brewing-guides/syphon
 True
 >>> siphon_params["temperature"] == 93 # https://unionroasted.com/blogs/brewing-guides/syphon
 True
@@ -257,11 +257,11 @@ True
 True
 >>> moka_pot_params["grind"] == 510 # https://honestcoffeeguide.com/coffee-grind-size-chart/#moka-pot
 True
->>> METHODS_MAP["moka-pot"]["temperature_upper_limit"] == 95 https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+>>> METHODS_MAP["moka-pot"]["temperature_upper_limit"] == 95 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
 True
->>> METHODS_MAP["moka-pot"]["temperature_lower_limit"] == 85 https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
+>>> METHODS_MAP["moka-pot"]["temperature_lower_limit"] == 85 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
 True
->>> moka_pot_params["temperature"] == 93 https://honestcoffeeguide.com/what-temperature-to-brew-a-moka-pot
+>>> moka_pot_params["temperature"] == 93 # https://honestcoffeeguide.com/what-temperature-to-brew-a-moka-pot
 True
 >>> ristretto_params = load_method_params("ristretto") # https://honestcoffeeguide.com/coffee-to-water-ratio-calculator
 >>> ristretto_params["coffee_ratio"] == 1

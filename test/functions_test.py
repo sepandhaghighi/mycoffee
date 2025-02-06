@@ -17,7 +17,7 @@
 1000.0
 >>> get_grind_type(100)
 'Extra-Fine'
->>> test_params = {"method":"v60", "cups":2, "coffee":60, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", "coffee_unit": "g", "water_unit": "g", "grind": 500}
+>>> test_params = {"method":"v60", "cups":2, "coffee":60, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", "coffee_unit": "g", "water_unit": "g", "grind": 500, "temperature":93}
 >>> print_result(test_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
@@ -38,9 +38,11 @@ Ratio: 3/50
 <BLANKLINE>
 Grind: 500 um (Medium-Fine)
 <BLANKLINE>
+Temperature: 93 C
+<BLANKLINE>
 Message: V60 method
 <BLANKLINE>
->>> test_params = {"method":"v60", "cups":2, "coffee":60, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 600}
+>>> test_params = {"method":"v60", "cups":2, "coffee":60, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 600, "temperature":95}
 >>> test_params = filter_params(test_params)
 >>> check_ratio_limits(test_params)
 True
@@ -66,9 +68,11 @@ Ratio: 3/50
 <BLANKLINE>
 Grind: 600 um (Medium-Fine)
 <BLANKLINE>
+Temperature: 95 C
+<BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
->>> test_params = {"method":"v60", "cups":2, "coffee":60, "water":0.5, "coffee_ratio": 3, "water_ratio":50, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "kg", "grind": 700}
+>>> test_params = {"method":"v60", "cups":2, "coffee":60, "water":0.5, "coffee_ratio": 3, "water_ratio":50, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "kg", "grind": 700, "temperature":95}
 >>> test_params = filter_params(test_params)
 >>> check_ratio_limits(test_params)
 True
@@ -94,9 +98,11 @@ Ratio: 3/50
 <BLANKLINE>
 Grind: 700 um (Medium)
 <BLANKLINE>
+Temperature: 95 C
+<BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
->>> test_params = {"method":"v60", "cups":2, "coffee":6.0, "water":500, "coffee_ratio": 6, "water_ratio":1000, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 500}
+>>> test_params = {"method":"v60", "cups":2, "coffee":6.0, "water":500, "coffee_ratio": 6, "water_ratio":1000, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 500, "temperature":95}
 >>> test_params = filter_params(test_params)
 >>> check_ratio_limits(test_params)
 False
@@ -122,10 +128,12 @@ Ratio: 6/1000
 <BLANKLINE>
 Grind: 500 um (Medium-Fine)
 <BLANKLINE>
+Temperature: 95 C
+<BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
 [Warning] The ratio is not within the standard range. For `v60`, the ratio can be anywhere between `1/18` and `1/14`
->>> test_params = {"method":"v60", "cups":2, "coffee":27.7, "water":500, "coffee_ratio": 1, "water_ratio":18, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 1400}
+>>> test_params = {"method":"v60", "cups":2, "coffee":27.7, "water":500, "coffee_ratio": 1, "water_ratio":18, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 1400, "temperature":95}
 >>> test_params = filter_params(test_params)
 >>> check_ratio_limits(test_params)
 True
@@ -151,10 +159,12 @@ Ratio: 1/18
 <BLANKLINE>
 Grind: 1400 um (Extra-Coarse)
 <BLANKLINE>
+Temperature: 95 C
+<BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
 [Warning] The grind size is not within the standard range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
->>> test_params = {"method":"v60", "cups":2, "coffee":27.7, "water":500, "coffee_ratio": 1, "water_ratio":18, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 20}
+>>> test_params = {"method":"v60", "cups":2, "coffee":27.7, "water":500, "coffee_ratio": 1, "water_ratio":18, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 20, "temperature":95}
 >>> test_params = filter_params(test_params)
 >>> check_ratio_limits(test_params)
 True
@@ -180,6 +190,8 @@ Ratio: 1/18
 <BLANKLINE>
 Grind: 20 um (Extra-Fine)
 <BLANKLINE>
+Temperature: 95 C
+<BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
 [Warning] The grind size is not within the standard range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
@@ -201,7 +213,7 @@ False
 >>> check_grind_limits(test_params)
 False
 >>> chemex_params = load_method_params("chemex")
->>> chemex_params == {'message': 'Chemex method', 'water': 240, 'cups': 1, 'coffee_ratio': 1, 'water_ratio': 15, 'digits': 3, 'coffee_unit': 'g', 'water_unit': 'g', 'grind': 670}
+>>> chemex_params == {'message': 'Chemex method', 'water': 240, 'cups': 1, 'coffee_ratio': 1, 'water_ratio': 15, 'digits': 3, 'coffee_unit': 'g', 'water_unit': 'g', 'grind': 670, 'temperature':94}
 True
 >>> show_methods_list()
 Methods list:
@@ -311,6 +323,7 @@ True
 >>> _ = parser.add_argument('--water', help='water', type=validate_positive_float)
 >>> _ = parser.add_argument('--cups', help='number of cups', type=validate_positive_int)
 >>> _ = parser.add_argument('--grind', help='grind size (um)', type=validate_positive_int)
+>>> _ = parser.add_argument('--temperature', help='brewing temperature (C)', type=int)
 >>> _ = parser.add_argument('--digits', help='number of digits up to which the result is rounded', type=int, default=3)
 >>> _ = parser.add_argument('--coffee-unit', help='coffee unit', type=str, choices=sorted(COFFEE_UNITS_MAP), default="g")
 >>> _ = parser.add_argument('--water-unit', help='water unit', type=str, choices=sorted(WATER_UNITS_MAP), default="g")
@@ -342,6 +355,8 @@ Water: 250 g
 Ratio: 3/50
 <BLANKLINE>
 Grind: 550 um (Medium-Fine)
+<BLANKLINE>
+Temperature: 91 C
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -414,7 +429,7 @@ Message: V60 method
 1
 >>> params["cups"]
 1
->>> args = parser.parse_args(["--method", 'steep-and-release', "--digits", '1', "--cups", '3'])
+>>> args = parser.parse_args(["--method", 'steep-and-release', "--digits", '1', "--cups", '3', "--temperature", '92'])
 >>> params = load_params(args)
 >>> params["coffee"] = calc_coffee(params)
 >>> params["water"]
@@ -440,6 +455,8 @@ Message: V60 method
 1
 >>> params["cups"]
 3
+>>> params["temperature"]
+92
 >>> args = parser.parse_args(["--method", 'steep-and-release', "--digits", '1', "--cups", '3', "--coffee-unit", "oz"])
 >>> params = load_params(args)
 >>> params["coffee"] = calc_coffee(params)
