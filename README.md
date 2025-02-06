@@ -246,6 +246,12 @@ Just fill an issue and describe it. We'll check it ASAP!
 <blockquote>23- <a href="https://www.inchcalculator.com/convert/volume/">Volume Conversion Calculator - Inch Calculator</a></blockquote>
 <blockquote>24- <a href="https://www.metric-conversions.org/">Metric Conversion Charts and Calculators</a></blockquote>
 <blockquote>25- <a href="https://honestcoffeeguide.com/coffee-grind-size-chart">Coffee grind size chart</a></blockquote>
+<blockquote>26- <a href="https://honestcoffeeguide.com/best-temperature-to-brew-coffee/">The best temperature to brew coffee</a></blockquote>
+<blockquote>27- <a href="https://unionroasted.com/blogs/brewing-guides/syphon">How to Brew Coffee with a Syphon</a></blockquote>
+<blockquote>28- <a href="https://counterculturecoffee.com/blogs/counter-culture-coffee/guide-to-home-coffee-makers">Guide To Home Coffee Makers</a></blockquote>
+<blockquote>29- <a href="https://perfectdailygrind.com/2021/07/can-you-brew-coffee-with-warm-water">Can you brew coffee with warm water?</a></blockquote>
+<blockquote>30- <a href="https://ravecoffee.co.uk/blogs/news/how-to-brew-coffee-using-an-ibrik-cezve-for-turkish-style-coffee">How to Brew Coffee Using a Cezve</a></blockquote>
+<blockquote>31- <a href="https://www.diffordsguide.com/g/1113/coffee/cupping">Coffee cupping</a></blockquote>
 
 ## Show Your Support
 								
