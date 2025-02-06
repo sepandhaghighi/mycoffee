@@ -26,6 +26,7 @@ def main():
     parser.add_argument('--water', help='amount of water in each cup', type=validate_positive_float)
     parser.add_argument('--cups', help='number of cups', type=validate_positive_int)
     parser.add_argument('--grind', help='grind size (um)', type=validate_positive_int)
+    parser.add_argument('--temperature', help='brewing temperature (C)', type=int)
     parser.add_argument(
         '--digits',
         help='number of digits up to which the result is rounded',
