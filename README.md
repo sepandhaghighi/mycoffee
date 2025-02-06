@@ -96,7 +96,9 @@ Water: 250 g
 
 Ratio: 3/50
 
-Grind: 550 um
+Grind: 550 um (Medium-Fine)
+
+Temperature: 91 C
 
 Message: V60 method
 ```
@@ -111,7 +113,7 @@ Message: V60 method
 ℹ️ You can run `mycoffee --water-units-list` to view the supported water units
 
 ```shell
-> mycoffee --method=chemex --water=20 --cups=3 --coffee-ratio=2 --water-ratio=37 --coffee-unit="t oz" --water-unit="fl oz" --grind=750
+> mycoffee --method=chemex --water=20 --cups=3 --coffee-ratio=2 --water-ratio=37 --coffee-unit="t oz" --water-unit="fl oz" --grind=750 --temperature=88
 
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
@@ -130,7 +132,9 @@ Water: 20 fl oz
 
 Ratio: 2/37
 
-Grind: 750 um
+Grind: 750 um (Medium)
+
+Temperature: 88 C
 
 Message: Chemex method
 ```
