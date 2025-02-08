@@ -5,8 +5,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- `--temperature` argument
+- Temperature upper limit
+- Temperature lower limit
 ### Changed
 - `--info` argument renamed to `--message`
+- `README.md` updated
 ## [1.3] - 2025-01-31
 ### Added
 - `get_grind_type` function

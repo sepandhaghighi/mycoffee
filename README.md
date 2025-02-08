@@ -96,7 +96,9 @@ Water: 250 g
 
 Ratio: 3/50
 
-Grind: 550 um
+Grind: 550 um (Medium-Fine)
+
+Temperature: 91 C
 
 Message: V60 method
 ```
@@ -111,7 +113,7 @@ Message: V60 method
 ℹ️ You can run `mycoffee --water-units-list` to view the supported water units
 
 ```shell
-> mycoffee --method=chemex --water=20 --cups=3 --coffee-ratio=2 --water-ratio=37 --coffee-unit="t oz" --water-unit="fl oz" --grind=750
+> mycoffee --method=chemex --water=20 --cups=3 --coffee-ratio=2 --water-ratio=37 --coffee-unit="t oz" --water-unit="fl oz" --grind=750 --temperature=88
 
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
@@ -130,7 +132,9 @@ Water: 20 fl oz
 
 Ratio: 2/37
 
-Grind: 750 um
+Grind: 750 um (Medium)
+
+Temperature: 88 C
 
 Message: Chemex method
 ```
@@ -170,6 +174,12 @@ Message: Chemex method
       <td align="center">Grind size (um)</td>
       <td align="center">Integer</td>
       <td align="center"><code>700</code></td>
+    </tr>
+    <tr>
+      <td align="center"><code>--temperature</code></td>
+      <td align="center">Brewing temperature (C)</td>
+      <td align="center">Integer</td>
+      <td align="center"><code>90</code></td>
     </tr>
     <tr>
       <td align="center"><code>--coffee-ratio</code></td>
@@ -246,6 +256,12 @@ Just fill an issue and describe it. We'll check it ASAP!
 <blockquote>23- <a href="https://www.inchcalculator.com/convert/volume/">Volume Conversion Calculator - Inch Calculator</a></blockquote>
 <blockquote>24- <a href="https://www.metric-conversions.org/">Metric Conversion Charts and Calculators</a></blockquote>
 <blockquote>25- <a href="https://honestcoffeeguide.com/coffee-grind-size-chart">Coffee grind size chart</a></blockquote>
+<blockquote>26- <a href="https://honestcoffeeguide.com/best-temperature-to-brew-coffee/">The best temperature to brew coffee</a></blockquote>
+<blockquote>27- <a href="https://unionroasted.com/blogs/brewing-guides/syphon">How to Brew Coffee with a Syphon</a></blockquote>
+<blockquote>28- <a href="https://counterculturecoffee.com/blogs/counter-culture-coffee/guide-to-home-coffee-makers">Guide To Home Coffee Makers</a></blockquote>
+<blockquote>29- <a href="https://perfectdailygrind.com/2021/07/can-you-brew-coffee-with-warm-water">Can you brew coffee with warm water?</a></blockquote>
+<blockquote>30- <a href="https://ravecoffee.co.uk/blogs/news/how-to-brew-coffee-using-an-ibrik-cezve-for-turkish-style-coffee">How to Brew Coffee Using a Cezve</a></blockquote>
+<blockquote>31- <a href="https://www.diffordsguide.com/g/1113/coffee/cupping">Coffee cupping</a></blockquote>
 
 ## Show Your Support
 								
