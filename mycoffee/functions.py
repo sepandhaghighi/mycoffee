@@ -222,6 +222,8 @@ def filter_params(params):
         params["coffee_ratio"] = int(params["coffee_ratio"])
     if is_int(params["water"]):
         params["water"] = int(params["water"])
+    if is_int(params["temperature"]):
+        params["temperature"] = int(params["temperature"])
     if len(params["message"]) == 0:
         params["message"] = EMPTY_MESSAGE
     return params
