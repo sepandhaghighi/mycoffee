@@ -265,6 +265,24 @@ def check_grind_limits(params):
     return True
 
 
+def check_temperature_limits(params):
+    """
+    Check temperature limits.
+
+    :param params: parameters
+    :type params: dict
+    :return: result as bool (False --> the temperature is out of range)
+    """
+    method = params["method"]
+    if "temperature_lower_limit" in METHODS_MAP[method] and "temperature_upper_limit" in METHODS_MAP[method]:
+        temperature = params["temperature"]
+        temperature_lower_limit = METHODS_MAP[method]["temperature_lower_limit"]
+        temperature_upper_limit = METHODS_MAP[method]["temperature_upper_limit"]
+        if temperature < temperature_lower_limit or temperature > temperature_upper_limit:
+            return False
+    return True
+
+
 def convert_coffee(coffee, unit):
     """
     Convert coffee unit.
