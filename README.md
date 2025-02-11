@@ -178,7 +178,7 @@ Message: Chemex method
     <tr>
       <td align="center"><code>--temperature</code></td>
       <td align="center">Brewing temperature (C)</td>
-      <td align="center">Integer</td>
+      <td align="center">Float</td>
       <td align="center"><code>90</code></td>
     </tr>
     <tr>
