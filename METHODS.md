@@ -267,10 +267,10 @@
 
 **Notes**:
 
-- *LL: lower limit*
-- *UL: upper limit*
-- *g: gram*
-- *um: micrometer*
-- *C: degree Celsius*
+- *LL: Lower Limit*
+- *UL: Upper Limit*
+- *g: Gram*
+- *um: Micrometer*
+- *C: Degree Celsius*
 
 
