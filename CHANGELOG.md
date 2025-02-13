@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Temperature lower limit
 ### Changed
 - `--info` argument renamed to `--message`
+- Warning messages updated
 - `README.md` updated
 - `METHODS.md` updated
 ## [1.3] - 2025-01-31
