@@ -160,19 +160,19 @@ Message: Chemex method
     <tr>
       <td align="center"><code>--water</code></td>
       <td align="center">Sets the amount of water in each cup</td>
-      <td align="center">Float</td>
+      <td align="center">Positive float</td>
       <td align="center"><code>240</code></td>
     </tr>
     <tr>
       <td align="center"><code>--cups</code></td>
       <td align="center">Indicates the number of cups</td>
-      <td align="center">Integer</td>
+      <td align="center">Positive integer</td>
       <td align="center"><code>1</code></td>
     </tr>
     <tr>
       <td align="center"><code>--grind</code></td>
       <td align="center">Grind size (um)</td>
-      <td align="center">Integer</td>
+      <td align="center">Positive integer</td>
       <td align="center"><code>700</code></td>
     </tr>
     <tr>
@@ -184,13 +184,13 @@ Message: Chemex method
     <tr>
       <td align="center"><code>--coffee-ratio</code></td>
       <td align="center">Coefficient for the coffee component in the ratio</td>
-      <td align="center">Float</td>
+      <td align="center">Positive float</td>
       <td align="center"><code>1</code></td>
     </tr>
     <tr>
       <td align="center"><code>--water-ratio</code></td>
       <td align="center">Coefficient for the water component in the ratio</td>
-      <td align="center">Float</td>
+      <td align="center">Positive float</td>
       <td align="center"><code>17</code></td>
     </tr>
     <tr>
