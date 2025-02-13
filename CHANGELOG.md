@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - `--info` argument renamed to `--message`
 - `README.md` updated
+- `METHODS.md` updated
 ## [1.3] - 2025-01-31
 ### Added
 - `get_grind_type` function
