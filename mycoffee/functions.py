@@ -360,6 +360,8 @@ def run(args):
     """
     if args.version:
         print(MY_COFFEE_VERSION)
+    elif args.info:
+        mycoffee_info()
     elif args.methods_list:
         show_methods_list()
     elif args.coffee_units_list:
