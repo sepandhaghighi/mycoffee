@@ -10,6 +10,7 @@ from mycoffee.params import POSITIVE_INTEGER_ERROR_MESSAGE, POSITIVE_FLOAT_ERROR
 from mycoffee.params import MY_COFFEE_OVERVIEW, MY_COFFEE_REPO
 from art import tprint
 
+
 def mycoffee_info():
     """
     Print mycoffee details.
@@ -20,6 +21,7 @@ def mycoffee_info():
     tprint("V:" + MY_COFFEE_VERSION)
     print(MY_COFFEE_OVERVIEW)
     print(MY_COFFEE_REPO)
+
 
 def validate_positive_int(string):
     """
