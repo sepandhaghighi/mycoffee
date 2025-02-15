@@ -12,6 +12,12 @@ TEMPERATURE_WARNING_MESSAGE = "[Warning] The temperature is not within the recom
 INPUT_EXAMPLE = "Example: mycoffee --method=v60"
 EXIT_MESSAGE = "See you. Bye!"
 EMPTY_MESSAGE = "Nothing :)"
+MY_COFFEE_REPO = "Repo : https://github.com/sepandhaghighi/mycoffee"
+MY_COFFEE_OVERVIEW = '''
+MyCoffee is a command-line tool for coffee enthusiasts who love brewing with precision.
+It helps you calculate the perfect coffee-to-water ratio for various brewing methods,
+ensuring you brew your ideal cup every time-right from your terminal.
+'''
 MESSAGE_TEMPLATE = """
 
 Method: `{method}`

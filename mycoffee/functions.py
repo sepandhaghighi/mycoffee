@@ -7,8 +7,19 @@ from mycoffee.params import MY_COFFEE_VERSION, DEFAULT_PARAMS
 from mycoffee.params import METHODS_MAP, COFFEE_UNITS_MAP, WATER_UNITS_MAP
 from mycoffee.params import RATIO_WARNING_MESSAGE, GRIND_WARNING_MESSAGE, TEMPERATURE_WARNING_MESSAGE
 from mycoffee.params import POSITIVE_INTEGER_ERROR_MESSAGE, POSITIVE_FLOAT_ERROR_MESSAGE
+from mycoffee.params import MY_COFFEE_OVERVIEW, MY_COFFEE_REPO
 from art import tprint
 
+def mycoffee_info():
+    """
+    Print mycoffee details.
+
+    :return: None
+    """
+    tprint("MyCoffee")
+    tprint("V:" + MY_COFFEE_VERSION)
+    print(MY_COFFEE_OVERVIEW)
+    print(MY_COFFEE_REPO)
 
 def validate_positive_int(string):
     """
