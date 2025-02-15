@@ -11,7 +11,7 @@ from mycoffee.params import MY_COFFEE_OVERVIEW, MY_COFFEE_REPO
 from art import tprint
 
 
-def mycoffee_info():
+def mycoffee_info(): #pragma: no cover
     """
     Print mycoffee details.
 

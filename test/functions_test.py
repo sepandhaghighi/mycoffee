@@ -3,27 +3,6 @@
 >>> import argparse
 >>> from mycoffee.functions import *
 >>> from mycoffee.params import *
->>> mycoffee_info()
- __  __          ____          __   __
-|  \/  | _   _  / ___|  ___   / _| / _|  ___   ___
-| |\/| || | | || |     / _ \ | |_ | |_  / _ \ / _ \
-| |  | || |_| || |___ | (_) ||  _||  _||  __/|  __/
-|_|  |_| \__, | \____| \___/ |_|  |_|   \___| \___|
-         |___/
-<BLANKLINE>
-__     __    _     _  _
-\ \   / / _ / |   | || |
- \ \ / / (_)| |   | || |_
-  \ V /   _ | | _ |__   _|
-   \_/   (_)|_|(_)   |_|
-<BLANKLINE>
-<BLANKLINE>
-<BLANKLINE>
-MyCoffee is a command-line tool for coffee enthusiasts who love brewing with precision.
-It helps you calculate the perfect coffee-to-water ratio for various brewing methods,
-ensuring you brew your ideal cup every time-right from your terminal.
-<BLANKLINE>
-Repo : https://github.com/sepandhaghighi/mycoffee
 >>> convert_coffee(122, "g")
 122
 >>> convert_coffee(122, "cb")
