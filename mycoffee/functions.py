@@ -362,7 +362,7 @@ def run(args):
     """
     if args.version:
         print(MY_COFFEE_VERSION)
-    elif args.info:
+    elif args.info: #pragma: no cover
         mycoffee_info()
     elif args.methods_list:
         show_methods_list()
