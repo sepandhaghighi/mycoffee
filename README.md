@@ -79,6 +79,7 @@
 
 ```console
 > mycoffee --info
+
  __  __          ____          __   __
 |  \/  | _   _  / ___|  ___   / _| / _|  ___   ___
 | |\/| || | | || |     / _ \ | |_ | |_  / _ \ / _ \
@@ -103,7 +104,7 @@ Repo : https://github.com/sepandhaghighi/mycoffee
 
 ### Method
 
-```shell
+```console
 > mycoffee --method=v60
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
@@ -138,7 +139,7 @@ Message: V60 method
 
 ℹ️ You can run `mycoffee --water-units-list` to view the supported water units
 
-```shell
+```console
 > mycoffee --method=chemex --water=20 --cups=3 --coffee-ratio=2 --water-ratio=37 --coffee-unit="t oz" --water-unit="fl oz" --grind=750 --temperature=88
 
  __  __  _  _   ___  _____  ____  ____  ____  ____
