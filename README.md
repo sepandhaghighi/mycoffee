@@ -69,7 +69,7 @@
 
 ### Version
 
-```shell
+```console
 > mycoffee --version
 
 1.4
