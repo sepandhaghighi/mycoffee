@@ -7,7 +7,20 @@ from mycoffee.params import MY_COFFEE_VERSION, DEFAULT_PARAMS
 from mycoffee.params import METHODS_MAP, COFFEE_UNITS_MAP, WATER_UNITS_MAP
 from mycoffee.params import RATIO_WARNING_MESSAGE, GRIND_WARNING_MESSAGE, TEMPERATURE_WARNING_MESSAGE
 from mycoffee.params import POSITIVE_INTEGER_ERROR_MESSAGE, POSITIVE_FLOAT_ERROR_MESSAGE
+from mycoffee.params import MY_COFFEE_OVERVIEW, MY_COFFEE_REPO
 from art import tprint
+
+
+def mycoffee_info(): #pragma: no cover
+    """
+    Print mycoffee details.
+
+    :return: None
+    """
+    tprint("MyCoffee")
+    tprint("V:" + MY_COFFEE_VERSION)
+    print(MY_COFFEE_OVERVIEW)
+    print(MY_COFFEE_REPO)
 
 
 def validate_positive_int(string):
@@ -349,6 +362,8 @@ def run(args):
     """
     if args.version:
         print(MY_COFFEE_VERSION)
+    elif args.info: #pragma: no cover
+        mycoffee_info()
     elif args.methods_list:
         show_methods_list()
     elif args.coffee_units_list:
