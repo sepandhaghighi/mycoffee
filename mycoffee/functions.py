@@ -11,7 +11,7 @@ from mycoffee.params import MY_COFFEE_OVERVIEW, MY_COFFEE_REPO
 from art import tprint
 
 
-def mycoffee_info(): #pragma: no cover
+def mycoffee_info():  # pragma: no cover
     """
     Print mycoffee details.
 
@@ -130,7 +130,6 @@ def print_warnings(params):
                 method=method,
                 lower_limit=str(temperature_lower_limit),
                 upper_limit=str(temperature_upper_limit)))
-
 
 
 def get_grind_type(grind):
@@ -374,7 +373,7 @@ def run(args):
     """
     if args.version:
         print(MY_COFFEE_VERSION)
-    elif args.info: #pragma: no cover
+    elif args.info:  # pragma: no cover
         mycoffee_info()
     elif args.methods_list:
         show_methods_list()
