@@ -95,6 +95,17 @@ def print_result(params):
             grind_size=params["grind"],
             temperature=params["temperature"],
             grind_type=grind_type))
+
+
+def print_warnings(params):
+    """
+    Print warnings.
+
+    :param params: parameters
+    :type params: dict
+    :return: None
+    """
+    method = params["method"]
     if not check_ratio_limits(params):
         ratio_lower_limit = METHODS_MAP[method]["ratio_lower_limit"]
         ratio_upper_limit = METHODS_MAP[method]["ratio_upper_limit"]
@@ -119,6 +130,7 @@ def print_result(params):
                 method=method,
                 lower_limit=str(temperature_lower_limit),
                 upper_limit=str(temperature_upper_limit)))
+
 
 
 def get_grind_type(grind):
