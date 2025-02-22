@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - `--info` argument
+- `--ignore-warnings` argument
+### Changed
+- Test system modified
 ## [1.4] - 2025-02-15
 ### Added
 - `--temperature` argument
