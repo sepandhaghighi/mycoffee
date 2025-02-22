@@ -39,6 +39,7 @@ def main():
     parser.add_argument('--methods-list', help='brewing methods list', nargs="?", const=1)
     parser.add_argument('--version', help='version', nargs="?", const=1)
     parser.add_argument('--info', help='info', nargs="?", const=1)
+    parser.add_argument('--ignore-warnings', help='ignore warnings', nargs="?", const=1)
     args = parser.parse_args()
     try:
         run(args)
