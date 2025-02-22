@@ -388,3 +388,5 @@ def run(args):
         params["water"] = convert_water(params["water"], params["water_unit"])
         params = filter_params(params)
         print_result(params)
+        if not args.ignore_warnings:
+            print_warnings(params)
