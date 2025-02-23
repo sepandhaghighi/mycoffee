@@ -305,7 +305,7 @@ def check_grind_limits(params):
     return True
 
 
-def convert_temperature(value, from_unit, to_unit, digit=2):
+def convert_temperature(value, from_unit, to_unit, digit=3):
     """
     Convert temperature.
 

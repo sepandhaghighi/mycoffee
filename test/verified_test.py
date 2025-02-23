@@ -627,4 +627,22 @@ True
 True
 >>> get_grind_type(1300) == "Extra-Coarse" # https://honestcoffeeguide.com/coffee-grind-size-chart/
 True
+>>> convert_temperature(60, "C", "C")
+60
+>>> convert_temperature(60.0, "F", "F")
+60
+>>> convert_temperature(60, "K", "K")
+60
+>>> convert_temperature(60, "C", "F") # https://www.inchcalculator.com/convert/temperature/
+140
+>>> convert_temperature(60, "C", "K") # https://www.inchcalculator.com/convert/temperature/
+333.15
+>>> convert_temperature(60, "F", "C") # https://www.inchcalculator.com/convert/temperature/
+15.556
+>>> convert_temperature(60, "F", "K") # https://www.inchcalculator.com/convert/temperature/
+288.706
+>>> convert_temperature(60, "K", "C") # https://www.inchcalculator.com/convert/temperature/
+-213.15
+>>> convert_temperature(60, "K", "F") # https://www.inchcalculator.com/convert/temperature/
+-351.67
 """
