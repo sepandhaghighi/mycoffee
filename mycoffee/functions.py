@@ -351,7 +351,7 @@ def check_temperature_limits(params):
     """
     method = params["method"]
     if "temperature_lower_limit" in METHODS_MAP[method] and "temperature_upper_limit" in METHODS_MAP[method]:
-        temperature = params["temperature"]
+        temperature = convert_temperature(params["temperature"], from_unit=params["temperature_unit"], to_unit="C")
         temperature_lower_limit = METHODS_MAP[method]["temperature_lower_limit"]
         temperature_upper_limit = METHODS_MAP[method]["temperature_upper_limit"]
         if temperature < temperature_lower_limit or temperature > temperature_upper_limit:
