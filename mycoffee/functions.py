@@ -124,13 +124,14 @@ def print_warnings(params):
                 lower_limit=str(grind_lower_limit),
                 upper_limit=str(grind_upper_limit)))
     if not check_temperature_limits(params):
-        temperature_lower_limit = METHODS_MAP[method]["temperature_lower_limit"]
-        temperature_upper_limit = METHODS_MAP[method]["temperature_upper_limit"]
+        temperature_lower_limit = convert_temperature(METHODS_MAP[method]["temperature_lower_limit"], from_unit="C", to_unit=params["temperature_unit"])
+        temperature_upper_limit = convert_temperature(METHODS_MAP[method]["temperature_upper_limit"], from_unit="C", to_unit=params["temperature_unit"])
         print(
             TEMPERATURE_WARNING_MESSAGE.format(
                 method=method,
                 lower_limit=str(temperature_lower_limit),
-                upper_limit=str(temperature_upper_limit)))
+                upper_limit=str(temperature_upper_limit)),
+                unit=params["temperature_unit"])
 
 
 def get_grind_type(grind):
