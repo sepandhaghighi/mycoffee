@@ -347,14 +347,14 @@ def convert_temperature(value, from_unit, to_unit, digit=3):
         celsius = (value - 32) * 5 / 9
     elif from_unit == 'K':
         celsius = value - 273.15
-    elif from_unit == 'C':
+    else:
         celsius = value
 
     if to_unit == 'F':
         result = (celsius * 9 / 5) + 32
     elif to_unit == 'K':
         result = celsius + 273.15
-    elif to_unit == 'C':
+    else:
         result = celsius
     result = round(result, digit)
     if is_int(result):
