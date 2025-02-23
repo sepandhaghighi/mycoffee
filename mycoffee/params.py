@@ -8,7 +8,7 @@ POSITIVE_INTEGER_ERROR_MESSAGE = "invalid positive int value: '{string}'"
 POSITIVE_FLOAT_ERROR_MESSAGE = "invalid positive float value: '{string}'"
 RATIO_WARNING_MESSAGE = "[Warning] The ratio is not within the recommended range. For `{method}`, the ratio can be anywhere between `{lower_limit}` and `{upper_limit}`"
 GRIND_WARNING_MESSAGE = "[Warning] The grind size is not within the recommended range. For `{method}`, the grind size can be anywhere between `{lower_limit} um` and `{upper_limit} um`"
-TEMPERATURE_WARNING_MESSAGE = "[Warning] The temperature is not within the recommended range. For `{method}`, the temperature can be anywhere between `{lower_limit} C` and `{upper_limit} C`"
+TEMPERATURE_WARNING_MESSAGE = "[Warning] The temperature is not within the recommended range. For `{method}`, the temperature can be anywhere between `{lower_limit} {unit}` and `{upper_limit} {unit}`"
 INPUT_EXAMPLE = "Example: mycoffee --method=v60"
 EXIT_MESSAGE = "See you. Bye!"
 EMPTY_MESSAGE = "Nothing :)"
@@ -32,7 +32,7 @@ Ratio: {coffee_ratio}/{water_ratio}
 
 Grind: {grind_size} um ({grind_type})
 
-Temperature: {temperature} C
+Temperature: {temperature} {temperature_unit}
 
 Message: {message}
 """
@@ -49,6 +49,7 @@ DEFAULT_PARAMS = {
     "temperature": 90,
     "coffee_unit": "g",
     "water_unit": "g",
+    "temperature_unit": "C",
     "digits": 3,
     "message": ""
 
@@ -357,4 +358,10 @@ WATER_UNITS_MAP = {
     "ct": {"name": "carat", "rate": 5},
     "t lb": {"name": "troy pound", "rate": 0.0026792289},
     "dwt": {"name": "pennyweight", "rate": 0.643015},
+}
+
+TEMPERATURE_UNITS_MAP = {
+    "C": {"name": "Celsius"},
+    "F": {"name": "Fahrenheit"},
+    "K": {"name": "Kelvin"}
 }

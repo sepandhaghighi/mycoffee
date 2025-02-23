@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """mycoffee main."""
 from mycoffee.params import METHODS_MAP, EXIT_MESSAGE
-from mycoffee.params import COFFEE_UNITS_MAP, WATER_UNITS_MAP
+from mycoffee.params import COFFEE_UNITS_MAP, WATER_UNITS_MAP, TEMPERATURE_UNITS_MAP
 from mycoffee.functions import run, validate_positive_int, validate_positive_float
 import argparse
 
@@ -26,7 +26,7 @@ def main():
     parser.add_argument('--water', help='amount of water in each cup', type=validate_positive_float)
     parser.add_argument('--cups', help='number of cups', type=validate_positive_int)
     parser.add_argument('--grind', help='grind size (um)', type=validate_positive_int)
-    parser.add_argument('--temperature', help='brewing temperature (C)', type=float)
+    parser.add_argument('--temperature', help='brewing temperature', type=float)
     parser.add_argument(
         '--digits',
         help='number of digits up to which the result is rounded',
@@ -34,8 +34,15 @@ def main():
         default=3)
     parser.add_argument('--coffee-unit', help='coffee unit', type=str, choices=sorted(COFFEE_UNITS_MAP), default="g")
     parser.add_argument('--water-unit', help='water unit', type=str, choices=sorted(WATER_UNITS_MAP), default="g")
+    parser.add_argument(
+        '--temperature-unit',
+        help='temperature unit',
+        type=str,
+        choices=sorted(TEMPERATURE_UNITS_MAP),
+        default="C")
     parser.add_argument('--coffee-units-list', help='coffee units list', nargs="?", const=1)
     parser.add_argument('--water-units-list', help='water units list', nargs="?", const=1)
+    parser.add_argument('--temperature-units-list', help='temperature units list', nargs="?", const=1)
     parser.add_argument('--methods-list', help='brewing methods list', nargs="?", const=1)
     parser.add_argument('--version', help='version', nargs="?", const=1)
     parser.add_argument('--info', help='info', nargs="?", const=1)

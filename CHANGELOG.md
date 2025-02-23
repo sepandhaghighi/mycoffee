@@ -8,8 +8,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - `--info` argument
 - `--ignore-warnings` argument
+- `--temperature-unit` argument
+- `--temperature-units-list` argument
 ### Changed
 - Test system modified
+- `README.md` updated
 ## [1.4] - 2025-02-15
 ### Added
 - `--temperature` argument

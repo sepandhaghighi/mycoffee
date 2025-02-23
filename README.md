@@ -204,7 +204,7 @@ Message: Chemex method
     </tr>
     <tr>
       <td align="center"><code>--temperature</code></td>
-      <td align="center">Brewing temperature (C)</td>
+      <td align="center">Brewing temperature</td>
       <td align="center">Float</td>
       <td align="center"><code>90</code></td>
     </tr>
@@ -243,6 +243,12 @@ Message: Chemex method
       <td align="center">Water unit</td>
       <td align="center">String</td>
       <td align="center"><code>g</code></td>
+    </tr>
+    <tr>
+      <td align="center"><code>--temperature-unit</code></td>
+      <td align="center">Temperature unit</td>
+      <td align="center">String</td>
+      <td align="center"><code>C</code></td>
     </tr>
   </tbody>
 </table>
