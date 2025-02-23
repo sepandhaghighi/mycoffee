@@ -4,7 +4,7 @@ import math
 import argparse
 from mycoffee.params import MESSAGE_TEMPLATE, METHODS_LIST_TEMPLATE, EMPTY_MESSAGE
 from mycoffee.params import MY_COFFEE_VERSION, DEFAULT_PARAMS
-from mycoffee.params import METHODS_MAP, COFFEE_UNITS_MAP, WATER_UNITS_MAP
+from mycoffee.params import METHODS_MAP, COFFEE_UNITS_MAP, WATER_UNITS_MAP, TEMPERATURE_UNITS_MAP
 from mycoffee.params import RATIO_WARNING_MESSAGE, GRIND_WARNING_MESSAGE, TEMPERATURE_WARNING_MESSAGE
 from mycoffee.params import POSITIVE_INTEGER_ERROR_MESSAGE, POSITIVE_FLOAT_ERROR_MESSAGE
 from mycoffee.params import MY_COFFEE_OVERVIEW, MY_COFFEE_REPO
@@ -225,6 +225,21 @@ def show_water_units_list():
                 data=WATER_UNITS_MAP[unit]['name']))
 
 
+def show_temperature_units_list():
+    """
+    Show temperature units list.
+
+    :return: None
+    """
+    print("Temperature units list:\n")
+    for i, unit in enumerate(sorted(TEMPERATURE_UNITS_MAP), 1):
+        print(
+            METHODS_LIST_TEMPLATE.format(
+                index=i,
+                item=unit,
+                data=TEMPERATURE_UNITS_MAP[unit]['name']))
+
+
 def load_params(args):
     """
     Load params.
@@ -431,6 +446,8 @@ def run(args):
         show_coffee_units_list()
     elif args.water_units_list:
         show_water_units_list()
+    elif args.temperature_units_list:
+        show_temperature_units_list()
     else:
         params = load_params(args)
         params["coffee"] = calc_coffee(params)

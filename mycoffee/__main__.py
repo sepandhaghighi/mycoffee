@@ -42,6 +42,7 @@ def main():
         default="C")
     parser.add_argument('--coffee-units-list', help='coffee units list', nargs="?", const=1)
     parser.add_argument('--water-units-list', help='water units list', nargs="?", const=1)
+    parser.add_argument('--temperature-units-list', help='temperature units list', nargs="?", const=1)
     parser.add_argument('--methods-list', help='brewing methods list', nargs="?", const=1)
     parser.add_argument('--version', help='version', nargs="?", const=1)
     parser.add_argument('--info', help='info', nargs="?", const=1)
