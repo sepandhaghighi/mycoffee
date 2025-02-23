@@ -32,7 +32,7 @@ Ratio: {coffee_ratio}/{water_ratio}
 
 Grind: {grind_size} um ({grind_type})
 
-Temperature: {temperature} C
+Temperature: {temperature} {temperature_unit}
 
 Message: {message}
 """
@@ -49,6 +49,7 @@ DEFAULT_PARAMS = {
     "temperature": 90,
     "coffee_unit": "g",
     "water_unit": "g",
+    "temperature_unit": "C",
     "digits": 3,
     "message": ""
 

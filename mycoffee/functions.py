@@ -94,6 +94,7 @@ def print_result(params):
             water_unit=params["water_unit"],
             grind_size=params["grind"],
             temperature=params["temperature"],
+            temperature_unit=params["temperature_unit"],
             grind_type=grind_type))
 
 
