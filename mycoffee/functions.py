@@ -297,6 +297,48 @@ def check_grind_limits(params):
     return True
 
 
+def convert_temperature(value, from_unit, to_unit, digit=2):
+    """
+    Convert temperature.
+
+    :param value: temperature value to convert
+    :type value: float
+    :param from_unit: unit of the input value
+    :type from_unit: str
+    :param to_unit: unit to convert to
+    :type to_unit: str
+    :param digit: number of decimal places to round the result
+    :type digit: int
+    :return: converted temperature value
+    """
+    from_unit = from_unit.upper()
+    to_unit = to_unit.upper()
+
+    if from_unit == to_unit:
+        result = round(value, digit)
+        if is_int(result):
+            result = int(result)
+        return result
+
+    if from_unit == 'F':
+        celsius = (value - 32) * 5 / 9
+    elif from_unit == 'K':
+        celsius = value - 273.15
+    elif from_unit == 'C':
+        celsius = value
+
+    if to_unit == 'F':
+        result = (celsius * 9 / 5) + 32
+    elif to_unit == 'K':
+        result = celsius + 273.15
+    elif to_unit == 'C':
+        result = celsius
+    result = round(result, digit)
+    if is_int(result):
+        result = int(result)
+    return result
+
+
 def check_temperature_limits(params):
     """
     Check temperature limits.
