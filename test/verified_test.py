@@ -633,6 +633,8 @@ True
 60
 >>> convert_temperature(60, "K", "K")
 60
+>>> convert_temperature(62.2, "K", "K")
+62.2
 >>> convert_temperature(60, "C", "F") # https://www.inchcalculator.com/convert/temperature/
 140
 >>> convert_temperature(60, "C", "K") # https://www.inchcalculator.com/convert/temperature/
