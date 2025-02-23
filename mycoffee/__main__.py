@@ -34,7 +34,12 @@ def main():
         default=3)
     parser.add_argument('--coffee-unit', help='coffee unit', type=str, choices=sorted(COFFEE_UNITS_MAP), default="g")
     parser.add_argument('--water-unit', help='water unit', type=str, choices=sorted(WATER_UNITS_MAP), default="g")
-    parser.add_argument('--temperature-unit', help='temperature unit', type=str, choices=sorted(TEMPERATURE_UNITS_MAP), default="C")
+    parser.add_argument(
+        '--temperature-unit',
+        help='temperature unit',
+        type=str,
+        choices=sorted(TEMPERATURE_UNITS_MAP),
+        default="C")
     parser.add_argument('--coffee-units-list', help='coffee units list', nargs="?", const=1)
     parser.add_argument('--water-units-list', help='water units list', nargs="?", const=1)
     parser.add_argument('--methods-list', help='brewing methods list', nargs="?", const=1)
