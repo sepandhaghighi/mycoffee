@@ -136,8 +136,8 @@ def print_warnings(params):
             TEMPERATURE_WARNING_MESSAGE.format(
                 method=method,
                 lower_limit=str(temperature_lower_limit),
-                upper_limit=str(temperature_upper_limit)),
-            unit=params["temperature_unit"])
+                upper_limit=str(temperature_upper_limit),
+                unit=params["temperature_unit"]))
 
 
 def get_grind_type(grind):
