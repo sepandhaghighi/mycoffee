@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `--info` argument
 - `--ignore-warnings` argument
 - `--temperature-unit` argument
+- `--temperature-units-list` argument
 ### Changed
 - Test system modified
 - `README.md` updated
