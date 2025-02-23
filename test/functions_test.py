@@ -138,6 +138,7 @@ Temperature: 95 C
 <BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
+>>> print_warnings(test_params)
 [Warning] The ratio is not within the recommended range. For `v60`, the ratio can be anywhere between `1/18` and `1/14`
 >>> test_params = {"method":"v60", "cups":2, "coffee":27.7, "water":500, "coffee_ratio": 1, "water_ratio":18, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 1400, "temperature":95}
 >>> test_params = filter_params(test_params)
@@ -171,6 +172,7 @@ Temperature: 95 C
 <BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
+>>> print_warnings(test_params)
 [Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
 >>> test_params = {"method":"v60", "cups":2, "coffee":27.7, "water":500, "coffee_ratio": 1, "water_ratio":18, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 20, "temperature": 50.2}
 >>> test_params = filter_params(test_params)
@@ -204,6 +206,7 @@ Temperature: 50.2 C
 <BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
+>>> print_warnings(test_params)
 [Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
 [Warning] The temperature is not within the recommended range. For `v60`, the temperature can be anywhere between `85 C` and `95 C`
 >>> test_params = {"method":"custom", "cups":2, "coffee":6.0, "water":500, "coffee_ratio": 6, "water_ratio":1000, "message":"", "digits":3, "coffee_unit": "g", "temperature":94}
@@ -353,6 +356,7 @@ True
 >>> _ = parser.add_argument('--methods-list', help='brewing methods list', nargs="?", const=1)
 >>> _ = parser.add_argument('--version', help='version', nargs="?", const=1)
 >>> _ = parser.add_argument('--info', help='info', nargs="?", const=1)
+>>> _ = parser.add_argument('--ignore-warnings', help='ignore warnings', nargs="?", const=1)
 >>> args = parser.parse_args({"--version":True})
 >>> run(args)
 1.4
@@ -377,6 +381,57 @@ Water: 250 g
 Ratio: 3/50
 <BLANKLINE>
 Grind: 550 um (Medium-Fine)
+<BLANKLINE>
+Temperature: 91 C
+<BLANKLINE>
+Message: V60 method
+<BLANKLINE>
+>>> args = parser.parse_args(["--method", 'v60', '--grind', '50'])
+>>> run(args)
+ __  __  _  _   ___  _____  ____  ____  ____  ____
+(  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
+ )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
+(_/\/\_) (__)  \___)(_____)(__)  (__)  (____)(____)
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+Method: `v60`
+<BLANKLINE>
+Cups: 1
+<BLANKLINE>
+Coffee: 15 g
+<BLANKLINE>
+Water: 250 g
+<BLANKLINE>
+Ratio: 3/50
+<BLANKLINE>
+Grind: 50 um (Extra-Fine)
+<BLANKLINE>
+Temperature: 91 C
+<BLANKLINE>
+Message: V60 method
+<BLANKLINE>
+[Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
+>>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings'])
+>>> run(args)
+ __  __  _  _   ___  _____  ____  ____  ____  ____
+(  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
+ )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
+(_/\/\_) (__)  \___)(_____)(__)  (__)  (____)(____)
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+Method: `v60`
+<BLANKLINE>
+Cups: 1
+<BLANKLINE>
+Coffee: 15 g
+<BLANKLINE>
+Water: 250 g
+<BLANKLINE>
+Ratio: 3/50
+<BLANKLINE>
+Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
 <BLANKLINE>

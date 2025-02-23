@@ -11,7 +11,7 @@ from mycoffee.params import MY_COFFEE_OVERVIEW, MY_COFFEE_REPO
 from art import tprint
 
 
-def mycoffee_info(): #pragma: no cover
+def mycoffee_info():  # pragma: no cover
     """
     Print mycoffee details.
 
@@ -95,6 +95,17 @@ def print_result(params):
             grind_size=params["grind"],
             temperature=params["temperature"],
             grind_type=grind_type))
+
+
+def print_warnings(params):
+    """
+    Print warnings.
+
+    :param params: parameters
+    :type params: dict
+    :return: None
+    """
+    method = params["method"]
     if not check_ratio_limits(params):
         ratio_lower_limit = METHODS_MAP[method]["ratio_lower_limit"]
         ratio_upper_limit = METHODS_MAP[method]["ratio_upper_limit"]
@@ -362,7 +373,7 @@ def run(args):
     """
     if args.version:
         print(MY_COFFEE_VERSION)
-    elif args.info: #pragma: no cover
+    elif args.info:  # pragma: no cover
         mycoffee_info()
     elif args.methods_list:
         show_methods_list()
@@ -376,3 +387,5 @@ def run(args):
         params["water"] = convert_water(params["water"], params["water_unit"])
         params = filter_params(params)
         print_result(params)
+        if not args.ignore_warnings:
+            print_warnings(params)
