@@ -359,6 +359,12 @@ Water units list:
 19. `t oz` - troy ounce
 20. `tbsp` - tablespoon
 21. `tsp` - teaspoon
+>>> show_temperature_units_list()
+Temperature units list:
+<BLANKLINE>
+1. `C` - Celsius
+2. `F` - Fahrenheit
+3. `K` - Kelvin
 >>> test_params = {"method":"v60", "cups":1, "water":335, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", 'coffee_unit': 'g'}
 >>> calc_coffee(test_params)
 20.1
@@ -414,6 +420,7 @@ True
 >>> _ = parser.add_argument('--temperature-unit', help='temperature unit', type=str, choices=sorted(TEMPERATURE_UNITS_MAP), default="C")
 >>> _ = parser.add_argument('--coffee-units-list', help='coffee units list', nargs="?", const=1)
 >>> _ = parser.add_argument('--water-units-list', help='water units list', nargs="?", const=1)
+>>> _ = parser.add_argument('--temperature-units-list', help='temperature units list', nargs="?", const=1)
 >>> _ = parser.add_argument('--methods-list', help='brewing methods list', nargs="?", const=1)
 >>> _ = parser.add_argument('--version', help='version', nargs="?", const=1)
 >>> _ = parser.add_argument('--info', help='info', nargs="?", const=1)
@@ -690,6 +697,13 @@ Water units list:
 19. `t oz` - troy ounce
 20. `tbsp` - tablespoon
 21. `tsp` - teaspoon
+>>> args = parser.parse_args(["--temperature-units-list"])
+>>> run(args)
+Temperature units list:
+<BLANKLINE>
+1. `C` - Celsius
+2. `F` - Fahrenheit
+3. `K` - Kelvin
 >>> validate_positive_int("2")
 2
 >>> validate_positive_int("2.0")
