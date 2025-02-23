@@ -358,3 +358,9 @@ WATER_UNITS_MAP = {
     "t lb": {"name": "troy pound", "rate": 0.0026792289},
     "dwt": {"name": "pennyweight", "rate": 0.643015},
 }
+
+TEMPERATURE_UNITS_MAP = {
+    "C": {"name": "Celsius"},
+    "F": {"name": "Fahrenheit"},
+    "K": {"name": "Kelvin"}
+}
