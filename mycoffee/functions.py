@@ -127,11 +127,13 @@ def print_warnings(params):
         temperature_lower_limit = convert_temperature(
             METHODS_MAP[method]["temperature_lower_limit"],
             from_unit="C",
-            to_unit=params["temperature_unit"])
+            to_unit=params["temperature_unit"],
+            digit=params["digit"])
         temperature_upper_limit = convert_temperature(
             METHODS_MAP[method]["temperature_upper_limit"],
             from_unit="C",
-            to_unit=params["temperature_unit"])
+            to_unit=params["temperature_unit"],
+            digit=params["digit"])
         print(
             TEMPERATURE_WARNING_MESSAGE.format(
                 method=method,
