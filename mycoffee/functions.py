@@ -128,12 +128,12 @@ def print_warnings(params):
             METHODS_MAP[method]["temperature_lower_limit"],
             from_unit="C",
             to_unit=params["temperature_unit"],
-            digit=params["digit"])
+            digits=params["digits"])
         temperature_upper_limit = convert_temperature(
             METHODS_MAP[method]["temperature_upper_limit"],
             from_unit="C",
             to_unit=params["temperature_unit"],
-            digit=params["digit"])
+            digits=params["digits"])
         print(
             TEMPERATURE_WARNING_MESSAGE.format(
                 method=method,
@@ -322,7 +322,7 @@ def check_grind_limits(params):
     return True
 
 
-def convert_temperature(value, from_unit, to_unit, digit=3):
+def convert_temperature(value, from_unit, to_unit, digits=3):
     """
     Convert temperature.
 
@@ -332,8 +332,8 @@ def convert_temperature(value, from_unit, to_unit, digit=3):
     :type from_unit: str
     :param to_unit: unit to convert to
     :type to_unit: str
-    :param digit: number of decimal places to round the result
-    :type digit: int
+    :param digits: number of digits up to which the result is rounded
+    :type digits: int
     :return: converted temperature value
     """
     from_unit = from_unit.upper()
@@ -354,7 +354,7 @@ def convert_temperature(value, from_unit, to_unit, digit=3):
             result = celsius + 273.15
         else:
             result = celsius
-    result = round(result, digit)
+    result = round(result, digits)
     if is_int(result):
         result = int(result)
     return result
