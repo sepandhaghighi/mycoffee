@@ -337,25 +337,21 @@ def convert_temperature(value, from_unit, to_unit, digit=3):
     from_unit = from_unit.upper()
     to_unit = to_unit.upper()
 
-    if from_unit == to_unit:
-        result = round(value, digit)
-        if is_int(result):
-            result = int(result)
-        return result
+    result = value
+    if from_unit != to_unit:
+        if from_unit == 'F':
+            celsius = (value - 32) * 5 / 9
+        elif from_unit == 'K':
+            celsius = value - 273.15
+        else:
+            celsius = value
 
-    if from_unit == 'F':
-        celsius = (value - 32) * 5 / 9
-    elif from_unit == 'K':
-        celsius = value - 273.15
-    else:
-        celsius = value
-
-    if to_unit == 'F':
-        result = (celsius * 9 / 5) + 32
-    elif to_unit == 'K':
-        result = celsius + 273.15
-    else:
-        result = celsius
+        if to_unit == 'F':
+            result = (celsius * 9 / 5) + 32
+        elif to_unit == 'K':
+            result = celsius + 273.15
+        else:
+            result = celsius
     result = round(result, digit)
     if is_int(result):
         result = int(result)
