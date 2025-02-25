@@ -4,7 +4,7 @@ import math
 import argparse
 from mycoffee.params import MESSAGE_TEMPLATE, METHODS_LIST_TEMPLATE, EMPTY_MESSAGE
 from mycoffee.params import MY_COFFEE_VERSION, DEFAULT_PARAMS
-from mycoffee.params import METHODS_MAP, COFFEE_UNITS_MAP, WATER_UNITS_MAP
+from mycoffee.params import METHODS_MAP, COFFEE_UNITS_MAP, WATER_UNITS_MAP, TEMPERATURE_UNITS_MAP
 from mycoffee.params import RATIO_WARNING_MESSAGE, GRIND_WARNING_MESSAGE, TEMPERATURE_WARNING_MESSAGE
 from mycoffee.params import POSITIVE_INTEGER_ERROR_MESSAGE, POSITIVE_FLOAT_ERROR_MESSAGE
 from mycoffee.params import MY_COFFEE_OVERVIEW, MY_COFFEE_REPO
@@ -94,6 +94,7 @@ def print_result(params):
             water_unit=params["water_unit"],
             grind_size=params["grind"],
             temperature=params["temperature"],
+            temperature_unit=params["temperature_unit"],
             grind_type=grind_type))
 
 
@@ -123,13 +124,22 @@ def print_warnings(params):
                 lower_limit=str(grind_lower_limit),
                 upper_limit=str(grind_upper_limit)))
     if not check_temperature_limits(params):
-        temperature_lower_limit = METHODS_MAP[method]["temperature_lower_limit"]
-        temperature_upper_limit = METHODS_MAP[method]["temperature_upper_limit"]
+        temperature_lower_limit = convert_temperature(
+            METHODS_MAP[method]["temperature_lower_limit"],
+            from_unit="C",
+            to_unit=params["temperature_unit"],
+            digits=params["digits"])
+        temperature_upper_limit = convert_temperature(
+            METHODS_MAP[method]["temperature_upper_limit"],
+            from_unit="C",
+            to_unit=params["temperature_unit"],
+            digits=params["digits"])
         print(
             TEMPERATURE_WARNING_MESSAGE.format(
                 method=method,
                 lower_limit=str(temperature_lower_limit),
-                upper_limit=str(temperature_upper_limit)))
+                upper_limit=str(temperature_upper_limit),
+                unit=params["temperature_unit"]))
 
 
 def get_grind_type(grind):
@@ -217,6 +227,21 @@ def show_water_units_list():
                 data=WATER_UNITS_MAP[unit]['name']))
 
 
+def show_temperature_units_list():
+    """
+    Show temperature units list.
+
+    :return: None
+    """
+    print("Temperature units list:\n")
+    for i, unit in enumerate(sorted(TEMPERATURE_UNITS_MAP), 1):
+        print(
+            METHODS_LIST_TEMPLATE.format(
+                index=i,
+                item=unit,
+                data=TEMPERATURE_UNITS_MAP[unit]['name']))
+
+
 def load_params(args):
     """
     Load params.
@@ -297,6 +322,44 @@ def check_grind_limits(params):
     return True
 
 
+def convert_temperature(value, from_unit, to_unit, digits=3):
+    """
+    Convert temperature.
+
+    :param value: temperature value to convert
+    :type value: float
+    :param from_unit: unit of the input value
+    :type from_unit: str
+    :param to_unit: unit to convert to
+    :type to_unit: str
+    :param digits: number of digits up to which the result is rounded
+    :type digits: int
+    :return: converted temperature value
+    """
+    from_unit = from_unit.upper()
+    to_unit = to_unit.upper()
+
+    result = value
+    if from_unit != to_unit:
+        if from_unit == 'F':
+            celsius = (value - 32) * 5 / 9
+        elif from_unit == 'K':
+            celsius = value - 273.15
+        else:
+            celsius = value
+
+        if to_unit == 'F':
+            result = (celsius * 9 / 5) + 32
+        elif to_unit == 'K':
+            result = celsius + 273.15
+        else:
+            result = celsius
+    result = round(result, digits)
+    if is_int(result):
+        result = int(result)
+    return result
+
+
 def check_temperature_limits(params):
     """
     Check temperature limits.
@@ -307,7 +370,7 @@ def check_temperature_limits(params):
     """
     method = params["method"]
     if "temperature_lower_limit" in METHODS_MAP[method] and "temperature_upper_limit" in METHODS_MAP[method]:
-        temperature = params["temperature"]
+        temperature = convert_temperature(params["temperature"], from_unit=params["temperature_unit"], to_unit="C")
         temperature_lower_limit = METHODS_MAP[method]["temperature_lower_limit"]
         temperature_upper_limit = METHODS_MAP[method]["temperature_upper_limit"]
         if temperature < temperature_lower_limit or temperature > temperature_upper_limit:
@@ -381,6 +444,8 @@ def run(args):
         show_coffee_units_list()
     elif args.water_units_list:
         show_water_units_list()
+    elif args.temperature_units_list:
+        show_temperature_units_list()
     else:
         params = load_params(args)
         params["coffee"] = calc_coffee(params)
