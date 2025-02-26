@@ -427,7 +427,7 @@ True
 >>> _ = parser.add_argument('--ignore-warnings', help='ignore warnings', nargs="?", const=1)
 >>> args = parser.parse_args({"--version":True})
 >>> run(args)
-1.4
+1.5
 >>>
 >>> args = parser.parse_args(["--method", 'v60'])
 >>> run(args)
