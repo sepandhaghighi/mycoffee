@@ -68,6 +68,30 @@ Temperature: 65 F
 Message: V60 method
 <BLANKLINE>
 [Warning] The temperature is not within the recommended range. For `v60`, the temperature can be anywhere between `185 F` and `203 F`
+>>> print_result(test_params, ignore_warnings=True)
+ __  __  _  _   ___  _____  ____  ____  ____  ____
+(  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
+ )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
+(_/\/\_) (__)  \___)(_____)(__)  (__)  (____)(____)
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+Method: `v60`
+<BLANKLINE>
+Cups: 2
+<BLANKLINE>
+Coffee: 60 g
+<BLANKLINE>
+Water: 500 g
+<BLANKLINE>
+Ratio: 3/50
+<BLANKLINE>
+Grind: 500 um (Medium-Fine)
+<BLANKLINE>
+Temperature: 65 F
+<BLANKLINE>
+Message: V60 method
+<BLANKLINE>
 >>> test_params = {"method":"v60", "cups":2, "coffee":60, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 600, "temperature":95, "temperature_unit": "C"}
 >>> test_params = filter_params(test_params)
 >>> check_ratio_limits(test_params)
@@ -452,7 +476,7 @@ Temperature: 91 C
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
->>> args = parser.parse_args(["--method", 'v60', '--grind', '50'])
+>>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--save', "save_test1.txt"])
 >>> run(args)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
@@ -478,13 +502,54 @@ Temperature: 91 C
 Message: V60 method
 <BLANKLINE>
 [Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
->>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings'])
+>>> file = open("save_test1.txt", "r")
+>>> print(file.read())
+<BLANKLINE>
+<BLANKLINE>
+Method: `v60`
+<BLANKLINE>
+Cups: 1
+<BLANKLINE>
+Coffee: 15 g
+<BLANKLINE>
+Water: 250 g
+<BLANKLINE>
+Ratio: 3/50
+<BLANKLINE>
+Grind: 50 um (Extra-Fine)
+<BLANKLINE>
+Temperature: 91 C
+<BLANKLINE>
+Message: V60 method
+<BLANKLINE>
+[Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
+>>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save', "save_test2.txt"])
 >>> run(args)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
  )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
 (_/\/\_) (__)  \___)(_____)(__)  (__)  (____)(____)
 <BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+Method: `v60`
+<BLANKLINE>
+Cups: 1
+<BLANKLINE>
+Coffee: 15 g
+<BLANKLINE>
+Water: 250 g
+<BLANKLINE>
+Ratio: 3/50
+<BLANKLINE>
+Grind: 50 um (Extra-Fine)
+<BLANKLINE>
+Temperature: 91 C
+<BLANKLINE>
+Message: V60 method
+<BLANKLINE>
+>>> file = open("save_test2.txt", "r")
+>>> print(file.read())
 <BLANKLINE>
 <BLANKLINE>
 Method: `v60`
