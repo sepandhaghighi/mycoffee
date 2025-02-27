@@ -109,20 +109,20 @@ def print_result(params):
     print(get_result(params))
 
 
-
-def print_warnings(params):
+def get_warnings(params):
     """
-    Print warnings.
+    Get warnings.
 
     :param params: parameters
     :type params: dict
-    :return: None
+    :return: warnings list
     """
+    warnings_list = []
     method = params["method"]
     if not check_ratio_limits(params):
         ratio_lower_limit = METHODS_MAP[method]["ratio_lower_limit"]
         ratio_upper_limit = METHODS_MAP[method]["ratio_upper_limit"]
-        print(
+        warnings_list.append(
             RATIO_WARNING_MESSAGE.format(
                 method=method,
                 lower_limit=str(ratio_lower_limit),
@@ -130,7 +130,7 @@ def print_warnings(params):
     if not check_grind_limits(params):
         grind_lower_limit = METHODS_MAP[method]["grind_lower_limit"]
         grind_upper_limit = METHODS_MAP[method]["grind_upper_limit"]
-        print(
+        warnings_list.append(
             GRIND_WARNING_MESSAGE.format(
                 method=method,
                 lower_limit=str(grind_lower_limit),
@@ -146,12 +146,26 @@ def print_warnings(params):
             from_unit="C",
             to_unit=params["temperature_unit"],
             digits=params["digits"])
-        print(
+        warnings_list.append(
             TEMPERATURE_WARNING_MESSAGE.format(
                 method=method,
                 lower_limit=str(temperature_lower_limit),
                 upper_limit=str(temperature_upper_limit),
                 unit=params["temperature_unit"]))
+    return warnings_list
+
+
+def print_warnings(params):
+    """
+    Print warnings.
+
+    :param params: parameters
+    :type params: dict
+    :return: None
+    """
+    warnings_list = get_warnings(params)
+    print("\n".join(warnings_list))
+
 
 
 def get_grind_type(grind):
