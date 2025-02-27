@@ -47,7 +47,7 @@ def main():
     parser.add_argument('--version', help='version', nargs="?", const=1)
     parser.add_argument('--info', help='info', nargs="?", const=1)
     parser.add_argument('--ignore-warnings', help='ignore warnings', nargs="?", const=1)
-    parser.add_argument('--save', help='file path for save', type=str)
+    parser.add_argument('--save', help='file path to save', type=str)
     args = parser.parse_args()
     try:
         run(args)

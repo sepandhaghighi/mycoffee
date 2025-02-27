@@ -17,7 +17,7 @@
 1000.0
 >>> get_grind_type(100)
 'Extra-Fine'
->>> test_params = {"method":"v60", "cups":2, "coffee":60, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", "coffee_unit": "g", "water_unit": "g", "temperature_unit": "C", "grind": 500, "temperature":93}
+>>> test_params = {"method":"v60", "cups":2, "coffee":60, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", "digits":3, "coffee_unit": "g", "water_unit": "g", "temperature_unit": "C", "grind": 500, "temperature":93}
 >>> print_result(test_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
@@ -42,7 +42,7 @@ Temperature: 93 C
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
->>> test_params = {"method":"v60", "cups":2, "coffee":60, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", "coffee_unit": "g", "water_unit": "g", "temperature_unit": "F", "grind": 500, "temperature":65}
+>>> test_params = {"method":"v60", "cups":2, "coffee":60, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", "digits":3, "coffee_unit": "g", "water_unit": "g", "temperature_unit": "F", "grind": 500, "temperature":65}
 >>> print_result(test_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
@@ -67,6 +67,7 @@ Temperature: 65 F
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
+[Warning] The temperature is not within the recommended range. For `v60`, the temperature can be anywhere between `185 F` and `203 F`
 >>> test_params = {"method":"v60", "cups":2, "coffee":60, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 600, "temperature":95, "temperature_unit": "C"}
 >>> test_params = filter_params(test_params)
 >>> check_ratio_limits(test_params)
@@ -163,7 +164,6 @@ Temperature: 95 C
 <BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
->>> print_warnings(test_params)
 [Warning] The ratio is not within the recommended range. For `v60`, the ratio can be anywhere between `1/18` and `1/14`
 >>> test_params = {"method":"v60", "cups":2, "coffee":27.7, "water":500, "coffee_ratio": 1, "water_ratio":18, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 1400, "temperature":95, "temperature_unit": "C"}
 >>> test_params = filter_params(test_params)
@@ -197,7 +197,6 @@ Temperature: 95 C
 <BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
->>> print_warnings(test_params)
 [Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
 >>> test_params = {"method":"v60", "cups":2, "coffee":27.7, "water":500, "coffee_ratio": 1, "water_ratio":18, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 20, "temperature": 50.2, "temperature_unit": "C"}
 >>> test_params = filter_params(test_params)
@@ -231,7 +230,6 @@ Temperature: 50.2 C
 <BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
->>> print_warnings(test_params)
 [Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
 [Warning] The temperature is not within the recommended range. For `v60`, the temperature can be anywhere between `85 C` and `95 C`
 >>> test_params = {"method":"v60", "cups":2, "coffee":27.7, "water":500, "coffee_ratio": 1, "water_ratio":18, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 20, "temperature": 122.36, "temperature_unit": "F"}
@@ -266,7 +264,6 @@ Temperature: 122.36 F
 <BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
->>> print_warnings(test_params)
 [Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
 [Warning] The temperature is not within the recommended range. For `v60`, the temperature can be anywhere between `185 F` and `203 F`
 >>> test_params = {"method":"custom", "cups":2, "coffee":6.0, "water":500, "coffee_ratio": 6, "water_ratio":1000, "message":"", "digits":3, "coffee_unit": "g", "temperature":94, "temperature_unit": "C"}
@@ -425,6 +422,7 @@ True
 >>> _ = parser.add_argument('--version', help='version', nargs="?", const=1)
 >>> _ = parser.add_argument('--info', help='info', nargs="?", const=1)
 >>> _ = parser.add_argument('--ignore-warnings', help='ignore warnings', nargs="?", const=1)
+>>> _ = parser.add_argument('--save', help='file path to save', type=str)
 >>> args = parser.parse_args({"--version":True})
 >>> run(args)
 1.5
