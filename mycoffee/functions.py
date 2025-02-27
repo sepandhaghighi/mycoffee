@@ -110,7 +110,7 @@ def print_result(params):
     print(get_result(params))
 
 
-def save_result(params, file_path):
+def save_result(params, file_path, ignore_warnings=False):
     """
     Save result.
 
@@ -118,9 +118,14 @@ def save_result(params, file_path):
     :type params: dict
     :param file_path: file path
     :type file_path: str
+    :param ignore_warnings: ignore warnings flag
+    :type ignore_warnings: bool
     :return: None
     """
     result = get_result(params)
+    if not ignore_warnings:
+        warnings_list = get_warnings(params)
+        result = result + "\n".join(warnings_list)
     with open(file_path, "w") as file:
         json.dump(result, file)
 
