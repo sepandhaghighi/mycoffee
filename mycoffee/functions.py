@@ -491,3 +491,5 @@ def run(args):
         params["water"] = convert_water(params["water"], params["water_unit"])
         params = filter_params(params)
         print_result(params=params, ignore_warnings=args.ignore_warnings)
+        if args.save:
+            save_result(params=params, file_path=args.save, ignore_warnings=args.ignore_warnings)
