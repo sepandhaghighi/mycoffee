@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """mycoffee functions."""
 import math
-import json
 import argparse
 from mycoffee.params import MESSAGE_TEMPLATE, METHODS_LIST_TEMPLATE, EMPTY_MESSAGE
 from mycoffee.params import MY_COFFEE_VERSION, DEFAULT_PARAMS
@@ -9,6 +8,7 @@ from mycoffee.params import METHODS_MAP, COFFEE_UNITS_MAP, WATER_UNITS_MAP, TEMP
 from mycoffee.params import RATIO_WARNING_MESSAGE, GRIND_WARNING_MESSAGE, TEMPERATURE_WARNING_MESSAGE
 from mycoffee.params import POSITIVE_INTEGER_ERROR_MESSAGE, POSITIVE_FLOAT_ERROR_MESSAGE
 from mycoffee.params import MY_COFFEE_OVERVIEW, MY_COFFEE_REPO
+from mycoffee.params import SAVE_FILE_ERROR_MESSAGE
 from art import tprint
 
 
@@ -127,12 +127,15 @@ def save_result(params, file_path, ignore_warnings=False):
     :type ignore_warnings: bool
     :return: None
     """
-    result = get_result(params)
-    if not ignore_warnings:
-        warnings_list = get_warnings(params)
-        result = result + "\n".join(warnings_list)
-    with open(file_path, "w") as file:
-        json.dump(result, file)
+    try:
+        result = get_result(params)
+        if not ignore_warnings:
+            warnings_list = get_warnings(params)
+            result = result + "\n".join(warnings_list)
+        with open(file_path, "w") as file:
+            file.write(result)
+    except Exception:
+        print(SAVE_FILE_ERROR_MESSAGE)
 
 
 def get_warnings(params):
