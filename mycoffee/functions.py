@@ -81,19 +81,19 @@ def get_result(params):
     """
     grind_type = get_grind_type(params["grind"])
     result = MESSAGE_TEMPLATE.format(
-            method=params["method"],
-            cups=params["cups"],
-            coffee=params["coffee"],
-            water=params["water"],
-            coffee_ratio=params["coffee_ratio"],
-            water_ratio=params["water_ratio"],
-            message=params["message"],
-            coffee_unit=params["coffee_unit"],
-            water_unit=params["water_unit"],
-            grind_size=params["grind"],
-            temperature=params["temperature"],
-            temperature_unit=params["temperature_unit"],
-            grind_type=grind_type)
+        method=params["method"],
+        cups=params["cups"],
+        coffee=params["coffee"],
+        water=params["water"],
+        coffee_ratio=params["coffee_ratio"],
+        water_ratio=params["water_ratio"],
+        message=params["message"],
+        coffee_unit=params["coffee_unit"],
+        water_unit=params["water_unit"],
+        grind_size=params["grind"],
+        temperature=params["temperature"],
+        temperature_unit=params["temperature_unit"],
+        grind_type=grind_type)
     return result
 
 
