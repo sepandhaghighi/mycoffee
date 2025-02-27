@@ -112,7 +112,8 @@ def print_result(params, ignore_warnings=False):
     print(get_result(params))
     if not ignore_warnings:
         warnings_list = get_warnings(params)
-        print("\n".join(warnings_list))
+        if len(warnings_list) > 0:
+            print("\n".join(warnings_list))
 
 
 def save_result(params, file_path, ignore_warnings=False):
@@ -131,7 +132,8 @@ def save_result(params, file_path, ignore_warnings=False):
         result = get_result(params)
         if not ignore_warnings:
             warnings_list = get_warnings(params)
-            result = result + "\n".join(warnings_list)
+            if len(warnings_list) > 0:
+                result = result + "\n".join(warnings_list)
         with open(file_path, "w") as file:
             file.write(result)
     except Exception:
