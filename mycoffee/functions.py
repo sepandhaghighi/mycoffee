@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """mycoffee functions."""
 import math
+import json
 import argparse
 from mycoffee.params import MESSAGE_TEMPLATE, METHODS_LIST_TEMPLATE, EMPTY_MESSAGE
 from mycoffee.params import MY_COFFEE_VERSION, DEFAULT_PARAMS
@@ -107,6 +108,21 @@ def print_result(params):
 
     tprint("MyCoffee", font="bulbhead")
     print(get_result(params))
+
+
+def save_result(params, file_path):
+    """
+    Save result.
+
+    :param params: parameters
+    :type params: dict
+    :param file_path: file path
+    :type file_path: str
+    :return: None
+    """
+    result = get_result(params)
+    with open(file_path, "w") as file:
+        json.dump(result, file)
 
 
 def get_warnings(params):
