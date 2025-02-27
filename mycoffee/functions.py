@@ -70,20 +70,17 @@ def is_int(number):
     return False
 
 
-def print_result(params):
+def get_result(params):
     """
-    Print result.
+    Get result.
 
     :param params: parameters
     :type params: dict
-    :return: None
+    :return: result as str
     """
-    method = params["method"]
-    tprint("MyCoffee", font="bulbhead")
     grind_type = get_grind_type(params["grind"])
-    print(
-        MESSAGE_TEMPLATE.format(
-            method=method,
+    result = MESSAGE_TEMPLATE.format(
+            method=params["method"],
             cups=params["cups"],
             coffee=params["coffee"],
             water=params["water"],
@@ -95,7 +92,22 @@ def print_result(params):
             grind_size=params["grind"],
             temperature=params["temperature"],
             temperature_unit=params["temperature_unit"],
-            grind_type=grind_type))
+            grind_type=grind_type)
+    return result
+
+
+def print_result(params):
+    """
+    Print result.
+
+    :param params: parameters
+    :type params: dict
+    :return: None
+    """
+
+    tprint("MyCoffee", font="bulbhead")
+    print(get_result(params))
+
 
 
 def print_warnings(params):
