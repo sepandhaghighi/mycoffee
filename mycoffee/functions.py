@@ -97,17 +97,22 @@ def get_result(params):
     return result
 
 
-def print_result(params):
+def print_result(params, ignore_warnings=False):
     """
     Print result.
 
     :param params: parameters
     :type params: dict
+    :param ignore_warnings: ignore warnings flag
+    :type ignore_warnings: bool
     :return: None
     """
 
     tprint("MyCoffee", font="bulbhead")
     print(get_result(params))
+    if not ignore_warnings:
+        warnings_list = get_warnings(params)
+        print("\n".join(warnings_list))
 
 
 def save_result(params, file_path, ignore_warnings=False):
@@ -174,19 +179,6 @@ def get_warnings(params):
                 upper_limit=str(temperature_upper_limit),
                 unit=params["temperature_unit"]))
     return warnings_list
-
-
-def print_warnings(params):
-    """
-    Print warnings.
-
-    :param params: parameters
-    :type params: dict
-    :return: None
-    """
-    warnings_list = get_warnings(params)
-    print("\n".join(warnings_list))
-
 
 
 def get_grind_type(grind):
@@ -498,6 +490,4 @@ def run(args):
         params["coffee"] = calc_coffee(params)
         params["water"] = convert_water(params["water"], params["water_unit"])
         params = filter_params(params)
-        print_result(params)
-        if not args.ignore_warnings:
-            print_warnings(params)
+        print_result(params=params, ignore_warnings=args.ignore_warnings)
