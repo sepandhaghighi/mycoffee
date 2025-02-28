@@ -135,11 +135,11 @@ def save_result_text(params, file_path, ignore_warnings=False):
     :type ignore_warnings: bool
     :return: None
     """
-    result = get_result(params)
+    result = get_result(params).strip()
     if not ignore_warnings:
         warnings_list = get_warnings(params)
         if len(warnings_list) > 0:
-            result = result + "\n".join(warnings_list)
+            result = result + "\n\n" + "\n".join(warnings_list)
     with open(file_path, "w") as file:
         file.write(result)
 
