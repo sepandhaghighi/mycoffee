@@ -117,8 +117,15 @@ def print_result(params, ignore_warnings=False):
 
 
 def save_result(params, file_path, ignore_warnings=False):
+    try:
+        save_result_text(params, file_path, ignore_warnings)
+    except Exception:
+        print(SAVE_FILE_ERROR_MESSAGE)
+
+
+def save_result_text(params, file_path, ignore_warnings=False):
     """
-    Save result.
+    Save result as a text file.
 
     :param params: parameters
     :type params: dict
@@ -128,16 +135,13 @@ def save_result(params, file_path, ignore_warnings=False):
     :type ignore_warnings: bool
     :return: None
     """
-    try:
-        result = get_result(params)
-        if not ignore_warnings:
-            warnings_list = get_warnings(params)
-            if len(warnings_list) > 0:
-                result = result + "\n".join(warnings_list)
-        with open(file_path, "w") as file:
-            file.write(result)
-    except Exception:
-        print(SAVE_FILE_ERROR_MESSAGE)
+    result = get_result(params)
+    if not ignore_warnings:
+        warnings_list = get_warnings(params)
+        if len(warnings_list) > 0:
+            result = result + "\n".join(warnings_list)
+    with open(file_path, "w") as file:
+        file.write(result)
 
 
 def get_warnings(params):
@@ -496,5 +500,5 @@ def run(args):
         params["water"] = convert_water(params["water"], params["water_unit"])
         params = filter_params(params)
         print_result(params=params, ignore_warnings=args.ignore_warnings)
-        if args.save:
-            save_result(params=params, file_path=args.save, ignore_warnings=args.ignore_warnings)
+        if args.file_path:
+            save_result(params=params, file_path=args.file_path, ignore_warnings=args.ignore_warnings)

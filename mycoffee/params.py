@@ -366,3 +366,5 @@ TEMPERATURE_UNITS_MAP = {
     "F": {"name": "Fahrenheit"},
     "K": {"name": "Kelvin"}
 }
+
+FILE_FORMATS_LIST = ["text", "json"]

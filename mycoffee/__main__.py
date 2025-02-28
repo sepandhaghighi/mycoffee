@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """mycoffee main."""
-from mycoffee.params import METHODS_MAP, EXIT_MESSAGE
+from mycoffee.params import METHODS_MAP, EXIT_MESSAGE, FILE_FORMATS_LIST
 from mycoffee.params import COFFEE_UNITS_MAP, WATER_UNITS_MAP, TEMPERATURE_UNITS_MAP
 from mycoffee.functions import run, validate_positive_int, validate_positive_float
 import argparse
@@ -47,7 +47,8 @@ def main():
     parser.add_argument('--version', help='version', nargs="?", const=1)
     parser.add_argument('--info', help='info', nargs="?", const=1)
     parser.add_argument('--ignore-warnings', help='ignore warnings', nargs="?", const=1)
-    parser.add_argument('--save', help='file path to save', type=str)
+    parser.add_argument('--file-path', help='file path to save', type=str)
+    parser.add_argument('--file-format', help='file format', type=str, choices=FILE_FORMATS_LIST, default="text")
     args = parser.parse_args()
     try:
         run(args)
