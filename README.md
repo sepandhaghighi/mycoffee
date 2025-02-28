@@ -170,7 +170,7 @@ Message: Chemex method
 
 ℹ️ File format valid choices: [`text`, `json`]
 
-ℹ️ The default file format is text
+ℹ️ The default file format is `text`
 
 ```console
 > mycoffee --method=chemex --water=20 --cups=3 --coffee-ratio=2 --water-ratio=37 --file-path=profile1.txt --file-format=text
