@@ -60,7 +60,7 @@ Grind: 500 um (Medium-Fine)
 Temperature: 93 C
 <BLANKLINE>
 Message: V60 method
->>> save_result(test_params, 2)
+>>> save_result({}, 2)
 [Error] Failed to save file!
 >>> test_params = {"method":"v60", "cups":2, "coffee":60, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", "digits":3, "coffee_unit": "g", "water_unit": "g", "temperature_unit": "F", "grind": 500, "temperature":65}
 >>> print_result(test_params)
