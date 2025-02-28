@@ -107,7 +107,6 @@ def print_result(params, ignore_warnings=False):
     :type ignore_warnings: bool
     :return: None
     """
-
     tprint("MyCoffee", font="bulbhead")
     print(get_result(params))
     if not ignore_warnings:
