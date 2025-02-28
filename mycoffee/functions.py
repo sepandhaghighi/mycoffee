@@ -116,6 +116,17 @@ def print_result(params, ignore_warnings=False):
 
 
 def save_result(params, file_path, ignore_warnings=False):
+    """
+    Save result.
+
+    :param params: parameters
+    :type params: dict
+    :param file_path: file path
+    :type file_path: str
+    :param ignore_warnings: ignore warnings flag
+    :type ignore_warnings: bool
+    :return: None
+    """
     try:
         save_result_text(params, file_path, ignore_warnings)
     except Exception:
