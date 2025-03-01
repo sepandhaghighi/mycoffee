@@ -466,7 +466,7 @@ True
 >>> _ = parser.add_argument('--version', help='version', nargs="?", const=1)
 >>> _ = parser.add_argument('--info', help='info', nargs="?", const=1)
 >>> _ = parser.add_argument('--ignore-warnings', help='ignore warnings', nargs="?", const=1)
->>> _ = parser.add_argument('--file-path', help='file path to save', type=str)
+>>> _ = parser.add_argument('--save', help='file path to save', type=str)
 >>> _ = parser.add_argument('--file-format', help='file format', type=str, choices=FILE_FORMATS_LIST, default="text")
 >>> args = parser.parse_args({"--version":True})
 >>> run(args)
@@ -497,7 +497,7 @@ Temperature: 91 C
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
->>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--file-path', "save_test2.txt"])
+>>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--save', "save_test2.txt"])
 >>> run(args)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
@@ -542,7 +542,7 @@ Temperature: 91 C
 Message: V60 method
 <BLANKLINE>
 [Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
->>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--file-path', "save_test3.txt"])
+>>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save', "save_test3.txt"])
 >>> run(args)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)

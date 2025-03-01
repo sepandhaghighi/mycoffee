@@ -173,7 +173,7 @@ Message: Chemex method
 ℹ️ The default file format is `text`
 
 ```console
-> mycoffee --method=chemex --water=20 --cups=3 --coffee-ratio=2 --water-ratio=37 --file-path=profile1.txt --file-format=text
+> mycoffee --method=chemex --water=20 --cups=3 --coffee-ratio=2 --water-ratio=37 --save="profile1.txt" --file-format="text"
 ```
 
 ## Parameters

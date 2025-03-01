@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
-- `--file-path` argument
+- `--save` argument
 - `--file-format` argument
 ## [1.5] - 2025-02-26
 ### Added
