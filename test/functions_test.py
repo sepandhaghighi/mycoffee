@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """
+>>> import os
 >>> import argparse
 >>> from mycoffee.functions import *
 >>> from mycoffee.params import *
@@ -815,4 +816,7 @@ argparse.ArgumentTypeError: invalid positive float value: '-20'
 Traceback (most recent call last):
     ...
 argparse.ArgumentTypeError: invalid positive float value: 'a'
+>>> os.remove("save_test1.txt")
+>>> os.remove("save_test2.txt")
+>>> os.remove("save_test3.txt")
 """
