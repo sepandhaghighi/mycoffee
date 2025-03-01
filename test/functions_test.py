@@ -61,6 +61,7 @@ Grind: 500 um (Medium-Fine)
 Temperature: 93 C
 <BLANKLINE>
 Message: V60 method
+>>> file.close()
 >>> save_result({}, 2)
 [Error] Failed to save file!
 >>> test_params = {"method":"v60", "cups":2, "coffee":60, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", "digits":3, "coffee_unit": "g", "water_unit": "g", "temperature_unit": "F", "grind": 500, "temperature":65}
@@ -543,6 +544,7 @@ Temperature: 91 C
 Message: V60 method
 <BLANKLINE>
 [Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
+>>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save', "save_test3.txt"])
 >>> run(args)
  __  __  _  _   ___  _____  ____  ____  ____  ____
@@ -585,6 +587,7 @@ Grind: 50 um (Extra-Fine)
 Temperature: 91 C
 <BLANKLINE>
 Message: V60 method
+>>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', "--water-ratio", '500', "--coffee-ratio", '23', "--water", '5000'])
 >>> params = load_params(args)
 >>> params["coffee"] = calc_coffee(params)
