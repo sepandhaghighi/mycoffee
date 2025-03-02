@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """mycoffee functions."""
+import json
 import math
 import argparse
 from mycoffee.params import MESSAGE_TEMPLATE, METHODS_LIST_TEMPLATE, EMPTY_MESSAGE
@@ -152,6 +153,27 @@ def save_result_text(params, file_path, ignore_warnings=False):
             result = result + "\n\n" + "\n".join(warnings_list)
     with open(file_path, "w") as file:
         file.write(result)
+
+
+def save_result_json(params, file_path, ignore_warnings=False):
+    """
+    Save result as a JSON file.
+
+    :param params: parameters
+    :type params: dict
+    :param file_path: file path
+    :type file_path: str
+    :param ignore_warnings: ignore warnings flag
+    :type ignore_warnings: bool
+    :return: None
+    """
+    result = params.copy()
+    result["grind_unit"] = "um"
+    if not ignore_warnings:
+        warnings_list = get_warnings(params)
+        result["warnings"] = warnings_list
+    with open(file_path, "w") as file:
+        json.dump(result, file)
 
 
 def get_warnings(params):
