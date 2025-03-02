@@ -8,6 +8,7 @@ from mycoffee.params import METHODS_MAP, COFFEE_UNITS_MAP, WATER_UNITS_MAP, TEMP
 from mycoffee.params import RATIO_WARNING_MESSAGE, GRIND_WARNING_MESSAGE, TEMPERATURE_WARNING_MESSAGE
 from mycoffee.params import POSITIVE_INTEGER_ERROR_MESSAGE, POSITIVE_FLOAT_ERROR_MESSAGE
 from mycoffee.params import MY_COFFEE_OVERVIEW, MY_COFFEE_REPO
+from mycoffee.params import SAVE_FILE_ERROR_MESSAGE
 from art import tprint
 
 
@@ -70,47 +71,103 @@ def is_int(number):
     return False
 
 
-def print_result(params):
+def get_result(params):
+    """
+    Get result.
+
+    :param params: parameters
+    :type params: dict
+    :return: result as str
+    """
+    grind_type = get_grind_type(params["grind"])
+    result = MESSAGE_TEMPLATE.format(
+        method=params["method"],
+        cups=params["cups"],
+        coffee=params["coffee"],
+        water=params["water"],
+        coffee_ratio=params["coffee_ratio"],
+        water_ratio=params["water_ratio"],
+        message=params["message"],
+        coffee_unit=params["coffee_unit"],
+        water_unit=params["water_unit"],
+        grind_size=params["grind"],
+        temperature=params["temperature"],
+        temperature_unit=params["temperature_unit"],
+        grind_type=grind_type)
+    return result
+
+
+def print_result(params, ignore_warnings=False):
     """
     Print result.
 
     :param params: parameters
     :type params: dict
+    :param ignore_warnings: ignore warnings flag
+    :type ignore_warnings: bool
     :return: None
     """
-    method = params["method"]
     tprint("MyCoffee", font="bulbhead")
-    grind_type = get_grind_type(params["grind"])
-    print(
-        MESSAGE_TEMPLATE.format(
-            method=method,
-            cups=params["cups"],
-            coffee=params["coffee"],
-            water=params["water"],
-            coffee_ratio=params["coffee_ratio"],
-            water_ratio=params["water_ratio"],
-            message=params["message"],
-            coffee_unit=params["coffee_unit"],
-            water_unit=params["water_unit"],
-            grind_size=params["grind"],
-            temperature=params["temperature"],
-            temperature_unit=params["temperature_unit"],
-            grind_type=grind_type))
+    print(get_result(params))
+    if not ignore_warnings:
+        warnings_list = get_warnings(params)
+        if len(warnings_list) > 0:
+            print("\n".join(warnings_list))
 
 
-def print_warnings(params):
+def save_result(params, file_path, ignore_warnings=False):
     """
-    Print warnings.
+    Save result.
 
     :param params: parameters
     :type params: dict
+    :param file_path: file path
+    :type file_path: str
+    :param ignore_warnings: ignore warnings flag
+    :type ignore_warnings: bool
     :return: None
     """
+    try:
+        save_result_text(params, file_path, ignore_warnings)
+    except Exception:
+        print(SAVE_FILE_ERROR_MESSAGE)
+
+
+def save_result_text(params, file_path, ignore_warnings=False):
+    """
+    Save result as a text file.
+
+    :param params: parameters
+    :type params: dict
+    :param file_path: file path
+    :type file_path: str
+    :param ignore_warnings: ignore warnings flag
+    :type ignore_warnings: bool
+    :return: None
+    """
+    result = get_result(params).strip()
+    if not ignore_warnings:
+        warnings_list = get_warnings(params)
+        if len(warnings_list) > 0:
+            result = result + "\n\n" + "\n".join(warnings_list)
+    with open(file_path, "w") as file:
+        file.write(result)
+
+
+def get_warnings(params):
+    """
+    Get warnings.
+
+    :param params: parameters
+    :type params: dict
+    :return: warnings list
+    """
+    warnings_list = []
     method = params["method"]
     if not check_ratio_limits(params):
         ratio_lower_limit = METHODS_MAP[method]["ratio_lower_limit"]
         ratio_upper_limit = METHODS_MAP[method]["ratio_upper_limit"]
-        print(
+        warnings_list.append(
             RATIO_WARNING_MESSAGE.format(
                 method=method,
                 lower_limit=str(ratio_lower_limit),
@@ -118,7 +175,7 @@ def print_warnings(params):
     if not check_grind_limits(params):
         grind_lower_limit = METHODS_MAP[method]["grind_lower_limit"]
         grind_upper_limit = METHODS_MAP[method]["grind_upper_limit"]
-        print(
+        warnings_list.append(
             GRIND_WARNING_MESSAGE.format(
                 method=method,
                 lower_limit=str(grind_lower_limit),
@@ -134,12 +191,13 @@ def print_warnings(params):
             from_unit="C",
             to_unit=params["temperature_unit"],
             digits=params["digits"])
-        print(
+        warnings_list.append(
             TEMPERATURE_WARNING_MESSAGE.format(
                 method=method,
                 lower_limit=str(temperature_lower_limit),
                 upper_limit=str(temperature_upper_limit),
                 unit=params["temperature_unit"]))
+    return warnings_list
 
 
 def get_grind_type(grind):
@@ -451,6 +509,6 @@ def run(args):
         params["coffee"] = calc_coffee(params)
         params["water"] = convert_water(params["water"], params["water_unit"])
         params = filter_params(params)
-        print_result(params)
-        if not args.ignore_warnings:
-            print_warnings(params)
+        print_result(params=params, ignore_warnings=args.ignore_warnings)
+        if args.save_path:
+            save_result(params=params, file_path=args.save_path, ignore_warnings=args.ignore_warnings)
