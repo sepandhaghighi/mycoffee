@@ -116,7 +116,7 @@ def print_result(params, ignore_warnings=False):
             print("\n".join(warnings_list))
 
 
-def save_result(params, file_path, ignore_warnings=False):
+def save_result(params, file_path, file_format="text", ignore_warnings=False):
     """
     Save result.
 
@@ -124,12 +124,18 @@ def save_result(params, file_path, ignore_warnings=False):
     :type params: dict
     :param file_path: file path
     :type file_path: str
+    :param file_format: file format
+    :type file_format: str
     :param ignore_warnings: ignore warnings flag
     :type ignore_warnings: bool
     :return: None
     """
     try:
-        save_result_text(params, file_path, ignore_warnings)
+        if file_format == "json":
+            save_result_json(params, file_path, ignore_warnings)
+        else:
+            save_result_text(params, file_path, ignore_warnings)
+
     except Exception:
         print(SAVE_FILE_ERROR_MESSAGE)
 
@@ -533,4 +539,4 @@ def run(args):
         params = filter_params(params)
         print_result(params=params, ignore_warnings=args.ignore_warnings)
         if args.save_path:
-            save_result(params=params, file_path=args.save_path, ignore_warnings=args.ignore_warnings)
+            save_result(params=params, file_path=args.save_path, file_format=args.save_format, ignore_warnings=args.ignore_warnings)
