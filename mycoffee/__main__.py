@@ -47,8 +47,8 @@ def main():
     parser.add_argument('--version', help='version', nargs="?", const=1)
     parser.add_argument('--info', help='info', nargs="?", const=1)
     parser.add_argument('--ignore-warnings', help='ignore warnings', nargs="?", const=1)
-    parser.add_argument('--save', help='file path to save', type=str)
-    parser.add_argument('--file-format', help='file format', type=str, choices=FILE_FORMATS_LIST, default="text")
+    parser.add_argument('--save-path', help='file path to save', type=str)
+    parser.add_argument('--save-format', help='file format', type=str, choices=FILE_FORMATS_LIST, default="text")
     args = parser.parse_args()
     try:
         run(args)
