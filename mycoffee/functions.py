@@ -540,4 +540,8 @@ def run(args):
         params = filter_params(params)
         print_result(params=params, ignore_warnings=args.ignore_warnings)
         if args.save_path:
-            save_result(params=params, file_path=args.save_path, file_format=args.save_format, ignore_warnings=args.ignore_warnings)
+            save_result(
+                params=params,
+                file_path=args.save_path,
+                file_format=args.save_format,
+                ignore_warnings=args.ignore_warnings)
