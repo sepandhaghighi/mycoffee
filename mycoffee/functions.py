@@ -175,6 +175,7 @@ def save_result_json(params, file_path, ignore_warnings=False):
     """
     result = params.copy()
     result["grind_unit"] = "um"
+    result["mycoffee_version"] = MY_COFFEE_VERSION
     if not ignore_warnings:
         warnings_list = get_warnings(params)
         result["warnings"] = warnings_list
