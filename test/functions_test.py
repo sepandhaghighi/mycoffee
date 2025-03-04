@@ -68,7 +68,7 @@ Message: V60 method
 >>> save_test1_object = json.load(file)
 >>> save_test1_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 93, 'method': 'v60', 'water': 500, 'coffee_unit': 'g', 'coffee_ratio': 3, 'cups': 2, 'digits': 3,'coffee': 60, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 500, 'grind_unit': 'um', 'warnings': [], 'water_ratio': 50}
 True
-file.close()
+>>> file.close()
 >>> save_result({}, 2)
 [Error] Failed to save file!
 >>> test_params = {"method":"v60", "cups":2, "coffee":60, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", "digits":3, "coffee_unit": "g", "water_unit": "g", "temperature_unit": "F", "grind": 500, "temperature":65}
