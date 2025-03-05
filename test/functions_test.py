@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 >>> import os
+>>> import json
 >>> import argparse
 >>> from mycoffee.functions import *
 >>> from mycoffee.params import *
@@ -61,6 +62,12 @@ Grind: 500 um (Medium-Fine)
 Temperature: 93 C
 <BLANKLINE>
 Message: V60 method
+>>> file.close()
+>>> save_result(test_params, "save_test1.json", "json")
+>>> file = open("save_test1.json", "r")
+>>> save_test1_object = json.load(file)
+>>> save_test1_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 93, 'method': 'v60', 'water': 500, 'coffee_unit': 'g', 'coffee_ratio': 3, 'cups': 2, 'digits': 3,'coffee': 60, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 500, 'grind_unit': 'um', 'warnings': [], 'water_ratio': 50}
+True
 >>> file.close()
 >>> save_result({}, 2)
 [Error] Failed to save file!
@@ -545,6 +552,37 @@ Message: V60 method
 <BLANKLINE>
 [Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
 >>> file.close()
+>>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--save-path', "save_test2.json", '--save-format', "json"])
+>>> run(args)
+ __  __  _  _   ___  _____  ____  ____  ____  ____
+(  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
+ )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
+(_/\/\_) (__)  \___)(_____)(__)  (__)  (____)(____)
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+Method: `v60`
+<BLANKLINE>
+Cups: 1
+<BLANKLINE>
+Coffee: 15 g
+<BLANKLINE>
+Water: 250 g
+<BLANKLINE>
+Ratio: 3/50
+<BLANKLINE>
+Grind: 50 um (Extra-Fine)
+<BLANKLINE>
+Temperature: 91 C
+<BLANKLINE>
+Message: V60 method
+<BLANKLINE>
+[Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
+>>> file = open("save_test2.json", "r")
+>>> save_test2_object = json.load(file)
+>>> save_test2_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 91, 'method': 'v60', 'coffee': 15, 'cups': 1, 'coffee_ratio': 3, 'coffee_unit': 'g', 'digits': 3, 'water': 250, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 50, 'grind_unit': 'um', 'warnings': ['[Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`'], 'water_ratio': 50}
+True
+>>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save-path', "save_test3.txt"])
 >>> run(args)
  __  __  _  _   ___  _____  ____  ____  ____  ____
@@ -587,6 +625,36 @@ Grind: 50 um (Extra-Fine)
 Temperature: 91 C
 <BLANKLINE>
 Message: V60 method
+>>> file.close()
+>>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save-path', "save_test3.json", '--save-format', "json"])
+>>> run(args)
+ __  __  _  _   ___  _____  ____  ____  ____  ____
+(  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
+ )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
+(_/\/\_) (__)  \___)(_____)(__)  (__)  (____)(____)
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+Method: `v60`
+<BLANKLINE>
+Cups: 1
+<BLANKLINE>
+Coffee: 15 g
+<BLANKLINE>
+Water: 250 g
+<BLANKLINE>
+Ratio: 3/50
+<BLANKLINE>
+Grind: 50 um (Extra-Fine)
+<BLANKLINE>
+Temperature: 91 C
+<BLANKLINE>
+Message: V60 method
+<BLANKLINE>
+>>> file = open("save_test3.json", "r")
+>>> save_test3_object = json.load(file)
+>>> save_test3_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 91, 'method': 'v60', 'coffee': 15, 'cups': 1, 'coffee_ratio': 3, 'coffee_unit': 'g', 'digits': 3, 'water': 250, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 50, 'grind_unit': 'um', 'water_ratio': 50}
+True
 >>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', "--water-ratio", '500', "--coffee-ratio", '23', "--water", '5000'])
 >>> params = load_params(args)
@@ -822,4 +890,7 @@ argparse.ArgumentTypeError: invalid positive float value: 'a'
 >>> os.remove("save_test1.txt")
 >>> os.remove("save_test2.txt")
 >>> os.remove("save_test3.txt")
+>>> os.remove("save_test1.json")
+>>> os.remove("save_test2.json")
+>>> os.remove("save_test3.json")
 """
