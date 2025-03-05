@@ -553,7 +553,7 @@ def run(args):
         print_result(params=result, ignore_warnings=args.ignore_warnings)
         if args.save_path:
             save_result(
-                params=params,
+                params=result,
                 file_path=args.save_path,
                 file_format=args.save_format,
                 ignore_warnings=args.ignore_warnings)
