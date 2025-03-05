@@ -111,8 +111,9 @@ def print_result(params, ignore_warnings=False):
     tprint("MyCoffee", font="bulbhead")
     print(format_result(params))
     if not ignore_warnings:
-        if len(params["warnings"]) > 0:
-            print("\n".join(params["warnings"]))
+        warnings_list = params["warnings"]
+        if len(warnings_list) > 0:
+            print("\n".join(warnings_list))
 
 
 def save_result(params, file_path, file_format="text", ignore_warnings=False):
@@ -548,12 +549,12 @@ def run(args):
     elif args.temperature_units_list:
         show_temperature_units_list()
     else:
-        params = load_params(args)
-        result = get_result(params)
-        print_result(params=result, ignore_warnings=args.ignore_warnings)
+        input_params = load_params(args)
+        result_params = get_result(input_params)
+        print_result(params=result_params, ignore_warnings=args.ignore_warnings)
         if args.save_path:
             save_result(
-                params=result,
+                params=result_params,
                 file_path=args.save_path,
                 file_format=args.save_format,
                 ignore_warnings=args.ignore_warnings)
