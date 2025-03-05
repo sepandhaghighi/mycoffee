@@ -72,13 +72,13 @@ def is_int(number):
     return False
 
 
-def get_result(params):
+def format_result(params):
     """
-    Get result.
+    Format result.
 
     :param params: parameters
     :type params: dict
-    :return: result as str
+    :return: formatted result as str
     """
     grind_type = get_grind_type(params["grind"])
     result = MESSAGE_TEMPLATE.format(
@@ -109,7 +109,7 @@ def print_result(params, ignore_warnings=False):
     :return: None
     """
     tprint("MyCoffee", font="bulbhead")
-    print(get_result(params))
+    print(format_result(params))
     if not ignore_warnings:
         warnings_list = get_warnings(params)
         if len(warnings_list) > 0:
@@ -152,7 +152,7 @@ def save_result_text(params, file_path, ignore_warnings=False):
     :type ignore_warnings: bool
     :return: None
     """
-    result = get_result(params).strip()
+    result = format_result(params).strip()
     if not ignore_warnings:
         warnings_list = get_warnings(params)
         if len(warnings_list) > 0:
