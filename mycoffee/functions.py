@@ -513,6 +513,22 @@ def calc_coffee(params):
     return coffee
 
 
+def get_result(params):
+    """
+    Get result.
+
+    :param params: parameters
+    :type params: dict
+    :return: result as dict
+    """
+    params_copy = params.copy()
+    params_copy["coffee"] = calc_coffee(params_copy)
+    params_copy["water"] = convert_water(params_copy["water"], params_copy["water_unit"])
+    result = filter_params(params_copy)
+    result["warnings"] = get_warnings(result)
+    return result
+
+
 def run(args):
     """
     Run program.
@@ -535,10 +551,8 @@ def run(args):
         show_temperature_units_list()
     else:
         params = load_params(args)
-        params["coffee"] = calc_coffee(params)
-        params["water"] = convert_water(params["water"], params["water_unit"])
-        params = filter_params(params)
-        print_result(params=params, ignore_warnings=args.ignore_warnings)
+        result = get_result(params)
+        print_result(params=result, ignore_warnings=args.ignore_warnings)
         if args.save_path:
             save_result(
                 params=params,
