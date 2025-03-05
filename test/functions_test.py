@@ -19,9 +19,9 @@
 1000.0
 >>> get_grind_type(100)
 'Extra-Fine'
->>> test_input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", "digits":3, "coffee_unit": "g", "water_unit": "g", "temperature_unit": "C", "grind": 500, "temperature":93}
->>> test_result_params = get_result(test_input_params)
->>> print_result(test_result_params)
+>>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", "digits":3, "coffee_unit": "g", "water_unit": "g", "temperature_unit": "C", "grind": 500, "temperature":93}
+>>> result_params = get_result(input_params)
+>>> print_result(result_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
  )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
@@ -45,7 +45,7 @@ Temperature: 93 C
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
->>> save_result(test_result_params, "save_test1.txt")
+>>> save_result(result_params, "save_test1.txt")
 >>> file = open("save_test1.txt", "r")
 >>> print(file.read())
 Method: `v60`
@@ -64,7 +64,7 @@ Temperature: 93 C
 <BLANKLINE>
 Message: V60 method
 >>> file.close()
->>> save_result(test_result_params, "save_test1.json", "json")
+>>> save_result(result_params, "save_test1.json", "json")
 >>> file = open("save_test1.json", "r")
 >>> save_test1_object = json.load(file)
 >>> save_test1_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 93, 'method': 'v60', 'water': 500, 'coffee_unit': 'g', 'coffee_ratio': 3, 'cups': 2, 'digits': 3,'coffee': 60, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 500, 'grind_unit': 'um', 'warnings': [], 'water_ratio': 50}
@@ -72,9 +72,9 @@ True
 >>> file.close()
 >>> save_result({}, 2)
 [Error] Failed to save file!
->>> test_input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", "digits":3, "coffee_unit": "g", "water_unit": "g", "temperature_unit": "F", "grind": 500, "temperature":65}
->>> test_result_params = get_result(test_input_params)
->>> print_result(test_result_params)
+>>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", "digits":3, "coffee_unit": "g", "water_unit": "g", "temperature_unit": "F", "grind": 500, "temperature":65}
+>>> result_params = get_result(input_params)
+>>> print_result(result_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
  )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
@@ -99,7 +99,7 @@ Temperature: 65 F
 Message: V60 method
 <BLANKLINE>
 [Warning] The temperature is not within the recommended range. For `v60`, the temperature can be anywhere between `185 F` and `203 F`
->>> print_result(test_result_params, ignore_warnings=True)
+>>> print_result(result_params, ignore_warnings=True)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
  )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
@@ -123,15 +123,15 @@ Temperature: 65 F
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
->>> test_input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 600, "temperature":95, "temperature_unit": "C"}
->>> test_result_params = get_result(test_input_params)
->>> check_ratio_limits(test_result_params)
+>>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 600, "temperature":95, "temperature_unit": "C"}
+>>> result_params = get_result(input_params)
+>>> check_ratio_limits(result_params)
 True
->>> check_grind_limits(test_result_params)
+>>> check_grind_limits(result_params)
 True
->>> check_temperature_limits(test_result_params)
+>>> check_temperature_limits(result_params)
 True
->>> print_result(test_result_params)
+>>> print_result(result_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
  )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
@@ -155,15 +155,15 @@ Temperature: 95 C
 <BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
->>> test_input_params = {"method":"v60", "cups":2, "water":0.5, "coffee_ratio": 3, "water_ratio":50, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "kg", "grind": 700, "temperature":95, "temperature_unit": "C"}
->>> test_result_params = get_result(test_input_params)
->>> check_ratio_limits(test_result_params)
+>>> input_params = {"method":"v60", "cups":2, "water":0.5, "coffee_ratio": 3, "water_ratio":50, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "kg", "grind": 700, "temperature":95, "temperature_unit": "C"}
+>>> result_params = get_result(input_params)
+>>> check_ratio_limits(result_params)
 True
->>> check_grind_limits(test_result_params)
+>>> check_grind_limits(result_params)
 True
->>> check_temperature_limits(test_result_params)
+>>> check_temperature_limits(result_params)
 True
->>> print_result(test_result_params)
+>>> print_result(result_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
  )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
@@ -187,15 +187,15 @@ Temperature: 95 C
 <BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
->>> test_input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 6, "water_ratio":1000, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 500, "temperature":95, "temperature_unit": "C"}
->>> test_result_params = get_result(test_input_params)
->>> check_ratio_limits(test_result_params)
+>>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 6, "water_ratio":1000, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 500, "temperature":95, "temperature_unit": "C"}
+>>> result_params = get_result(input_params)
+>>> check_ratio_limits(result_params)
 False
->>> check_grind_limits(test_result_params)
+>>> check_grind_limits(result_params)
 True
->>> check_temperature_limits(test_result_params)
+>>> check_temperature_limits(result_params)
 True
->>> print_result(test_result_params)
+>>> print_result(result_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
  )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
@@ -220,15 +220,15 @@ Temperature: 95 C
 Message: Nothing :)
 <BLANKLINE>
 [Warning] The ratio is not within the recommended range. For `v60`, the ratio can be anywhere between `1/18` and `1/14`
->>> test_input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 1, "water_ratio":18, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 1400, "temperature":95,"temperature_unit": "C"}
->>> test_result_params = get_result(test_input_params)
->>> check_ratio_limits(test_result_params)
+>>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 1, "water_ratio":18, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 1400, "temperature":95,"temperature_unit": "C"}
+>>> result_params = get_result(input_params)
+>>> check_ratio_limits(result_params)
 True
->>> check_grind_limits(test_result_params)
+>>> check_grind_limits(result_params)
 False
->>> check_temperature_limits(test_result_params)
+>>> check_temperature_limits(result_params)
 True
->>> print_result(test_result_params)
+>>> print_result(result_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
  )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
@@ -253,15 +253,15 @@ Temperature: 95 C
 Message: Nothing :)
 <BLANKLINE>
 [Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
->>> test_input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 1, "water_ratio":18, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 20, "temperature": 50.2, "temperature_unit": "C"}
->>> test_result_params = get_result(test_input_params)
->>> check_ratio_limits(test_result_params)
+>>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 1, "water_ratio":18, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 20, "temperature": 50.2, "temperature_unit": "C"}
+>>> result_params = get_result(input_params)
+>>> check_ratio_limits(result_params)
 True
->>> check_grind_limits(test_result_params)
+>>> check_grind_limits(result_params)
 False
->>> check_temperature_limits(test_result_params)
+>>> check_temperature_limits(result_params)
 False
->>> print_result(test_result_params)
+>>> print_result(result_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
  )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
@@ -287,15 +287,15 @@ Message: Nothing :)
 <BLANKLINE>
 [Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
 [Warning] The temperature is not within the recommended range. For `v60`, the temperature can be anywhere between `85 C` and `95 C`
->>> test_input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 1, "water_ratio":18, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 20, "temperature": 122.36, "temperature_unit": "F"}
->>> test_result_params = get_result(test_input_params)
->>> check_ratio_limits(test_result_params)
+>>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 1, "water_ratio":18, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 20, "temperature": 122.36, "temperature_unit": "F"}
+>>> result_params = get_result(input_params)
+>>> check_ratio_limits(result_params)
 True
->>> check_grind_limits(test_result_params)
+>>> check_grind_limits(result_params)
 False
->>> check_temperature_limits(test_result_params)
+>>> check_temperature_limits(result_params)
 False
->>> print_result(test_result_params)
+>>> print_result(result_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
  )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
@@ -321,29 +321,29 @@ Message: Nothing :)
 <BLANKLINE>
 [Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
 [Warning] The temperature is not within the recommended range. For `v60`, the temperature can be anywhere between `185 F` and `203 F`
->>> test_input_params = {"method":"custom", "cups":2, "water":500, "coffee_ratio": 6, "water_ratio":1000, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "temperature": 94, "temperature_unit": "C"}
->>> test_result_params = get_result(test_input_params)
->>> check_ratio_limits(test_result_params)
+>>> input_params = {"method":"custom", "cups":2, "water":500, "coffee_ratio": 6, "water_ratio":1000, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "temperature": 94, "temperature_unit": "C"}
+>>> result_params = get_result(input_params)
+>>> check_ratio_limits(result_params)
 True
->>> check_grind_limits(test_result_params)
+>>> check_grind_limits(result_params)
 True
->>> check_temperature_limits(test_result_params)
+>>> check_temperature_limits(result_params)
 True
->>> test_input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 1.2, "water_ratio":18.4, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 20, "temperature":94, "temperature_unit": "C"}
->>> test_result_params = get_result(test_input_params)
->>> check_ratio_limits(test_result_params)
+>>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 1.2, "water_ratio":18.4, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 20, "temperature":94, "temperature_unit": "C"}
+>>> result_params = get_result(input_params)
+>>> check_ratio_limits(result_params)
 True
->>> check_grind_limits(test_result_params)
+>>> check_grind_limits(result_params)
 False
->>> check_temperature_limits(test_result_params)
+>>> check_temperature_limits(result_params)
 True
->>> test_input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 1.2, "water_ratio":50.1, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 20, "temperature":94, "temperature_unit": "C"}
->>> test_result_params = get_result(test_input_params)
->>> check_ratio_limits(test_result_params)
+>>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 1.2, "water_ratio":50.1, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 20, "temperature":94, "temperature_unit": "C"}
+>>> result_params = get_result(input_params)
+>>> check_ratio_limits(result_params)
 False
->>> check_grind_limits(test_result_params)
+>>> check_grind_limits(result_params)
 False
->>> check_temperature_limits(test_result_params)
+>>> check_temperature_limits(result_params)
 True
 >>> chemex_params = load_method_params("chemex")
 >>> chemex_params == {'message': 'Chemex method', 'water': 240, 'cups': 1, 'coffee_ratio': 1, 'water_ratio': 15, 'digits': 3, 'coffee_unit': 'g', 'water_unit': 'g', 'grind': 670, 'temperature':94, "temperature_unit": "C"}
