@@ -9,7 +9,7 @@ from mycoffee.params import METHODS_MAP, COFFEE_UNITS_MAP, WATER_UNITS_MAP, TEMP
 from mycoffee.params import RATIO_WARNING_MESSAGE, GRIND_WARNING_MESSAGE, TEMPERATURE_WARNING_MESSAGE
 from mycoffee.params import POSITIVE_INTEGER_ERROR_MESSAGE, POSITIVE_FLOAT_ERROR_MESSAGE
 from mycoffee.params import MY_COFFEE_OVERVIEW, MY_COFFEE_REPO
-from mycoffee.params import SAVE_FILE_ERROR_MESSAGE
+from mycoffee.params import SAVE_FILE_ERROR_MESSAGE, SAVE_FILE_SUCCESS_MESSAGE
 from art import tprint
 
 
@@ -127,16 +127,18 @@ def save_result(params, file_path, file_format="text", ignore_warnings=False):
     :type file_format: str
     :param ignore_warnings: ignore warnings flag
     :type ignore_warnings: bool
-    :return: None
+    :return: save result as dict
     """
+    result = {"status": True, "message": SAVE_FILE_SUCCESS_MESSAGE}
     try:
         if file_format == "json":
             save_result_json(params, file_path, ignore_warnings)
         else:
             save_result_text(params, file_path, ignore_warnings)
-
-    except Exception:
-        print(SAVE_FILE_ERROR_MESSAGE)
+        return result
+    except Exception as e:
+        result["status"] = False
+        result["message"] = str(e)
 
 
 def save_result_text(params, file_path, ignore_warnings=False):
@@ -553,8 +555,10 @@ def run(args):
         result_params = get_result(input_params)
         print_result(params=result_params, ignore_warnings=args.ignore_warnings)
         if args.save_path:
-            save_result(
+            save_details = save_result(
                 params=result_params,
                 file_path=args.save_path,
                 file_format=args.save_format,
                 ignore_warnings=args.ignore_warnings)
+            if not save_details["status"]:
+                print(SAVE_FILE_ERROR_MESSAGE)
