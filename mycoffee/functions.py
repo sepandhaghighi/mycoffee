@@ -562,3 +562,5 @@ def run(args):
                 ignore_warnings=args.ignore_warnings)
             if not save_details["status"]:
                 print(SAVE_FILE_ERROR_MESSAGE)
+            else:
+                print(save_details["message"])
