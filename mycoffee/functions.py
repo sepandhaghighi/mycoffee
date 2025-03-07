@@ -80,7 +80,6 @@ def format_result(params):
     :type params: dict
     :return: formatted result as str
     """
-    grind_type = get_grind_type(params["grind"])
     result = MESSAGE_TEMPLATE.format(
         method=params["method"],
         cups=params["cups"],
@@ -94,7 +93,7 @@ def format_result(params):
         grind_size=params["grind"],
         temperature=params["temperature"],
         temperature_unit=params["temperature_unit"],
-        grind_type=grind_type)
+        grind_type=params["grind_type"])
     return result
 
 
@@ -523,6 +522,7 @@ def get_result(params):
     """
     params_copy = params.copy()
     params_copy["coffee"] = calc_coffee(params_copy)
+    params_copy["grind_type"] = get_grind_type(params_copy["grind"])
     result = filter_params(params_copy)
     result["warnings"] = get_warnings(result)
     return result
