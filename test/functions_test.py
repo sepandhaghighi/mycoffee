@@ -672,7 +672,7 @@ Message: V60 method
 >>> save_test3_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 91, 'method': 'v60', 'coffee': 15, 'cups': 1, 'coffee_ratio': 3, 'coffee_unit': 'g', 'digits': 3, 'water': 250, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 50, 'grind_unit': 'um', 'grind_type': get_grind_type(50), 'water_ratio': 50, "warnings":[]}
 True
 >>> file.close()
->>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save-path', "f:", '--save-format', "json"])
+>>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save-path', "f://", '--save-format', "json"])
 >>> run(args)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
