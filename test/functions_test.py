@@ -48,7 +48,7 @@ Message: V60 method
 >>> save_details = save_result(result_params, "save_test1.txt")
 >>> save_details["status"]
 True
->>> save_details["message"] == "Everything seems good."
+>>> save_details["message"] == "[Info] File saved successfully!"
 True
 >>> file = open("save_test1.txt", "r")
 >>> print(file.read())
@@ -71,7 +71,7 @@ Message: V60 method
 >>> save_details = save_result(result_params, "save_test1.json", "json")
 >>> save_details["status"]
 True
->>> save_details["message"] == "Everything seems good."
+>>> save_details["message"] == "[Info] File saved successfully!"
 True
 >>> file = open("save_test1.json", "r")
 >>> save_test1_object = json.load(file)
@@ -544,6 +544,7 @@ Temperature: 91 C
 Message: V60 method
 <BLANKLINE>
 [Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
+[Info] File saved successfully!
 >>> file = open("save_test2.txt", "r")
 >>> print(file.read())
 Method: `v60`
@@ -590,6 +591,7 @@ Temperature: 91 C
 Message: V60 method
 <BLANKLINE>
 [Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
+[Info] File saved successfully!
 >>> file = open("save_test2.json", "r")
 >>> save_test2_object = json.load(file)
 >>> save_test2_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 91, 'method': 'v60', 'coffee': 15, 'cups': 1, 'coffee_ratio': 3, 'coffee_unit': 'g', 'digits': 3, 'water': 250, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 50, 'grind_unit': 'um', 'grind_type': get_grind_type(50), 'warnings': ['[Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`'], 'water_ratio': 50}
@@ -620,6 +622,7 @@ Temperature: 91 C
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
+[Info] File saved successfully!
 >>> file = open("save_test3.txt", "r")
 >>> print(file.read())
 Method: `v60`
@@ -663,6 +666,7 @@ Temperature: 91 C
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
+[Info] File saved successfully!
 >>> file = open("save_test3.json", "r")
 >>> save_test3_object = json.load(file)
 >>> save_test3_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 91, 'method': 'v60', 'coffee': 15, 'cups': 1, 'coffee_ratio': 3, 'coffee_unit': 'g', 'digits': 3, 'water': 250, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 50, 'grind_unit': 'um', 'grind_type': get_grind_type(50), 'water_ratio': 50, "warnings":[]}
