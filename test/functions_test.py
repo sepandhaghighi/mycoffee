@@ -45,7 +45,11 @@ Temperature: 93 C
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
->>> save_result(result_params, "save_test1.txt")
+>>> save_details = save_result(result_params, "save_test1.txt")
+>>> save_details["status"]
+True
+>>> save_details["message"] == "Everything seems good."
+True
 >>> file = open("save_test1.txt", "r")
 >>> print(file.read())
 Method: `v60`
@@ -64,14 +68,19 @@ Temperature: 93 C
 <BLANKLINE>
 Message: V60 method
 >>> file.close()
->>> save_result(result_params, "save_test1.json", "json")
+>>> save_details = save_result(result_params, "save_test1.json", "json")
+>>> save_details["status"]
+True
+>>> save_details["message"] == "Everything seems good."
+True
 >>> file = open("save_test1.json", "r")
 >>> save_test1_object = json.load(file)
 >>> save_test1_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 93, 'method': 'v60', 'water': 500, 'coffee_unit': 'g', 'coffee_ratio': 3, 'cups': 2, 'digits': 3,'coffee': 60, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 500, 'grind_unit': 'um', 'warnings': [], 'water_ratio': 50, 'grind_type': get_grind_type(500)}
 True
 >>> file.close()
->>> save_result({}, 2)
-[Error] Failed to save file!
+>>> save_details = save_result({}, 2)
+>>> save_details["status"]
+False
 >>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", "digits":3, "coffee_unit": "g", "water_unit": "g", "temperature_unit": "F", "grind": 500, "temperature":65}
 >>> result_params = get_result(input_params)
 >>> print_result(result_params)

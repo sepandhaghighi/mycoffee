@@ -135,10 +135,10 @@ def save_result(params, file_path, file_format="text", ignore_warnings=False):
             save_result_json(params, file_path, ignore_warnings)
         else:
             save_result_text(params, file_path, ignore_warnings)
-        return result
     except Exception as e:
         result["status"] = False
         result["message"] = str(e)
+    return result
 
 
 def save_result_text(params, file_path, ignore_warnings=False):
