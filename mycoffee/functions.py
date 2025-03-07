@@ -340,8 +340,8 @@ def load_params(args):
     for item in params:
         if getattr(args, item) is not None:
             params[item] = getattr(args, item)
-    if getattr(args, "water") is not None:
-        params["water"] = convert_water(params["water"], params["water_unit"], True)
+    if getattr(args, "water") is None:
+        params["water"] = convert_water(params["water"], params["water_unit"])
     params["method"] = args.method
     return params
 
@@ -507,8 +507,9 @@ def calc_coffee(params):
     :type params: dict
     :return: coffee amount as float
     """
-    coffee = params["cups"] * params["water"] * params["coffee_ratio"] / params["water_ratio"]
-    coffee = convert_coffee(coffee, params["coffee_unit"])
+    water_gr = convert_water(params["water"], params["water_unit"], True)
+    coffee_gr = params["cups"] * water_gr * params["coffee_ratio"] / params["water_ratio"]
+    coffee = convert_coffee(coffee_gr, params["coffee_unit"])
     return coffee
 
 
@@ -522,7 +523,6 @@ def get_result(params):
     """
     params_copy = params.copy()
     params_copy["coffee"] = calc_coffee(params_copy)
-    params_copy["water"] = convert_water(params_copy["water"], params_copy["water_unit"])
     result = filter_params(params_copy)
     result["warnings"] = get_warnings(result)
     return result
