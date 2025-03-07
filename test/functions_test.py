@@ -67,7 +67,7 @@ Message: V60 method
 >>> save_result(result_params, "save_test1.json", "json")
 >>> file = open("save_test1.json", "r")
 >>> save_test1_object = json.load(file)
->>> save_test1_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 93, 'method': 'v60', 'water': 500, 'coffee_unit': 'g', 'coffee_ratio': 3, 'cups': 2, 'digits': 3,'coffee': 60, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 500, 'grind_unit': 'um', 'warnings': [], 'water_ratio': 50}
+>>> save_test1_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 93, 'method': 'v60', 'water': 500, 'coffee_unit': 'g', 'coffee_ratio': 3, 'cups': 2, 'digits': 3,'coffee': 60, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 500, 'grind_unit': 'um', 'warnings': [], 'water_ratio': 50, 'grind_type': get_grind_type(500)}
 True
 >>> file.close()
 >>> save_result({}, 2)
@@ -321,7 +321,7 @@ Message: Nothing :)
 <BLANKLINE>
 [Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
 [Warning] The temperature is not within the recommended range. For `v60`, the temperature can be anywhere between `185 F` and `203 F`
->>> input_params = {"method":"custom", "cups":2, "water":500, "coffee_ratio": 6, "water_ratio":1000, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "temperature": 94, "temperature_unit": "C"}
+>>> input_params = {"method":"custom", "cups":2, "water":500, "coffee_ratio": 6, "water_ratio":1000, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "temperature": 94, "temperature_unit": "C", "grind": 700}
 >>> result_params = get_result(input_params)
 >>> check_ratio_limits(result_params)
 True
@@ -583,7 +583,7 @@ Message: V60 method
 [Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
 >>> file = open("save_test2.json", "r")
 >>> save_test2_object = json.load(file)
->>> save_test2_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 91, 'method': 'v60', 'coffee': 15, 'cups': 1, 'coffee_ratio': 3, 'coffee_unit': 'g', 'digits': 3, 'water': 250, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 50, 'grind_unit': 'um', 'warnings': ['[Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`'], 'water_ratio': 50}
+>>> save_test2_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 91, 'method': 'v60', 'coffee': 15, 'cups': 1, 'coffee_ratio': 3, 'coffee_unit': 'g', 'digits': 3, 'water': 250, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 50, 'grind_unit': 'um', 'grind_type': get_grind_type(50), 'warnings': ['[Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`'], 'water_ratio': 50}
 True
 >>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save-path', "save_test3.txt"])
@@ -656,7 +656,7 @@ Message: V60 method
 <BLANKLINE>
 >>> file = open("save_test3.json", "r")
 >>> save_test3_object = json.load(file)
->>> save_test3_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 91, 'method': 'v60', 'coffee': 15, 'cups': 1, 'coffee_ratio': 3, 'coffee_unit': 'g', 'digits': 3, 'water': 250, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 50, 'grind_unit': 'um', 'water_ratio': 50, "warnings":[]}
+>>> save_test3_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 91, 'method': 'v60', 'coffee': 15, 'cups': 1, 'coffee_ratio': 3, 'coffee_unit': 'g', 'digits': 3, 'water': 250, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 50, 'grind_unit': 'um', 'grind_type': get_grind_type(50), 'water_ratio': 50, "warnings":[]}
 True
 >>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', "--water-ratio", '500', "--coffee-ratio", '23', "--water", '5000'])
