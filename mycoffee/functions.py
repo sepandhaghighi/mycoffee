@@ -72,13 +72,13 @@ def is_int(number):
     return False
 
 
-def get_result(params):
+def format_result(params):
     """
-    Get result.
+    Format result.
 
     :param params: parameters
     :type params: dict
-    :return: result as str
+    :return: formatted result as str
     """
     grind_type = get_grind_type(params["grind"])
     result = MESSAGE_TEMPLATE.format(
@@ -109,9 +109,9 @@ def print_result(params, ignore_warnings=False):
     :return: None
     """
     tprint("MyCoffee", font="bulbhead")
-    print(get_result(params))
+    print(format_result(params))
     if not ignore_warnings:
-        warnings_list = get_warnings(params)
+        warnings_list = params["warnings"]
         if len(warnings_list) > 0:
             print("\n".join(warnings_list))
 
@@ -152,9 +152,9 @@ def save_result_text(params, file_path, ignore_warnings=False):
     :type ignore_warnings: bool
     :return: None
     """
-    result = get_result(params).strip()
+    result = format_result(params).strip()
     if not ignore_warnings:
-        warnings_list = get_warnings(params)
+        warnings_list = params["warnings"]
         if len(warnings_list) > 0:
             result = result + "\n\n" + "\n".join(warnings_list)
     with open(file_path, "w") as file:
@@ -176,9 +176,8 @@ def save_result_json(params, file_path, ignore_warnings=False):
     result = params.copy()
     result["grind_unit"] = "um"
     result["mycoffee_version"] = MY_COFFEE_VERSION
-    if not ignore_warnings:
-        warnings_list = get_warnings(params)
-        result["warnings"] = warnings_list
+    if ignore_warnings:
+        result["warnings"] = []
     with open(file_path, "w") as file:
         json.dump(result, file)
 
@@ -513,6 +512,22 @@ def calc_coffee(params):
     return coffee
 
 
+def get_result(params):
+    """
+    Get result.
+
+    :param params: parameters
+    :type params: dict
+    :return: result as dict
+    """
+    params_copy = params.copy()
+    params_copy["coffee"] = calc_coffee(params_copy)
+    params_copy["water"] = convert_water(params_copy["water"], params_copy["water_unit"])
+    result = filter_params(params_copy)
+    result["warnings"] = get_warnings(result)
+    return result
+
+
 def run(args):
     """
     Run program.
@@ -534,14 +549,12 @@ def run(args):
     elif args.temperature_units_list:
         show_temperature_units_list()
     else:
-        params = load_params(args)
-        params["coffee"] = calc_coffee(params)
-        params["water"] = convert_water(params["water"], params["water_unit"])
-        params = filter_params(params)
-        print_result(params=params, ignore_warnings=args.ignore_warnings)
+        input_params = load_params(args)
+        result_params = get_result(input_params)
+        print_result(params=result_params, ignore_warnings=args.ignore_warnings)
         if args.save_path:
             save_result(
-                params=params,
+                params=result_params,
                 file_path=args.save_path,
                 file_format=args.save_format,
                 ignore_warnings=args.ignore_warnings)

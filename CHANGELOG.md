@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - `--save-path` argument
 - `--save-format` argument
+### Changed
+- Warning functions modified
+- Result functions modified
+- Test system modified
+- `README.md` updated
 ## [1.5] - 2025-02-26
 ### Added
 - `--info` argument
