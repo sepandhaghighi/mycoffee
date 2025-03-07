@@ -175,9 +175,9 @@ Method: `v60`
 <BLANKLINE>
 Cups: 2
 <BLANKLINE>
-Coffee: 0.06 g
+Coffee: 60 g
 <BLANKLINE>
-Water: 0.001 kg
+Water: 0.5 kg
 <BLANKLINE>
 Ratio: 3/50
 <BLANKLINE>
@@ -418,10 +418,10 @@ Temperature units list:
 1. `C` - Celsius
 2. `F` - Fahrenheit
 3. `K` - Kelvin
->>> test_params = {"method":"v60", "cups":1, "water":335, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", 'coffee_unit': 'g'}
+>>> test_params = {"method":"v60", "cups":1, "water":335, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", 'coffee_unit': 'g', 'water_unit': 'g'}
 >>> calc_coffee(test_params)
 20.1
->>> test_params = {"method":"v60", "cups":2, "water":335, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", 'coffee_unit': 'g'}
+>>> test_params = {"method":"v60", "cups":2, "water":335, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", 'coffee_unit': 'g', 'water_unit': 'g'}
 >>> calc_coffee(test_params)
 40.2
 >>> test_params = {"method":"v60", "cups":2, "coffee":40.2, "water":335.0, "coffee_ratio": 3.0, "water_ratio":50.0, "message":"", "digits":3, 'coffee_unit': 'g', "temperature":94.0, "temperature_unit": "C"}
@@ -682,7 +682,7 @@ True
 >>> args = parser.parse_args(["--method", 'v60', "--water-ratio", '500', "--coffee-ratio", '23', "--water", '5000000', "--water-unit", "mg"])
 >>> params = load_params(args)
 >>> params["water"]
-5000.0
+5000000.0
 >>> params["water_ratio"]
 500.0
 >>> params["coffee_ratio"]
@@ -693,7 +693,7 @@ True
 >>> params = load_params(args)
 >>> params["coffee"] = calc_coffee(params)
 >>> params["water"]
-255
+255000
 >>> params["coffee"]
 15.9375
 >>> params["water_ratio"]
