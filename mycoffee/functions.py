@@ -127,18 +127,18 @@ def save_result(params, file_path, file_format="text", ignore_warnings=False):
     :type file_format: str
     :param ignore_warnings: ignore warnings flag
     :type ignore_warnings: bool
-    :return: save result as dict
+    :return: save details as dict
     """
-    result = {"status": True, "message": SAVE_FILE_SUCCESS_MESSAGE}
+    details = {"status": True, "message": SAVE_FILE_SUCCESS_MESSAGE}
     try:
         if file_format == "json":
             save_result_json(params, file_path, ignore_warnings)
         else:
             save_result_text(params, file_path, ignore_warnings)
     except Exception as e:
-        result["status"] = False
-        result["message"] = str(e)
-    return result
+        details["status"] = False
+        details["message"] = str(e)
+    return details
 
 
 def save_result_text(params, file_path, ignore_warnings=False):
