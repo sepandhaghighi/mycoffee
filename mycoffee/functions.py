@@ -508,9 +508,9 @@ def calc_coffee(params):
     :type params: dict
     :return: coffee amount as float
     """
-    water_gr = convert_water(params["water"], params["water_unit"], True)
-    coffee_gr = params["cups"] * water_gr * params["coffee_ratio"] / params["water_ratio"]
-    coffee = convert_coffee(coffee_gr, params["coffee_unit"])
+    water_gram = convert_water(params["water"], params["water_unit"], True)
+    coffee_gram = params["cups"] * water_gram * params["coffee_ratio"] / params["water_ratio"]
+    coffee = convert_coffee(coffee_gram, params["coffee_unit"])
     return coffee
 
 
