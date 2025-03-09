@@ -468,7 +468,7 @@ True
 >>> is_int(15)
 True
 >>> parser = argparse.ArgumentParser()
->>> _ = parser.add_argument('--method', help='brewing method', type=str, choices=sorted(METHODS_MAP), default="custom")
+>>> _ = parser.add_argument('--method', help='brewing method', type=str.lower, choices=sorted(METHODS_MAP), default="custom")
 >>> _ = parser.add_argument('--message', help='extra information about the brewing method', type=str)
 >>> _ = parser.add_argument('--coffee-ratio', help='coffee ratio', type=validate_positive_float)
 >>> _ = parser.add_argument('--water-ratio', help='water ratio', type=validate_positive_float)
@@ -477,9 +477,9 @@ True
 >>> _ = parser.add_argument('--grind', help='grind size (um)', type=validate_positive_int)
 >>> _ = parser.add_argument('--temperature', help='brewing temperature', type=float)
 >>> _ = parser.add_argument('--digits', help='number of digits up to which the result is rounded', type=int, default=3)
->>> _ = parser.add_argument('--coffee-unit', help='coffee unit', type=str, choices=sorted(COFFEE_UNITS_MAP), default="g")
->>> _ = parser.add_argument('--water-unit', help='water unit', type=str, choices=sorted(WATER_UNITS_MAP), default="g")
->>> _ = parser.add_argument('--temperature-unit', help='temperature unit', type=str, choices=sorted(TEMPERATURE_UNITS_MAP), default="C")
+>>> _ = parser.add_argument('--coffee-unit', help='coffee unit', type=str.lower, choices=sorted(COFFEE_UNITS_MAP), default="g")
+>>> _ = parser.add_argument('--water-unit', help='water unit', type=str.lower, choices=sorted(WATER_UNITS_MAP), default="g")
+>>> _ = parser.add_argument('--temperature-unit', help='temperature unit', type=str.upper, choices=sorted(TEMPERATURE_UNITS_MAP), default="C")
 >>> _ = parser.add_argument('--coffee-units-list', help='coffee units list', nargs="?", const=1)
 >>> _ = parser.add_argument('--water-units-list', help='water units list', nargs="?", const=1)
 >>> _ = parser.add_argument('--temperature-units-list', help='temperature units list', nargs="?", const=1)
@@ -488,7 +488,7 @@ True
 >>> _ = parser.add_argument('--info', help='info', nargs="?", const=1)
 >>> _ = parser.add_argument('--ignore-warnings', help='ignore warnings', nargs="?", const=1)
 >>> _ = parser.add_argument('--save-path', help='file path to save', type=str)
->>> _ = parser.add_argument('--save-format', help='file format', type=str, choices=FILE_FORMATS_LIST, default="text")
+>>> _ = parser.add_argument('--save-format', help='file format', type=str.lower, choices=FILE_FORMATS_LIST, default="text")
 >>> args = parser.parse_args({"--version":True})
 >>> run(args)
 1.5
@@ -518,7 +518,7 @@ Temperature: 91 C
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
->>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--save-path', "save_test2.txt"])
+>>> args = parser.parse_args(["--method", 'V60', '--grind', '50', '--save-path', "save_test2.txt"])
 >>> run(args)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
@@ -565,7 +565,7 @@ Message: V60 method
 <BLANKLINE>
 [Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
 >>> file.close()
->>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--save-path', "save_test2.json", '--save-format', "json"])
+>>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--save-path', "save_test2.json", '--save-format', "JsOn"])
 >>> run(args)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
