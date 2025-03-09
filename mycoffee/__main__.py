@@ -13,7 +13,12 @@ def main():
     :return: None
     """
     parser = argparse.ArgumentParser()
-    parser.add_argument('--method', help='brewing method', type=str.lower, choices=sorted(METHODS_MAP), default="custom")
+    parser.add_argument(
+        '--method',
+        help='brewing method',
+        type=str.lower,
+        choices=sorted(METHODS_MAP),
+        default="custom")
     parser.add_argument('--message', help='extra information about the brewing method', type=str)
     parser.add_argument(
         '--coffee-ratio',
@@ -32,7 +37,12 @@ def main():
         help='number of digits up to which the result is rounded',
         type=int,
         default=3)
-    parser.add_argument('--coffee-unit', help='coffee unit', type=str.lower, choices=sorted(COFFEE_UNITS_MAP), default="g")
+    parser.add_argument(
+        '--coffee-unit',
+        help='coffee unit',
+        type=str.lower,
+        choices=sorted(COFFEE_UNITS_MAP),
+        default="g")
     parser.add_argument('--water-unit', help='water unit', type=str.lower, choices=sorted(WATER_UNITS_MAP), default="g")
     parser.add_argument(
         '--temperature-unit',
