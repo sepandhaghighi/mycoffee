@@ -10,6 +10,7 @@ RATIO_WARNING_MESSAGE = "[Warning] The ratio is not within the recommended range
 GRIND_WARNING_MESSAGE = "[Warning] The grind size is not within the recommended range. For `{method}`, the grind size can be anywhere between `{lower_limit} um` and `{upper_limit} um`"
 TEMPERATURE_WARNING_MESSAGE = "[Warning] The temperature is not within the recommended range. For `{method}`, the temperature can be anywhere between `{lower_limit} {unit}` and `{upper_limit} {unit}`"
 SAVE_FILE_ERROR_MESSAGE = "[Error] Failed to save file!"
+SAVE_FILE_SUCCESS_MESSAGE = "[Info] File saved successfully!"
 INPUT_EXAMPLE = "Example: mycoffee --method=v60"
 EXIT_MESSAGE = "See you. Bye!"
 EMPTY_MESSAGE = "Nothing :)"

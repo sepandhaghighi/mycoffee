@@ -9,7 +9,7 @@ from mycoffee.params import METHODS_MAP, COFFEE_UNITS_MAP, WATER_UNITS_MAP, TEMP
 from mycoffee.params import RATIO_WARNING_MESSAGE, GRIND_WARNING_MESSAGE, TEMPERATURE_WARNING_MESSAGE
 from mycoffee.params import POSITIVE_INTEGER_ERROR_MESSAGE, POSITIVE_FLOAT_ERROR_MESSAGE
 from mycoffee.params import MY_COFFEE_OVERVIEW, MY_COFFEE_REPO
-from mycoffee.params import SAVE_FILE_ERROR_MESSAGE
+from mycoffee.params import SAVE_FILE_ERROR_MESSAGE, SAVE_FILE_SUCCESS_MESSAGE
 from art import tprint
 
 
@@ -80,7 +80,6 @@ def format_result(params):
     :type params: dict
     :return: formatted result as str
     """
-    grind_type = get_grind_type(params["grind"])
     result = MESSAGE_TEMPLATE.format(
         method=params["method"],
         cups=params["cups"],
@@ -94,7 +93,7 @@ def format_result(params):
         grind_size=params["grind"],
         temperature=params["temperature"],
         temperature_unit=params["temperature_unit"],
-        grind_type=grind_type)
+        grind_type=params["grind_type"])
     return result
 
 
@@ -128,16 +127,18 @@ def save_result(params, file_path, file_format="text", ignore_warnings=False):
     :type file_format: str
     :param ignore_warnings: ignore warnings flag
     :type ignore_warnings: bool
-    :return: None
+    :return: save details as dict
     """
+    details = {"status": True, "message": SAVE_FILE_SUCCESS_MESSAGE}
     try:
         if file_format == "json":
             save_result_json(params, file_path, ignore_warnings)
         else:
             save_result_text(params, file_path, ignore_warnings)
-
-    except Exception:
-        print(SAVE_FILE_ERROR_MESSAGE)
+    except Exception as e:
+        details["status"] = False
+        details["message"] = str(e)
+    return details
 
 
 def save_result_text(params, file_path, ignore_warnings=False):
@@ -340,8 +341,8 @@ def load_params(args):
     for item in params:
         if getattr(args, item) is not None:
             params[item] = getattr(args, item)
-    if getattr(args, "water") is not None:
-        params["water"] = convert_water(params["water"], params["water_unit"], True)
+    if getattr(args, "water") is None:
+        params["water"] = convert_water(params["water"], params["water_unit"])
     params["method"] = args.method
     return params
 
@@ -507,8 +508,9 @@ def calc_coffee(params):
     :type params: dict
     :return: coffee amount as float
     """
-    coffee = params["cups"] * params["water"] * params["coffee_ratio"] / params["water_ratio"]
-    coffee = convert_coffee(coffee, params["coffee_unit"])
+    water_gram = convert_water(params["water"], params["water_unit"], True)
+    coffee_gram = params["cups"] * water_gram * params["coffee_ratio"] / params["water_ratio"]
+    coffee = convert_coffee(coffee_gram, params["coffee_unit"])
     return coffee
 
 
@@ -522,7 +524,7 @@ def get_result(params):
     """
     params_copy = params.copy()
     params_copy["coffee"] = calc_coffee(params_copy)
-    params_copy["water"] = convert_water(params_copy["water"], params_copy["water_unit"])
+    params_copy["grind_type"] = get_grind_type(params_copy["grind"])
     result = filter_params(params_copy)
     result["warnings"] = get_warnings(result)
     return result
@@ -553,8 +555,12 @@ def run(args):
         result_params = get_result(input_params)
         print_result(params=result_params, ignore_warnings=args.ignore_warnings)
         if args.save_path:
-            save_result(
+            save_details = save_result(
                 params=result_params,
                 file_path=args.save_path,
                 file_format=args.save_format,
                 ignore_warnings=args.ignore_warnings)
+            if not save_details["status"]:
+                print(SAVE_FILE_ERROR_MESSAGE)
+            else:
+                print(save_details["message"])

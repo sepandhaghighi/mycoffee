@@ -45,7 +45,11 @@ Temperature: 93 C
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
->>> save_result(result_params, "save_test1.txt")
+>>> save_details = save_result(result_params, "save_test1.txt")
+>>> save_details["status"]
+True
+>>> save_details["message"] == "[Info] File saved successfully!"
+True
 >>> file = open("save_test1.txt", "r")
 >>> print(file.read())
 Method: `v60`
@@ -64,14 +68,19 @@ Temperature: 93 C
 <BLANKLINE>
 Message: V60 method
 >>> file.close()
->>> save_result(result_params, "save_test1.json", "json")
+>>> save_details = save_result(result_params, "save_test1.json", "json")
+>>> save_details["status"]
+True
+>>> save_details["message"] == "[Info] File saved successfully!"
+True
 >>> file = open("save_test1.json", "r")
 >>> save_test1_object = json.load(file)
->>> save_test1_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 93, 'method': 'v60', 'water': 500, 'coffee_unit': 'g', 'coffee_ratio': 3, 'cups': 2, 'digits': 3,'coffee': 60, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 500, 'grind_unit': 'um', 'warnings': [], 'water_ratio': 50}
+>>> save_test1_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 93, 'method': 'v60', 'water': 500, 'coffee_unit': 'g', 'coffee_ratio': 3, 'cups': 2, 'digits': 3,'coffee': 60, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 500, 'grind_unit': 'um', 'warnings': [], 'water_ratio': 50, 'grind_type': get_grind_type(500)}
 True
 >>> file.close()
->>> save_result({}, 2)
-[Error] Failed to save file!
+>>> save_details = save_result({}, 2)
+>>> save_details["status"]
+False
 >>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", "digits":3, "coffee_unit": "g", "water_unit": "g", "temperature_unit": "F", "grind": 500, "temperature":65}
 >>> result_params = get_result(input_params)
 >>> print_result(result_params)
@@ -175,9 +184,9 @@ Method: `v60`
 <BLANKLINE>
 Cups: 2
 <BLANKLINE>
-Coffee: 0.06 g
+Coffee: 60 g
 <BLANKLINE>
-Water: 0.001 kg
+Water: 0.5 kg
 <BLANKLINE>
 Ratio: 3/50
 <BLANKLINE>
@@ -321,7 +330,7 @@ Message: Nothing :)
 <BLANKLINE>
 [Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
 [Warning] The temperature is not within the recommended range. For `v60`, the temperature can be anywhere between `185 F` and `203 F`
->>> input_params = {"method":"custom", "cups":2, "water":500, "coffee_ratio": 6, "water_ratio":1000, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "temperature": 94, "temperature_unit": "C"}
+>>> input_params = {"method":"custom", "cups":2, "water":500, "coffee_ratio": 6, "water_ratio":1000, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "temperature": 94, "temperature_unit": "C", "grind": 700}
 >>> result_params = get_result(input_params)
 >>> check_ratio_limits(result_params)
 True
@@ -418,10 +427,10 @@ Temperature units list:
 1. `C` - Celsius
 2. `F` - Fahrenheit
 3. `K` - Kelvin
->>> test_params = {"method":"v60", "cups":1, "water":335, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", 'coffee_unit': 'g'}
+>>> test_params = {"method":"v60", "cups":1, "water":335, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", 'coffee_unit': 'g', 'water_unit': 'g'}
 >>> calc_coffee(test_params)
 20.1
->>> test_params = {"method":"v60", "cups":2, "water":335, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", 'coffee_unit': 'g'}
+>>> test_params = {"method":"v60", "cups":2, "water":335, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", 'coffee_unit': 'g', 'water_unit': 'g'}
 >>> calc_coffee(test_params)
 40.2
 >>> test_params = {"method":"v60", "cups":2, "coffee":40.2, "water":335.0, "coffee_ratio": 3.0, "water_ratio":50.0, "message":"", "digits":3, 'coffee_unit': 'g', "temperature":94.0, "temperature_unit": "C"}
@@ -535,6 +544,7 @@ Temperature: 91 C
 Message: V60 method
 <BLANKLINE>
 [Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
+[Info] File saved successfully!
 >>> file = open("save_test2.txt", "r")
 >>> print(file.read())
 Method: `v60`
@@ -581,9 +591,10 @@ Temperature: 91 C
 Message: V60 method
 <BLANKLINE>
 [Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
+[Info] File saved successfully!
 >>> file = open("save_test2.json", "r")
 >>> save_test2_object = json.load(file)
->>> save_test2_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 91, 'method': 'v60', 'coffee': 15, 'cups': 1, 'coffee_ratio': 3, 'coffee_unit': 'g', 'digits': 3, 'water': 250, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 50, 'grind_unit': 'um', 'warnings': ['[Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`'], 'water_ratio': 50}
+>>> save_test2_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 91, 'method': 'v60', 'coffee': 15, 'cups': 1, 'coffee_ratio': 3, 'coffee_unit': 'g', 'digits': 3, 'water': 250, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 50, 'grind_unit': 'um', 'grind_type': get_grind_type(50), 'warnings': ['[Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`'], 'water_ratio': 50}
 True
 >>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save-path', "save_test3.txt"])
@@ -611,6 +622,7 @@ Temperature: 91 C
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
+[Info] File saved successfully!
 >>> file = open("save_test3.txt", "r")
 >>> print(file.read())
 Method: `v60`
@@ -654,11 +666,38 @@ Temperature: 91 C
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
+[Info] File saved successfully!
 >>> file = open("save_test3.json", "r")
 >>> save_test3_object = json.load(file)
->>> save_test3_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 91, 'method': 'v60', 'coffee': 15, 'cups': 1, 'coffee_ratio': 3, 'coffee_unit': 'g', 'digits': 3, 'water': 250, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 50, 'grind_unit': 'um', 'water_ratio': 50, "warnings":[]}
+>>> save_test3_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 91, 'method': 'v60', 'coffee': 15, 'cups': 1, 'coffee_ratio': 3, 'coffee_unit': 'g', 'digits': 3, 'water': 250, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 50, 'grind_unit': 'um', 'grind_type': get_grind_type(50), 'water_ratio': 50, "warnings":[]}
 True
 >>> file.close()
+>>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save-path', "f://", '--save-format', "json"])
+>>> run(args)
+ __  __  _  _   ___  _____  ____  ____  ____  ____
+(  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
+ )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
+(_/\/\_) (__)  \___)(_____)(__)  (__)  (____)(____)
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+Method: `v60`
+<BLANKLINE>
+Cups: 1
+<BLANKLINE>
+Coffee: 15 g
+<BLANKLINE>
+Water: 250 g
+<BLANKLINE>
+Ratio: 3/50
+<BLANKLINE>
+Grind: 50 um (Extra-Fine)
+<BLANKLINE>
+Temperature: 91 C
+<BLANKLINE>
+Message: V60 method
+<BLANKLINE>
+[Error] Failed to save file!
 >>> args = parser.parse_args(["--method", 'v60', "--water-ratio", '500', "--coffee-ratio", '23', "--water", '5000'])
 >>> params = load_params(args)
 >>> params["coffee"] = calc_coffee(params)
@@ -682,7 +721,7 @@ True
 >>> args = parser.parse_args(["--method", 'v60', "--water-ratio", '500', "--coffee-ratio", '23', "--water", '5000000', "--water-unit", "mg"])
 >>> params = load_params(args)
 >>> params["water"]
-5000.0
+5000000.0
 >>> params["water_ratio"]
 500.0
 >>> params["coffee_ratio"]
@@ -693,7 +732,7 @@ True
 >>> params = load_params(args)
 >>> params["coffee"] = calc_coffee(params)
 >>> params["water"]
-255
+255000
 >>> params["coffee"]
 15.9375
 >>> params["water_ratio"]
