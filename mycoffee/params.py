@@ -32,7 +32,7 @@ Water: {water} {water_unit}
 
 Ratio: {coffee_ratio}/{water_ratio}
 
-Grind: {grind_size} um ({grind_type})
+Grind: {grind_size} {grind_unit} ({grind_type})
 
 Temperature: {temperature} {temperature_unit}
 
