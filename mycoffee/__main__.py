@@ -13,7 +13,12 @@ def main():
     :return: None
     """
     parser = argparse.ArgumentParser()
-    parser.add_argument('--method', help='brewing method', type=str, choices=sorted(METHODS_MAP), default="custom")
+    parser.add_argument(
+        '--method',
+        help='brewing method',
+        type=str.lower,
+        choices=sorted(METHODS_MAP),
+        default="custom")
     parser.add_argument('--message', help='extra information about the brewing method', type=str)
     parser.add_argument(
         '--coffee-ratio',
@@ -32,12 +37,17 @@ def main():
         help='number of digits up to which the result is rounded',
         type=int,
         default=3)
-    parser.add_argument('--coffee-unit', help='coffee unit', type=str, choices=sorted(COFFEE_UNITS_MAP), default="g")
-    parser.add_argument('--water-unit', help='water unit', type=str, choices=sorted(WATER_UNITS_MAP), default="g")
+    parser.add_argument(
+        '--coffee-unit',
+        help='coffee unit',
+        type=str.lower,
+        choices=sorted(COFFEE_UNITS_MAP),
+        default="g")
+    parser.add_argument('--water-unit', help='water unit', type=str.lower, choices=sorted(WATER_UNITS_MAP), default="g")
     parser.add_argument(
         '--temperature-unit',
         help='temperature unit',
-        type=str,
+        type=str.upper,
         choices=sorted(TEMPERATURE_UNITS_MAP),
         default="C")
     parser.add_argument('--coffee-units-list', help='coffee units list', nargs="?", const=1)
@@ -48,7 +58,7 @@ def main():
     parser.add_argument('--info', help='info', nargs="?", const=1)
     parser.add_argument('--ignore-warnings', help='ignore warnings', nargs="?", const=1)
     parser.add_argument('--save-path', help='file path to save', type=str)
-    parser.add_argument('--save-format', help='file format', type=str, choices=FILE_FORMATS_LIST, default="text")
+    parser.add_argument('--save-format', help='file format', type=str.lower, choices=FILE_FORMATS_LIST, default="text")
     args = parser.parse_args()
     try:
         run(args)

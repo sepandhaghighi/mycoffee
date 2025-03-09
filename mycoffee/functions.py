@@ -93,6 +93,7 @@ def format_result(params):
         grind_size=params["grind"],
         temperature=params["temperature"],
         temperature_unit=params["temperature_unit"],
+        grind_unit=params["grind_unit"],
         grind_type=params["grind_type"])
     return result
 
@@ -175,7 +176,6 @@ def save_result_json(params, file_path, ignore_warnings=False):
     :return: None
     """
     result = params.copy()
-    result["grind_unit"] = "um"
     result["mycoffee_version"] = MY_COFFEE_VERSION
     if ignore_warnings:
         result["warnings"] = []
@@ -525,6 +525,7 @@ def get_result(params):
     params_copy = params.copy()
     params_copy["coffee"] = calc_coffee(params_copy)
     params_copy["grind_type"] = get_grind_type(params_copy["grind"])
+    params_copy["grind_unit"] = "um"
     result = filter_params(params_copy)
     result["warnings"] = get_warnings(result)
     return result
