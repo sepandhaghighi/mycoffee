@@ -800,7 +800,7 @@ Message: V60 method
 >>> args = parser.parse_args(["--method", 'steep-and-release', "--digits", '1', "--cups", '3', "--temperature-unit", 'F'])
 >>> params = load_params(args)
 >>> params["temperature"]
-93
+199.4
 >>> params["temperature_unit"]
 'F'
 >>> args = parser.parse_args(["--method", 'steep-and-release', "--digits", '1', "--cups", '3', "--coffee-unit", "oz"])
