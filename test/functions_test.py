@@ -797,6 +797,12 @@ Message: V60 method
 92
 >>> params["temperature_unit"]
 'F'
+>>> args = parser.parse_args(["--method", 'steep-and-release', "--digits", '1', "--cups", '3', "--temperature-unit", 'F'])
+>>> params = load_params(args)
+>>> params["temperature"]
+93
+>>> params["temperature_unit"]
+'F'
 >>> args = parser.parse_args(["--method", 'steep-and-release', "--digits", '1', "--cups", '3', "--coffee-unit", "oz"])
 >>> params = load_params(args)
 >>> params["coffee"] = calc_coffee(params)
