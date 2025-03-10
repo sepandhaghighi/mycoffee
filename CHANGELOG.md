@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Warning functions modified
 - Result functions modified
 - Input case sensitivity bug fixed
+- Temperature unit bug fixed
 - Test system modified
 - `README.md` updated
 ## [1.5] - 2025-02-26
