@@ -343,6 +343,12 @@ def load_params(args):
             params[item] = getattr(args, item)
     if getattr(args, "water") is None:
         params["water"] = convert_water(params["water"], params["water_unit"])
+    if getattr(args, "temperature") is None:
+        params["temperature"] = convert_temperature(
+            params["temperature"],
+            from_unit="C",
+            to_unit=params["temperature_unit"],
+            digits=params["digits"])
     params["method"] = args.method
     return params
 
