@@ -54,13 +54,13 @@
 ## Installation		
 
 ### Source Code
-- Download [Version 1.5](https://github.com/sepandhaghighi/mycoffee/archive/v1.5.zip) or [Latest Source](https://github.com/sepandhaghighi/mycoffee/archive/dev.zip)
+- Download [Version 1.6](https://github.com/sepandhaghighi/mycoffee/archive/v1.6.zip) or [Latest Source](https://github.com/sepandhaghighi/mycoffee/archive/dev.zip)
 - `pip install .`				
 
 ### PyPI
 
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
-- `pip install mycoffee==1.5`						
+- `pip install mycoffee==1.6`						
 
 
 ## Usage
@@ -72,7 +72,7 @@
 ```console
 > mycoffee --version
 
-1.5
+1.6
 ```
 
 ### Info
@@ -87,11 +87,11 @@
 |_|  |_| \__, | \____| \___/ |_|  |_|   \___| \___|
          |___/
 
-__     __    _     ____
-\ \   / / _ / |   | ___|
- \ \ / / (_)| |   |___ \
-  \ V /   _ | | _  ___) |
-   \_/   (_)|_|(_)|____/
+__     __    _      __
+\ \   / / _ / |    / /_
+ \ \ / / (_)| |   | '_ \
+  \ V /   _ | | _ | (_) |
+   \_/   (_)|_|(_) \___/
 
 
 
