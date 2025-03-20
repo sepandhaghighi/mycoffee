@@ -43,7 +43,7 @@ Grind: 500 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 93 C
 <BLANKLINE>
-Strength: Weak
+Strength: Medium
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -68,7 +68,7 @@ Grind: 500 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 93 C
 <BLANKLINE>
-Strength: Weak
+Strength: Medium
 <BLANKLINE>
 Message: V60 method
 >>> file.close()
@@ -109,7 +109,7 @@ Grind: 500 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 65 F
 <BLANKLINE>
-Strength: Weak
+Strength: Medium
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -136,7 +136,7 @@ Grind: 500 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 65 F
 <BLANKLINE>
-Strength: Weak
+Strength: Medium
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -170,7 +170,7 @@ Grind: 600 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 95 C
 <BLANKLINE>
-Strength: Weak
+Strength: Medium
 <BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
@@ -204,7 +204,7 @@ Grind: 700 um (Medium)
 <BLANKLINE>
 Temperature: 95 C
 <BLANKLINE>
-Strength: Weak
+Strength: Medium
 <BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
@@ -273,7 +273,7 @@ Grind: 1400 um (Extra-Coarse)
 <BLANKLINE>
 Temperature: 95 C
 <BLANKLINE>
-Strength: Weak
+Strength: Medium
 <BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
@@ -308,7 +308,7 @@ Grind: 20 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 50.2 C
 <BLANKLINE>
-Strength: Weak
+Strength: Medium
 <BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
@@ -344,7 +344,7 @@ Grind: 20 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 122.36 F
 <BLANKLINE>
-Strength: Weak
+Strength: Medium
 <BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
@@ -536,7 +536,7 @@ Grind: 550 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 91 C
 <BLANKLINE>
-Strength: Weak
+Strength: Medium
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -563,7 +563,7 @@ Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
 <BLANKLINE>
-Strength: Weak
+Strength: Medium
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -585,7 +585,7 @@ Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
 <BLANKLINE>
-Strength: Weak
+Strength: Medium
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -614,7 +614,7 @@ Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
 <BLANKLINE>
-Strength: Weak
+Strength: Medium
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -648,7 +648,7 @@ Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
 <BLANKLINE>
-Strength: Weak
+Strength: Medium
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -669,7 +669,7 @@ Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
 <BLANKLINE>
-Strength: Weak
+Strength: Medium
 <BLANKLINE>
 Message: V60 method
 >>> file.close()
@@ -696,7 +696,7 @@ Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
 <BLANKLINE>
-Strength: Weak
+Strength: Medium
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -729,7 +729,7 @@ Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
 <BLANKLINE>
-Strength: Weak
+Strength: Medium
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
