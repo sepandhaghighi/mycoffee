@@ -263,7 +263,7 @@ def get_brew_strength(ratio):
     :return: brew strength as float
     """
     strength_labels = ["Very Weak", "Weak", "Medium", "Strong", "Very Strong"]
-    thresholds = [1/40, 1/22, 1/15, 1/12, 1/8]
+    thresholds = [1 / 40, 1 / 22, 1 / 15, 1 / 12, 1 / 8]
 
     if ratio < thresholds[0]:
         return strength_labels[0]
