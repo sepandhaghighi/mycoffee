@@ -252,6 +252,34 @@ def get_grind_type(grind):
     return "Extra-Coarse"
 
 
+def get_brew_strength(ratio, min_ratio=1/20, max_ratio=1):
+    """
+    Return brew strength.
+
+    :param ratio: coffee to water ratio
+    :type ratio: float
+    :param min_ratio: minimum ratio
+    :type min_ratio: float
+    :param max_ratio: maximum ratio
+    :type max_ratio: float
+    :return: brew strength as float
+    """
+    range_size = (max_ratio - min_ratio) / 5.0
+    strength_labels = ["Very Weak", "Weak", "Medium", "Strong", "Very Strong"]
+    thresholds = [min_ratio + i * range_size for i in range(1, 5)]
+
+    if ratio < thresholds[0]:
+        return strength_labels[0]
+    elif thresholds[0] <= ratio < thresholds[1]:
+        return strength_labels[1]
+    elif thresholds[1] <= ratio < thresholds[2]:
+        return strength_labels[2]
+    elif thresholds[2] <= ratio < thresholds[3]:
+        return strength_labels[3]
+    else:
+        return strength_labels[4]
+
+
 def load_method_params(method_name):
     """
     Load method params.
