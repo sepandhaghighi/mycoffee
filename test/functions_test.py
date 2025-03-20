@@ -19,6 +19,16 @@
 1000.0
 >>> get_grind_type(100)
 'Extra-Fine'
+>>> get_brew_strength(1/60)
+'Very Weak'
+>>> get_brew_strength(1/30)
+'Weak'
+>>> get_brew_strength(1/22)
+'Medium'
+>>> get_brew_strength(1/15)
+'Strong'
+>>> get_brew_strength(1/2)
+'Very Strong'
 >>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", "digits":3, "coffee_unit": "g", "water_unit": "g", "temperature_unit": "C", "grind": 500, "temperature":93}
 >>> result_params = get_result(input_params)
 >>> print_result(result_params)
