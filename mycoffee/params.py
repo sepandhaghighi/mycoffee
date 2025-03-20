@@ -30,7 +30,7 @@ Coffee: {coffee} {coffee_unit}
 
 Water: {water} {water_unit}
 
-Ratio: {coffee_ratio}/{water_ratio}
+Ratio: {coffee_ratio}/{water_ratio} (ratio)
 
 Grind: {grind_size} {grind_unit} ({grind_type})
 

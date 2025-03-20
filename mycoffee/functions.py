@@ -87,6 +87,7 @@ def format_result(params):
         water=params["water"],
         coffee_ratio=params["coffee_ratio"],
         water_ratio=params["water_ratio"],
+        ratio = params["ratio"],
         message=params["message"],
         coffee_unit=params["coffee_unit"],
         water_unit=params["water_unit"],
