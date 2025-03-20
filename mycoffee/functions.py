@@ -254,7 +254,7 @@ def get_grind_type(grind):
     return "Extra-Coarse"
 
 
-def get_brew_strength(ratio, min_ratio=1 / 25, max_ratio=1 / 7):
+def get_brew_strength(ratio, min_ratio=1 / 40, max_ratio=1 / 8):
     """
     Return brew strength.
 

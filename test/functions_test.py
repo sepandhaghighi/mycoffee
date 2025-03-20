@@ -43,7 +43,7 @@ Grind: 500 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 93 C
 <BLANKLINE>
-Strength: Very Weak
+Strength: Weak
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -68,7 +68,7 @@ Grind: 500 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 93 C
 <BLANKLINE>
-Strength: Very Weak
+Strength: Weak
 <BLANKLINE>
 Message: V60 method
 >>> file.close()
@@ -109,7 +109,7 @@ Grind: 500 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 65 F
 <BLANKLINE>
-Strength: Very Weak
+Strength: Weak
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -136,7 +136,7 @@ Grind: 500 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 65 F
 <BLANKLINE>
-Strength: Very Weak
+Strength: Weak
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -170,7 +170,7 @@ Grind: 600 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 95 C
 <BLANKLINE>
-Strength: Very Weak
+Strength: Weak
 <BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
@@ -204,7 +204,7 @@ Grind: 700 um (Medium)
 <BLANKLINE>
 Temperature: 95 C
 <BLANKLINE>
-Strength: Very Weak
+Strength: Weak
 <BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
@@ -273,7 +273,7 @@ Grind: 1400 um (Extra-Coarse)
 <BLANKLINE>
 Temperature: 95 C
 <BLANKLINE>
-Strength: Very Weak
+Strength: Weak
 <BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
@@ -308,7 +308,7 @@ Grind: 20 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 50.2 C
 <BLANKLINE>
-Strength: Very Weak
+Strength: Weak
 <BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
@@ -344,7 +344,7 @@ Grind: 20 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 122.36 F
 <BLANKLINE>
-Strength: Very Weak
+Strength: Weak
 <BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
@@ -536,7 +536,7 @@ Grind: 550 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 91 C
 <BLANKLINE>
-Strength: Very Weak
+Strength: Weak
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -563,7 +563,7 @@ Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
 <BLANKLINE>
-Strength: Very Weak
+Strength: Weak
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -585,7 +585,7 @@ Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
 <BLANKLINE>
-Strength: Very Weak
+Strength: Weak
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -614,7 +614,7 @@ Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
 <BLANKLINE>
-Strength: Very Weak
+Strength: Weak
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -622,7 +622,7 @@ Message: V60 method
 [Info] File saved successfully!
 >>> file = open("save_test2.json", "r")
 >>> save_test2_object = json.load(file)
->>> save_test2_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 91, 'method': 'v60', 'coffee': 15, 'cups': 1, 'coffee_ratio': 3, 'coffee_unit': 'g', 'digits': 3, 'water': 250, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 50, 'grind_unit': 'um', 'grind_type': get_grind_type(50), 'warnings': ['[Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`'], 'water_ratio': 50, 'ratio': 0.06, 'strength': "Very Weak"}
+>>> save_test2_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 91, 'method': 'v60', 'coffee': 15, 'cups': 1, 'coffee_ratio': 3, 'coffee_unit': 'g', 'digits': 3, 'water': 250, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 50, 'grind_unit': 'um', 'grind_type': get_grind_type(50), 'warnings': ['[Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`'], 'water_ratio': 50, 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
 >>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save-path', "save_test3.txt"])
@@ -648,7 +648,7 @@ Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
 <BLANKLINE>
-Strength: Very Weak
+Strength: Weak
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -669,7 +669,7 @@ Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
 <BLANKLINE>
-Strength: Very Weak
+Strength: Weak
 <BLANKLINE>
 Message: V60 method
 >>> file.close()
@@ -696,14 +696,14 @@ Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
 <BLANKLINE>
-Strength: Very Weak
+Strength: Weak
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
 [Info] File saved successfully!
 >>> file = open("save_test3.json", "r")
 >>> save_test3_object = json.load(file)
->>> save_test3_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 91, 'method': 'v60', 'coffee': 15, 'cups': 1, 'coffee_ratio': 3, 'coffee_unit': 'g', 'digits': 3, 'water': 250, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 50, 'grind_unit': 'um', 'grind_type': get_grind_type(50), 'water_ratio': 50, "warnings":[], 'ratio': 0.06, 'strength': "Very Weak"}
+>>> save_test3_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 91, 'method': 'v60', 'coffee': 15, 'cups': 1, 'coffee_ratio': 3, 'coffee_unit': 'g', 'digits': 3, 'water': 250, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 50, 'grind_unit': 'um', 'grind_type': get_grind_type(50), 'water_ratio': 50, "warnings":[], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
 >>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save-path', "f://", '--save-format', "json"])
@@ -729,7 +729,7 @@ Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
 <BLANKLINE>
-Strength: Very Weak
+Strength: Weak
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
