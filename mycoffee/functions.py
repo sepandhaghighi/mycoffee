@@ -559,6 +559,8 @@ def get_result(params):
     params_copy = params.copy()
     params_copy["coffee"] = calc_coffee(params_copy)
     params_copy["grind_type"] = get_grind_type(params_copy["grind"])
+    params_copy["ratio"] = round(params_copy["coffee_ratio"] / params_copy["water_ratio"], params["digits"])
+    params_copy["strength"] = get_brew_strength(ratio=params_copy["ratio"])
     params_copy["grind_unit"] = "um"
     result = filter_params(params_copy)
     result["warnings"] = get_warnings(result)
