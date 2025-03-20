@@ -94,7 +94,8 @@ def format_result(params):
         temperature=params["temperature"],
         temperature_unit=params["temperature_unit"],
         grind_unit=params["grind_unit"],
-        grind_type=params["grind_type"])
+        grind_type=params["grind_type"],
+        strength=params["strength"])
     return result
 
 
