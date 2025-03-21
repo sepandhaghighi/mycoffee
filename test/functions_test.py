@@ -49,11 +49,11 @@ Water: 500 g
 <BLANKLINE>
 Ratio: 3/50 (0.06)
 <BLANKLINE>
+Strength: Medium
+<BLANKLINE>
 Grind: 500 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 93 C
-<BLANKLINE>
-Strength: Medium
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -74,11 +74,11 @@ Water: 500 g
 <BLANKLINE>
 Ratio: 3/50 (0.06)
 <BLANKLINE>
+Strength: Medium
+<BLANKLINE>
 Grind: 500 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 93 C
-<BLANKLINE>
-Strength: Medium
 <BLANKLINE>
 Message: V60 method
 >>> file.close()
@@ -115,11 +115,11 @@ Water: 500 g
 <BLANKLINE>
 Ratio: 3/50 (0.06)
 <BLANKLINE>
+Strength: Medium
+<BLANKLINE>
 Grind: 500 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 65 F
-<BLANKLINE>
-Strength: Medium
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -142,11 +142,11 @@ Water: 500 g
 <BLANKLINE>
 Ratio: 3/50 (0.06)
 <BLANKLINE>
+Strength: Medium
+<BLANKLINE>
 Grind: 500 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 65 F
-<BLANKLINE>
-Strength: Medium
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -176,11 +176,11 @@ Water: 500 g
 <BLANKLINE>
 Ratio: 3/50 (0.06)
 <BLANKLINE>
+Strength: Medium
+<BLANKLINE>
 Grind: 600 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 95 C
-<BLANKLINE>
-Strength: Medium
 <BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
@@ -210,11 +210,11 @@ Water: 0.5 kg
 <BLANKLINE>
 Ratio: 3/50 (0.06)
 <BLANKLINE>
+Strength: Medium
+<BLANKLINE>
 Grind: 700 um (Medium)
 <BLANKLINE>
 Temperature: 95 C
-<BLANKLINE>
-Strength: Medium
 <BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
@@ -244,11 +244,11 @@ Water: 500 g
 <BLANKLINE>
 Ratio: 6/1000 (0.006)
 <BLANKLINE>
+Strength: Very Weak
+<BLANKLINE>
 Grind: 500 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 95 C
-<BLANKLINE>
-Strength: Very Weak
 <BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
@@ -279,11 +279,11 @@ Water: 500 g
 <BLANKLINE>
 Ratio: 1/18 (0.056)
 <BLANKLINE>
+Strength: Medium
+<BLANKLINE>
 Grind: 1400 um (Extra-Coarse)
 <BLANKLINE>
 Temperature: 95 C
-<BLANKLINE>
-Strength: Medium
 <BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
@@ -314,11 +314,11 @@ Water: 500 g
 <BLANKLINE>
 Ratio: 1/18 (0.056)
 <BLANKLINE>
+Strength: Medium
+<BLANKLINE>
 Grind: 20 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 50.2 C
-<BLANKLINE>
-Strength: Medium
 <BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
@@ -350,11 +350,11 @@ Water: 500 g
 <BLANKLINE>
 Ratio: 1/18 (0.056)
 <BLANKLINE>
+Strength: Medium
+<BLANKLINE>
 Grind: 20 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 122.36 F
-<BLANKLINE>
-Strength: Medium
 <BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
@@ -542,11 +542,11 @@ Water: 250 g
 <BLANKLINE>
 Ratio: 3/50 (0.06)
 <BLANKLINE>
+Strength: Medium
+<BLANKLINE>
 Grind: 550 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 91 C
-<BLANKLINE>
-Strength: Medium
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -569,11 +569,11 @@ Water: 250 g
 <BLANKLINE>
 Ratio: 3/50 (0.06)
 <BLANKLINE>
+Strength: Medium
+<BLANKLINE>
 Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
-<BLANKLINE>
-Strength: Medium
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -591,11 +591,11 @@ Water: 250 g
 <BLANKLINE>
 Ratio: 3/50 (0.06)
 <BLANKLINE>
+Strength: Medium
+<BLANKLINE>
 Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
-<BLANKLINE>
-Strength: Medium
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -620,11 +620,11 @@ Water: 250 g
 <BLANKLINE>
 Ratio: 3/50 (0.06)
 <BLANKLINE>
+Strength: Medium
+<BLANKLINE>
 Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
-<BLANKLINE>
-Strength: Medium
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -654,11 +654,11 @@ Water: 250 g
 <BLANKLINE>
 Ratio: 3/50 (0.06)
 <BLANKLINE>
+Strength: Medium
+<BLANKLINE>
 Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
-<BLANKLINE>
-Strength: Medium
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -675,11 +675,11 @@ Water: 250 g
 <BLANKLINE>
 Ratio: 3/50 (0.06)
 <BLANKLINE>
+Strength: Medium
+<BLANKLINE>
 Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
-<BLANKLINE>
-Strength: Medium
 <BLANKLINE>
 Message: V60 method
 >>> file.close()
@@ -702,11 +702,11 @@ Water: 250 g
 <BLANKLINE>
 Ratio: 3/50 (0.06)
 <BLANKLINE>
+Strength: Medium
+<BLANKLINE>
 Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
-<BLANKLINE>
-Strength: Medium
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -735,11 +735,11 @@ Water: 250 g
 <BLANKLINE>
 Ratio: 3/50 (0.06)
 <BLANKLINE>
+Strength: Medium
+<BLANKLINE>
 Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
-<BLANKLINE>
-Strength: Medium
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
