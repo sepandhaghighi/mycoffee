@@ -32,11 +32,11 @@ Water: {water} {water_unit}
 
 Ratio: {coffee_ratio}/{water_ratio} ({ratio})
 
+Strength: {strength}
+
 Grind: {grind_size} {grind_unit} ({grind_type})
 
 Temperature: {temperature} {temperature_unit}
-
-Strength: {strength}
 
 Message: {message}
 """
