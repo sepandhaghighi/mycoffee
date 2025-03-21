@@ -121,7 +121,9 @@ Coffee: 15 g
 
 Water: 250 g
 
-Ratio: 3/50
+Ratio: 3/50 (0.06)
+
+Strength: Medium
 
 Grind: 550 um (Medium-Fine)
 
