@@ -19,6 +19,16 @@
 1000.0
 >>> get_grind_type(100)
 'Extra-Fine'
+>>> get_brew_strength(1/60)
+'Very Weak'
+>>> get_brew_strength(1/30)
+'Weak'
+>>> get_brew_strength(1/22)
+'Medium'
+>>> get_brew_strength(1/15)
+'Strong'
+>>> get_brew_strength(1/2)
+'Very Strong'
 >>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", "digits":3, "coffee_unit": "g", "water_unit": "g", "temperature_unit": "C", "grind": 500, "temperature":93}
 >>> result_params = get_result(input_params)
 >>> print_result(result_params)
@@ -37,7 +47,9 @@ Coffee: 60 g
 <BLANKLINE>
 Water: 500 g
 <BLANKLINE>
-Ratio: 3/50
+Ratio: 3/50 (0.06)
+<BLANKLINE>
+Strength: Medium
 <BLANKLINE>
 Grind: 500 um (Medium-Fine)
 <BLANKLINE>
@@ -60,7 +72,9 @@ Coffee: 60 g
 <BLANKLINE>
 Water: 500 g
 <BLANKLINE>
-Ratio: 3/50
+Ratio: 3/50 (0.06)
+<BLANKLINE>
+Strength: Medium
 <BLANKLINE>
 Grind: 500 um (Medium-Fine)
 <BLANKLINE>
@@ -75,7 +89,7 @@ True
 True
 >>> file = open("save_test1.json", "r")
 >>> save_test1_object = json.load(file)
->>> save_test1_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 93, 'method': 'v60', 'water': 500, 'coffee_unit': 'g', 'coffee_ratio': 3, 'cups': 2, 'digits': 3,'coffee': 60, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 500, 'grind_unit': 'um', 'warnings': [], 'water_ratio': 50, 'grind_type': get_grind_type(500)}
+>>> save_test1_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 93, 'method': 'v60', 'water': 500, 'coffee_unit': 'g', 'coffee_ratio': 3, 'cups': 2, 'digits': 3, 'coffee': 60, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 500, 'grind_unit': 'um', 'warnings': [], 'water_ratio': 50, 'grind_type': get_grind_type(500), 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
 >>> file.close()
 >>> save_details = save_result({}, 2)
@@ -99,7 +113,9 @@ Coffee: 60 g
 <BLANKLINE>
 Water: 500 g
 <BLANKLINE>
-Ratio: 3/50
+Ratio: 3/50 (0.06)
+<BLANKLINE>
+Strength: Medium
 <BLANKLINE>
 Grind: 500 um (Medium-Fine)
 <BLANKLINE>
@@ -124,7 +140,9 @@ Coffee: 60 g
 <BLANKLINE>
 Water: 500 g
 <BLANKLINE>
-Ratio: 3/50
+Ratio: 3/50 (0.06)
+<BLANKLINE>
+Strength: Medium
 <BLANKLINE>
 Grind: 500 um (Medium-Fine)
 <BLANKLINE>
@@ -156,7 +174,9 @@ Coffee: 60 g
 <BLANKLINE>
 Water: 500 g
 <BLANKLINE>
-Ratio: 3/50
+Ratio: 3/50 (0.06)
+<BLANKLINE>
+Strength: Medium
 <BLANKLINE>
 Grind: 600 um (Medium-Fine)
 <BLANKLINE>
@@ -188,7 +208,9 @@ Coffee: 60 g
 <BLANKLINE>
 Water: 0.5 kg
 <BLANKLINE>
-Ratio: 3/50
+Ratio: 3/50 (0.06)
+<BLANKLINE>
+Strength: Medium
 <BLANKLINE>
 Grind: 700 um (Medium)
 <BLANKLINE>
@@ -220,7 +242,9 @@ Coffee: 6 g
 <BLANKLINE>
 Water: 500 g
 <BLANKLINE>
-Ratio: 6/1000
+Ratio: 6/1000 (0.006)
+<BLANKLINE>
+Strength: Very Weak
 <BLANKLINE>
 Grind: 500 um (Medium-Fine)
 <BLANKLINE>
@@ -253,7 +277,9 @@ Coffee: 55.556 g
 <BLANKLINE>
 Water: 500 g
 <BLANKLINE>
-Ratio: 1/18
+Ratio: 1/18 (0.056)
+<BLANKLINE>
+Strength: Medium
 <BLANKLINE>
 Grind: 1400 um (Extra-Coarse)
 <BLANKLINE>
@@ -286,7 +312,9 @@ Coffee: 55.556 g
 <BLANKLINE>
 Water: 500 g
 <BLANKLINE>
-Ratio: 1/18
+Ratio: 1/18 (0.056)
+<BLANKLINE>
+Strength: Medium
 <BLANKLINE>
 Grind: 20 um (Extra-Fine)
 <BLANKLINE>
@@ -320,7 +348,9 @@ Coffee: 55.556 g
 <BLANKLINE>
 Water: 500 g
 <BLANKLINE>
-Ratio: 1/18
+Ratio: 1/18 (0.056)
+<BLANKLINE>
+Strength: Medium
 <BLANKLINE>
 Grind: 20 um (Extra-Fine)
 <BLANKLINE>
@@ -510,7 +540,9 @@ Coffee: 15 g
 <BLANKLINE>
 Water: 250 g
 <BLANKLINE>
-Ratio: 3/50
+Ratio: 3/50 (0.06)
+<BLANKLINE>
+Strength: Medium
 <BLANKLINE>
 Grind: 550 um (Medium-Fine)
 <BLANKLINE>
@@ -535,7 +567,9 @@ Coffee: 15 g
 <BLANKLINE>
 Water: 250 g
 <BLANKLINE>
-Ratio: 3/50
+Ratio: 3/50 (0.06)
+<BLANKLINE>
+Strength: Medium
 <BLANKLINE>
 Grind: 50 um (Extra-Fine)
 <BLANKLINE>
@@ -555,7 +589,9 @@ Coffee: 15 g
 <BLANKLINE>
 Water: 250 g
 <BLANKLINE>
-Ratio: 3/50
+Ratio: 3/50 (0.06)
+<BLANKLINE>
+Strength: Medium
 <BLANKLINE>
 Grind: 50 um (Extra-Fine)
 <BLANKLINE>
@@ -582,7 +618,9 @@ Coffee: 15 g
 <BLANKLINE>
 Water: 250 g
 <BLANKLINE>
-Ratio: 3/50
+Ratio: 3/50 (0.06)
+<BLANKLINE>
+Strength: Medium
 <BLANKLINE>
 Grind: 50 um (Extra-Fine)
 <BLANKLINE>
@@ -594,7 +632,7 @@ Message: V60 method
 [Info] File saved successfully!
 >>> file = open("save_test2.json", "r")
 >>> save_test2_object = json.load(file)
->>> save_test2_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 91, 'method': 'v60', 'coffee': 15, 'cups': 1, 'coffee_ratio': 3, 'coffee_unit': 'g', 'digits': 3, 'water': 250, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 50, 'grind_unit': 'um', 'grind_type': get_grind_type(50), 'warnings': ['[Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`'], 'water_ratio': 50}
+>>> save_test2_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 91, 'method': 'v60', 'coffee': 15, 'cups': 1, 'coffee_ratio': 3, 'coffee_unit': 'g', 'digits': 3, 'water': 250, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 50, 'grind_unit': 'um', 'grind_type': get_grind_type(50), 'warnings': ['[Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`'], 'water_ratio': 50, 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
 >>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save-path', "save_test3.txt"])
@@ -614,7 +652,9 @@ Coffee: 15 g
 <BLANKLINE>
 Water: 250 g
 <BLANKLINE>
-Ratio: 3/50
+Ratio: 3/50 (0.06)
+<BLANKLINE>
+Strength: Medium
 <BLANKLINE>
 Grind: 50 um (Extra-Fine)
 <BLANKLINE>
@@ -633,7 +673,9 @@ Coffee: 15 g
 <BLANKLINE>
 Water: 250 g
 <BLANKLINE>
-Ratio: 3/50
+Ratio: 3/50 (0.06)
+<BLANKLINE>
+Strength: Medium
 <BLANKLINE>
 Grind: 50 um (Extra-Fine)
 <BLANKLINE>
@@ -658,7 +700,9 @@ Coffee: 15 g
 <BLANKLINE>
 Water: 250 g
 <BLANKLINE>
-Ratio: 3/50
+Ratio: 3/50 (0.06)
+<BLANKLINE>
+Strength: Medium
 <BLANKLINE>
 Grind: 50 um (Extra-Fine)
 <BLANKLINE>
@@ -669,7 +713,7 @@ Message: V60 method
 [Info] File saved successfully!
 >>> file = open("save_test3.json", "r")
 >>> save_test3_object = json.load(file)
->>> save_test3_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 91, 'method': 'v60', 'coffee': 15, 'cups': 1, 'coffee_ratio': 3, 'coffee_unit': 'g', 'digits': 3, 'water': 250, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 50, 'grind_unit': 'um', 'grind_type': get_grind_type(50), 'water_ratio': 50, "warnings":[]}
+>>> save_test3_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 91, 'method': 'v60', 'coffee': 15, 'cups': 1, 'coffee_ratio': 3, 'coffee_unit': 'g', 'digits': 3, 'water': 250, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 50, 'grind_unit': 'um', 'grind_type': get_grind_type(50), 'water_ratio': 50, "warnings":[], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
 >>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save-path', "f://", '--save-format', "json"])
@@ -689,7 +733,9 @@ Coffee: 15 g
 <BLANKLINE>
 Water: 250 g
 <BLANKLINE>
-Ratio: 3/50
+Ratio: 3/50 (0.06)
+<BLANKLINE>
+Strength: Medium
 <BLANKLINE>
 Grind: 50 um (Extra-Fine)
 <BLANKLINE>

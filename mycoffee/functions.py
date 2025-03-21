@@ -87,6 +87,7 @@ def format_result(params):
         water=params["water"],
         coffee_ratio=params["coffee_ratio"],
         water_ratio=params["water_ratio"],
+        ratio=params["ratio"],
         message=params["message"],
         coffee_unit=params["coffee_unit"],
         water_unit=params["water_unit"],
@@ -94,7 +95,8 @@ def format_result(params):
         temperature=params["temperature"],
         temperature_unit=params["temperature_unit"],
         grind_unit=params["grind_unit"],
-        grind_type=params["grind_type"])
+        grind_type=params["grind_type"],
+        strength=params["strength"])
     return result
 
 
@@ -250,6 +252,29 @@ def get_grind_type(grind):
     elif grind <= 1200:
         return "Coarse"
     return "Extra-Coarse"
+
+
+def get_brew_strength(ratio):
+    """
+    Return brew strength.
+
+    :param ratio: coffee to water ratio
+    :type ratio: float
+    :return: brew strength as str
+    """
+    strength_labels = ["Very Weak", "Weak", "Medium", "Strong", "Very Strong"]
+    thresholds = [1 / 40, 1 / 22, 1 / 15, 1 / 12, 1 / 8]
+
+    if ratio < thresholds[0]:
+        return strength_labels[0]
+    elif ratio < thresholds[1]:
+        return strength_labels[1]
+    elif ratio < thresholds[2]:
+        return strength_labels[2]
+    elif ratio < thresholds[3]:
+        return strength_labels[3]
+    else:
+        return strength_labels[4]
 
 
 def load_method_params(method_name):
@@ -531,6 +556,8 @@ def get_result(params):
     params_copy = params.copy()
     params_copy["coffee"] = calc_coffee(params_copy)
     params_copy["grind_type"] = get_grind_type(params_copy["grind"])
+    params_copy["ratio"] = round(params_copy["coffee_ratio"] / params_copy["water_ratio"], params["digits"])
+    params_copy["strength"] = get_brew_strength(ratio=params_copy["ratio"])
     params_copy["grind_unit"] = "um"
     result = filter_params(params_copy)
     result["warnings"] = get_warnings(result)
