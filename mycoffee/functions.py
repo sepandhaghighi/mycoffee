@@ -260,18 +260,18 @@ def get_brew_strength(ratio):
 
     :param ratio: coffee to water ratio
     :type ratio: float
-    :return: brew strength as float
+    :return: brew strength as str
     """
     strength_labels = ["Very Weak", "Weak", "Medium", "Strong", "Very Strong"]
     thresholds = [1 / 40, 1 / 22, 1 / 15, 1 / 12, 1 / 8]
 
     if ratio < thresholds[0]:
         return strength_labels[0]
-    elif thresholds[0] <= ratio < thresholds[1]:
+    elif ratio < thresholds[1]:
         return strength_labels[1]
-    elif thresholds[1] <= ratio < thresholds[2]:
+    elif ratio < thresholds[2]:
         return strength_labels[2]
-    elif thresholds[2] <= ratio < thresholds[3]:
+    elif ratio < thresholds[3]:
         return strength_labels[3]
     else:
         return strength_labels[4]
