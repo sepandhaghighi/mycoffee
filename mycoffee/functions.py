@@ -104,8 +104,11 @@ def print_result(params: Dict[str, Union[str, int, float]], ignore_warnings: boo
             print("\n".join(warnings_list))
 
 
-def save_result(params: Dict[str, Union[str, int, float]], file_path: str,
-                file_format: str = "text", ignore_warnings: bool = False) -> Dict[str, Union[bool, str]]:
+def save_result(
+        params: Dict[str, Union[str, int, float]],
+        file_path: str,
+        file_format: str = "text",
+        ignore_warnings: bool = False) -> Dict[str, Union[bool, str]]:
     """
     Save result.
 
