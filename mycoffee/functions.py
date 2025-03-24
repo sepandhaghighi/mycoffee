@@ -264,11 +264,7 @@ def load_method_params(method_name: str) -> Dict[str, Union[str, int, float]]:
 
 
 def show_methods_list() -> None:
-    """
-    Show methods list.
-
-    :return: None
-    """
+    """Show methods list."""
     print("Methods list:\n")
     for i, method in enumerate(sorted(METHODS_MAP), 1):
         print(
@@ -279,11 +275,7 @@ def show_methods_list() -> None:
 
 
 def show_coffee_units_list() -> None:
-    """
-    Show coffee units list.
-
-    :return: None
-    """
+    """Show coffee units list."""
     print("Coffee units list:\n")
     for i, unit in enumerate(sorted(COFFEE_UNITS_MAP), 1):
         print(
@@ -294,11 +286,7 @@ def show_coffee_units_list() -> None:
 
 
 def show_water_units_list() -> None:
-    """
-    Show water units list.
-
-    :return: None
-    """
+    """Show water units list."""
     print("Water units list:\n")
     for i, unit in enumerate(sorted(WATER_UNITS_MAP), 1):
         print(
@@ -309,11 +297,7 @@ def show_water_units_list() -> None:
 
 
 def show_temperature_units_list() -> None:
-    """
-    Show temperature units list.
-
-    :return: None
-    """
+    """Show temperature units list."""
     print("Temperature units list:\n")
     for i, unit in enumerate(sorted(TEMPERATURE_UNITS_MAP), 1):
         print(
