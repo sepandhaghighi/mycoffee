@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """mycoffee functions."""
+from typing import Union, Dict, List
 import json
 import math
 import argparse
@@ -13,25 +14,19 @@ from mycoffee.params import SAVE_FILE_ERROR_MESSAGE, SAVE_FILE_SUCCESS_MESSAGE
 from art import tprint
 
 
-def mycoffee_info():  # pragma: no cover
-    """
-    Print mycoffee details.
-
-    :return: None
-    """
+def mycoffee_info() -> None:  # pragma: no cover
+    """Print mycoffee details."""
     tprint("MyCoffee")
     tprint("V:" + MY_COFFEE_VERSION)
     print(MY_COFFEE_OVERVIEW)
     print(MY_COFFEE_REPO)
 
 
-def validate_positive_int(string):
+def validate_positive_int(string: str) -> int:
     """
-    Validate that the input string is a positive integer.
+    Validate and return a positive integer or raise argparse.ArgumentTypeError.
 
     :param string: input string
-    :type string: str
-    :return: the validated positive integer or raise argparse.ArgumentTypeError
     """
     try:
         number = int(string)
@@ -42,13 +37,11 @@ def validate_positive_int(string):
         raise argparse.ArgumentTypeError(POSITIVE_INTEGER_ERROR_MESSAGE.format(string=string))
 
 
-def validate_positive_float(string):
+def validate_positive_float(string: str) -> float:
     """
-    Validate that the input string is a positive float.
+    Validate and return a positive float or raise argparse.ArgumentTypeError.
 
     :param string: input string
-    :type string: str
-    :return: the validated positive float or raise argparse.ArgumentTypeError
     """
     try:
         number = float(string)
@@ -59,26 +52,22 @@ def validate_positive_float(string):
         raise argparse.ArgumentTypeError(POSITIVE_FLOAT_ERROR_MESSAGE.format(string=string))
 
 
-def is_int(number):
+def is_int(number: Union[int, float]) -> bool:
     """
     Check that input number is int or not.
 
     :param number: input number
-    :type number: float or int
-    :return: result as bool
     """
     if int(number) == number:
         return True
     return False
 
 
-def format_result(params):
+def format_result(params: Dict[str, Union[str, int, float]]) -> str:
     """
     Format result.
 
     :param params: parameters
-    :type params: dict
-    :return: formatted result as str
     """
     result = MESSAGE_TEMPLATE.format(
         method=params["method"],
@@ -100,15 +89,12 @@ def format_result(params):
     return result
 
 
-def print_result(params, ignore_warnings=False):
+def print_result(params: Dict[str, Union[str, int, float]], ignore_warnings: bool = False) -> None:
     """
     Print result.
 
     :param params: parameters
-    :type params: dict
     :param ignore_warnings: ignore warnings flag
-    :type ignore_warnings: bool
-    :return: None
     """
     tprint("MyCoffee", font="bulbhead")
     print(format_result(params))
@@ -118,19 +104,18 @@ def print_result(params, ignore_warnings=False):
             print("\n".join(warnings_list))
 
 
-def save_result(params, file_path, file_format="text", ignore_warnings=False):
+def save_result(
+        params: Dict[str, Union[str, int, float]],
+        file_path: str,
+        file_format: str = "text",
+        ignore_warnings: bool = False) -> Dict[str, Union[bool, str]]:
     """
     Save result.
 
     :param params: parameters
-    :type params: dict
     :param file_path: file path
-    :type file_path: str
     :param file_format: file format
-    :type file_format: str
     :param ignore_warnings: ignore warnings flag
-    :type ignore_warnings: bool
-    :return: save details as dict
     """
     details = {"status": True, "message": SAVE_FILE_SUCCESS_MESSAGE}
     try:
@@ -144,17 +129,13 @@ def save_result(params, file_path, file_format="text", ignore_warnings=False):
     return details
 
 
-def save_result_text(params, file_path, ignore_warnings=False):
+def save_result_text(params: Dict[str, Union[str, int, float]], file_path: str, ignore_warnings: bool = False) -> None:
     """
     Save result as a text file.
 
     :param params: parameters
-    :type params: dict
     :param file_path: file path
-    :type file_path: str
     :param ignore_warnings: ignore warnings flag
-    :type ignore_warnings: bool
-    :return: None
     """
     result = format_result(params).strip()
     if not ignore_warnings:
@@ -165,17 +146,13 @@ def save_result_text(params, file_path, ignore_warnings=False):
         file.write(result)
 
 
-def save_result_json(params, file_path, ignore_warnings=False):
+def save_result_json(params: Dict[str, Union[str, int, float]], file_path: str, ignore_warnings: bool = False) -> None:
     """
     Save result as a JSON file.
 
     :param params: parameters
-    :type params: dict
     :param file_path: file path
-    :type file_path: str
     :param ignore_warnings: ignore warnings flag
-    :type ignore_warnings: bool
-    :return: None
     """
     result = params.copy()
     result["mycoffee_version"] = MY_COFFEE_VERSION
@@ -185,13 +162,11 @@ def save_result_json(params, file_path, ignore_warnings=False):
         json.dump(result, file)
 
 
-def get_warnings(params):
+def get_warnings(params: Dict[str, Union[str, int, float]]) -> List[str]:
     """
-    Get warnings.
+    Get warnings as a list.
 
     :param params: parameters
-    :type params: dict
-    :return: warnings list
     """
     warnings_list = []
     method = params["method"]
@@ -231,13 +206,11 @@ def get_warnings(params):
     return warnings_list
 
 
-def get_grind_type(grind):
+def get_grind_type(grind: int) -> str:
     """
     Return grind type.
 
     :param grind: grind size
-    :type grind: int
-    :return: grind type as str
     """
     if grind <= 200:
         return "Extra-Fine"
@@ -254,13 +227,11 @@ def get_grind_type(grind):
     return "Extra-Coarse"
 
 
-def get_brew_strength(ratio):
+def get_brew_strength(ratio: float) -> str:
     """
     Return brew strength.
 
     :param ratio: coffee to water ratio
-    :type ratio: float
-    :return: brew strength as str
     """
     strength_labels = ["Very Weak", "Weak", "Medium", "Strong", "Very Strong"]
     thresholds = [1 / 40, 1 / 22, 1 / 15, 1 / 12, 1 / 8]
@@ -277,13 +248,11 @@ def get_brew_strength(ratio):
         return strength_labels[4]
 
 
-def load_method_params(method_name):
+def load_method_params(method_name: str) -> Dict[str, Union[str, int, float]]:
     """
     Load method params.
 
     :param method_name: method name
-    :type method_name: str
-    :return: method params as dict
     """
     method_params = dict()
     for item in DEFAULT_PARAMS:
@@ -294,7 +263,7 @@ def load_method_params(method_name):
     return method_params
 
 
-def show_methods_list():
+def show_methods_list() -> None:
     """
     Show methods list.
 
@@ -309,7 +278,7 @@ def show_methods_list():
                 data=METHODS_MAP[method]['message']))
 
 
-def show_coffee_units_list():
+def show_coffee_units_list() -> None:
     """
     Show coffee units list.
 
@@ -324,7 +293,7 @@ def show_coffee_units_list():
                 data=COFFEE_UNITS_MAP[unit]['name']))
 
 
-def show_water_units_list():
+def show_water_units_list() -> None:
     """
     Show water units list.
 
@@ -339,7 +308,7 @@ def show_water_units_list():
                 data=WATER_UNITS_MAP[unit]['name']))
 
 
-def show_temperature_units_list():
+def show_temperature_units_list() -> None:
     """
     Show temperature units list.
 
@@ -354,13 +323,11 @@ def show_temperature_units_list():
                 data=TEMPERATURE_UNITS_MAP[unit]['name']))
 
 
-def load_params(args):
+def load_params(args: argparse.Namespace) -> Dict[str, Union[str, int, float]]:
     """
-    Load params.
+    Load params as a dictionary.
 
     :param args: input arguments
-    :type args: argparse.Namespace
-    :return: params as dict
     """
     params = load_method_params(args.method)
     for item in params:
@@ -378,13 +345,11 @@ def load_params(args):
     return params
 
 
-def filter_params(params):
+def filter_params(params: Dict[str, Union[str, int, float]]) -> Dict[str, Union[str, int, float]]:
     """
     Filter params.
 
     :param params: parameters
-    :type params: dict
-    :return: filtered parameters as dict
     """
     digits = params["digits"]
     params["coffee"] = round(params["coffee"], digits)
@@ -404,13 +369,11 @@ def filter_params(params):
     return params
 
 
-def check_ratio_limits(params):
+def check_ratio_limits(params: Dict[str, Union[str, int, float]]) -> bool:
     """
-    Check ratio limits.
+    Return True if the ratio is within limits, otherwise False.
 
     :param params: parameters
-    :type params: dict
-    :return: result as bool (False --> the ratio is out of range)
     """
     method = params["method"]
     if "ratio_lower_limit" in METHODS_MAP[method] and "ratio_upper_limit" in METHODS_MAP[method]:
@@ -422,13 +385,11 @@ def check_ratio_limits(params):
     return True
 
 
-def check_grind_limits(params):
+def check_grind_limits(params: Dict[str, Union[str, int, float]]) -> bool:
     """
-    Check grind limits.
+    Return True if the grind is within limits, otherwise False.
 
     :param params: parameters
-    :type params: dict
-    :return: result as bool (False --> the grind is out of range)
     """
     method = params["method"]
     if "grind_lower_limit" in METHODS_MAP[method] and "grind_upper_limit" in METHODS_MAP[method]:
@@ -440,19 +401,14 @@ def check_grind_limits(params):
     return True
 
 
-def convert_temperature(value, from_unit, to_unit, digits=3):
+def convert_temperature(value: float, from_unit: str, to_unit: str, digits: int = 3) -> float:
     """
     Convert temperature.
 
     :param value: temperature value to convert
-    :type value: float
     :param from_unit: unit of the input value
-    :type from_unit: str
     :param to_unit: unit to convert to
-    :type to_unit: str
     :param digits: number of digits up to which the result is rounded
-    :type digits: int
-    :return: converted temperature value
     """
     from_unit = from_unit.upper()
     to_unit = to_unit.upper()
@@ -478,13 +434,11 @@ def convert_temperature(value, from_unit, to_unit, digits=3):
     return result
 
 
-def check_temperature_limits(params):
+def check_temperature_limits(params: Dict[str, Union[str, int, float]]) -> bool:
     """
-    Check temperature limits.
+    Return True if the temperature is within limits, otherwise False.
 
     :param params: parameters
-    :type params: dict
-    :return: result as bool (False --> the temperature is out of range)
     """
     method = params["method"]
     if "temperature_lower_limit" in METHODS_MAP[method] and "temperature_upper_limit" in METHODS_MAP[method]:
@@ -496,15 +450,12 @@ def check_temperature_limits(params):
     return True
 
 
-def convert_coffee(coffee, unit):
+def convert_coffee(coffee: float, unit: str) -> Union[float, int]:
     """
-    Convert coffee unit.
+    Convert and return the coffee amount as a float or int.
 
     :param coffee: coffee amount
-    :type coffee: float
     :param unit: coffee unit
-    :type unit: str
-    :return: converted coffee amount as float/int
     """
     coffee = coffee * COFFEE_UNITS_MAP[unit]["rate"]
     if unit == "cb":
@@ -512,17 +463,13 @@ def convert_coffee(coffee, unit):
     return coffee
 
 
-def convert_water(water, unit, reverse=False):
+def convert_water(water: float, unit: str, reverse: bool = False) -> Union[float, int]:
     """
-    Convert water unit.
+    Convert and return the water amount as a float or int.
 
     :param water: water amount
-    :type water: float
     :param unit: water unit
-    :type unit: str
     :param reverse: reverse convert flag
-    :type reverse: bool
-    :return: converted water amount as float/int
     """
     rate = WATER_UNITS_MAP[unit]["rate"]
     if reverse:
@@ -531,13 +478,11 @@ def convert_water(water, unit, reverse=False):
     return water
 
 
-def calc_coffee(params):
+def calc_coffee(params: Dict[str, Union[str, int, float]]) -> float:
     """
     Calculate coffee.
 
     :param params: parameters
-    :type params: dict
-    :return: coffee amount as float
     """
     water_gram = convert_water(params["water"], params["water_unit"], True)
     coffee_gram = params["cups"] * water_gram * params["coffee_ratio"] / params["water_ratio"]
@@ -545,13 +490,11 @@ def calc_coffee(params):
     return coffee
 
 
-def get_result(params):
+def get_result(params: Dict[str, Union[str, int, float]]) -> Dict[str, Union[str, int, float]]:
     """
     Get result.
 
     :param params: parameters
-    :type params: dict
-    :return: result as dict
     """
     params_copy = params.copy()
     params_copy["coffee"] = calc_coffee(params_copy)
@@ -564,13 +507,11 @@ def get_result(params):
     return result
 
 
-def run(args):
+def run(args: argparse.Namespace) -> None:
     """
     Run program.
 
     :param args: input arguments
-    :type args: argparse.Namespace
-    :return: None
     """
     if args.version:
         print(MY_COFFEE_VERSION)

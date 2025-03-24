@@ -6,12 +6,8 @@ from mycoffee.functions import run, validate_positive_int, validate_positive_flo
 import argparse
 
 
-def main():
-    """
-    CLI main function.
-
-    :return: None
-    """
+def main() -> None:
+    """CLI main function."""
     parser = argparse.ArgumentParser()
     parser.add_argument(
         '--method',
