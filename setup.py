@@ -30,7 +30,7 @@ def read_description() -> str:
 setup(
     name='mycoffee',
     packages=['mycoffee'],
-    version='1.6',
+    version='1.7',
     description='Brew Perfect Coffee Right from Your Terminal',
     long_description=read_description(),
     long_description_content_type='text/markdown',
@@ -38,7 +38,7 @@ setup(
     author='Sepand Haghighi',
     author_email='me@sepand.tech',
     url='https://github.com/sepandhaghighi/mycoffee',
-    download_url='https://github.com/sepandhaghighi/mycoffee/tarball/v1.6',
+    download_url='https://github.com/sepandhaghighi/mycoffee/tarball/v1.7',
     keywords="coffee ratio terminal brew calculator cli",
     project_urls={
         'Source': 'https://github.com/sepandhaghighi/mycoffee'
