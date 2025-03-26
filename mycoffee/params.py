@@ -2,7 +2,7 @@
 """mycoffee params."""
 from fractions import Fraction
 
-MY_COFFEE_VERSION = "1.6"
+MY_COFFEE_VERSION = "1.7"
 INPUT_ERROR_MESSAGE = "[Error] Wrong input"
 POSITIVE_INTEGER_ERROR_MESSAGE = "invalid positive int value: '{string}'"
 POSITIVE_FLOAT_ERROR_MESSAGE = "invalid positive float value: '{string}'"
