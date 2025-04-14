@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Changed
-- ` get_result` function modified
+- `get_result` function modified
 - `coffee` parameter splitted to `coffee[cup]` and `coffee[total]`
 - Test system modified
 - `Python 3.6` support dropped
