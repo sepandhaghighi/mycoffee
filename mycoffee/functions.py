@@ -129,7 +129,8 @@ def save_result(
     return details
 
 
-def save_result_text(params: Dict[str, Union[str, int, float, dict]], file_path: str, ignore_warnings: bool = False) -> None:
+def save_result_text(params: Dict[str, Union[str, int, float, dict]],
+                     file_path: str, ignore_warnings: bool = False) -> None:
     """
     Save result as a text file.
 
@@ -146,7 +147,8 @@ def save_result_text(params: Dict[str, Union[str, int, float, dict]], file_path:
         file.write(result)
 
 
-def save_result_json(params: Dict[str, Union[str, int, float, dict]], file_path: str, ignore_warnings: bool = False) -> None:
+def save_result_json(params: Dict[str, Union[str, int, float, dict]],
+                     file_path: str, ignore_warnings: bool = False) -> None:
     """
     Save result as a JSON file.
 
