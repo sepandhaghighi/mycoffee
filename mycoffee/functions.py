@@ -63,7 +63,7 @@ def is_int(number: Union[int, float]) -> bool:
     return False
 
 
-def format_result(params: Dict[str, Union[str, int, float]]) -> str:
+def format_result(params: Dict[str, Union[str, int, float, dict]]) -> str:
     """
     Format result.
 
@@ -89,7 +89,7 @@ def format_result(params: Dict[str, Union[str, int, float]]) -> str:
     return result
 
 
-def print_result(params: Dict[str, Union[str, int, float]], ignore_warnings: bool = False) -> None:
+def print_result(params: Dict[str, Union[str, int, float, dict]], ignore_warnings: bool = False) -> None:
     """
     Print result.
 
@@ -105,7 +105,7 @@ def print_result(params: Dict[str, Union[str, int, float]], ignore_warnings: boo
 
 
 def save_result(
-        params: Dict[str, Union[str, int, float]],
+        params: Dict[str, Union[str, int, float, dict]],
         file_path: str,
         file_format: str = "text",
         ignore_warnings: bool = False) -> Dict[str, Union[bool, str]]:
@@ -129,7 +129,7 @@ def save_result(
     return details
 
 
-def save_result_text(params: Dict[str, Union[str, int, float]], file_path: str, ignore_warnings: bool = False) -> None:
+def save_result_text(params: Dict[str, Union[str, int, float, dict]], file_path: str, ignore_warnings: bool = False) -> None:
     """
     Save result as a text file.
 
@@ -146,7 +146,7 @@ def save_result_text(params: Dict[str, Union[str, int, float]], file_path: str, 
         file.write(result)
 
 
-def save_result_json(params: Dict[str, Union[str, int, float]], file_path: str, ignore_warnings: bool = False) -> None:
+def save_result_json(params: Dict[str, Union[str, int, float, dict]], file_path: str, ignore_warnings: bool = False) -> None:
     """
     Save result as a JSON file.
 
@@ -336,10 +336,13 @@ def filter_params(params: Dict[str, Union[str, int, float]]) -> Dict[str, Union[
     :param params: parameters
     """
     digits = params["digits"]
-    params["coffee"] = round(params["coffee"], digits)
+    params["coffee"]["cup"] = round(params["coffee"]["cup"], digits)
+    params["coffee"]["total"] = round(params["coffee"]["total"], digits)
     params["water"] = round(params["water"], digits)
-    if is_int(params["coffee"]):
-        params["coffee"] = int(params["coffee"])
+    if is_int(params["coffee"]["cup"]):
+        params["coffee"]["cup"] = int(params["coffee"]["cup"])
+    if is_int(params["coffee"]["total"]):
+        params["coffee"]["total"] = int(params["coffee"]["total"])
     if is_int(params["water_ratio"]):
         params["water_ratio"] = int(params["water_ratio"])
     if is_int(params["coffee_ratio"]):
@@ -469,19 +472,21 @@ def calc_coffee(params: Dict[str, Union[str, int, float]]) -> float:
     :param params: parameters
     """
     water_gram = convert_water(params["water"], params["water_unit"], True)
-    coffee_gram = params["cups"] * water_gram * params["coffee_ratio"] / params["water_ratio"]
+    coffee_gram = water_gram * params["coffee_ratio"] / params["water_ratio"]
     coffee = convert_coffee(coffee_gram, params["coffee_unit"])
     return coffee
 
 
-def get_result(params: Dict[str, Union[str, int, float]]) -> Dict[str, Union[str, int, float]]:
+def get_result(params: Dict[str, Union[str, int, float]]) -> Dict[str, Union[str, int, float, dict]]:
     """
     Get result.
 
     :param params: parameters
     """
     params_copy = params.copy()
-    params_copy["coffee"] = calc_coffee(params_copy)
+    params_copy["coffee"] = dict()
+    params_copy["coffee"]["cup"] = calc_coffee(params_copy)
+    params_copy["coffee"]["total"] = params_copy["cups"] * params_copy["coffee"]["cup"]
     params_copy["grind_type"] = get_grind_type(params_copy["grind"])
     params_copy["ratio"] = round(params_copy["coffee_ratio"] / params_copy["water_ratio"], params["digits"])
     params_copy["strength"] = get_brew_strength(ratio=params_copy["ratio"])
