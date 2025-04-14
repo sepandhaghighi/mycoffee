@@ -27,6 +27,7 @@ Method: `{method}`
 Cups: {cups}
 
 Coffee:
+
     - Cup:   {coffee[cup]} {coffee_unit}
     - Total: {coffee[total]} {coffee_unit}
 
