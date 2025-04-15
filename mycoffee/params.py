@@ -31,7 +31,10 @@ Coffee:
     - Cup:   {coffee[cup]} {coffee_unit}
     - Total: {coffee[total]} {coffee_unit}
 
-Water: {water} {water_unit}
+Water:
+
+    - Cup: {water[cup]} {water_unit}
+    - Total: {water[total]} {water_unit}
 
 Ratio: {coffee_ratio}/{water_ratio} ({ratio})
 
