@@ -340,17 +340,20 @@ def filter_params(params: Dict[str, Union[str, int, float]]) -> Dict[str, Union[
     digits = params["digits"]
     params["coffee"]["cup"] = round(params["coffee"]["cup"], digits)
     params["coffee"]["total"] = round(params["coffee"]["total"], digits)
-    params["water"] = round(params["water"], digits)
+    params["water"]["cup"] = round(params["water"]["cup"], digits)
+    params["water"]["total"] = round(params["water"]["total"], digits)
     if is_int(params["coffee"]["cup"]):
         params["coffee"]["cup"] = int(params["coffee"]["cup"])
     if is_int(params["coffee"]["total"]):
         params["coffee"]["total"] = int(params["coffee"]["total"])
+    if is_int(params["water"]["cup"]):
+        params["water"]["cup"] = int(params["water"]["cup"])
+    if is_int(params["water"]["total"]):
+        params["water"]["total"] = int(params["water"]["total"])
     if is_int(params["water_ratio"]):
         params["water_ratio"] = int(params["water_ratio"])
     if is_int(params["coffee_ratio"]):
         params["coffee_ratio"] = int(params["coffee_ratio"])
-    if is_int(params["water"]):
-        params["water"] = int(params["water"])
     if is_int(params["temperature"]):
         params["temperature"] = int(params["temperature"])
     if len(params["message"]) == 0:
