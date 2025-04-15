@@ -122,7 +122,10 @@ Coffee:
     - Cup:   15 g
     - Total: 15 g
 
-Water: 250 g
+Water:
+
+    - Cup: 250 g
+    - Total: 250 g
 
 Ratio: 3/50 (0.06)
 
@@ -158,9 +161,15 @@ Method: `chemex`
 
 Cups: 3
 
-Coffee: 3.084 t oz
+Coffee:
 
-Water: 20 fl oz
+    - Cup:   1.028 t oz
+    - Total: 3.084 t oz
+
+Water:
+
+    - Cup: 20 fl oz
+    - Total: 60 fl oz
 
 Ratio: 2/37
 

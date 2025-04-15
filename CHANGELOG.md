@@ -7,7 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Changed
 - `get_result` function modified
+- `filter_params` function modified
 - `coffee` parameter splitted to `coffee[cup]` and `coffee[total]`
+- `water` parameter splitted to `water[cup]` and `water[total]`
 - Test system modified
 - `Python 3.6` support dropped
 ## [1.7] - 2025-03-26

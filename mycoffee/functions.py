@@ -340,17 +340,20 @@ def filter_params(params: Dict[str, Union[str, int, float]]) -> Dict[str, Union[
     digits = params["digits"]
     params["coffee"]["cup"] = round(params["coffee"]["cup"], digits)
     params["coffee"]["total"] = round(params["coffee"]["total"], digits)
-    params["water"] = round(params["water"], digits)
+    params["water"]["cup"] = round(params["water"]["cup"], digits)
+    params["water"]["total"] = round(params["water"]["total"], digits)
     if is_int(params["coffee"]["cup"]):
         params["coffee"]["cup"] = int(params["coffee"]["cup"])
     if is_int(params["coffee"]["total"]):
         params["coffee"]["total"] = int(params["coffee"]["total"])
+    if is_int(params["water"]["cup"]):
+        params["water"]["cup"] = int(params["water"]["cup"])
+    if is_int(params["water"]["total"]):
+        params["water"]["total"] = int(params["water"]["total"])
     if is_int(params["water_ratio"]):
         params["water_ratio"] = int(params["water_ratio"])
     if is_int(params["coffee_ratio"]):
         params["coffee_ratio"] = int(params["coffee_ratio"])
-    if is_int(params["water"]):
-        params["water"] = int(params["water"])
     if is_int(params["temperature"]):
         params["temperature"] = int(params["temperature"])
     if len(params["message"]) == 0:
@@ -487,8 +490,11 @@ def get_result(params: Dict[str, Union[str, int, float]]) -> Dict[str, Union[str
     """
     params_copy = params.copy()
     params_copy["coffee"] = dict()
-    params_copy["coffee"]["cup"] = calc_coffee(params_copy)
+    params_copy["water"] = dict()
+    params_copy["coffee"]["cup"] = calc_coffee(params)
     params_copy["coffee"]["total"] = params_copy["cups"] * params_copy["coffee"]["cup"]
+    params_copy["water"]["cup"] = params["water"]
+    params_copy["water"]["total"] = params_copy["cups"] * params_copy["water"]["cup"]
     params_copy["grind_type"] = get_grind_type(params_copy["grind"])
     params_copy["ratio"] = round(params_copy["coffee_ratio"] / params_copy["water_ratio"], params["digits"])
     params_copy["strength"] = get_brew_strength(ratio=params_copy["ratio"])

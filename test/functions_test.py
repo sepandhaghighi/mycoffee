@@ -47,7 +47,10 @@ Coffee:
     - Cup:   30 g
     - Total: 60 g
 <BLANKLINE>
-Water: 500 g
+Water:
+<BLANKLINE>
+    - Cup: 500 g
+    - Total: 1000 g
 <BLANKLINE>
 Ratio: 3/50 (0.06)
 <BLANKLINE>
@@ -74,7 +77,10 @@ Coffee:
     - Cup:   30 g
     - Total: 60 g
 <BLANKLINE>
-Water: 500 g
+Water:
+<BLANKLINE>
+    - Cup: 500 g
+    - Total: 1000 g
 <BLANKLINE>
 Ratio: 3/50 (0.06)
 <BLANKLINE>
@@ -93,7 +99,7 @@ True
 True
 >>> file = open("save_test1.json", "r")
 >>> save_test1_object = json.load(file)
->>> save_test1_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 93, 'method': 'v60', 'water': 500, 'coffee_unit': 'g', 'coffee_ratio': 3, 'cups': 2, 'digits': 3, 'coffee': {'total':60, 'cup': 30}, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 500, 'grind_unit': 'um', 'warnings': [], 'water_ratio': 50, 'grind_type': get_grind_type(500), 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
+>>> save_test1_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 93, 'method': 'v60', 'water': {'cup':500, 'total':1000}, 'coffee_unit': 'g', 'coffee_ratio': 3, 'cups': 2, 'digits': 3, 'coffee': {'total':60, 'cup': 30}, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 500, 'grind_unit': 'um', 'warnings': [], 'water_ratio': 50, 'grind_type': get_grind_type(500), 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
 >>> file.close()
 >>> save_details = save_result({}, 2)
@@ -117,7 +123,10 @@ Coffee:
     - Cup:   30 g
     - Total: 60 g
 <BLANKLINE>
-Water: 500 g
+Water:
+<BLANKLINE>
+    - Cup: 500 g
+    - Total: 1000 g
 <BLANKLINE>
 Ratio: 3/50 (0.06)
 <BLANKLINE>
@@ -146,7 +155,10 @@ Coffee:
     - Cup:   30 g
     - Total: 60 g
 <BLANKLINE>
-Water: 500 g
+Water:
+<BLANKLINE>
+    - Cup: 500 g
+    - Total: 1000 g
 <BLANKLINE>
 Ratio: 3/50 (0.06)
 <BLANKLINE>
@@ -182,7 +194,10 @@ Coffee:
     - Cup:   30 g
     - Total: 60 g
 <BLANKLINE>
-Water: 500 g
+Water:
+<BLANKLINE>
+    - Cup: 500 g
+    - Total: 1000 g
 <BLANKLINE>
 Ratio: 3/50 (0.06)
 <BLANKLINE>
@@ -218,7 +233,10 @@ Coffee:
     - Cup:   30 g
     - Total: 60 g
 <BLANKLINE>
-Water: 0.5 kg
+Water:
+<BLANKLINE>
+    - Cup: 0.5 kg
+    - Total: 1 kg
 <BLANKLINE>
 Ratio: 3/50 (0.06)
 <BLANKLINE>
@@ -254,7 +272,10 @@ Coffee:
     - Cup:   3 g
     - Total: 6 g
 <BLANKLINE>
-Water: 500 g
+Water:
+<BLANKLINE>
+    - Cup: 500 g
+    - Total: 1000 g
 <BLANKLINE>
 Ratio: 6/1000 (0.006)
 <BLANKLINE>
@@ -291,7 +312,10 @@ Coffee:
     - Cup:   27.778 g
     - Total: 55.556 g
 <BLANKLINE>
-Water: 500 g
+Water:
+<BLANKLINE>
+    - Cup: 500 g
+    - Total: 1000 g
 <BLANKLINE>
 Ratio: 1/18 (0.056)
 <BLANKLINE>
@@ -328,7 +352,10 @@ Coffee:
     - Cup:   27.778 g
     - Total: 55.556 g
 <BLANKLINE>
-Water: 500 g
+Water:
+<BLANKLINE>
+    - Cup: 500 g
+    - Total: 1000 g
 <BLANKLINE>
 Ratio: 1/18 (0.056)
 <BLANKLINE>
@@ -366,7 +393,10 @@ Coffee:
     - Cup:   27.778 g
     - Total: 55.556 g
 <BLANKLINE>
-Water: 500 g
+Water:
+<BLANKLINE>
+    - Cup: 500 g
+    - Total: 1000 g
 <BLANKLINE>
 Ratio: 1/18 (0.056)
 <BLANKLINE>
@@ -483,7 +513,7 @@ Temperature units list:
 >>> test_params = {"method":"v60", "cups":2, "water":335, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", 'coffee_unit': 'g', 'water_unit': 'g'}
 >>> calc_coffee(test_params)
 20.1
->>> test_params = {"method":"v60", "cups":2, "coffee":{"total":40.2, "cup":20.1}, "water":335.0, "coffee_ratio": 3.0, "water_ratio":50.0, "message":"", "digits":3, 'coffee_unit': 'g', "temperature":94.0, "temperature_unit": "C"}
+>>> test_params = {"method":"v60", "cups":2, "coffee":{"total":40.2, "cup":20.1}, "water":{"cup":335.0, "total":670}, "coffee_ratio": 3.0, "water_ratio":50.0, "message":"", "digits":3, 'coffee_unit': 'g', "temperature":94.0, "temperature_unit": "C"}
 >>> test_params = filter_params(test_params)
 >>> test_params["coffee"]["total"]
 40.2
@@ -493,13 +523,15 @@ Temperature units list:
 50
 >>> test_params["coffee_ratio"]
 3
->>> test_params["water"]
+>>> test_params["water"]["cup"]
 335
+>>> test_params["water"]["total"]
+670
 >>> test_params["temperature"]
 94
 >>> test_params["message"]
 'Nothing :)'
->>> test_params = {"method":"v60", "cups":2, "coffee":{"total": 41.76653202852158, "cup": 20.88326601426079}, "water":335.12345, "coffee_ratio": 3.12345, "water_ratio":50.12345, "message":"", "digits":2,'coffee_unit': 'g',"temperature": 94.2, "temperature_unit": "C"}
+>>> test_params = {"method":"v60", "cups":2, "coffee":{"total": 41.76653202852158, "cup": 20.88326601426079}, "water":{"cup":335.12345, "total":670.2469}, "coffee_ratio": 3.12345, "water_ratio":50.12345,"message":"","digits":2,'coffee_unit': 'g',"temperature": 94.2, "temperature_unit": "C"}
 >>> test_params = filter_params(test_params)
 >>> test_params["coffee"]["total"]
 41.77
@@ -509,8 +541,10 @@ Temperature units list:
 3.12345
 >>> test_params["water_ratio"]
 50.12345
->>> test_params["water"]
+>>> test_params["water"]["cup"]
 335.12
+>>> test_params["water"]["total"]
+670.25
 >>> test_params["temperature"]
 94.2
 >>> is_int(12.1)
@@ -564,7 +598,10 @@ Coffee:
     - Cup:   15 g
     - Total: 15 g
 <BLANKLINE>
-Water: 250 g
+Water:
+<BLANKLINE>
+    - Cup: 250 g
+    - Total: 250 g
 <BLANKLINE>
 Ratio: 3/50 (0.06)
 <BLANKLINE>
@@ -593,7 +630,10 @@ Coffee:
     - Cup:   15 g
     - Total: 15 g
 <BLANKLINE>
-Water: 250 g
+Water:
+<BLANKLINE>
+    - Cup: 250 g
+    - Total: 250 g
 <BLANKLINE>
 Ratio: 3/50 (0.06)
 <BLANKLINE>
@@ -617,7 +657,10 @@ Coffee:
     - Cup:   15 g
     - Total: 15 g
 <BLANKLINE>
-Water: 250 g
+Water:
+<BLANKLINE>
+    - Cup: 250 g
+    - Total: 250 g
 <BLANKLINE>
 Ratio: 3/50 (0.06)
 <BLANKLINE>
@@ -648,7 +691,10 @@ Coffee:
     - Cup:   15 g
     - Total: 15 g
 <BLANKLINE>
-Water: 250 g
+Water:
+<BLANKLINE>
+    - Cup: 250 g
+    - Total: 250 g
 <BLANKLINE>
 Ratio: 3/50 (0.06)
 <BLANKLINE>
@@ -664,7 +710,7 @@ Message: V60 method
 [Info] File saved successfully!
 >>> file = open("save_test2.json", "r")
 >>> save_test2_object = json.load(file)
->>> save_test2_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 91, 'method': 'v60', 'coffee': {'total':15, 'cup':15}, 'cups': 1, 'coffee_ratio': 3, 'coffee_unit': 'g', 'digits': 3, 'water': 250, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 50, 'grind_unit': 'um', 'grind_type': get_grind_type(50), 'warnings': ['[Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`'], 'water_ratio': 50, 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
+>>> save_test2_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 91, 'method': 'v60', 'coffee': {'total':15, 'cup':15}, 'cups': 1, 'coffee_ratio': 3, 'coffee_unit': 'g', 'digits': 3, 'water': {'cup':250, 'total':250}, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 50, 'grind_unit': 'um', 'grind_type': get_grind_type(50), 'warnings': ['[Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`'], 'water_ratio': 50, 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
 >>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save-path', "save_test3.txt"])
@@ -684,7 +730,10 @@ Coffee:
     - Cup:   15 g
     - Total: 15 g
 <BLANKLINE>
-Water: 250 g
+Water:
+<BLANKLINE>
+    - Cup: 250 g
+    - Total: 250 g
 <BLANKLINE>
 Ratio: 3/50 (0.06)
 <BLANKLINE>
@@ -707,7 +756,10 @@ Coffee:
     - Cup:   15 g
     - Total: 15 g
 <BLANKLINE>
-Water: 250 g
+Water:
+<BLANKLINE>
+    - Cup: 250 g
+    - Total: 250 g
 <BLANKLINE>
 Ratio: 3/50 (0.06)
 <BLANKLINE>
@@ -736,7 +788,10 @@ Coffee:
     - Cup:   15 g
     - Total: 15 g
 <BLANKLINE>
-Water: 250 g
+Water:
+<BLANKLINE>
+    - Cup: 250 g
+    - Total: 250 g
 <BLANKLINE>
 Ratio: 3/50 (0.06)
 <BLANKLINE>
@@ -751,7 +806,7 @@ Message: V60 method
 [Info] File saved successfully!
 >>> file = open("save_test3.json", "r")
 >>> save_test3_object = json.load(file)
->>> save_test3_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 91, 'method': 'v60', 'coffee': {'total': 15, 'cup': 15}, 'cups': 1, 'coffee_ratio': 3, 'coffee_unit': 'g', 'digits': 3, 'water': 250, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 50, 'grind_unit': 'um', 'grind_type': get_grind_type(50), 'water_ratio': 50, "warnings":[], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
+>>> save_test3_object == {'mycoffee_version': MY_COFFEE_VERSION, 'water_unit': 'g', 'temperature': 91, 'method': 'v60', 'coffee': {'total': 15, 'cup': 15}, 'cups': 1, 'coffee_ratio': 3, 'coffee_unit': 'g', 'digits': 3, 'water': {'total':250, 'cup':250}, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 50, 'grind_unit': 'um', 'grind_type': get_grind_type(50), 'water_ratio': 50, "warnings":[], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
 >>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save-path', "f://", '--save-format', "json"])
@@ -771,7 +826,10 @@ Coffee:
     - Cup:   15 g
     - Total: 15 g
 <BLANKLINE>
-Water: 250 g
+Water:
+<BLANKLINE>
+    - Cup: 250 g
+    - Total: 250 g
 <BLANKLINE>
 Ratio: 3/50 (0.06)
 <BLANKLINE>
@@ -786,10 +844,16 @@ Message: V60 method
 [Error] Failed to save file!
 >>> args = parser.parse_args(["--method", 'v60', "--water-ratio", '500', "--coffee-ratio", '23', "--water", '5000'])
 >>> params = load_params(args)
+>>> water = params["water"]
 >>> params["coffee"] = dict()
 >>> params["coffee"]["cup"] = calc_coffee(params)
 >>> params["coffee"]["total"] = params["coffee"]["cup"] * params["cups"]
->>> params["water"]
+>>> params["water"] = dict()
+>>> params["water"]["cup"] = water
+>>> params["water"]["total"] = params["water"]["cup"] * params["cups"]
+>>> params["water"]["cup"]
+5000.0
+>>> params["water"]["total"]
 5000.0
 >>> params["water_ratio"]
 500.0
@@ -802,7 +866,7 @@ Message: V60 method
 500
 >>> params["coffee_ratio"]
 23
->>> params["water"]
+>>> params["water"]["total"]
 5000
 >>> params["cups"]
 1
@@ -831,10 +895,16 @@ Message: V60 method
 'steep-and-release'
 >>> args = parser.parse_args(["--method", 'steep-and-release', "--digits", '1'])
 >>> params = load_params(args)
+>>> water = params["water"]
 >>> params["coffee"] = dict()
 >>> params["coffee"]["cup"] = calc_coffee(params)
 >>> params["coffee"]["total"] = params["coffee"]["cup"] * params["cups"]
->>> params["water"]
+>>> params["water"] = dict()
+>>> params["water"]["cup"] = water
+>>> params["water"]["total"] = params["water"]["cup"] * params["cups"]
+>>> params["water"]["cup"]
+255
+>>> params["water"]["total"]
 255
 >>> params["coffee"]["total"]
 15.9375
@@ -851,7 +921,9 @@ Message: V60 method
 16
 >>> params["coffee_ratio"]
 1
->>> params["water"]
+>>> params["water"]["cup"]
+255
+>>> params["water"]["total"]
 255
 >>> params["coffee"]["total"]
 15.9
@@ -863,10 +935,16 @@ Message: V60 method
 1
 >>> args = parser.parse_args(["--method", 'steep-and-release', "--digits", '1', "--cups", '3', "--temperature", '92', "--temperature-unit", 'F'])
 >>> params = load_params(args)
+>>> water = params["water"]
 >>> params["coffee"] = dict()
 >>> params["coffee"]["cup"] = calc_coffee(params)
 >>> params["coffee"]["total"] = params["coffee"]["cup"] * params["cups"]
->>> params["water"]
+>>> params["water"] = dict()
+>>> params["water"]["cup"] = water
+>>> params["water"]["total"] = params["water"]["cup"] * params["cups"]
+>>> params["water"]["total"]
+765
+>>> params["water"]["cup"]
 255
 >>> params["coffee"]["total"]
 47.8125
@@ -881,8 +959,10 @@ Message: V60 method
 16
 >>> params["coffee_ratio"]
 1
->>> params["water"]
+>>> params["water"]["cup"]
 255
+>>> params["water"]["total"]
+765
 >>> params["coffee"]["total"]
 47.8
 >>> params["digits"]
@@ -901,11 +981,17 @@ Message: V60 method
 'F'
 >>> args = parser.parse_args(["--method", 'steep-and-release', "--digits", '1', "--cups", '3', "--coffee-unit", "oz"])
 >>> params = load_params(args)
+>>> water = params["water"]
 >>> params["coffee"] = dict()
 >>> params["coffee"]["cup"] = calc_coffee(params)
 >>> params["coffee"]["total"] = params["coffee"]["cup"] * params["cups"]
->>> params["water"]
+>>> params["water"] = dict()
+>>> params["water"]["cup"] = water
+>>> params["water"]["total"] = params["water"]["cup"] * params["cups"]
+>>> params["water"]["cup"]
 255
+>>> params["water"]["total"]
+765
 >>> params["coffee"]["total"]
 1.686536305734375
 >>> params["water_ratio"]
@@ -919,8 +1005,10 @@ Message: V60 method
 16
 >>> params["coffee_ratio"]
 1
->>> params["water"]
+>>> params["water"]["cup"]
 255
+>>> params["water"]["total"]
+765
 >>> params["coffee"]["total"]
 1.7
 >>> params["digits"]
