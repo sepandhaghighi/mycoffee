@@ -117,7 +117,10 @@ Method: `v60`
 
 Cups: 1
 
-Coffee: 15 g
+Coffee:
+
+    - Cup:   15 g
+    - Total: 15 g
 
 Water: 250 g
 

@@ -26,7 +26,10 @@ Method: `{method}`
 
 Cups: {cups}
 
-Coffee: {coffee} {coffee_unit}
+Coffee:
+
+    - Cup:   {coffee[cup]} {coffee_unit}
+    - Total: {coffee[total]} {coffee_unit}
 
 Water: {water} {water_unit}
 

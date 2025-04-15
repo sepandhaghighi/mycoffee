@@ -15,7 +15,7 @@ on:
       - dev
 
 env:
-  TEST_PYTHON_VERSION: 3.10.0
+  TEST_PYTHON_VERSION: 3.9
   TEST_OS: 'ubuntu-22.04'
 
 jobs:
