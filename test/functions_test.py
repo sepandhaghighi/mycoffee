@@ -174,7 +174,7 @@ Message: V60 method
 >>> result_params = get_result(input_params)
 >>> check_ratio_limits(method=result_params["method"], ratio=result_params["ratio"])
 True
->>> check_grind_limits(result_params)
+>>> check_grind_limits(method=result_params["method"], grind=result_params["grind"])
 True
 >>> check_temperature_limits(result_params)
 True
@@ -213,7 +213,7 @@ Message: Nothing :)
 >>> result_params = get_result(input_params)
 >>> check_ratio_limits(method=result_params["method"], ratio=result_params["ratio"])
 True
->>> check_grind_limits(result_params)
+>>> check_grind_limits(method=result_params["method"], grind=result_params["grind"])
 True
 >>> check_temperature_limits(result_params)
 True
@@ -252,7 +252,7 @@ Message: Nothing :)
 >>> result_params = get_result(input_params)
 >>> check_ratio_limits(method=result_params["method"], ratio=result_params["ratio"])
 False
->>> check_grind_limits(result_params)
+>>> check_grind_limits(method=result_params["method"], grind=result_params["grind"])
 True
 >>> check_temperature_limits(result_params)
 True
@@ -292,7 +292,7 @@ Message: Nothing :)
 >>> result_params = get_result(input_params)
 >>> check_ratio_limits(method=result_params["method"], ratio=result_params["ratio"])
 True
->>> check_grind_limits(result_params)
+>>> check_grind_limits(method=result_params["method"], grind=result_params["grind"])
 False
 >>> check_temperature_limits(result_params)
 True
@@ -332,7 +332,7 @@ Message: Nothing :)
 >>> result_params = get_result(input_params)
 >>> check_ratio_limits(method=result_params["method"], ratio=result_params["ratio"])
 True
->>> check_grind_limits(result_params)
+>>> check_grind_limits(method=result_params["method"], grind=result_params["grind"])
 False
 >>> check_temperature_limits(result_params)
 False
@@ -373,7 +373,7 @@ Message: Nothing :)
 >>> result_params = get_result(input_params)
 >>> check_ratio_limits(method=result_params["method"], ratio=result_params["ratio"])
 True
->>> check_grind_limits(result_params)
+>>> check_grind_limits(method=result_params["method"], grind=result_params["grind"])
 False
 >>> check_temperature_limits(result_params)
 False
@@ -414,7 +414,7 @@ Message: Nothing :)
 >>> result_params = get_result(input_params)
 >>> check_ratio_limits(method=result_params["method"], ratio=result_params["ratio"])
 True
->>> check_grind_limits(result_params)
+>>> check_grind_limits(method=result_params["method"], grind=result_params["grind"])
 True
 >>> check_temperature_limits(result_params)
 True
@@ -422,7 +422,7 @@ True
 >>> result_params = get_result(input_params)
 >>> check_ratio_limits(method=result_params["method"], ratio=result_params["ratio"])
 True
->>> check_grind_limits(result_params)
+>>> check_grind_limits(method=result_params["method"], grind=result_params["grind"])
 False
 >>> check_temperature_limits(result_params)
 True
@@ -430,7 +430,7 @@ True
 >>> result_params = get_result(input_params)
 >>> check_ratio_limits(method=result_params["method"], ratio=result_params["ratio"])
 False
->>> check_grind_limits(result_params)
+>>> check_grind_limits(method=result_params["method"], grind=result_params["grind"])
 False
 >>> check_temperature_limits(result_params)
 True

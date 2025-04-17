@@ -180,7 +180,7 @@ def get_warnings(params: Dict[str, Union[str, int, float]]) -> List[str]:
                 method=method,
                 lower_limit=str(ratio_lower_limit),
                 upper_limit=str(ratio_upper_limit)))
-    if not check_grind_limits(params):
+    if not check_grind_limits(method=method, grind=params["grind"]):
         grind_lower_limit = METHODS_MAP[method]["grind_lower_limit"]
         grind_upper_limit = METHODS_MAP[method]["grind_upper_limit"]
         warnings_list.append(
@@ -376,15 +376,14 @@ def check_ratio_limits(method: str, ratio: float) -> bool:
     return True
 
 
-def check_grind_limits(params: Dict[str, Union[str, int, float]]) -> bool:
+def check_grind_limits(method: str, grind: int) -> bool:
     """
     Return True if the grind is within limits, otherwise False.
 
-    :param params: parameters
+    :param method: brewing method
+    :param grind: grind size
     """
-    method = params["method"]
     if "grind_lower_limit" in METHODS_MAP[method] and "grind_upper_limit" in METHODS_MAP[method]:
-        grind = params["grind"]
         grind_lower_limit = METHODS_MAP[method]["grind_lower_limit"]
         grind_upper_limit = METHODS_MAP[method]["grind_upper_limit"]
         if grind < grind_lower_limit or grind > grind_upper_limit:
