@@ -188,7 +188,7 @@ def get_warnings(params: Dict[str, Union[str, int, float]]) -> List[str]:
                 method=method,
                 lower_limit=str(grind_lower_limit),
                 upper_limit=str(grind_upper_limit)))
-    if not check_temperature_limits(params):
+    if not check_temperature_limits(method=params["method"], temperature=params["temperature"], temperature_unit=params["temperature_unit"]):
         temperature_lower_limit = convert_temperature(
             METHODS_MAP[method]["temperature_lower_limit"],
             from_unit="C",
@@ -424,15 +424,16 @@ def convert_temperature(value: float, from_unit: str, to_unit: str, digits: int 
     return result
 
 
-def check_temperature_limits(params: Dict[str, Union[str, int, float]]) -> bool:
+def check_temperature_limits(method: str, temperature: float, temperature_unit: str) -> bool:
     """
     Return True if the temperature is within limits, otherwise False.
 
-    :param params: parameters
+    :param method: brewing method
+    :param temperature: temperature value
+    :param temperature_unit: temperature unit
     """
-    method = params["method"]
     if "temperature_lower_limit" in METHODS_MAP[method] and "temperature_upper_limit" in METHODS_MAP[method]:
-        temperature = convert_temperature(params["temperature"], from_unit=params["temperature_unit"], to_unit="C")
+        temperature = convert_temperature(temperature, from_unit=temperature_unit, to_unit="C")
         temperature_lower_limit = METHODS_MAP[method]["temperature_lower_limit"]
         temperature_upper_limit = METHODS_MAP[method]["temperature_upper_limit"]
         if temperature < temperature_lower_limit or temperature > temperature_upper_limit:
