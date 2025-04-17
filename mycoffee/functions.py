@@ -172,7 +172,7 @@ def get_warnings(params: Dict[str, Union[str, int, float]]) -> List[str]:
     """
     warnings_list = []
     method = params["method"]
-    if not check_ratio_limits(params):
+    if not check_ratio_limits(method=method, ratio=params["ratio"]):
         ratio_lower_limit = METHODS_MAP[method]["ratio_lower_limit"]
         ratio_upper_limit = METHODS_MAP[method]["ratio_upper_limit"]
         warnings_list.append(
@@ -180,7 +180,7 @@ def get_warnings(params: Dict[str, Union[str, int, float]]) -> List[str]:
                 method=method,
                 lower_limit=str(ratio_lower_limit),
                 upper_limit=str(ratio_upper_limit)))
-    if not check_grind_limits(params):
+    if not check_grind_limits(method=method, grind=params["grind"]):
         grind_lower_limit = METHODS_MAP[method]["grind_lower_limit"]
         grind_upper_limit = METHODS_MAP[method]["grind_upper_limit"]
         warnings_list.append(
@@ -188,7 +188,10 @@ def get_warnings(params: Dict[str, Union[str, int, float]]) -> List[str]:
                 method=method,
                 lower_limit=str(grind_lower_limit),
                 upper_limit=str(grind_upper_limit)))
-    if not check_temperature_limits(params):
+    if not check_temperature_limits(
+            method=method,
+            temperature=params["temperature"],
+            temperature_unit=params["temperature_unit"]):
         temperature_lower_limit = convert_temperature(
             METHODS_MAP[method]["temperature_lower_limit"],
             from_unit="C",
@@ -361,15 +364,14 @@ def filter_params(params: Dict[str, Union[str, int, float]]) -> Dict[str, Union[
     return params
 
 
-def check_ratio_limits(params: Dict[str, Union[str, int, float]]) -> bool:
+def check_ratio_limits(method: str, ratio: float) -> bool:
     """
     Return True if the ratio is within limits, otherwise False.
 
-    :param params: parameters
+    :param method: brewing method
+    :param ratio: coffee/water ratio
     """
-    method = params["method"]
     if "ratio_lower_limit" in METHODS_MAP[method] and "ratio_upper_limit" in METHODS_MAP[method]:
-        ratio = params["coffee_ratio"] / params["water_ratio"]
         ratio_lower_limit = float(METHODS_MAP[method]["ratio_lower_limit"])
         ratio_upper_limit = float(METHODS_MAP[method]["ratio_upper_limit"])
         if ratio < ratio_lower_limit or ratio > ratio_upper_limit:
@@ -377,15 +379,14 @@ def check_ratio_limits(params: Dict[str, Union[str, int, float]]) -> bool:
     return True
 
 
-def check_grind_limits(params: Dict[str, Union[str, int, float]]) -> bool:
+def check_grind_limits(method: str, grind: int) -> bool:
     """
     Return True if the grind is within limits, otherwise False.
 
-    :param params: parameters
+    :param method: brewing method
+    :param grind: grind size
     """
-    method = params["method"]
     if "grind_lower_limit" in METHODS_MAP[method] and "grind_upper_limit" in METHODS_MAP[method]:
-        grind = params["grind"]
         grind_lower_limit = METHODS_MAP[method]["grind_lower_limit"]
         grind_upper_limit = METHODS_MAP[method]["grind_upper_limit"]
         if grind < grind_lower_limit or grind > grind_upper_limit:
@@ -426,15 +427,16 @@ def convert_temperature(value: float, from_unit: str, to_unit: str, digits: int 
     return result
 
 
-def check_temperature_limits(params: Dict[str, Union[str, int, float]]) -> bool:
+def check_temperature_limits(method: str, temperature: float, temperature_unit: str) -> bool:
     """
     Return True if the temperature is within limits, otherwise False.
 
-    :param params: parameters
+    :param method: brewing method
+    :param temperature: temperature value
+    :param temperature_unit: temperature unit
     """
-    method = params["method"]
     if "temperature_lower_limit" in METHODS_MAP[method] and "temperature_upper_limit" in METHODS_MAP[method]:
-        temperature = convert_temperature(params["temperature"], from_unit=params["temperature_unit"], to_unit="C")
+        temperature = convert_temperature(temperature, from_unit=temperature_unit, to_unit="C")
         temperature_lower_limit = METHODS_MAP[method]["temperature_lower_limit"]
         temperature_upper_limit = METHODS_MAP[method]["temperature_upper_limit"]
         if temperature < temperature_lower_limit or temperature > temperature_upper_limit:

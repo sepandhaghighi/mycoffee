@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `filter_params` function modified
 - `coffee` parameter splitted to `coffee[cup]` and `coffee[total]`
 - `water` parameter splitted to `water[cup]` and `water[total]`
+- `check_ratio_limits` function parameters updated
+- `check_temperature_limits` function parameters updated
+- `check_grind_limits` function parameters updated
 - Test system modified
 - `Python 3.6` support dropped
 ## [1.7] - 2025-03-26
