@@ -189,7 +189,7 @@ def get_warnings(params: Dict[str, Union[str, int, float]]) -> List[str]:
                 lower_limit=str(grind_lower_limit),
                 upper_limit=str(grind_upper_limit)))
     if not check_temperature_limits(
-            method=params["method"],
+            method=method,
             temperature=params["temperature"],
             temperature_unit=params["temperature_unit"]):
         temperature_lower_limit = convert_temperature(
