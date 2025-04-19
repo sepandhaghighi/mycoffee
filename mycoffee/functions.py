@@ -472,15 +472,18 @@ def convert_water(water: float, unit: str, reverse: bool = False) -> Union[float
     return water
 
 
-def calc_coffee(params: Dict[str, Union[str, int, float]]) -> float:
+def calc_coffee(ratio: float, water: float, water_unit: str, coffee_unit: str) -> float:
     """
     Calculate coffee.
 
-    :param params: parameters
+    :param ratio: coffee/water ratio
+    :param water: water amount
+    :param water_unit: water unit
+    :param coffee_unit: coffee unit
     """
-    water_gram = convert_water(params["water"], params["water_unit"], True)
-    coffee_gram = water_gram * params["coffee_ratio"] / params["water_ratio"]
-    coffee = convert_coffee(coffee_gram, params["coffee_unit"])
+    water_gram = convert_water(water, water_unit, True)
+    coffee_gram = water_gram * ratio
+    coffee = convert_coffee(coffee_gram, coffee_unit)
     return coffee
 
 
