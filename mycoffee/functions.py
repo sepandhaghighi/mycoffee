@@ -350,10 +350,10 @@ def filter_params(params: Dict[str, Union[str, int, float]]) -> Dict[str, Union[
         params["water"]["cup"] = int(params["water"]["cup"])
     if is_int(params["water"]["total"]):
         params["water"]["total"] = int(params["water"]["total"])
-    if is_int(params["water_ratio"]):
-        params["water_ratio"] = int(params["water_ratio"])
-    if is_int(params["coffee_ratio"]):
-        params["coffee_ratio"] = int(params["coffee_ratio"])
+    if is_int(params["water"]["ratio"]):
+        params["water"]["ratio"] = int(params["water"]["ratio"])
+    if is_int(params["coffee"]["ratio"]):
+        params["coffee"]["ratio"] = int(params["coffee"]["ratio"])
     if is_int(params["temperature"]):
         params["temperature"] = int(params["temperature"])
     if len(params["message"]) == 0:
@@ -484,11 +484,12 @@ def calc_coffee(ratio: float, water: float, water_unit: str, coffee_unit: str) -
     return coffee
 
 
-def get_result(params: Dict[str, Union[str, int, float]]) -> Dict[str, Union[str, int, float, dict]]:
+def get_result(params: Dict[str, Union[str, int, float]], enable_filter: bool = True) -> Dict[str, Union[str, int, float, dict]]:
     """
     Get result.
 
     :param params: parameters
+    :param enable_filter: filter flag
     """
     result_params = params.copy()
     result_params["ratio"] = params["coffee_ratio"] / params["water_ratio"]
@@ -508,7 +509,8 @@ def get_result(params: Dict[str, Union[str, int, float]]) -> Dict[str, Union[str
     result_params["grind_type"] = get_grind_type(params["grind"])
     result_params["strength"] = get_brew_strength(ratio=result_params["ratio"])
     result_params["grind_unit"] = "um"
-    result_params = filter_params(result_params)
+    if enable_filter:
+        result_params = filter_params(result_params)
     result_params["warnings"] = get_warnings(result_params)
     return result_params
 
