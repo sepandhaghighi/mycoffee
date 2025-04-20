@@ -484,7 +484,8 @@ def calc_coffee(ratio: float, water: float, water_unit: str, coffee_unit: str) -
     return coffee
 
 
-def get_result(params: Dict[str, Union[str, int, float]], enable_filter: bool = True) -> Dict[str, Union[str, int, float, dict]]:
+def get_result(params: Dict[str, Union[str, int, float]],
+               enable_filter: bool = True) -> Dict[str, Union[str, int, float, dict]]:
     """
     Get result.
 
@@ -493,8 +494,16 @@ def get_result(params: Dict[str, Union[str, int, float]], enable_filter: bool = 
     """
     result_params = params.copy()
     result_params["ratio"] = params["coffee_ratio"] / params["water_ratio"]
-    result_params["coffee"] = {"total": None, "cup": None, "ratio": params["coffee_ratio"], "unit": params["coffee_unit"]}
-    result_params["water"] = {"total": None, "cup": params["water"], "ratio": params["water_ratio"], "unit": params["water_unit"]}
+    result_params["coffee"] = {
+        "total": None,
+        "cup": None,
+        "ratio": params["coffee_ratio"],
+        "unit": params["coffee_unit"]}
+    result_params["water"] = {
+        "total": None,
+        "cup": params["water"],
+        "ratio": params["water_ratio"],
+        "unit": params["water_unit"]}
     del result_params["water_ratio"]
     del result_params["coffee_ratio"]
     del result_params["coffee_unit"]
