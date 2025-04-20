@@ -10,7 +10,8 @@ True
 True
 >>> v60_params["water"] == 250
 True
->>> v60_coffee = calc_coffee(v60_params)
+>>> v60_params["ratio"] = v60_params["coffee_ratio"] / v60_params["water_ratio"]
+>>> v60_coffee = calc_coffee(ratio=v60_params["ratio"], water=v60_params["water"], water_unit=v60_params["water_unit"], coffee_unit=v60_params["coffee_unit"])
 >>> v60_coffee == 15
 True
 >>> METHODS_MAP["v60"]["ratio_upper_limit"] == Fraction(1, 14)
@@ -36,7 +37,8 @@ True
 True
 >>> chemex_params["water"] == 240
 True
->>> chemex_coffee = calc_coffee(chemex_params)
+>>> chemex_params["ratio"] = chemex_params["coffee_ratio"] / chemex_params["water_ratio"]
+>>> chemex_coffee = calc_coffee(ratio=chemex_params["ratio"], water=chemex_params["water"], water_unit=chemex_params["water_unit"], coffee_unit=chemex_params["coffee_unit"])
 >>> chemex_coffee == 16
 True
 >>> METHODS_MAP["chemex"]["ratio_upper_limit"] == Fraction(1, 10)
@@ -62,7 +64,8 @@ True
 True
 >>> espresso_params["water"] == 36
 True
->>> espresso_coffee = calc_coffee(espresso_params)
+>>> espresso_params["ratio"] = espresso_params["coffee_ratio"] / espresso_params["water_ratio"]
+>>> espresso_coffee = calc_coffee(ratio=espresso_params["ratio"], water=espresso_params["water"], water_unit=espresso_params["water_unit"], coffee_unit=espresso_params["coffee_unit"])
 >>> espresso_coffee == 18
 True
 >>> METHODS_MAP["espresso"]["ratio_upper_limit"] == Fraction(2, 3)
@@ -88,7 +91,8 @@ True
 True
 >>> siphon_params["water"] == 240
 True
->>> siphon_coffee = calc_coffee(siphon_params)
+>>> siphon_params["ratio"] = siphon_params["coffee_ratio"] / siphon_params["water_ratio"]
+>>> siphon_coffee = calc_coffee(ratio=siphon_params["ratio"], water=siphon_params["water"], water_unit=siphon_params["water_unit"], coffee_unit=siphon_params["coffee_unit"])
 >>> siphon_coffee == 16
 True
 >>> METHODS_MAP["siphon"]["ratio_upper_limit"] == Fraction(1, 12)
@@ -114,7 +118,8 @@ True
 True
 >>> french_press_params["water"] == 120
 True
->>> french_press_coffee = calc_coffee(french_press_params)
+>>> french_press_params["ratio"] = french_press_params["coffee_ratio"] / french_press_params["water_ratio"]
+>>> french_press_coffee = calc_coffee(ratio=french_press_params["ratio"], water=french_press_params["water"], water_unit=french_press_params["water_unit"], coffee_unit=french_press_params["coffee_unit"])
 >>> french_press_coffee == 8
 True
 >>> METHODS_MAP["french-press"]["ratio_upper_limit"] == Fraction(1, 12)
@@ -140,7 +145,8 @@ True
 True
 >>> pour_over_params["water"] == 240
 True
->>> pour_over_coffee = calc_coffee(pour_over_params)
+>>> pour_over_params["ratio"] = pour_over_params["coffee_ratio"] / pour_over_params["water_ratio"]
+>>> pour_over_coffee = calc_coffee(ratio=pour_over_params["ratio"], water=pour_over_params["water"], water_unit=pour_over_params["water_unit"], coffee_unit=pour_over_params["coffee_unit"])
 >>> pour_over_coffee == 16
 True
 >>> METHODS_MAP["pour-over"]["ratio_upper_limit"] == Fraction(1, 14)
@@ -166,7 +172,8 @@ True
 True
 >>> auto_drip_params["water"] == 128
 True
->>> auto_drip_coffee = calc_coffee(auto_drip_params)
+>>> auto_drip_params["ratio"] = auto_drip_params["coffee_ratio"] / auto_drip_params["water_ratio"]
+>>> auto_drip_coffee = calc_coffee(ratio=auto_drip_params["ratio"], water=auto_drip_params["water"], water_unit=auto_drip_params["water_unit"], coffee_unit=auto_drip_params["coffee_unit"])
 >>> auto_drip_coffee == 8
 True
 >>> METHODS_MAP["auto-drip"]["ratio_upper_limit"] == Fraction(1, 14)
@@ -192,7 +199,8 @@ True
 True
 >>> cold_brew_params["water"] == 242
 True
->>> cold_brew_coffee = calc_coffee(cold_brew_params)
+>>> cold_brew_params["ratio"] = cold_brew_params["coffee_ratio"] / cold_brew_params["water_ratio"]
+>>> cold_brew_coffee = calc_coffee(ratio=cold_brew_params["ratio"], water=cold_brew_params["water"], water_unit=cold_brew_params["water_unit"], coffee_unit=cold_brew_params["coffee_unit"])
 >>> cold_brew_coffee == 22
 True
 >>> METHODS_MAP["cold-brew"]["ratio_upper_limit"] == Fraction(1, 8)
@@ -218,7 +226,8 @@ True
 True
 >>> cold_brew_conc_params["water"] == 120
 True
->>> cold_brew_conc_coffee = calc_coffee(cold_brew_conc_params)
+>>> cold_brew_conc_params["ratio"] = cold_brew_conc_params["coffee_ratio"] / cold_brew_conc_params["water_ratio"]
+>>> cold_brew_conc_coffee = calc_coffee(ratio=cold_brew_conc_params["ratio"], water=cold_brew_conc_params["water"], water_unit=cold_brew_conc_params["water_unit"], coffee_unit=cold_brew_conc_params["coffee_unit"])
 >>> cold_brew_conc_coffee == 24
 True
 >>> METHODS_MAP["cold-brew-conc"]["ratio_upper_limit"] == Fraction(1, 4)
@@ -244,7 +253,8 @@ True
 True
 >>> moka_pot_params["water"] == 60
 True
->>> moka_pot_coffee = calc_coffee(moka_pot_params)
+>>> moka_pot_params["ratio"] = moka_pot_params["coffee_ratio"] / moka_pot_params["water_ratio"]
+>>> moka_pot_coffee = calc_coffee(ratio=moka_pot_params["ratio"], water=moka_pot_params["water"], water_unit=moka_pot_params["water_unit"], coffee_unit=moka_pot_params["coffee_unit"])
 >>> moka_pot_coffee == 6
 True
 >>> METHODS_MAP["moka-pot"]["ratio_upper_limit"] == Fraction(1, 7)
@@ -270,7 +280,8 @@ True
 True
 >>> ristretto_params["water"] == 18
 True
->>> ristretto_coffee = calc_coffee(ristretto_params)
+>>> ristretto_params["ratio"] = ristretto_params["coffee_ratio"] / ristretto_params["water_ratio"]
+>>> ristretto_coffee = calc_coffee(ratio=ristretto_params["ratio"], water=ristretto_params["water"], water_unit=ristretto_params["water_unit"], coffee_unit=ristretto_params["coffee_unit"])
 >>> ristretto_coffee == 18
 True
 >>> METHODS_MAP["ristretto"]["ratio_upper_limit"] == Fraction(1, 1)
@@ -296,7 +307,8 @@ True
 True
 >>> lungo_params["water"] == 72
 True
->>> lungo_coffee = calc_coffee(lungo_params)
+>>> lungo_params["ratio"] = lungo_params["coffee_ratio"] / lungo_params["water_ratio"]
+>>> lungo_coffee = calc_coffee(ratio=lungo_params["ratio"], water=lungo_params["water"], water_unit=lungo_params["water_unit"], coffee_unit=lungo_params["coffee_unit"])
 >>> lungo_coffee == 18
 True
 >>> METHODS_MAP["lungo"]["ratio_upper_limit"] == Fraction(2, 5)
@@ -322,7 +334,8 @@ True
 True
 >>> turkish_params["water"] == 50
 True
->>> turkish_coffee = calc_coffee(turkish_params)
+>>> turkish_params["ratio"] = turkish_params["coffee_ratio"] / turkish_params["water_ratio"]
+>>> turkish_coffee = calc_coffee(ratio=turkish_params["ratio"], water=turkish_params["water"], water_unit=turkish_params["water_unit"], coffee_unit=turkish_params["coffee_unit"])
 >>> turkish_coffee == 5
 True
 >>> METHODS_MAP["turkish"]["ratio_upper_limit"] == Fraction(1, 8)
@@ -348,7 +361,8 @@ True
 True
 >>> cupping_params["water"] == 150
 True
->>> cupping_coffee = calc_coffee(cupping_params)
+>>> cupping_params["ratio"] = cupping_params["coffee_ratio"] / cupping_params["water_ratio"]
+>>> cupping_coffee = calc_coffee(ratio=cupping_params["ratio"], water=cupping_params["water"], water_unit=cupping_params["water_unit"], coffee_unit=cupping_params["coffee_unit"])
 >>> cupping_coffee == 8.25
 True
 >>> METHODS_MAP["cupping"]["ratio_upper_limit"] == Fraction(1, 17)
@@ -374,7 +388,8 @@ True
 True
 >>> aero_press_params["water"] == 135
 True
->>> aero_press_coffee = calc_coffee(aero_press_params)
+>>> aero_press_params["ratio"] = aero_press_params["coffee_ratio"] / aero_press_params["water_ratio"]
+>>> aero_press_coffee = calc_coffee(ratio=aero_press_params["ratio"], water=aero_press_params["water"], water_unit=aero_press_params["water_unit"], coffee_unit=aero_press_params["coffee_unit"])
 >>> aero_press_coffee == 9
 True
 >>> METHODS_MAP["aero-press"]["ratio_upper_limit"] == Fraction(1, 12)
@@ -400,7 +415,8 @@ True
 True
 >>> aero_press_conc_params["water"] == 90
 True
->>> aero_press_conc_coffee = calc_coffee(aero_press_conc_params)
+>>> aero_press_conc_params["ratio"] = aero_press_conc_params["coffee_ratio"] / aero_press_conc_params["water_ratio"]
+>>> aero_press_conc_coffee = calc_coffee(ratio=aero_press_conc_params["ratio"], water=aero_press_conc_params["water"], water_unit=aero_press_conc_params["water_unit"], coffee_unit=aero_press_conc_params["coffee_unit"])
 >>> aero_press_conc_coffee == 15
 True
 >>> METHODS_MAP["aero-press-conc"]["ratio_upper_limit"] == Fraction(1, 5)
@@ -426,7 +442,8 @@ True
 True
 >>> aero_press_inv_params["water"] == 132
 True
->>> aero_press_inv_coffee = calc_coffee(aero_press_inv_params)
+>>> aero_press_inv_params["ratio"] = aero_press_inv_params["coffee_ratio"] / aero_press_inv_params["water_ratio"]
+>>> aero_press_inv_coffee = calc_coffee(ratio=aero_press_inv_params["ratio"], water=aero_press_inv_params["water"], water_unit=aero_press_inv_params["water_unit"], coffee_unit=aero_press_inv_params["coffee_unit"])
 >>> aero_press_inv_coffee == 11
 True
 >>> METHODS_MAP["aero-press-inv"]["ratio_upper_limit"] == Fraction(1, 10)
@@ -452,7 +469,8 @@ True
 True
 >>> steep_and_release_params["water"] == 255
 True
->>> steep_and_release_coffee = calc_coffee(steep_and_release_params)
+>>> steep_and_release_params["ratio"] = steep_and_release_params["coffee_ratio"] / steep_and_release_params["water_ratio"]
+>>> steep_and_release_coffee = calc_coffee(ratio=steep_and_release_params["ratio"], water=steep_and_release_params["water"], water_unit=steep_and_release_params["water_unit"], coffee_unit=steep_and_release_params["coffee_unit"])
 >>> steep_and_release_coffee == 15.9375
 True
 >>> METHODS_MAP["steep-and-release"]["ratio_upper_limit"] == Fraction(1, 14)
@@ -480,43 +498,44 @@ True
 True
 >>> custom_params["coffee_unit"] == "g"
 True
->>> custom_coffee_g = calc_coffee(custom_params)
+>>> custom_params["ratio"] = custom_params["coffee_ratio"] / custom_params["water_ratio"]
+>>> custom_coffee_g = calc_coffee(ratio=custom_params["ratio"], water=custom_params["water"], water_unit=custom_params["water_unit"], coffee_unit=custom_params["coffee_unit"])
 >>> custom_coffee_g == 14.117647058823529
 True
 >>> custom_params["coffee_unit"] = "oz" # https://www.rapidtables.com/convert/weight/gram-to-ounce.html?x=14.117647058823529
->>> custom_coffee_oz = calc_coffee(custom_params)
+>>> custom_coffee_oz = calc_coffee(ratio=custom_params["ratio"], water=custom_params["water"], water_unit=custom_params["water_unit"], coffee_unit=custom_params["coffee_unit"])
 >>> custom_coffee_oz == 0.4979853451764706
 True
 >>> custom_params["coffee_unit"] = "lb" # https://www.rapidtables.com/convert/weight/gram-to-pound.html?x=14.117647058823529
->>> custom_coffee_lb = calc_coffee(custom_params)
+>>> custom_coffee_lb = calc_coffee(ratio=custom_params["ratio"], water=custom_params["water"], water_unit=custom_params["water_unit"], coffee_unit=custom_params["coffee_unit"])
 >>> custom_coffee_lb == 0.03112408407317647
 True
 >>> custom_params["coffee_unit"] = "mg" # https://www.rapidtables.com/convert/weight/gram-to-mg.html?x=14.117647058823529
->>> custom_coffee_mg = calc_coffee(custom_params)
+>>> custom_coffee_mg = calc_coffee(ratio=custom_params["ratio"], water=custom_params["water"], water_unit=custom_params["water_unit"], coffee_unit=custom_params["coffee_unit"])
 >>> custom_coffee_mg == 14117.64705882353
 True
 >>> custom_params["coffee_unit"] = "kg" # https://www.rapidtables.com/convert/weight/gram-to-kg.html?x=14.117647058823529
->>> custom_coffee_kg = calc_coffee(custom_params)
+>>> custom_coffee_kg = calc_coffee(ratio=custom_params["ratio"], water=custom_params["water"], water_unit=custom_params["water_unit"], coffee_unit=custom_params["coffee_unit"])
 >>> custom_coffee_kg == 0.01411764705882353
 True
 >>> custom_params["coffee_unit"] = "cb" # https://honestcoffeeguide.com/whole-bean-to-ground-coffee-ratio/
->>> custom_coffee_cb = calc_coffee(custom_params)
+>>> custom_coffee_cb = calc_coffee(ratio=custom_params["ratio"], water=custom_params["water"], water_unit=custom_params["water_unit"], coffee_unit=custom_params["coffee_unit"])
 >>> custom_coffee_cb == 107
 True
 >>> custom_params["coffee_unit"] = "tbsp" # https://www.howmany.wiki/wv/
->>> custom_coffee_tbsp = calc_coffee(custom_params)
+>>> custom_coffee_tbsp = calc_coffee(ratio=custom_params["ratio"], water=custom_params["water"], water_unit=custom_params["water_unit"], coffee_unit=custom_params["coffee_unit"])
 >>> custom_coffee_tbsp == 2.6157176470588235
 True
 >>> custom_params["coffee_unit"] = "tsp" # https://www.howmany.wiki/wv/
->>> custom_coffee_tsp = calc_coffee(custom_params)
+>>> custom_coffee_tsp = calc_coffee(ratio=custom_params["ratio"], water=custom_params["water"], water_unit=custom_params["water_unit"], coffee_unit=custom_params["coffee_unit"])
 >>> custom_coffee_tsp == 7.847294117647058
 True
 >>> custom_params["coffee_unit"] = "dsp" # https://www.howmany.wiki/wv/
->>> custom_coffee_dsp = calc_coffee(custom_params)
+>>> custom_coffee_dsp = calc_coffee(ratio=custom_params["ratio"], water=custom_params["water"], water_unit=custom_params["water_unit"], coffee_unit=custom_params["coffee_unit"])
 >>> custom_coffee_dsp == 3.923576470588235
 True
 >>> custom_params["coffee_unit"] = "cup" # https://www.howmany.wiki/wv/
->>> custom_coffee_cup = calc_coffee(custom_params)
+>>> custom_coffee_cup = calc_coffee(ratio=custom_params["ratio"], water=custom_params["water"], water_unit=custom_params["water_unit"], coffee_unit=custom_params["coffee_unit"])
 >>> custom_coffee_cup == 0.16348235294117647
 True
 >>> convert_water(240, "g") == 240 # https://www.calculator.net/weight-calculator.html

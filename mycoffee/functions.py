@@ -345,6 +345,7 @@ def filter_params(params: Dict[str, Union[str, int, float]]) -> Dict[str, Union[
     params["coffee"]["total"] = round(params["coffee"]["total"], digits)
     params["water"]["cup"] = round(params["water"]["cup"], digits)
     params["water"]["total"] = round(params["water"]["total"], digits)
+    params["ratio"] = round(params["ratio"], digits)
     if is_int(params["coffee"]["cup"]):
         params["coffee"]["cup"] = int(params["coffee"]["cup"])
     if is_int(params["coffee"]["total"]):
@@ -472,15 +473,18 @@ def convert_water(water: float, unit: str, reverse: bool = False) -> Union[float
     return water
 
 
-def calc_coffee(params: Dict[str, Union[str, int, float]]) -> float:
+def calc_coffee(ratio: float, water: float, water_unit: str, coffee_unit: str) -> float:
     """
     Calculate coffee.
 
-    :param params: parameters
+    :param ratio: coffee/water ratio
+    :param water: water amount
+    :param water_unit: water unit
+    :param coffee_unit: coffee unit
     """
-    water_gram = convert_water(params["water"], params["water_unit"], True)
-    coffee_gram = water_gram * params["coffee_ratio"] / params["water_ratio"]
-    coffee = convert_coffee(coffee_gram, params["coffee_unit"])
+    water_gram = convert_water(water, water_unit, True)
+    coffee_gram = water_gram * ratio
+    coffee = convert_coffee(coffee_gram, coffee_unit)
     return coffee
 
 
@@ -491,14 +495,18 @@ def get_result(params: Dict[str, Union[str, int, float]]) -> Dict[str, Union[str
     :param params: parameters
     """
     params_copy = params.copy()
+    params_copy["ratio"] = params_copy["coffee_ratio"] / params_copy["water_ratio"]
     params_copy["coffee"] = dict()
     params_copy["water"] = dict()
-    params_copy["coffee"]["cup"] = calc_coffee(params)
+    params_copy["coffee"]["cup"] = calc_coffee(
+        ratio=params_copy["ratio"],
+        water=params["water"],
+        water_unit=params["water_unit"],
+        coffee_unit=params["coffee_unit"])
     params_copy["coffee"]["total"] = params_copy["cups"] * params_copy["coffee"]["cup"]
     params_copy["water"]["cup"] = params["water"]
     params_copy["water"]["total"] = params_copy["cups"] * params_copy["water"]["cup"]
     params_copy["grind_type"] = get_grind_type(params_copy["grind"])
-    params_copy["ratio"] = round(params_copy["coffee_ratio"] / params_copy["water_ratio"], params["digits"])
     params_copy["strength"] = get_brew_strength(ratio=params_copy["ratio"])
     params_copy["grind_unit"] = "um"
     result = filter_params(params_copy)

@@ -507,13 +507,13 @@ Temperature units list:
 1. `C` - Celsius
 2. `F` - Fahrenheit
 3. `K` - Kelvin
->>> test_params = {"method":"v60", "cups":1, "water":335, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", 'coffee_unit': 'g', 'water_unit': 'g'}
->>> calc_coffee(test_params)
-20.1
->>> test_params = {"method":"v60", "cups":2, "water":335, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", 'coffee_unit': 'g', 'water_unit': 'g'}
->>> calc_coffee(test_params)
-20.1
->>> test_params = {"method":"v60", "cups":2, "coffee":{"total":40.2, "cup":20.1}, "water":{"cup":335.0, "total":670}, "coffee_ratio": 3.0, "water_ratio":50.0, "message":"", "digits":3, 'coffee_unit': 'g', "temperature":94.0, "temperature_unit": "C"}
+>>> test_params = {"method":"v60", "cups":1, "water":335, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", 'coffee_unit': 'g', 'water_unit': 'g', "ratio": 3/50}
+>>> calc_coffee(ratio=test_params["ratio"], water=test_params["water"], water_unit=test_params["water_unit"], coffee_unit=test_params["coffee_unit"])
+20.099999999999998
+>>> test_params = {"method":"v60", "cups":2, "water":335, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", 'coffee_unit': 'g', 'water_unit': 'g', "ratio": 3/50}
+>>> calc_coffee(ratio=test_params["ratio"], water=test_params["water"], water_unit=test_params["water_unit"], coffee_unit=test_params["coffee_unit"])
+20.099999999999998
+>>> test_params = {"method":"v60", "ratio": 3/50, "cups":2, "coffee":{"total":40.2, "cup":20.1}, "water":{"cup":335.0, "total":670}, "coffee_ratio": 3.0, "water_ratio":50.0, "message":"", "digits":3, 'coffee_unit': 'g', "temperature":94.0, "temperature_unit": "C"}
 >>> test_params = filter_params(test_params)
 >>> test_params["coffee"]["total"]
 40.2
@@ -531,7 +531,7 @@ Temperature units list:
 94
 >>> test_params["message"]
 'Nothing :)'
->>> test_params = {"method":"v60", "cups":2, "coffee":{"total": 41.76653202852158, "cup": 20.88326601426079}, "water":{"cup":335.12345, "total":670.2469}, "coffee_ratio": 3.12345, "water_ratio":50.12345,"message":"","digits":2,'coffee_unit': 'g',"temperature": 94.2, "temperature_unit": "C"}
+>>> test_params = {"method":"v60", "ratio": 3.12345/50.12345, "cups":2, "coffee":{"total": 41.76653202852158, "cup": 20.88326601426079}, "water":{"cup":335.12345, "total":670.2469}, "coffee_ratio": 3.12345, "water_ratio":50.12345,"message":"","digits":2,'coffee_unit': 'g',"temperature": 94.2, "temperature_unit": "C"}
 >>> test_params = filter_params(test_params)
 >>> test_params["coffee"]["total"]
 41.77
@@ -845,8 +845,10 @@ Message: V60 method
 >>> args = parser.parse_args(["--method", 'v60', "--water-ratio", '500', "--coffee-ratio", '23', "--water", '5000'])
 >>> params = load_params(args)
 >>> water = params["water"]
+>>> ratio = params["coffee_ratio"] / params["water_ratio"]
+>>> params["ratio"] = ratio
 >>> params["coffee"] = dict()
->>> params["coffee"]["cup"] = calc_coffee(params)
+>>> params["coffee"]["cup"] = calc_coffee(ratio=ratio, water=water, water_unit=params["water_unit"], coffee_unit=params["coffee_unit"])
 >>> params["coffee"]["total"] = params["coffee"]["cup"] * params["cups"]
 >>> params["water"] = dict()
 >>> params["water"]["cup"] = water
@@ -882,7 +884,8 @@ Message: V60 method
 'v60'
 >>> args = parser.parse_args(["--method", 'steep-and-release', "--digits", '1', "--water-unit", "mg"])
 >>> params = load_params(args)
->>> params["coffee"] = calc_coffee(params)
+>>> ratio = params["coffee_ratio"] / params["water_ratio"]
+>>> params["coffee"] = calc_coffee(ratio=ratio, water=params["water"], water_unit=params["water_unit"], coffee_unit=params["coffee_unit"])
 >>> params["water"]
 255000
 >>> params["coffee"]
@@ -896,8 +899,10 @@ Message: V60 method
 >>> args = parser.parse_args(["--method", 'steep-and-release', "--digits", '1'])
 >>> params = load_params(args)
 >>> water = params["water"]
+>>> ratio = params["coffee_ratio"] / params["water_ratio"]
+>>> params["ratio"] = ratio
 >>> params["coffee"] = dict()
->>> params["coffee"]["cup"] = calc_coffee(params)
+>>> params["coffee"]["cup"] = calc_coffee(ratio=ratio, water=water, water_unit=params["water_unit"], coffee_unit=params["coffee_unit"])
 >>> params["coffee"]["total"] = params["coffee"]["cup"] * params["cups"]
 >>> params["water"] = dict()
 >>> params["water"]["cup"] = water
@@ -935,9 +940,11 @@ Message: V60 method
 1
 >>> args = parser.parse_args(["--method", 'steep-and-release', "--digits", '1', "--cups", '3', "--temperature", '92', "--temperature-unit", 'F'])
 >>> params = load_params(args)
+>>> ratio = params["coffee_ratio"] / params["water_ratio"]
+>>> params["ratio"] = ratio
 >>> water = params["water"]
 >>> params["coffee"] = dict()
->>> params["coffee"]["cup"] = calc_coffee(params)
+>>> params["coffee"]["cup"] = calc_coffee(ratio=ratio, water=water, water_unit=params["water_unit"], coffee_unit=params["coffee_unit"])
 >>> params["coffee"]["total"] = params["coffee"]["cup"] * params["cups"]
 >>> params["water"] = dict()
 >>> params["water"]["cup"] = water
@@ -981,9 +988,11 @@ Message: V60 method
 'F'
 >>> args = parser.parse_args(["--method", 'steep-and-release', "--digits", '1', "--cups", '3', "--coffee-unit", "oz"])
 >>> params = load_params(args)
+>>> ratio = params["coffee_ratio"] / params["water_ratio"]
+>>> params["ratio"] = ratio
 >>> water = params["water"]
 >>> params["coffee"] = dict()
->>> params["coffee"]["cup"] = calc_coffee(params)
+>>> params["coffee"]["cup"] = calc_coffee(ratio=ratio, water=water, water_unit=params["water_unit"], coffee_unit=params["coffee_unit"])
 >>> params["coffee"]["total"] = params["coffee"]["cup"] * params["cups"]
 >>> params["water"] = dict()
 >>> params["water"]["cup"] = water
