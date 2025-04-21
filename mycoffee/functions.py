@@ -78,7 +78,6 @@ def format_result(params: Dict[str, Union[str, int, float, dict]]) -> str:
         message=params["message"],
         grind=params["grind"],
         temperature=params["temperature"],
-        temperature_unit=params["temperature_unit"],
         strength=params["strength"])
     return result
 
@@ -184,7 +183,7 @@ def get_warnings(params: Dict[str, Union[str, int, float]]) -> List[str]:
                 upper_limit=str(grind_upper_limit)))
     if not check_temperature_limits(
             method=method,
-            temperature=params["temperature"],
+            temperature=params["temperature"]["value"],
             temperature_unit=params["temperature_unit"]):
         temperature_lower_limit = convert_temperature(
             METHODS_MAP[method]["temperature_lower_limit"],
@@ -352,8 +351,8 @@ def filter_params(params: Dict[str, Union[str, int, float]]) -> Dict[str, Union[
         params["water"]["ratio"] = int(params["water"]["ratio"])
     if is_int(params["coffee"]["ratio"]):
         params["coffee"]["ratio"] = int(params["coffee"]["ratio"])
-    if is_int(params["temperature"]):
-        params["temperature"] = int(params["temperature"])
+    if is_int(params["temperature"]["value"]):
+        params["temperature"]["value"] = int(params["temperature"]["value"])
     if len(params["message"]) == 0:
         params["message"] = EMPTY_MESSAGE
     return params
@@ -506,6 +505,10 @@ def get_result(params: Dict[str, Union[str, int, float]],
         "unit": "um",
         "value": params["grind"],
         "type": get_grind_type(params["grind"]),
+    }
+    result_params["temperature"] = {
+        "unit": params["temperature_unit"],
+        "value": params["temperature"]
     }
     del result_params["water_ratio"]
     del result_params["coffee_ratio"]
