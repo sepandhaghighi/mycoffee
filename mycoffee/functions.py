@@ -493,11 +493,15 @@ def get_result(params: Dict[str, Union[str, int, float]],
     result_params["ratio"] = params["coffee_ratio"] / params["water_ratio"]
     result_params["coffee"] = {
         "total": None,
-        "cup": None,
+        "cup": calc_coffee(
+        ratio=result_params["ratio"],
+        water=params["water"],
+        water_unit=params["water_unit"],
+        coffee_unit=params["coffee_unit"]),
         "ratio": params["coffee_ratio"],
         "unit": params["coffee_unit"]}
     result_params["water"] = {
-        "total": None,
+        "total": result_params["cups"] * result_params["water"]["cup"],
         "cup": params["water"],
         "ratio": params["water_ratio"],
         "unit": params["water_unit"]}
@@ -510,18 +514,9 @@ def get_result(params: Dict[str, Union[str, int, float]],
         "unit": params["temperature_unit"],
         "value": params["temperature"]
     }
-    del result_params["temperature_unit"]
-    del result_params["water_ratio"]
-    del result_params["coffee_ratio"]
-    del result_params["coffee_unit"]
-    del result_params["water_unit"]
-    result_params["coffee"]["cup"] = calc_coffee(
-        ratio=result_params["ratio"],
-        water=params["water"],
-        water_unit=params["water_unit"],
-        coffee_unit=params["coffee_unit"])
+    for item in ["temperature_unit", "water_ratio", "coffee_ratio", "coffee_unit", "water_unit"]:
+        del result_params[item]
     result_params["coffee"]["total"] = result_params["cups"] * result_params["coffee"]["cup"]
-    result_params["water"]["total"] = result_params["cups"] * result_params["water"]["cup"]
     result_params["strength"] = get_brew_strength(ratio=result_params["ratio"])
     if enable_filter:
         result_params = filter_params(result_params)
