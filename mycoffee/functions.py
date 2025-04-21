@@ -184,23 +184,23 @@ def get_warnings(params: Dict[str, Union[str, int, float]]) -> List[str]:
     if not check_temperature_limits(
             method=method,
             temperature=params["temperature"]["value"],
-            temperature_unit=params["temperature_unit"]):
+            temperature_unit=params["temperature"]["unit"]):
         temperature_lower_limit = convert_temperature(
             METHODS_MAP[method]["temperature_lower_limit"],
             from_unit="C",
-            to_unit=params["temperature_unit"],
+            to_unit=params["temperature"]["unit"],
             digits=params["digits"])
         temperature_upper_limit = convert_temperature(
             METHODS_MAP[method]["temperature_upper_limit"],
             from_unit="C",
-            to_unit=params["temperature_unit"],
+            to_unit=params["temperature"]["unit"],
             digits=params["digits"])
         warnings_list.append(
             TEMPERATURE_WARNING_MESSAGE.format(
                 method=method,
                 lower_limit=str(temperature_lower_limit),
                 upper_limit=str(temperature_upper_limit),
-                unit=params["temperature_unit"]))
+                unit=params["temperature"]["unit"]))
     return warnings_list
 
 
@@ -510,6 +510,7 @@ def get_result(params: Dict[str, Union[str, int, float]],
         "unit": params["temperature_unit"],
         "value": params["temperature"]
     }
+    del result_params["temperature_unit"]
     del result_params["water_ratio"]
     del result_params["coffee_ratio"]
     del result_params["coffee_unit"]

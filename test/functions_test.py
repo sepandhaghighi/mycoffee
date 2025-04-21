@@ -99,7 +99,7 @@ True
 True
 >>> file = open("save_test1.json", "r")
 >>> save_test1_object = json.load(file)
->>> save_test1_object == {'mycoffee_version': MY_COFFEE_VERSION, 'temperature': 93, 'method': 'v60', 'water': {'cup':500, 'total':1000, 'unit':'g', 'ratio':50}, 'cups': 2, 'digits': 3, 'coffee': {'total':60, 'cup': 30, 'unit': 'g', 'ratio': 3}, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 500, 'grind_unit': 'um', 'warnings': [], 'grind_type': get_grind_type(500), 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
+>>> save_test1_object == {'mycoffee_version': MY_COFFEE_VERSION, 'temperature': {'value':93, 'unit':'C'}, 'method': 'v60', 'water': {'cup':500, 'total':1000, 'unit':'g', 'ratio':50}, 'cups': 2, 'digits': 3, 'coffee': {'total':60, 'cup': 30, 'unit': 'g', 'ratio': 3}, 'message': 'V60 method', 'grind': {'value':500, 'unit':'um', 'type':get_grind_type(500)},'warnings': [], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
 >>> file.close()
 >>> save_details = save_result({}, 2)
@@ -174,9 +174,9 @@ Message: V60 method
 >>> result_params = get_result(input_params)
 >>> check_ratio_limits(method=result_params["method"], ratio=result_params["ratio"])
 True
->>> check_grind_limits(method=result_params["method"], grind=result_params["grind"])
+>>> check_grind_limits(method=result_params["method"], grind=result_params["grind"]["value"])
 True
->>> check_temperature_limits(method=result_params["method"], temperature=result_params["temperature"], temperature_unit=result_params["temperature_unit"])
+>>> check_temperature_limits(method=result_params["method"], temperature=result_params["temperature"]["value"], temperature_unit=result_params["temperature"]["unit"])
 True
 >>> print_result(result_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
@@ -213,9 +213,9 @@ Message: Nothing :)
 >>> result_params = get_result(input_params)
 >>> check_ratio_limits(method=result_params["method"], ratio=result_params["ratio"])
 True
->>> check_grind_limits(method=result_params["method"], grind=result_params["grind"])
+>>> check_grind_limits(method=result_params["method"], grind=result_params["grind"]["value"])
 True
->>> check_temperature_limits(method=result_params["method"], temperature=result_params["temperature"], temperature_unit=result_params["temperature_unit"])
+>>> check_temperature_limits(method=result_params["method"], temperature=result_params["temperature"]["value"], temperature_unit=result_params["temperature"]["unit"])
 True
 >>> print_result(result_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
@@ -252,9 +252,9 @@ Message: Nothing :)
 >>> result_params = get_result(input_params)
 >>> check_ratio_limits(method=result_params["method"], ratio=result_params["ratio"])
 False
->>> check_grind_limits(method=result_params["method"], grind=result_params["grind"])
+>>> check_grind_limits(method=result_params["method"], grind=result_params["grind"]["value"])
 True
->>> check_temperature_limits(method=result_params["method"], temperature=result_params["temperature"], temperature_unit=result_params["temperature_unit"])
+>>> check_temperature_limits(method=result_params["method"], temperature=result_params["temperature"]["value"], temperature_unit=result_params["temperature"]["unit"])
 True
 >>> print_result(result_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
@@ -292,9 +292,9 @@ Message: Nothing :)
 >>> result_params = get_result(input_params)
 >>> check_ratio_limits(method=result_params["method"], ratio=result_params["ratio"])
 True
->>> check_grind_limits(method=result_params["method"], grind=result_params["grind"])
+>>> check_grind_limits(method=result_params["method"], grind=result_params["grind"]["value"])
 False
->>> check_temperature_limits(method=result_params["method"], temperature=result_params["temperature"], temperature_unit=result_params["temperature_unit"])
+>>> check_temperature_limits(method=result_params["method"], temperature=result_params["temperature"]["value"], temperature_unit=result_params["temperature"]["unit"])
 True
 >>> print_result(result_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
@@ -332,9 +332,9 @@ Message: Nothing :)
 >>> result_params = get_result(input_params)
 >>> check_ratio_limits(method=result_params["method"], ratio=result_params["ratio"])
 True
->>> check_grind_limits(method=result_params["method"], grind=result_params["grind"])
+>>> check_grind_limits(method=result_params["method"], grind=result_params["grind"]["value"])
 False
->>> check_temperature_limits(method=result_params["method"], temperature=result_params["temperature"], temperature_unit=result_params["temperature_unit"])
+>>> check_temperature_limits(method=result_params["method"], temperature=result_params["temperature"]["value"], temperature_unit=result_params["temperature"]["unit"])
 False
 >>> print_result(result_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
@@ -373,9 +373,9 @@ Message: Nothing :)
 >>> result_params = get_result(input_params)
 >>> check_ratio_limits(method=result_params["method"], ratio=result_params["ratio"])
 True
->>> check_grind_limits(method=result_params["method"], grind=result_params["grind"])
+>>> check_grind_limits(method=result_params["method"], grind=result_params["grind"]["value"])
 False
->>> check_temperature_limits(method=result_params["method"], temperature=result_params["temperature"], temperature_unit=result_params["temperature_unit"])
+>>> check_temperature_limits(method=result_params["method"], temperature=result_params["temperature"]["value"], temperature_unit=result_params["temperature"]["unit"])
 False
 >>> print_result(result_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
@@ -414,25 +414,25 @@ Message: Nothing :)
 >>> result_params = get_result(input_params)
 >>> check_ratio_limits(method=result_params["method"], ratio=result_params["ratio"])
 True
->>> check_grind_limits(method=result_params["method"], grind=result_params["grind"])
+>>> check_grind_limits(method=result_params["method"], grind=result_params["grind"]["value"])
 True
->>> check_temperature_limits(method=result_params["method"], temperature=result_params["temperature"], temperature_unit=result_params["temperature_unit"])
+>>> check_temperature_limits(method=result_params["method"], temperature=result_params["temperature"]["value"], temperature_unit=result_params["temperature"]["unit"])
 True
 >>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 1.2, "water_ratio":18.4, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 20, "temperature":94, "temperature_unit": "C"}
 >>> result_params = get_result(input_params)
 >>> check_ratio_limits(method=result_params["method"], ratio=result_params["ratio"])
 True
->>> check_grind_limits(method=result_params["method"], grind=result_params["grind"])
+>>> check_grind_limits(method=result_params["method"], grind=result_params["grind"]["value"])
 False
->>> check_temperature_limits(method=result_params["method"], temperature=result_params["temperature"], temperature_unit=result_params["temperature_unit"])
+>>> check_temperature_limits(method=result_params["method"], temperature=result_params["temperature"]["value"], temperature_unit=result_params["temperature"]["unit"])
 True
 >>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 1.2, "water_ratio":50.1, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 20, "temperature":94, "temperature_unit": "C"}
 >>> result_params = get_result(input_params)
 >>> check_ratio_limits(method=result_params["method"], ratio=result_params["ratio"])
 False
->>> check_grind_limits(method=result_params["method"], grind=result_params["grind"])
+>>> check_grind_limits(method=result_params["method"], grind=result_params["grind"]["value"])
 False
->>> check_temperature_limits(method=result_params["method"], temperature=result_params["temperature"], temperature_unit=result_params["temperature_unit"])
+>>> check_temperature_limits(method=result_params["method"], temperature=result_params["temperature"]["value"], temperature_unit=result_params["temperature"]["unit"])
 True
 >>> chemex_params = load_method_params("chemex")
 >>> chemex_params == {'message': 'Chemex method', 'water': 240, 'cups': 1, 'coffee_ratio': 1, 'water_ratio': 15, 'digits': 3, 'coffee_unit': 'g', 'water_unit': 'g', 'grind': 670, 'temperature':94, "temperature_unit": "C"}
@@ -513,7 +513,7 @@ Temperature units list:
 >>> test_params = {"method":"v60", "cups":2, "water":335, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", 'coffee_unit': 'g', 'water_unit': 'g', "ratio": 3/50}
 >>> calc_coffee(ratio=test_params["ratio"], water=test_params["water"], water_unit=test_params["water_unit"], coffee_unit=test_params["coffee_unit"])
 20.099999999999998
->>> test_params = {"method":"v60", "ratio": 3/50, "cups":2, "coffee":{"total":40.2, "cup":20.1, "ratio":3.0, "unit":'g'}, "water":{"cup":335.0, "total":670, "ratio":50.0}, "message":"", "digits":3, "temperature":94.0, "temperature_unit": "C"}
+>>> test_params = {"method":"v60", "ratio": 3/50, "cups":2, "coffee":{"total":40.2, "cup":20.1, "ratio":3.0, "unit":'g'}, "water":{"cup":335.0, "total":670, "ratio":50.0}, "message":"", "digits":3, "temperature":{"value":94.0, "unit": "C"}}
 >>> test_params = filter_params(test_params)
 >>> test_params["coffee"]["total"]
 40.2
@@ -527,11 +527,11 @@ Temperature units list:
 335
 >>> test_params["water"]["total"]
 670
->>> test_params["temperature"]
+>>> test_params["temperature"]["value"]
 94
 >>> test_params["message"]
 'Nothing :)'
->>> test_params = {"method":"v60", "ratio": 3.12345/50.12345, "cups":2, "coffee":{"total": 41.76653202852158, "cup": 20.88326601426079, "ratio":3.12345, "unit":'g'}, "water":{"cup":335.12345, "total":670.2469, "ratio":50.12345},"message":"","digits":2,"temperature": 94.2, "temperature_unit": "C"}
+>>> test_params = {"method":"v60", "ratio": 3.12345/50.12345, "cups":2, "coffee":{"total": 41.76653202852158, "cup": 20.88326601426079, "ratio":3.12345, "unit":'g'}, "water":{"cup":335.12345, "total":670.2469, "ratio":50.12345},"message":"","digits":2,"temperature": {"value":94.2, "unit": "C"}}
 >>> test_params = filter_params(test_params)
 >>> test_params["coffee"]["total"]
 41.77
@@ -545,7 +545,7 @@ Temperature units list:
 335.12
 >>> test_params["water"]["total"]
 670.25
->>> test_params["temperature"]
+>>> test_params["temperature"]["value"]
 94.2
 >>> is_int(12.1)
 False
@@ -710,7 +710,7 @@ Message: V60 method
 [Info] File saved successfully!
 >>> file = open("save_test2.json", "r")
 >>> save_test2_object = json.load(file)
->>> save_test2_object == {'mycoffee_version': MY_COFFEE_VERSION, 'temperature': 91, 'method': 'v60', 'coffee': {'total':15, 'cup':15, 'unit':'g', 'ratio':3}, 'cups': 1, 'digits': 3,'water': {'cup':250, 'total':250, 'unit':'g', 'ratio':50}, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 50, 'grind_unit': 'um', 'grind_type': get_grind_type(50), 'warnings': ['[Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`'], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
+>>> save_test2_object == {'mycoffee_version': MY_COFFEE_VERSION, 'temperature': {'value':91, 'unit':'C'}, 'method': 'v60', 'coffee': {'total':15, 'cup':15, 'unit':'g', 'ratio':3}, 'cups': 1,'digits': 3,'water': {'cup':250, 'total':250, 'unit':'g', 'ratio':50}, 'message': 'V60 method', 'grind': {'value':50, 'unit': 'um', 'type': get_grind_type(50)}, 'warnings': ['[Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`'], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
 >>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save-path', "save_test3.txt"])
@@ -806,7 +806,7 @@ Message: V60 method
 [Info] File saved successfully!
 >>> file = open("save_test3.json", "r")
 >>> save_test3_object = json.load(file)
->>> save_test3_object == {'mycoffee_version': MY_COFFEE_VERSION, 'temperature': 91, 'method': 'v60', 'coffee': {'total': 15, 'cup': 15, 'unit': 'g', 'ratio': 3}, 'cups': 1,'digits': 3, 'water': {'total':250, 'cup':250, 'unit':'g', 'ratio':50}, 'message': 'V60 method', 'temperature_unit': 'C', 'grind': 50, 'grind_unit': 'um', 'grind_type': get_grind_type(50),"warnings":[], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
+>>> save_test3_object == {'mycoffee_version': MY_COFFEE_VERSION, 'temperature': {'value':91, 'unit':'C'}, 'method': 'v60', 'coffee': {'total': 15, 'cup': 15, 'unit': 'g', 'ratio': 3}, 'cups': 1,'digits': 3, 'water': {'total':250, 'cup':250, 'unit':'g', 'ratio':50}, 'message': 'V60 method', 'grind': {'value':50, 'unit': 'um', 'type': get_grind_type(50)},"warnings":[], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
 >>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save-path', "f://", '--save-format', "json"])
@@ -952,9 +952,9 @@ Message: V60 method
 1
 >>> params["cups"]
 3
->>> params["temperature"]
+>>> params["temperature"]["value"]
 92
->>> params["temperature_unit"]
+>>> params["temperature"]["unit"]
 'F'
 >>> args = parser.parse_args(["--method", 'steep-and-release', "--digits", '1', "--cups", '3', "--temperature-unit", 'F'])
 >>> params = load_params(args)
