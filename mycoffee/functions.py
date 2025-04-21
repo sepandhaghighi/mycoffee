@@ -501,7 +501,7 @@ def get_result(params: Dict[str, Union[str, int, float]],
         "ratio": params["coffee_ratio"],
         "unit": params["coffee_unit"]}
     result_params["water"] = {
-        "total": result_params["cups"] * result_params["water"]["cup"],
+        "total": result_params["cups"] * params["water"],
         "cup": params["water"],
         "ratio": params["water_ratio"],
         "unit": params["water_unit"]}
