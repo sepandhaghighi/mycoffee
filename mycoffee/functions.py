@@ -494,10 +494,10 @@ def get_result(params: Dict[str, Union[str, int, float]],
     result_params["coffee"] = {
         "total": None,
         "cup": calc_coffee(
-        ratio=result_params["ratio"],
-        water=params["water"],
-        water_unit=params["water_unit"],
-        coffee_unit=params["coffee_unit"]),
+            ratio=result_params["ratio"],
+            water=params["water"],
+            water_unit=params["water_unit"],
+            coffee_unit=params["coffee_unit"]),
         "ratio": params["coffee_ratio"],
         "unit": params["coffee_unit"]}
     result_params["water"] = {
