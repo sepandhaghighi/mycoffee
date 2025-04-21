@@ -74,12 +74,8 @@ def format_result(params: Dict[str, Union[str, int, float, dict]]) -> str:
         cups=params["cups"],
         coffee=params["coffee"],
         water=params["water"],
-        coffee_ratio=params["coffee_ratio"],
-        water_ratio=params["water_ratio"],
         ratio=params["ratio"],
         message=params["message"],
-        coffee_unit=params["coffee_unit"],
-        water_unit=params["water_unit"],
         grind_size=params["grind"],
         temperature=params["temperature"],
         temperature_unit=params["temperature_unit"],
@@ -354,10 +350,10 @@ def filter_params(params: Dict[str, Union[str, int, float]]) -> Dict[str, Union[
         params["water"]["cup"] = int(params["water"]["cup"])
     if is_int(params["water"]["total"]):
         params["water"]["total"] = int(params["water"]["total"])
-    if is_int(params["water_ratio"]):
-        params["water_ratio"] = int(params["water_ratio"])
-    if is_int(params["coffee_ratio"]):
-        params["coffee_ratio"] = int(params["coffee_ratio"])
+    if is_int(params["water"]["ratio"]):
+        params["water"]["ratio"] = int(params["water"]["ratio"])
+    if is_int(params["coffee"]["ratio"]):
+        params["coffee"]["ratio"] = int(params["coffee"]["ratio"])
     if is_int(params["temperature"]):
         params["temperature"] = int(params["temperature"])
     if len(params["message"]) == 0:
@@ -488,30 +484,44 @@ def calc_coffee(ratio: float, water: float, water_unit: str, coffee_unit: str) -
     return coffee
 
 
-def get_result(params: Dict[str, Union[str, int, float]]) -> Dict[str, Union[str, int, float, dict]]:
+def get_result(params: Dict[str, Union[str, int, float]],
+               enable_filter: bool = True) -> Dict[str, Union[str, int, float, dict]]:
     """
     Get result.
 
     :param params: parameters
+    :param enable_filter: filter flag
     """
-    params_copy = params.copy()
-    params_copy["ratio"] = params_copy["coffee_ratio"] / params_copy["water_ratio"]
-    params_copy["coffee"] = dict()
-    params_copy["water"] = dict()
-    params_copy["coffee"]["cup"] = calc_coffee(
-        ratio=params_copy["ratio"],
+    result_params = params.copy()
+    result_params["ratio"] = params["coffee_ratio"] / params["water_ratio"]
+    result_params["coffee"] = {
+        "total": None,
+        "cup": None,
+        "ratio": params["coffee_ratio"],
+        "unit": params["coffee_unit"]}
+    result_params["water"] = {
+        "total": None,
+        "cup": params["water"],
+        "ratio": params["water_ratio"],
+        "unit": params["water_unit"]}
+    del result_params["water_ratio"]
+    del result_params["coffee_ratio"]
+    del result_params["coffee_unit"]
+    del result_params["water_unit"]
+    result_params["coffee"]["cup"] = calc_coffee(
+        ratio=result_params["ratio"],
         water=params["water"],
         water_unit=params["water_unit"],
         coffee_unit=params["coffee_unit"])
-    params_copy["coffee"]["total"] = params_copy["cups"] * params_copy["coffee"]["cup"]
-    params_copy["water"]["cup"] = params["water"]
-    params_copy["water"]["total"] = params_copy["cups"] * params_copy["water"]["cup"]
-    params_copy["grind_type"] = get_grind_type(params_copy["grind"])
-    params_copy["strength"] = get_brew_strength(ratio=params_copy["ratio"])
-    params_copy["grind_unit"] = "um"
-    result = filter_params(params_copy)
-    result["warnings"] = get_warnings(result)
-    return result
+    result_params["coffee"]["total"] = result_params["cups"] * result_params["coffee"]["cup"]
+    result_params["water"]["total"] = result_params["cups"] * result_params["water"]["cup"]
+    result_params["grind_type"] = get_grind_type(params["grind"])
+    result_params["strength"] = get_brew_strength(ratio=result_params["ratio"])
+    result_params["grind_unit"] = "um"
+    if enable_filter:
+        result_params = filter_params(result_params)
+    result_params["warnings"] = get_warnings(result_params)
+    return result_params
 
 
 def run(args: argparse.Namespace) -> None:

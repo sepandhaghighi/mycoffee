@@ -28,15 +28,15 @@ Cups: {cups}
 
 Coffee:
 
-    - Cup:   {coffee[cup]} {coffee_unit}
-    - Total: {coffee[total]} {coffee_unit}
+    - Cup:   {coffee[cup]} {coffee[unit]}
+    - Total: {coffee[total]} {coffee[unit]}
 
 Water:
 
-    - Cup: {water[cup]} {water_unit}
-    - Total: {water[total]} {water_unit}
+    - Cup: {water[cup]} {water[unit]}
+    - Total: {water[total]} {water[unit]}
 
-Ratio: {coffee_ratio}/{water_ratio} ({ratio})
+Ratio: {coffee[ratio]}/{water[ratio]} ({ratio})
 
 Strength: {strength}
 
