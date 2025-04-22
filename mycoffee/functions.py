@@ -76,11 +76,8 @@ def format_result(params: Dict[str, Union[str, int, float, dict]]) -> str:
         water=params["water"],
         ratio=params["ratio"],
         message=params["message"],
-        grind_size=params["grind"],
+        grind=params["grind"],
         temperature=params["temperature"],
-        temperature_unit=params["temperature_unit"],
-        grind_unit=params["grind_unit"],
-        grind_type=params["grind_type"],
         strength=params["strength"])
     return result
 
@@ -176,7 +173,7 @@ def get_warnings(params: Dict[str, Union[str, int, float]]) -> List[str]:
                 method=method,
                 lower_limit=str(ratio_lower_limit),
                 upper_limit=str(ratio_upper_limit)))
-    if not check_grind_limits(method=method, grind=params["grind"]):
+    if not check_grind_limits(method=method, grind=params["grind"]["value"]):
         grind_lower_limit = METHODS_MAP[method]["grind_lower_limit"]
         grind_upper_limit = METHODS_MAP[method]["grind_upper_limit"]
         warnings_list.append(
@@ -186,24 +183,24 @@ def get_warnings(params: Dict[str, Union[str, int, float]]) -> List[str]:
                 upper_limit=str(grind_upper_limit)))
     if not check_temperature_limits(
             method=method,
-            temperature=params["temperature"],
-            temperature_unit=params["temperature_unit"]):
+            temperature=params["temperature"]["value"],
+            temperature_unit=params["temperature"]["unit"]):
         temperature_lower_limit = convert_temperature(
             METHODS_MAP[method]["temperature_lower_limit"],
             from_unit="C",
-            to_unit=params["temperature_unit"],
+            to_unit=params["temperature"]["unit"],
             digits=params["digits"])
         temperature_upper_limit = convert_temperature(
             METHODS_MAP[method]["temperature_upper_limit"],
             from_unit="C",
-            to_unit=params["temperature_unit"],
+            to_unit=params["temperature"]["unit"],
             digits=params["digits"])
         warnings_list.append(
             TEMPERATURE_WARNING_MESSAGE.format(
                 method=method,
                 lower_limit=str(temperature_lower_limit),
                 upper_limit=str(temperature_upper_limit),
-                unit=params["temperature_unit"]))
+                unit=params["temperature"]["unit"]))
     return warnings_list
 
 
@@ -354,8 +351,8 @@ def filter_params(params: Dict[str, Union[str, int, float]]) -> Dict[str, Union[
         params["water"]["ratio"] = int(params["water"]["ratio"])
     if is_int(params["coffee"]["ratio"]):
         params["coffee"]["ratio"] = int(params["coffee"]["ratio"])
-    if is_int(params["temperature"]):
-        params["temperature"] = int(params["temperature"])
+    if is_int(params["temperature"]["value"]):
+        params["temperature"]["value"] = int(params["temperature"]["value"])
     if len(params["message"]) == 0:
         params["message"] = EMPTY_MESSAGE
     return params
@@ -496,28 +493,31 @@ def get_result(params: Dict[str, Union[str, int, float]],
     result_params["ratio"] = params["coffee_ratio"] / params["water_ratio"]
     result_params["coffee"] = {
         "total": None,
-        "cup": None,
+        "cup": calc_coffee(
+            ratio=result_params["ratio"],
+            water=params["water"],
+            water_unit=params["water_unit"],
+            coffee_unit=params["coffee_unit"]),
         "ratio": params["coffee_ratio"],
         "unit": params["coffee_unit"]}
     result_params["water"] = {
-        "total": None,
+        "total": result_params["cups"] * params["water"],
         "cup": params["water"],
         "ratio": params["water_ratio"],
         "unit": params["water_unit"]}
-    del result_params["water_ratio"]
-    del result_params["coffee_ratio"]
-    del result_params["coffee_unit"]
-    del result_params["water_unit"]
-    result_params["coffee"]["cup"] = calc_coffee(
-        ratio=result_params["ratio"],
-        water=params["water"],
-        water_unit=params["water_unit"],
-        coffee_unit=params["coffee_unit"])
+    result_params["grind"] = {
+        "unit": "um",
+        "value": params["grind"],
+        "type": get_grind_type(params["grind"]),
+    }
+    result_params["temperature"] = {
+        "unit": params["temperature_unit"],
+        "value": params["temperature"]
+    }
+    for item in ["temperature_unit", "water_ratio", "coffee_ratio", "coffee_unit", "water_unit"]:
+        del result_params[item]
     result_params["coffee"]["total"] = result_params["cups"] * result_params["coffee"]["cup"]
-    result_params["water"]["total"] = result_params["cups"] * result_params["water"]["cup"]
-    result_params["grind_type"] = get_grind_type(params["grind"])
     result_params["strength"] = get_brew_strength(ratio=result_params["ratio"])
-    result_params["grind_unit"] = "um"
     if enable_filter:
         result_params = filter_params(result_params)
     result_params["warnings"] = get_warnings(result_params)

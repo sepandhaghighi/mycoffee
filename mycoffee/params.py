@@ -40,9 +40,9 @@ Ratio: {coffee[ratio]}/{water[ratio]} ({ratio})
 
 Strength: {strength}
 
-Grind: {grind_size} {grind_unit} ({grind_type})
+Grind: {grind[value]} {grind[unit]} ({grind[type]})
 
-Temperature: {temperature} {temperature_unit}
+Temperature: {temperature[value]} {temperature[unit]}
 
 Message: {message}
 """
