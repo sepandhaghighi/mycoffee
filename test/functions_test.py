@@ -538,9 +538,9 @@ Temperature units list:
 >>> test_params["coffee"]["cup"]
 20.88
 >>> test_params["coffee"]["ratio"]
-3.12345
+3.12
 >>> test_params["water"]["ratio"]
-50.12345
+50.12
 >>> test_params["water"]["cup"]
 335.12
 >>> test_params["water"]["total"]
