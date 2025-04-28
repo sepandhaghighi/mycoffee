@@ -136,7 +136,9 @@ def save_result_text(params: Dict[str, Union[str, int, float, dict]],
     if not ignore_warnings:
         warnings_list = params["warnings"]
         if len(warnings_list) > 0:
-            result = result + "\n\n" + "\n".join(warnings_list)
+            result = result + "\n\n"
+            for message in warnings_list:
+                result += "[Warning] " + message + "\n"
     with open(file_path, "w") as file:
         file.write(result)
 
