@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `check_grind_limits` function parameters updated
 - `calc_coffee` function parameters updated
 - Test system modified
+- Warning messages updated
 - `Python 3.6` support dropped
 ## [1.7] - 2025-03-26
 ### Added
