@@ -19,7 +19,7 @@ def mycoffee_info() -> None:  # pragma: no cover
     tprint("MyCoffee")
     tprint("V:" + MY_COFFEE_VERSION)
     print(MY_COFFEE_OVERVIEW)
-    print(MY_COFFEE_REPO)
+    print("Repo : " + MY_COFFEE_REPO)
 
 
 def validate_positive_int(string: str) -> int:
