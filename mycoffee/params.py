@@ -14,7 +14,7 @@ SAVE_FILE_SUCCESS_MESSAGE = "[Info] File saved successfully!"
 INPUT_EXAMPLE = "Example: mycoffee --method=v60"
 EXIT_MESSAGE = "See you. Bye!"
 EMPTY_MESSAGE = "Nothing :)"
-MY_COFFEE_REPO = "Repo : https://github.com/sepandhaghighi/mycoffee"
+MY_COFFEE_REPO = "https://github.com/sepandhaghighi/mycoffee"
 MY_COFFEE_OVERVIEW = '''
 MyCoffee is a command-line tool for coffee enthusiasts who love brewing with precision.
 It helps you calculate the perfect coffee-to-water ratio for various brewing methods,

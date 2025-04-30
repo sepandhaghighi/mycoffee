@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - `get_result` function modified
 - `filter_params` function modified
+- `mycoffee_info` function modified
 - `coffee` parameter splitted to `coffee[cup]` and `coffee[total]`
 - `water` parameter splitted to `water[cup]` and `water[total]`
 - `check_ratio_limits` function parameters updated
