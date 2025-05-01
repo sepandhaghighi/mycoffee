@@ -5,6 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [1.8] - 2025-05-02
 ### Changed
 - `get_result` function modified
 - `filter_params` function modified
@@ -202,7 +203,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 	5. Siphon
 	6. Custom
 
-[Unreleased]: https://github.com/sepandhaghighi/mycoffee/compare/v1.7...dev
+[Unreleased]: https://github.com/sepandhaghighi/mycoffee/compare/v1.8...dev
+[1.8]: https://github.com/sepandhaghighi/mycoffee/compare/v1.7...v1.8
 [1.7]: https://github.com/sepandhaghighi/mycoffee/compare/v1.6...v1.7
 [1.6]: https://github.com/sepandhaghighi/mycoffee/compare/v1.5...v1.6
 [1.5]: https://github.com/sepandhaghighi/mycoffee/compare/v1.4...v1.5
