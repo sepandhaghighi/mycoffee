@@ -1,6 +1,6 @@
 # Methods List
 
-**Last Update: 2025-02-13**
+**Last Update: 2025-05-22**
 
 <table>
 	<tr align="center">
@@ -262,6 +262,19 @@
 		<td>95</td>
 		<td>255</td>
 		<td>>=0.4</td>
+	</tr>
+	<tr align="center">
+		<td>Clever dripper</td>
+		<td><code>clever-dripper</code></td>
+		<td>1/16.67</td>
+		<td>1/20</td>
+		<td>1/15</td>
+		<td>400</td>
+		<td>800</td>
+		<td>91</td>
+		<td>96</td>
+		<td>250</td>
+		<td>>=1.9</td>
 	</tr>
 </table>
 
