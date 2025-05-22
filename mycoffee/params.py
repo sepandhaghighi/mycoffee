@@ -325,6 +325,20 @@ METHODS_MAP = {
         "ratio_upper_limit": Fraction(1, 14),
         "water": 255,
         "message": "Steep-and-release method"
+    },
+    "clever-dripper": {
+        "coffee_ratio": 1,
+        "water_ratio": 16.67,
+        "grind": 600,
+        "temperature": 93,
+        "temperature_lower_limit": 91,
+        "temperature_upper_limit": 96,
+        "grind_lower_limit": 400,
+        "grind_upper_limit": 800,
+        "ratio_lower_limit": Fraction(1, 20),
+        "ratio_upper_limit": Fraction(1, 15),
+        "water": 250,
+        "message": "Clever dripper method"
     }
 }
 
