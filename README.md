@@ -319,6 +319,7 @@ Just fill an issue and describe it. We'll check it ASAP!
 <blockquote>29- <a href="https://perfectdailygrind.com/2021/07/can-you-brew-coffee-with-warm-water">Can you brew coffee with warm water?</a></blockquote>
 <blockquote>30- <a href="https://ravecoffee.co.uk/blogs/news/how-to-brew-coffee-using-an-ibrik-cezve-for-turkish-style-coffee">How to Brew Coffee Using a Cezve</a></blockquote>
 <blockquote>31- <a href="https://www.diffordsguide.com/g/1113/coffee/cupping">Coffee cupping</a></blockquote>
+<blockquote>32- <a href="https://sablebrew.com/blogs/news/the-latest-method-to-brew-coffee-with-your-clever-dripper">The Latest Method to Brew Coffee with Your Clever Dripper</a></blockquote>
 
 ## Show Your Support
 								
