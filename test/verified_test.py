@@ -489,6 +489,33 @@ True
 True
 >>> steep_and_release_params["temperature"] == 93 # https://honestcoffeeguide.com/best-temperature-to-brew-coffee/
 True
+>>> clever_dripper_params = load_method_params("clever-dripper")
+>>> clever_dripper_params["coffee_ratio"] == 1
+True
+>>> clever_dripper_params["water_ratio"] == 16.67 # https://coffee-coach.netlify.app/clever-by-james-hoffman/
+True
+>>> clever_dripper_params["water"] == 250 # https://coffee-coach.netlify.app/clever-by-james-hoffman/
+True
+>>> clever_dripper_params["ratio"] = clever_dripper_params["coffee_ratio"] / clever_dripper_params["water_ratio"]
+>>> clever_dripper_coffee = calc_coffee(ratio=clever_dripper_params["ratio"], water=clever_dripper_params["water"], water_unit=clever_dripper_params["water_unit"], coffee_unit=clever_dripper_params["coffee_unit"])
+>>> round(clever_dripper_coffee, 1) == 15 # https://coffee-coach.netlify.app/clever-by-james-hoffman/
+True
+>>> METHODS_MAP["clever-dripper"]["ratio_upper_limit"] == Fraction(1, 15) # https://sablebrew.com/blogs/news/the-latest-method-to-brew-coffee-with-your-clever-dripper
+True
+>>> METHODS_MAP["clever-dripper"]["ratio_lower_limit"] == Fraction(1, 20) # https://sablebrew.com/blogs/news/the-latest-method-to-brew-coffee-with-your-clever-dripper
+True
+>>> METHODS_MAP["clever-dripper"]["grind_upper_limit"] == 800
+True
+>>> METHODS_MAP["clever-dripper"]["grind_lower_limit"] == 400
+True
+>>> clever_dripper_params["grind"] == 600
+True
+>>> METHODS_MAP["clever-dripper"]["temperature_upper_limit"] == 96 # https://sablebrew.com/blogs/news/the-latest-method-to-brew-coffee-with-your-clever-dripper
+True
+>>> METHODS_MAP["clever-dripper"]["temperature_lower_limit"] == 91 # https://sablebrew.com/blogs/news/the-latest-method-to-brew-coffee-with-your-clever-dripper
+True
+>>> clever_dripper_params["temperature"] == 93
+True
 >>> custom_params = load_method_params("custom")
 >>> custom_params["coffee_ratio"] == 1
 True
