@@ -445,20 +445,21 @@ Methods list:
 3. `aero-press-inv` - AeroPress inverted method
 4. `auto-drip` - Auto drip method
 5. `chemex` - Chemex method
-6. `cold-brew` - Cold brew method
-7. `cold-brew-conc` - Cold brew concentrate method
-8. `cupping` - Cupping method
-9. `custom` - Custom brewing method
-10. `espresso` - Espresso method
-11. `french-press` - French press method
-12. `lungo` - Lungo method
-13. `moka-pot` - Moka pot method
-14. `pour-over` - Pour-over method
-15. `ristretto` - Ristretto method
-16. `siphon` - Siphon method
-17. `steep-and-release` - Steep-and-release method
-18. `turkish` - Turkish method
-19. `v60` - V60 method
+6. `clever-dripper` - Clever dripper method
+7. `cold-brew` - Cold brew method
+8. `cold-brew-conc` - Cold brew concentrate method
+9. `cupping` - Cupping method
+10. `custom` - Custom brewing method
+11. `espresso` - Espresso method
+12. `french-press` - French press method
+13. `lungo` - Lungo method
+14. `moka-pot` - Moka pot method
+15. `pour-over` - Pour-over method
+16. `ristretto` - Ristretto method
+17. `siphon` - Siphon method
+18. `steep-and-release` - Steep-and-release method
+19. `turkish` - Turkish method
+20. `v60` - V60 method
 >>> show_coffee_units_list()
 Coffee units list:
 <BLANKLINE>
@@ -1001,20 +1002,21 @@ Methods list:
 3. `aero-press-inv` - AeroPress inverted method
 4. `auto-drip` - Auto drip method
 5. `chemex` - Chemex method
-6. `cold-brew` - Cold brew method
-7. `cold-brew-conc` - Cold brew concentrate method
-8. `cupping` - Cupping method
-9. `custom` - Custom brewing method
-10. `espresso` - Espresso method
-11. `french-press` - French press method
-12. `lungo` - Lungo method
-13. `moka-pot` - Moka pot method
-14. `pour-over` - Pour-over method
-15. `ristretto` - Ristretto method
-16. `siphon` - Siphon method
-17. `steep-and-release` - Steep-and-release method
-18. `turkish` - Turkish method
-19. `v60` - V60 method
+6. `clever-dripper` - Clever dripper method
+7. `cold-brew` - Cold brew method
+8. `cold-brew-conc` - Cold brew concentrate method
+9. `cupping` - Cupping method
+10. `custom` - Custom brewing method
+11. `espresso` - Espresso method
+12. `french-press` - French press method
+13. `lungo` - Lungo method
+14. `moka-pot` - Moka pot method
+15. `pour-over` - Pour-over method
+16. `ristretto` - Ristretto method
+17. `siphon` - Siphon method
+18. `steep-and-release` - Steep-and-release method
+19. `turkish` - Turkish method
+20. `v60` - V60 method
 >>> args = parser.parse_args(["--coffee-units-list"])
 >>> run(args)
 Coffee units list:
