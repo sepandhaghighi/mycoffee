@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - 1 new method
 	1. Clever dripper
+### Changed
+- Test system modified
+- `README.md` updated
 ## [1.8] - 2025-05-02
 ### Changed
 - `get_result` function modified
