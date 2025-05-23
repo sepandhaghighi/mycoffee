@@ -339,6 +339,20 @@ METHODS_MAP = {
         "ratio_upper_limit": Fraction(1, 15),
         "water": 250,
         "message": "Clever dripper method"
+    },
+    "phin-filter": {
+        "coffee_ratio": 1,
+        "water_ratio": 2,
+        "grind": 300,
+        "temperature": 93,
+        "temperature_lower_limit": 90,
+        "temperature_upper_limit": 96,
+        "grind_lower_limit": 200,
+        "grind_upper_limit": 400,
+        "ratio_lower_limit": Fraction(1, 4),
+        "ratio_upper_limit": Fraction(1, 2),
+        "water": 115,
+        "message": "Phin filter method"
     }
 }
 
