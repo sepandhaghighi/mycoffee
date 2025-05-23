@@ -525,7 +525,7 @@ True
 True
 >>> phin_filter_params["ratio"] = phin_filter_params["coffee_ratio"] / phin_filter_params["water_ratio"]
 >>> phin_filter_coffee = calc_coffee(ratio=phin_filter_params["ratio"], water=phin_filter_params["water"], water_unit=phin_filter_params["water_unit"], coffee_unit=phin_filter_params["coffee_unit"])
->>> phin_filter_coffee, 1 == 36
+>>> phin_filter_coffee == 36
 True
 >>> METHODS_MAP["phin-filter"]["ratio_upper_limit"] == Fraction(1, 2) # https://cafely.com/blogs/coffee-brew-guide/vietnamese-phin-drip
 True

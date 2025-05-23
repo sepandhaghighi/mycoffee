@@ -286,7 +286,7 @@
 		<td>400</td>
 		<td>90</td>
 		<td>96</td>
-		<td>115</td>
+		<td>72</td>
 		<td>>=1.9</td>
 	</tr>
 </table>
