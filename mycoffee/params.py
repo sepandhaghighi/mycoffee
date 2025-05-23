@@ -351,7 +351,7 @@ METHODS_MAP = {
         "grind_upper_limit": 400,
         "ratio_lower_limit": Fraction(1, 4),
         "ratio_upper_limit": Fraction(1, 2),
-        "water": 115,
+        "water": 72,
         "message": "Phin filter method"
     }
 }
