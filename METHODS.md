@@ -1,6 +1,6 @@
 # Methods List
 
-**Last Update: 2025-05-22**
+**Last Update: 2025-05-23**
 
 <table>
 	<tr align="center">
@@ -274,6 +274,19 @@
 		<td>91</td>
 		<td>96</td>
 		<td>250</td>
+		<td>>=1.9</td>
+	</tr>
+	<tr align="center">
+		<td>Phin filter</td>
+		<td><code>phin-filter</code></td>
+		<td>1/2</td>
+		<td>1/4</td>
+		<td>1/2</td>
+		<td>200</td>
+		<td>400</td>
+		<td>90</td>
+		<td>96</td>
+		<td>72</td>
 		<td>>=1.9</td>
 	</tr>
 </table>

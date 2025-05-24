@@ -454,12 +454,13 @@ Methods list:
 12. `french-press` - French press method
 13. `lungo` - Lungo method
 14. `moka-pot` - Moka pot method
-15. `pour-over` - Pour-over method
-16. `ristretto` - Ristretto method
-17. `siphon` - Siphon method
-18. `steep-and-release` - Steep-and-release method
-19. `turkish` - Turkish method
-20. `v60` - V60 method
+15. `phin-filter` - Phin filter method
+16. `pour-over` - Pour-over method
+17. `ristretto` - Ristretto method
+18. `siphon` - Siphon method
+19. `steep-and-release` - Steep-and-release method
+20. `turkish` - Turkish method
+21. `v60` - V60 method
 >>> show_coffee_units_list()
 Coffee units list:
 <BLANKLINE>
@@ -1011,12 +1012,13 @@ Methods list:
 12. `french-press` - French press method
 13. `lungo` - Lungo method
 14. `moka-pot` - Moka pot method
-15. `pour-over` - Pour-over method
-16. `ristretto` - Ristretto method
-17. `siphon` - Siphon method
-18. `steep-and-release` - Steep-and-release method
-19. `turkish` - Turkish method
-20. `v60` - V60 method
+15. `phin-filter` - Phin filter method
+16. `pour-over` - Pour-over method
+17. `ristretto` - Ristretto method
+18. `siphon` - Siphon method
+19. `steep-and-release` - Steep-and-release method
+20. `turkish` - Turkish method
+21. `v60` - V60 method
 >>> args = parser.parse_args(["--coffee-units-list"])
 >>> run(args)
 Coffee units list:

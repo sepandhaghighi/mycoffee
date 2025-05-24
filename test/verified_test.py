@@ -516,6 +516,33 @@ True
 True
 >>> clever_dripper_params["temperature"] == 93
 True
+>>> phin_filter_params = load_method_params("phin-filter")
+>>> phin_filter_params["coffee_ratio"] == 1
+True
+>>> phin_filter_params["water_ratio"] == 2
+True
+>>> phin_filter_params["water"] == 72
+True
+>>> phin_filter_params["ratio"] = phin_filter_params["coffee_ratio"] / phin_filter_params["water_ratio"]
+>>> phin_filter_coffee = calc_coffee(ratio=phin_filter_params["ratio"], water=phin_filter_params["water"], water_unit=phin_filter_params["water_unit"], coffee_unit=phin_filter_params["coffee_unit"])
+>>> phin_filter_coffee == 36
+True
+>>> METHODS_MAP["phin-filter"]["ratio_upper_limit"] == Fraction(1, 2) # https://cafely.com/blogs/coffee-brew-guide/vietnamese-phin-drip
+True
+>>> METHODS_MAP["phin-filter"]["ratio_lower_limit"] == Fraction(1, 4) # https://cafely.com/blogs/coffee-brew-guide/vietnamese-phin-drip
+True
+>>> METHODS_MAP["phin-filter"]["grind_upper_limit"] == 400
+True
+>>> METHODS_MAP["phin-filter"]["grind_lower_limit"] == 200
+True
+>>> phin_filter_params["grind"] == 300 # https://cafely.com/blogs/coffee-brew-guide/vietnamese-phin-drip
+True
+>>> METHODS_MAP["phin-filter"]["temperature_upper_limit"] == 96 # https://cafely.com/blogs/coffee-brew-guide/vietnamese-phin-drip
+True
+>>> METHODS_MAP["phin-filter"]["temperature_lower_limit"] == 90 # https://cafely.com/blogs/coffee-brew-guide/vietnamese-phin-drip
+True
+>>> phin_filter_params["temperature"] == 93 # https://cafely.com/blogs/coffee-brew-guide/vietnamese-phin-drip
+True
 >>> custom_params = load_method_params("custom")
 >>> custom_params["coffee_ratio"] == 1
 True
