@@ -25,6 +25,7 @@ def main() -> None:
         help='coefficient for the water component in the ratio',
         type=validate_positive_float)
     parser.add_argument('--water', help='amount of water in each cup', type=validate_positive_float)
+    parser.add_argument('--coffee', help='amount of coffee in each cup', type=validate_positive_float)
     parser.add_argument('--cups', help='number of cups', type=validate_positive_int)
     parser.add_argument('--grind', help='grind size (um)', type=validate_positive_int)
     parser.add_argument('--temperature', help='brewing temperature', type=float)

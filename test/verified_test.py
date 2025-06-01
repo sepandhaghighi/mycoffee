@@ -14,6 +14,8 @@ True
 >>> v60_coffee = calc_coffee(ratio=v60_params["ratio"], water=v60_params["water"], water_unit=v60_params["water_unit"], coffee_unit=v60_params["coffee_unit"])
 >>> v60_coffee == 15
 True
+>>> v60_coffee == METHODS_MAP["v60"]["coffee"]
+True
 >>> METHODS_MAP["v60"]["ratio_upper_limit"] == Fraction(1, 14)
 True
 >>> METHODS_MAP["v60"]["ratio_lower_limit"] == Fraction(1, 18)
@@ -40,6 +42,8 @@ True
 >>> chemex_params["ratio"] = chemex_params["coffee_ratio"] / chemex_params["water_ratio"]
 >>> chemex_coffee = calc_coffee(ratio=chemex_params["ratio"], water=chemex_params["water"], water_unit=chemex_params["water_unit"], coffee_unit=chemex_params["coffee_unit"])
 >>> chemex_coffee == 16
+True
+>>> chemex_coffee == METHODS_MAP["chemex"]["coffee"]
 True
 >>> METHODS_MAP["chemex"]["ratio_upper_limit"] == Fraction(1, 10)
 True
@@ -68,6 +72,8 @@ True
 >>> espresso_coffee = calc_coffee(ratio=espresso_params["ratio"], water=espresso_params["water"], water_unit=espresso_params["water_unit"], coffee_unit=espresso_params["coffee_unit"])
 >>> espresso_coffee == 18
 True
+>>> espresso_coffee == METHODS_MAP["espresso"]["coffee"]
+True
 >>> METHODS_MAP["espresso"]["ratio_upper_limit"] == Fraction(2, 3)
 True
 >>> METHODS_MAP["espresso"]["ratio_lower_limit"] == Fraction(2, 5)
@@ -94,6 +100,8 @@ True
 >>> siphon_params["ratio"] = siphon_params["coffee_ratio"] / siphon_params["water_ratio"]
 >>> siphon_coffee = calc_coffee(ratio=siphon_params["ratio"], water=siphon_params["water"], water_unit=siphon_params["water_unit"], coffee_unit=siphon_params["coffee_unit"])
 >>> siphon_coffee == 16
+True
+>>> siphon_coffee == METHODS_MAP["siphon"]["coffee"]
 True
 >>> METHODS_MAP["siphon"]["ratio_upper_limit"] == Fraction(1, 12)
 True
@@ -122,6 +130,8 @@ True
 >>> french_press_coffee = calc_coffee(ratio=french_press_params["ratio"], water=french_press_params["water"], water_unit=french_press_params["water_unit"], coffee_unit=french_press_params["coffee_unit"])
 >>> french_press_coffee == 8
 True
+>>> french_press_coffee == METHODS_MAP["french-press"]["coffee"]
+True
 >>> METHODS_MAP["french-press"]["ratio_upper_limit"] == Fraction(1, 12)
 True
 >>> METHODS_MAP["french-press"]["ratio_lower_limit"] == Fraction(1, 18)
@@ -148,6 +158,8 @@ True
 >>> pour_over_params["ratio"] = pour_over_params["coffee_ratio"] / pour_over_params["water_ratio"]
 >>> pour_over_coffee = calc_coffee(ratio=pour_over_params["ratio"], water=pour_over_params["water"], water_unit=pour_over_params["water_unit"], coffee_unit=pour_over_params["coffee_unit"])
 >>> pour_over_coffee == 16
+True
+>>> pour_over_coffee == METHODS_MAP["pour-over"]["coffee"]
 True
 >>> METHODS_MAP["pour-over"]["ratio_upper_limit"] == Fraction(1, 14)
 True
@@ -176,6 +188,8 @@ True
 >>> auto_drip_coffee = calc_coffee(ratio=auto_drip_params["ratio"], water=auto_drip_params["water"], water_unit=auto_drip_params["water_unit"], coffee_unit=auto_drip_params["coffee_unit"])
 >>> auto_drip_coffee == 8
 True
+>>> auto_drip_coffee == METHODS_MAP["auto-drip"]["coffee"]
+True
 >>> METHODS_MAP["auto-drip"]["ratio_upper_limit"] == Fraction(1, 14)
 True
 >>> METHODS_MAP["auto-drip"]["ratio_lower_limit"] == Fraction(1, 17)
@@ -202,6 +216,8 @@ True
 >>> cold_brew_params["ratio"] = cold_brew_params["coffee_ratio"] / cold_brew_params["water_ratio"]
 >>> cold_brew_coffee = calc_coffee(ratio=cold_brew_params["ratio"], water=cold_brew_params["water"], water_unit=cold_brew_params["water_unit"], coffee_unit=cold_brew_params["coffee_unit"])
 >>> cold_brew_coffee == 22
+True
+>>> cold_brew_coffee == METHODS_MAP["cold-brew"]["coffee"]
 True
 >>> METHODS_MAP["cold-brew"]["ratio_upper_limit"] == Fraction(1, 8)
 True
@@ -230,6 +246,8 @@ True
 >>> cold_brew_conc_coffee = calc_coffee(ratio=cold_brew_conc_params["ratio"], water=cold_brew_conc_params["water"], water_unit=cold_brew_conc_params["water_unit"], coffee_unit=cold_brew_conc_params["coffee_unit"])
 >>> cold_brew_conc_coffee == 24
 True
+>>> cold_brew_conc_coffee == METHODS_MAP["cold-brew-conc"]["coffee"]
+True
 >>> METHODS_MAP["cold-brew-conc"]["ratio_upper_limit"] == Fraction(1, 4)
 True
 >>> METHODS_MAP["cold-brew-conc"]["ratio_lower_limit"] == Fraction(1, 6)
@@ -256,6 +274,8 @@ True
 >>> moka_pot_params["ratio"] = moka_pot_params["coffee_ratio"] / moka_pot_params["water_ratio"]
 >>> moka_pot_coffee = calc_coffee(ratio=moka_pot_params["ratio"], water=moka_pot_params["water"], water_unit=moka_pot_params["water_unit"], coffee_unit=moka_pot_params["coffee_unit"])
 >>> moka_pot_coffee == 6
+True
+>>> moka_pot_coffee == METHODS_MAP["moka-pot"]["coffee"]
 True
 >>> METHODS_MAP["moka-pot"]["ratio_upper_limit"] == Fraction(1, 7)
 True
@@ -284,6 +304,8 @@ True
 >>> ristretto_coffee = calc_coffee(ratio=ristretto_params["ratio"], water=ristretto_params["water"], water_unit=ristretto_params["water_unit"], coffee_unit=ristretto_params["coffee_unit"])
 >>> ristretto_coffee == 18
 True
+>>> ristretto_coffee == METHODS_MAP["ristretto"]["coffee"]
+True
 >>> METHODS_MAP["ristretto"]["ratio_upper_limit"] == Fraction(1, 1)
 True
 >>> METHODS_MAP["ristretto"]["ratio_lower_limit"] == Fraction(2, 3)
@@ -310,6 +332,8 @@ True
 >>> lungo_params["ratio"] = lungo_params["coffee_ratio"] / lungo_params["water_ratio"]
 >>> lungo_coffee = calc_coffee(ratio=lungo_params["ratio"], water=lungo_params["water"], water_unit=lungo_params["water_unit"], coffee_unit=lungo_params["coffee_unit"])
 >>> lungo_coffee == 18
+True
+>>> lungo_coffee == METHODS_MAP["lungo"]["coffee"]
 True
 >>> METHODS_MAP["lungo"]["ratio_upper_limit"] == Fraction(2, 5)
 True
@@ -338,6 +362,8 @@ True
 >>> turkish_coffee = calc_coffee(ratio=turkish_params["ratio"], water=turkish_params["water"], water_unit=turkish_params["water_unit"], coffee_unit=turkish_params["coffee_unit"])
 >>> turkish_coffee == 5
 True
+>>> turkish_coffee == METHODS_MAP["turkish"]["coffee"]
+True
 >>> METHODS_MAP["turkish"]["ratio_upper_limit"] == Fraction(1, 8)
 True
 >>> METHODS_MAP["turkish"]["ratio_lower_limit"] == Fraction(1, 12)
@@ -364,6 +390,8 @@ True
 >>> cupping_params["ratio"] = cupping_params["coffee_ratio"] / cupping_params["water_ratio"]
 >>> cupping_coffee = calc_coffee(ratio=cupping_params["ratio"], water=cupping_params["water"], water_unit=cupping_params["water_unit"], coffee_unit=cupping_params["coffee_unit"])
 >>> cupping_coffee == 8.25
+True
+>>> cupping_coffee == METHODS_MAP["cupping"]["coffee"]
 True
 >>> METHODS_MAP["cupping"]["ratio_upper_limit"] == Fraction(1, 17)
 True
@@ -392,6 +420,8 @@ True
 >>> aero_press_coffee = calc_coffee(ratio=aero_press_params["ratio"], water=aero_press_params["water"], water_unit=aero_press_params["water_unit"], coffee_unit=aero_press_params["coffee_unit"])
 >>> aero_press_coffee == 9
 True
+>>> aero_press_coffee == METHODS_MAP["aero-press"]["coffee"]
+True
 >>> METHODS_MAP["aero-press"]["ratio_upper_limit"] == Fraction(1, 12)
 True
 >>> METHODS_MAP["aero-press"]["ratio_lower_limit"] == Fraction(1, 18)
@@ -418,6 +448,8 @@ True
 >>> aero_press_conc_params["ratio"] = aero_press_conc_params["coffee_ratio"] / aero_press_conc_params["water_ratio"]
 >>> aero_press_conc_coffee = calc_coffee(ratio=aero_press_conc_params["ratio"], water=aero_press_conc_params["water"], water_unit=aero_press_conc_params["water_unit"], coffee_unit=aero_press_conc_params["coffee_unit"])
 >>> aero_press_conc_coffee == 15
+True
+>>> aero_press_conc_coffee == METHODS_MAP["aero-press-conc"]["coffee"]
 True
 >>> METHODS_MAP["aero-press-conc"]["ratio_upper_limit"] == Fraction(1, 5)
 True
@@ -446,6 +478,8 @@ True
 >>> aero_press_inv_coffee = calc_coffee(ratio=aero_press_inv_params["ratio"], water=aero_press_inv_params["water"], water_unit=aero_press_inv_params["water_unit"], coffee_unit=aero_press_inv_params["coffee_unit"])
 >>> aero_press_inv_coffee == 11
 True
+>>> aero_press_inv_coffee == METHODS_MAP["aero-press-inv"]["coffee"]
+True
 >>> METHODS_MAP["aero-press-inv"]["ratio_upper_limit"] == Fraction(1, 10)
 True
 >>> METHODS_MAP["aero-press-inv"]["ratio_lower_limit"] == Fraction(1, 14)
@@ -472,6 +506,8 @@ True
 >>> steep_and_release_params["ratio"] = steep_and_release_params["coffee_ratio"] / steep_and_release_params["water_ratio"]
 >>> steep_and_release_coffee = calc_coffee(ratio=steep_and_release_params["ratio"], water=steep_and_release_params["water"], water_unit=steep_and_release_params["water_unit"], coffee_unit=steep_and_release_params["coffee_unit"])
 >>> steep_and_release_coffee == 15.9375
+True
+>>> steep_and_release_coffee == METHODS_MAP["steep-and-release"]["coffee"]
 True
 >>> METHODS_MAP["steep-and-release"]["ratio_upper_limit"] == Fraction(1, 14)
 True
@@ -500,6 +536,8 @@ True
 >>> clever_dripper_coffee = calc_coffee(ratio=clever_dripper_params["ratio"], water=clever_dripper_params["water"], water_unit=clever_dripper_params["water_unit"], coffee_unit=clever_dripper_params["coffee_unit"])
 >>> round(clever_dripper_coffee, 1) == 15 # https://coffee-coach.netlify.app/clever-by-james-hoffman/
 True
+>>> round(clever_dripper_coffee, 3) == METHODS_MAP["clever-dripper"]["coffee"]
+True
 >>> METHODS_MAP["clever-dripper"]["ratio_upper_limit"] == Fraction(1, 15) # https://sablebrew.com/blogs/news/the-latest-method-to-brew-coffee-with-your-clever-dripper
 True
 >>> METHODS_MAP["clever-dripper"]["ratio_lower_limit"] == Fraction(1, 20) # https://sablebrew.com/blogs/news/the-latest-method-to-brew-coffee-with-your-clever-dripper
@@ -526,6 +564,8 @@ True
 >>> phin_filter_params["ratio"] = phin_filter_params["coffee_ratio"] / phin_filter_params["water_ratio"]
 >>> phin_filter_coffee = calc_coffee(ratio=phin_filter_params["ratio"], water=phin_filter_params["water"], water_unit=phin_filter_params["water_unit"], coffee_unit=phin_filter_params["coffee_unit"])
 >>> phin_filter_coffee == 36
+True
+>>> phin_filter_coffee == METHODS_MAP["phin-filter"]["coffee"]
 True
 >>> METHODS_MAP["phin-filter"]["ratio_upper_limit"] == Fraction(1, 2) # https://cafely.com/blogs/coffee-brew-guide/vietnamese-phin-drip
 True
