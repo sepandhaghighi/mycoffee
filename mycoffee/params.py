@@ -343,7 +343,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 17),
         "ratio_upper_limit": Fraction(1, 14),
         "water": 255,
-        "coffee": 15.938,
+        "coffee": 15.9375,
         "message": "Steep-and-release method"
     },
     "clever-dripper": {
