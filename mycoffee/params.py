@@ -53,6 +53,7 @@ METHODS_LIST_TEMPLATE = "{index}. `{item}` - {data}"
 DEFAULT_PARAMS = {
     "cups": 1,
     "water": 0,
+    "coffee": 0,
     "coffee_ratio": 1,
     "water_ratio": 1,
     "grind": 700,
@@ -72,6 +73,7 @@ METHODS_MAP = {
         "grind": 700,
         "temperature": 90,
         "water": 240,
+        "coffee": 14.118,
         "message": "Custom brewing method"
     },
     "v60": {
@@ -86,6 +88,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 18),
         "ratio_upper_limit": Fraction(1, 14),
         "water": 250,
+        "coffee": 15,
         "message": "V60 method"
     },
     "espresso": {
@@ -100,6 +103,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(2, 5),
         "ratio_upper_limit": Fraction(2, 3),
         "water": 36,
+        "coffee": 18,
         "message": "Espresso method"
     },
     "ristretto": {
@@ -114,6 +118,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(2, 3),
         "ratio_upper_limit": Fraction(1, 1),
         "water": 18,
+        "coffee": 18,
         "message": "Ristretto method"
     },
     "lungo": {
@@ -128,6 +133,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 4),
         "ratio_upper_limit": Fraction(2, 5),
         "water": 72,
+        "coffee": 18,
         "message": "Lungo method"
     },
     "chemex": {
@@ -142,6 +148,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 21),
         "ratio_upper_limit": Fraction(1, 10),
         "water": 240,
+        "coffee": 16,
         "message": "Chemex method"
     },
     "french-press": {
@@ -156,6 +163,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 18),
         "ratio_upper_limit": Fraction(1, 12),
         "water": 120,
+        "coffee": 8,
         "message": "French press method"
     },
     "siphon": {
@@ -170,6 +178,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 16),
         "ratio_upper_limit": Fraction(1, 12),
         "water": 240,
+        "coffee": 16,
         "message": "Siphon method"
     },
     "pour-over": {
@@ -184,6 +193,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 16),
         "ratio_upper_limit": Fraction(1, 14),
         "water": 240,
+        "coffee": 16,
         "message": "Pour-over method"
     },
     "auto-drip": {
@@ -198,6 +208,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 17),
         "ratio_upper_limit": Fraction(1, 14),
         "water": 128,
+        "coffee": 8,
         "message": "Auto drip method"
     },
     "cold-brew": {
@@ -212,6 +223,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 15),
         "ratio_upper_limit": Fraction(1, 8),
         "water": 242,
+        "coffee": 22,
         "message": "Cold brew method"
     },
     "cold-brew-conc": {
@@ -226,6 +238,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 6),
         "ratio_upper_limit": Fraction(1, 4),
         "water": 120,
+        "coffee": 24,
         "message": "Cold brew concentrate method"
     },
     "moka-pot": {
@@ -240,6 +253,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 12),
         "ratio_upper_limit": Fraction(1, 7),
         "water": 60,
+        "coffee": 6,
         "message": "Moka pot method"
     },
     "turkish": {
@@ -254,6 +268,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 12),
         "ratio_upper_limit": Fraction(1, 8),
         "water": 50,
+        "coffee": 5,
         "message": "Turkish method"
     },
     "cupping": {
@@ -268,6 +283,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 19),
         "ratio_upper_limit": Fraction(1, 17),
         "water": 150,
+        "coffee": 8.25,
         "message": "Cupping method"
     },
     "aero-press": {
@@ -282,6 +298,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 18),
         "ratio_upper_limit": Fraction(1, 12),
         "water": 135,
+        "coffee": 9,
         "message": "AeroPress standard method"
     },
     "aero-press-conc": {
@@ -296,6 +313,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 7),
         "ratio_upper_limit": Fraction(1, 5),
         "water": 90,
+        "coffee": 15,
         "message": "AeroPress concentrate method"
     },
     "aero-press-inv": {
@@ -310,6 +328,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 14),
         "ratio_upper_limit": Fraction(1, 10),
         "water": 132,
+        "coffee": 11,
         "message": "AeroPress inverted method"
     },
     "steep-and-release": {
@@ -324,6 +343,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 17),
         "ratio_upper_limit": Fraction(1, 14),
         "water": 255,
+        "coffee": 15.938,
         "message": "Steep-and-release method"
     },
     "clever-dripper": {
@@ -338,6 +358,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 20),
         "ratio_upper_limit": Fraction(1, 15),
         "water": 250,
+        "coffee": 14.997,
         "message": "Clever dripper method"
     },
     "phin-filter": {
@@ -352,6 +373,7 @@ METHODS_MAP = {
         "ratio_lower_limit": Fraction(1, 4),
         "ratio_upper_limit": Fraction(1, 2),
         "water": 72,
+        "coffee": 36,
         "message": "Phin filter method"
     }
 }
