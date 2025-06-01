@@ -304,7 +304,7 @@ True
 >>> ristretto_coffee = calc_coffee(ratio=ristretto_params["ratio"], water=ristretto_params["water"], water_unit=ristretto_params["water_unit"], coffee_unit=ristretto_params["coffee_unit"])
 >>> ristretto_coffee == 18
 True
->>> ristretto_coffee = METHODS_MAP["ristretto"]["coffee"]
+>>> ristretto_coffee == METHODS_MAP["ristretto"]["coffee"]
 True
 >>> METHODS_MAP["ristretto"]["ratio_upper_limit"] == Fraction(1, 1)
 True
@@ -449,7 +449,7 @@ True
 >>> aero_press_conc_coffee = calc_coffee(ratio=aero_press_conc_params["ratio"], water=aero_press_conc_params["water"], water_unit=aero_press_conc_params["water_unit"], coffee_unit=aero_press_conc_params["coffee_unit"])
 >>> aero_press_conc_coffee == 15
 True
->> aero_press_conc_coffee == METHODS_MAP["aero-press-conc"]["coffee"]
+>>> aero_press_conc_coffee == METHODS_MAP["aero-press-conc"]["coffee"]
 True
 >>> METHODS_MAP["aero-press-conc"]["ratio_upper_limit"] == Fraction(1, 5)
 True

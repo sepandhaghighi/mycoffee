@@ -435,7 +435,7 @@ False
 >>> check_temperature_limits(method=result_params["method"], temperature=result_params["temperature"]["value"], temperature_unit=result_params["temperature"]["unit"])
 True
 >>> chemex_params = load_method_params("chemex")
->>> chemex_params == {'message': 'Chemex method', 'water': 240, 'cups': 1, 'coffee_ratio': 1, 'water_ratio': 15, 'digits': 3, 'coffee_unit': 'g', 'water_unit': 'g', 'grind': 670, 'temperature':94, "temperature_unit": "C"}
+>>> chemex_params == {'message': 'Chemex method', 'water': 240, 'coffee': 16, 'cups': 1, 'coffee_ratio': 1, 'water_ratio': 15, 'digits': 3, 'coffee_unit': 'g', 'water_unit': 'g', 'grind': 670, 'temperature':94, "temperature_unit": "C"}
 True
 >>> show_methods_list()
 Methods list:
@@ -563,6 +563,7 @@ True
 >>> _ = parser.add_argument('--coffee-ratio', help='coffee ratio', type=validate_positive_float)
 >>> _ = parser.add_argument('--water-ratio', help='water ratio', type=validate_positive_float)
 >>> _ = parser.add_argument('--water', help='water', type=validate_positive_float)
+>>> _ = parser.add_argument('--coffee', help='coffee', type=validate_positive_float)
 >>> _ = parser.add_argument('--cups', help='number of cups', type=validate_positive_int)
 >>> _ = parser.add_argument('--grind', help='grind size (um)', type=validate_positive_int)
 >>> _ = parser.add_argument('--temperature', help='brewing temperature', type=float)
