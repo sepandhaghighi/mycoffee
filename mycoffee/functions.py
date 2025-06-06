@@ -503,10 +503,10 @@ def calc_water(ratio: float, coffee: float, water_unit: str, coffee_unit: str) -
     return water
 
 
-def get_result(params: Dict[str, Union[str, int, float]],
+def get_result_by_water(params: Dict[str, Union[str, int, float]],
                enable_filter: bool = True) -> Dict[str, Union[str, int, float, dict]]:
     """
-    Get result.
+    Get result by water.
 
     :param params: parameters
     :param enable_filter: filter flag
@@ -543,6 +543,63 @@ def get_result(params: Dict[str, Union[str, int, float]],
     if enable_filter:
         result_params = filter_params(result_params)
     result_params["warnings"] = get_warnings(result_params)
+    return result_params
+
+
+def get_result_by_coffee(params: Dict[str, Union[str, int, float]],
+               enable_filter: bool = True) -> Dict[str, Union[str, int, float, dict]]:
+    """
+    Get result by coffee.
+
+    :param params: parameters
+    :param enable_filter: filter flag
+    """
+    result_params = params.copy()
+    result_params["ratio"] = params["coffee_ratio"] / params["water_ratio"]
+    result_params["coffee"] = {
+        "total": result_params["cups"] * params["coffee"],
+        "cup": params["coffee"],
+        "ratio": params["coffee_ratio"],
+        "unit": params["coffee_unit"]}
+    result_params["water"] = {
+        "total": None,
+        "cup": calc_water(
+            ratio=result_params["ratio"],
+            coffee=params["coffee"],
+            water_unit=params["water_unit"],
+            coffee_unit=params["coffee_unit"]),
+        "ratio": params["water_ratio"],
+        "unit": params["water_unit"]}
+    result_params["grind"] = {
+        "unit": "um",
+        "value": params["grind"],
+        "type": get_grind_type(params["grind"]),
+    }
+    result_params["temperature"] = {
+        "unit": params["temperature_unit"],
+        "value": params["temperature"]
+    }
+    for item in ["temperature_unit", "water_ratio", "coffee_ratio", "coffee_unit", "water_unit"]:
+        del result_params[item]
+    result_params["water"]["total"] = result_params["cups"] * result_params["water"]["cup"]
+    result_params["strength"] = get_brew_strength(ratio=result_params["ratio"])
+    if enable_filter:
+        result_params = filter_params(result_params)
+    result_params["warnings"] = get_warnings(result_params)
+    return result_params
+
+def get_result(params: Dict[str, Union[str, int, float]],
+               enable_filter: bool = True) -> Dict[str, Union[str, int, float, dict]]:
+    """
+    Get result.
+
+    :param params: parameters
+    :param enable_filter: filter flag
+    """
+    if params["mode"] == "water-to-coffee":
+        result_params = get_result_by_water(params=params, enable_filter=enable_filter)
+    else:
+        result_params = get_result_by_coffee(params=params, enable_filter=enable_filter)
     return result_params
 
 
