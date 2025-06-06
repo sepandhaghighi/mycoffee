@@ -454,7 +454,7 @@ def convert_coffee(coffee: float, unit: str, reverse: bool = False) -> Union[flo
     """
     rate = COFFEE_UNITS_MAP[unit]["rate"]
     if reverse:
-        rate = 1/ rate
+        rate = 1 / rate
     coffee = coffee * rate
     if unit == "cb":
         coffee = math.ceil(coffee)
@@ -507,7 +507,7 @@ def calc_water(ratio: float, coffee: float, water_unit: str, coffee_unit: str) -
 
 
 def get_result_by_water(params: Dict[str, Union[str, int, float]],
-               enable_filter: bool = True) -> Dict[str, Union[str, int, float, dict]]:
+                        enable_filter: bool = True) -> Dict[str, Union[str, int, float, dict]]:
     """
     Get result by water.
 
@@ -550,7 +550,7 @@ def get_result_by_water(params: Dict[str, Union[str, int, float]],
 
 
 def get_result_by_coffee(params: Dict[str, Union[str, int, float]],
-               enable_filter: bool = True) -> Dict[str, Union[str, int, float, dict]]:
+                         enable_filter: bool = True) -> Dict[str, Union[str, int, float, dict]]:
     """
     Get result by coffee.
 
@@ -590,6 +590,7 @@ def get_result_by_coffee(params: Dict[str, Union[str, int, float]],
         result_params = filter_params(result_params)
     result_params["warnings"] = get_warnings(result_params)
     return result_params
+
 
 def get_result(params: Dict[str, Union[str, int, float]],
                enable_filter: bool = True) -> Dict[str, Union[str, int, float, dict]]:
