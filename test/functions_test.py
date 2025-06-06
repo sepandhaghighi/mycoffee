@@ -29,7 +29,7 @@
 'Strong'
 >>> get_brew_strength(1/2)
 'Very Strong'
->>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", "digits":3, "coffee_unit": "g", "water_unit": "g", "temperature_unit": "C", "grind": 500, "temperature":93}
+>>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", "digits":3, "coffee_unit": "g", "water_unit": "g", "temperature_unit": "C", "grind": 500, "temperature":93, "mode":"water-to-coffee"}
 >>> result_params = get_result(input_params)
 >>> print_result(result_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
@@ -59,6 +59,8 @@ Strength: Medium
 Grind: 500 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 93 C
+<BLANKLINE>
+Mode: water-to-coffee
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -90,6 +92,8 @@ Grind: 500 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 93 C
 <BLANKLINE>
+Mode: water-to-coffee
+<BLANKLINE>
 Message: V60 method
 >>> file.close()
 >>> save_details = save_result(result_params, "save_test1.json", "json")
@@ -99,13 +103,13 @@ True
 True
 >>> file = open("save_test1.json", "r")
 >>> save_test1_object = json.load(file)
->>> save_test1_object == {'mycoffee_version': MY_COFFEE_VERSION, 'temperature': {'value':93, 'unit':'C'}, 'method': 'v60', 'water': {'cup':500, 'total':1000, 'unit':'g', 'ratio':50}, 'cups': 2, 'digits': 3, 'coffee': {'total':60, 'cup': 30, 'unit': 'g', 'ratio': 3}, 'message': 'V60 method', 'grind': {'value':500, 'unit':'um', 'type':get_grind_type(500)},'warnings': [], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
+>>> save_test1_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"water-to-coffee", 'temperature': {'value':93, 'unit':'C'}, 'method': 'v60', 'water': {'cup':500, 'total':1000, 'unit':'g','ratio':50}, 'cups': 2, 'digits': 3, 'coffee': {'total':60, 'cup': 30, 'unit': 'g', 'ratio': 3}, 'message': 'V60 method', 'grind': {'value':500, 'unit':'um', 'type':get_grind_type(500)},'warnings': [], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
 >>> file.close()
 >>> save_details = save_result({}, 2)
 >>> save_details["status"]
 False
->>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", "digits":3, "coffee_unit": "g", "water_unit": "g", "temperature_unit": "F", "grind": 500, "temperature":65}
+>>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", "digits":3, "coffee_unit": "g", "water_unit": "g", "temperature_unit": "F", "grind": 500, "temperature":65, "mode":"water-to-coffee"}
 >>> result_params = get_result(input_params)
 >>> print_result(result_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
@@ -135,6 +139,8 @@ Strength: Medium
 Grind: 500 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 65 F
+<BLANKLINE>
+Mode: water-to-coffee
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -168,9 +174,11 @@ Grind: 500 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 65 F
 <BLANKLINE>
+Mode: water-to-coffee
+<BLANKLINE>
 Message: V60 method
 <BLANKLINE>
->>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 600, "temperature":95, "temperature_unit": "C"}
+>>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 600, "temperature":95, "temperature_unit": "C", "mode":"water-to-coffee"}
 >>> result_params = get_result(input_params)
 >>> check_ratio_limits(method=result_params["method"], ratio=result_params["ratio"])
 True
@@ -207,9 +215,11 @@ Grind: 600 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 95 C
 <BLANKLINE>
+Mode: water-to-coffee
+<BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
->>> input_params = {"method":"v60", "cups":2, "water":0.5, "coffee_ratio": 3, "water_ratio":50, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "kg", "grind": 700, "temperature":95, "temperature_unit": "C"}
+>>> input_params = {"method":"v60", "cups":2, "water":0.5, "coffee_ratio": 3, "water_ratio":50, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "kg", "grind": 700, "temperature":95, "temperature_unit": "C", "mode":"water-to-coffee"}
 >>> result_params = get_result(input_params)
 >>> check_ratio_limits(method=result_params["method"], ratio=result_params["ratio"])
 True
@@ -246,9 +256,11 @@ Grind: 700 um (Medium)
 <BLANKLINE>
 Temperature: 95 C
 <BLANKLINE>
+Mode: water-to-coffee
+<BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
->>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 6, "water_ratio":1000, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 500, "temperature":95, "temperature_unit": "C"}
+>>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 6, "water_ratio":1000, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 500, "temperature":95, "temperature_unit": "C", "mode":"water-to-coffee"}
 >>> result_params = get_result(input_params)
 >>> check_ratio_limits(method=result_params["method"], ratio=result_params["ratio"])
 False
@@ -285,10 +297,12 @@ Grind: 500 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 95 C
 <BLANKLINE>
+Mode: water-to-coffee
+<BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
 [Warning] The ratio is not within the recommended range. For `v60`, the ratio can be anywhere between `1/18` and `1/14`
->>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 1, "water_ratio":18, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 1400, "temperature":95,"temperature_unit": "C"}
+>>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 1, "water_ratio":18, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 1400, "temperature":95,"temperature_unit": "C", "mode":"water-to-coffee"}
 >>> result_params = get_result(input_params)
 >>> check_ratio_limits(method=result_params["method"], ratio=result_params["ratio"])
 True
@@ -325,10 +339,12 @@ Grind: 1400 um (Extra-Coarse)
 <BLANKLINE>
 Temperature: 95 C
 <BLANKLINE>
+Mode: water-to-coffee
+<BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
 [Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
->>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 1, "water_ratio":18, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 20, "temperature": 50.2, "temperature_unit": "C"}
+>>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 1, "water_ratio":18, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 20, "temperature": 50.2, "temperature_unit": "C", "mode":"water-to-coffee"}
 >>> result_params = get_result(input_params)
 >>> check_ratio_limits(method=result_params["method"], ratio=result_params["ratio"])
 True
@@ -365,11 +381,13 @@ Grind: 20 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 50.2 C
 <BLANKLINE>
+Mode: water-to-coffee
+<BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
 [Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
 [Warning] The temperature is not within the recommended range. For `v60`, the temperature can be anywhere between `85 C` and `95 C`
->>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 1, "water_ratio":18, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 20, "temperature": 122.36, "temperature_unit": "F"}
+>>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 1, "water_ratio":18, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 20, "temperature": 122.36, "temperature_unit": "F", "mode":"water-to-coffee"}
 >>> result_params = get_result(input_params)
 >>> check_ratio_limits(method=result_params["method"], ratio=result_params["ratio"])
 True
@@ -406,11 +424,13 @@ Grind: 20 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 122.36 F
 <BLANKLINE>
+Mode: water-to-coffee
+<BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
 [Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
 [Warning] The temperature is not within the recommended range. For `v60`, the temperature can be anywhere between `185 F` and `203 F`
->>> input_params = {"method":"custom", "cups":2, "water":500, "coffee_ratio": 6, "water_ratio":1000, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "temperature": 94, "temperature_unit": "C", "grind": 700}
+>>> input_params = {"method":"custom", "cups":2, "water":500, "coffee_ratio": 6, "water_ratio":1000, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "temperature": 94, "temperature_unit": "C", "grind": 700, "mode":"water-to-coffee"}
 >>> result_params = get_result(input_params)
 >>> check_ratio_limits(method=result_params["method"], ratio=result_params["ratio"])
 True
@@ -418,7 +438,7 @@ True
 True
 >>> check_temperature_limits(method=result_params["method"], temperature=result_params["temperature"]["value"], temperature_unit=result_params["temperature"]["unit"])
 True
->>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 1.2, "water_ratio":18.4, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 20, "temperature":94, "temperature_unit": "C"}
+>>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 1.2, "water_ratio":18.4, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 20, "temperature":94, "temperature_unit": "C", "mode":"water-to-coffee"}
 >>> result_params = get_result(input_params)
 >>> check_ratio_limits(method=result_params["method"], ratio=result_params["ratio"])
 True
@@ -426,7 +446,7 @@ True
 False
 >>> check_temperature_limits(method=result_params["method"], temperature=result_params["temperature"]["value"], temperature_unit=result_params["temperature"]["unit"])
 True
->>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 1.2, "water_ratio":50.1, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 20, "temperature":94, "temperature_unit": "C"}
+>>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 1.2, "water_ratio":50.1, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 20, "temperature":94, "temperature_unit": "C", "mode":"water-to-coffee"}
 >>> result_params = get_result(input_params)
 >>> check_ratio_limits(method=result_params["method"], ratio=result_params["ratio"])
 False
@@ -435,7 +455,7 @@ False
 >>> check_temperature_limits(method=result_params["method"], temperature=result_params["temperature"]["value"], temperature_unit=result_params["temperature"]["unit"])
 True
 >>> chemex_params = load_method_params("chemex")
->>> chemex_params == {'message': 'Chemex method', 'water': 240, 'coffee': 16, 'cups': 1, 'coffee_ratio': 1, 'water_ratio': 15, 'digits': 3, 'coffee_unit': 'g', 'water_unit': 'g', 'grind': 670, 'temperature':94, "temperature_unit": "C"}
+>>> chemex_params == {'message': 'Chemex method', 'water': 240, 'coffee': 16, 'cups': 1, 'coffee_ratio': 1, 'water_ratio': 15, 'digits': 3, 'coffee_unit': 'g', 'water_unit': 'g', 'grind': 670, 'temperature':94, "temperature_unit": "C", "mode":"water-to-coffee"}
 True
 >>> show_methods_list()
 Methods list:
@@ -615,6 +635,8 @@ Grind: 550 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 91 C
 <BLANKLINE>
+Mode: water-to-coffee
+<BLANKLINE>
 Message: V60 method
 <BLANKLINE>
 >>> args = parser.parse_args(["--method", 'V60', '--grind', '50', '--save-path', "save_test2.txt"])
@@ -647,6 +669,8 @@ Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
 <BLANKLINE>
+Mode: water-to-coffee
+<BLANKLINE>
 Message: V60 method
 <BLANKLINE>
 [Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
@@ -673,6 +697,8 @@ Strength: Medium
 Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
+<BLANKLINE>
+Mode: water-to-coffee
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -708,13 +734,15 @@ Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
 <BLANKLINE>
+Mode: water-to-coffee
+<BLANKLINE>
 Message: V60 method
 <BLANKLINE>
 [Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
 [Info] File saved successfully!
 >>> file = open("save_test2.json", "r")
 >>> save_test2_object = json.load(file)
->>> save_test2_object == {'mycoffee_version': MY_COFFEE_VERSION, 'temperature': {'value':91, 'unit':'C'}, 'method': 'v60', 'coffee': {'total':15, 'cup':15, 'unit':'g', 'ratio':3}, 'cups': 1,'digits': 3,'water': {'cup':250, 'total':250, 'unit':'g', 'ratio':50}, 'message': 'V60 method', 'grind': {'value':50, 'unit': 'um', 'type': get_grind_type(50)}, 'warnings': ['The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`'], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
+>>> save_test2_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"water-to-coffee", 'temperature': {'value':91, 'unit':'C'}, 'method': 'v60', 'coffee': {'total':15, 'cup':15, 'unit':'g', 'ratio':3}, 'cups': 1,'digits': 3,'water': {'cup':250, 'total':250, 'unit':'g', 'ratio':50}, 'message': 'V60 method', 'grind': {'value':50, 'unit': 'um', 'type': get_grind_type(50)}, 'warnings': ['The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`'], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
 >>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save-path', "save_test3.txt"])
@@ -747,6 +775,8 @@ Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
 <BLANKLINE>
+Mode: water-to-coffee
+<BLANKLINE>
 Message: V60 method
 <BLANKLINE>
 [Info] File saved successfully!
@@ -772,6 +802,8 @@ Strength: Medium
 Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
+<BLANKLINE>
+Mode: water-to-coffee
 <BLANKLINE>
 Message: V60 method
 >>> file.close()
@@ -805,12 +837,14 @@ Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
 <BLANKLINE>
+Mode: water-to-coffee
+<BLANKLINE>
 Message: V60 method
 <BLANKLINE>
 [Info] File saved successfully!
 >>> file = open("save_test3.json", "r")
 >>> save_test3_object = json.load(file)
->>> save_test3_object == {'mycoffee_version': MY_COFFEE_VERSION, 'temperature': {'value':91, 'unit':'C'}, 'method': 'v60', 'coffee': {'total': 15, 'cup': 15, 'unit': 'g', 'ratio': 3}, 'cups': 1,'digits': 3, 'water': {'total':250, 'cup':250, 'unit':'g', 'ratio':50}, 'message': 'V60 method', 'grind': {'value':50, 'unit': 'um', 'type': get_grind_type(50)},"warnings":[], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
+>>> save_test3_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"water-to-coffee", 'temperature': {'value':91, 'unit':'C'}, 'method': 'v60', 'coffee': {'total': 15, 'cup': 15, 'unit': 'g', 'ratio': 3}, 'cups': 1,'digits': 3, 'water': {'total':250, 'cup':250, 'unit':'g', 'ratio':50}, 'message': 'V60 method', 'grind': {'value':50, 'unit': 'um', 'type': get_grind_type(50)},"warnings":[], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
 >>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save-path', "f://", '--save-format', "json"])
@@ -842,6 +876,8 @@ Strength: Medium
 Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
+<BLANKLINE>
+Mode: water-to-coffee
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
