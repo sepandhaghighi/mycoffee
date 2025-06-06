@@ -44,6 +44,8 @@ Grind: {grind[value]} {grind[unit]} ({grind[type]})
 
 Temperature: {temperature[value]} {temperature[unit]}
 
+Mode: {mode}
+
 Message: {message}
 """
 

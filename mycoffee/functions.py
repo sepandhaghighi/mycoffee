@@ -78,7 +78,8 @@ def format_result(params: Dict[str, Union[str, int, float, dict]]) -> str:
         message=params["message"],
         grind=params["grind"],
         temperature=params["temperature"],
-        strength=params["strength"])
+        strength=params["strength"],
+        mode=params["mode"])
     return result
 
 
