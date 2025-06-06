@@ -590,6 +590,9 @@ True
 >>> clever_dripper_coffee = calc_coffee(ratio=clever_dripper_params["ratio"], water=clever_dripper_params["water"], water_unit=clever_dripper_params["water_unit"], coffee_unit=clever_dripper_params["coffee_unit"])
 >>> round(clever_dripper_coffee, 1) == 15 # https://coffee-coach.netlify.app/clever-by-james-hoffman/
 True
+>>> clever_dripper_water = round(calc_water(ratio=clever_dripper_params["ratio"], coffee=clever_dripper_coffee, water_unit=clever_dripper_params["water_unit"], coffee_unit=clever_dripper_params["coffee_unit"]), 3)
+>>> clever_dripper_water == clever_dripper_params["water"]
+True
 >>> round(clever_dripper_coffee, 3) == METHODS_MAP["clever-dripper"]["coffee"]
 True
 >>> METHODS_MAP["clever-dripper"]["ratio_upper_limit"] == Fraction(1, 15) # https://sablebrew.com/blogs/news/the-latest-method-to-brew-coffee-with-your-clever-dripper
@@ -618,6 +621,9 @@ True
 >>> phin_filter_params["ratio"] = phin_filter_params["coffee_ratio"] / phin_filter_params["water_ratio"]
 >>> phin_filter_coffee = calc_coffee(ratio=phin_filter_params["ratio"], water=phin_filter_params["water"], water_unit=phin_filter_params["water_unit"], coffee_unit=phin_filter_params["coffee_unit"])
 >>> phin_filter_coffee == 36
+True
+>>> phin_filter_water = round(calc_water(ratio=phin_filter_params["ratio"], coffee=phin_filter_coffee, water_unit=phin_filter_params["water_unit"], coffee_unit=phin_filter_params["coffee_unit"]), 3)
+>>> phin_filter_water == phin_filter_params["water"]
 True
 >>> phin_filter_coffee == METHODS_MAP["phin-filter"]["coffee"]
 True
