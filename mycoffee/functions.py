@@ -441,14 +441,18 @@ def check_temperature_limits(method: str, temperature: float, temperature_unit: 
     return True
 
 
-def convert_coffee(coffee: float, unit: str) -> Union[float, int]:
+def convert_coffee(coffee: float, unit: str, reverse: bool = False) -> Union[float, int]:
     """
     Convert and return the coffee amount as a float or int.
 
     :param coffee: coffee amount
     :param unit: coffee unit
+    :param reverse: reverse convert flag
     """
-    coffee = coffee * COFFEE_UNITS_MAP[unit]["rate"]
+    rate = COFFEE_UNITS_MAP[unit]["rate"]
+    if reverse:
+        rate = 1/ rate
+    coffee = coffee * rate
     if unit == "cb":
         coffee = math.ceil(coffee)
     return coffee
