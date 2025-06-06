@@ -62,6 +62,7 @@ DEFAULT_PARAMS = {
     "water_unit": "g",
     "temperature_unit": "C",
     "digits": 3,
+    "mode": "water-to-coffee",
     "message": ""
 
 }
@@ -427,3 +428,5 @@ TEMPERATURE_UNITS_MAP = {
 }
 
 FILE_FORMATS_LIST = ["text", "json"]
+
+MODES_LIST = ["water-to-coffee", "coffee-to-water"]
