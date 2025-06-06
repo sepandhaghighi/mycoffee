@@ -42,6 +42,7 @@ jobs:
         mycoffee --version
         mycoffee --method=chemex --water=20 --cups=3 --coffee-ratio=2 --water-ratio=37 --message="Temp: 92 C"
         mycoffee --method=chemex --water=20 --cups=3 --coffee-ratio=2 --water-ratio=37 --message="Temp: 92 C" --ignore-warnings
+        mycoffee --method=chemex --coffee=2 --cups=3 --coffee-ratio=2 --water-ratio=37 --message="Temp: 92 C" --mode="coffee-to-water"
     - name: Install dev-requirements
       run: |
         python otherfiles/requirements-splitter.py
