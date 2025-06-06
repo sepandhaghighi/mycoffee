@@ -321,6 +321,8 @@ def load_params(args: argparse.Namespace) -> Dict[str, Union[str, int, float]]:
             params[item] = getattr(args, item)
     if getattr(args, "water") is None:
         params["water"] = convert_water(params["water"], params["water_unit"])
+    if getattr(args, "coffee") is None:
+        params["coffee"] = convert_coffee(params["coffee"], params["coffee_unit"])
     if getattr(args, "temperature") is None:
         params["temperature"] = convert_temperature(
             params["temperature"],
