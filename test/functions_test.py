@@ -578,6 +578,7 @@ True
 >>> _ = parser.add_argument('--version', help='version', nargs="?", const=1)
 >>> _ = parser.add_argument('--info', help='info', nargs="?", const=1)
 >>> _ = parser.add_argument('--ignore-warnings', help='ignore warnings', nargs="?", const=1)
+>>> _ = parser.add_argument('--mode', help='conversion mode', type=str.lower, choices=MODES_LIST, default="water-to-coffee")
 >>> _ = parser.add_argument('--save-path', help='file path to save', type=str)
 >>> _ = parser.add_argument('--save-format', help='file format', type=str.lower, choices=FILE_FORMATS_LIST, default="text")
 >>> args = parser.parse_args({"--version":True})
