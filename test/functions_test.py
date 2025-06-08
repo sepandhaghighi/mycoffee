@@ -1258,6 +1258,34 @@ Message: V60 method
 5000
 >>> params["cups"]
 1
+>>> args = parser.parse_args(["--method", 'v60', "--water-ratio", '500', "--coffee-ratio", '23', "--coffee", '230', "--mode", "coffee-to-water"])
+>>> params = load_params(args)
+>>> params = get_result(params, enable_filter=False)
+>>> params["coffee"]["cup"]
+230.0
+>>> params["coffee"]["total"]
+230.0
+>>> params["water"]["cup"]
+5000.0
+>>> params["water"]["total"]
+5000.0
+>>> params["water"]["ratio"]
+500.0
+>>> params["coffee"]["ratio"]
+23.0
+>>> params["method"]
+'v60'
+>>> params = filter_params(params)
+>>> params["water"]["ratio"]
+500
+>>> params["coffee"]["ratio"]
+23
+>>> params["water"]["total"]
+5000
+>>> params["coffee"]["total"]
+230
+>>> params["cups"]
+1
 >>> args = parser.parse_args(["--method", 'v60', "--water-ratio", '500', "--coffee-ratio", '23', "--water", '5000000', "--water-unit", "mg"])
 >>> params = load_params(args)
 >>> params["water"]
