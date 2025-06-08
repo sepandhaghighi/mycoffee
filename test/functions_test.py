@@ -224,7 +224,7 @@ Mode: water-to-coffee
 Message: V60 method
 <BLANKLINE>
 [Warning] The temperature is not within the recommended range. For `v60`, the temperature can be anywhere between `185 F` and `203 F`
->>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", "digits":3, "coffee_unit": "g", "water_unit": "g", "temperature_unit": "F", "grind": 500, "temperature":65, "mode":"coffee-to-water"}
+>>> input_params = {"method":"v60", "cups":2, "coffee":30, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", "digits":3, "coffee_unit": "g", "water_unit": "g", "temperature_unit": "F", "grind": 500, "temperature":65, "mode":"coffee-to-water"}
 >>> result_params = get_result(input_params)
 >>> print_result(result_params)
  __  __  _  _   ___  _____  ____  ____  ____  ____
