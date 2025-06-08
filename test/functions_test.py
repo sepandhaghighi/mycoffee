@@ -1172,7 +1172,7 @@ True
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
-Cups: 1
+Cups: 2
 <BLANKLINE>
 Coffee:
     - Cup:   30 g
@@ -1198,7 +1198,7 @@ Message: V60 method
 [Info] File saved successfully!
 >>> file = open("save_test6.json", "r")
 >>> save_test3_object = json.load(file)
->>> save_test3_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"coffee-to-water", 'temperature': {'value':91, 'unit':'C'}, 'method': 'v60', 'coffee': {'total': 60, 'cup': 30, 'unit': 'g', 'ratio': 3}, 'cups': 1,'digits': 3, 'water': {'total':1000, 'cup':500, 'unit':'g', 'ratio':50}, 'message': 'V60 method', 'grind': {'value':50, 'unit': 'um', 'type': get_grind_type(50)},"warnings":[], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
+>>> save_test3_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"coffee-to-water", 'temperature': {'value':91, 'unit':'C'}, 'method': 'v60', 'coffee': {'total': 60, 'cup': 30, 'unit': 'g', 'ratio': 3}, 'cups': 2,'digits': 3, 'water': {'total':1000, 'cup':500, 'unit':'g', 'ratio':50}, 'message': 'V60 method', 'grind': {'value':50, 'unit': 'um', 'type': get_grind_type(50)},"warnings":[], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
 >>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save-path', "f://", '--save-format', "json"])
