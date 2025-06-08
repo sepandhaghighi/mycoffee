@@ -106,8 +106,6 @@ True
 >>> save_test1_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"water-to-coffee", 'temperature': {'value':93, 'unit':'C'}, 'method': 'v60', 'water': {'cup':500, 'total':1000, 'unit':'g','ratio':50}, 'cups': 2, 'digits': 3, 'coffee': {'total':60, 'cup': 30, 'unit': 'g', 'ratio': 3}, 'message': 'V60 method', 'grind': {'value':500, 'unit':'um', 'type':get_grind_type(500)},'warnings': [], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
 >>> file.close()
-
-
 >>> input_params = {"method":"v60", "cups":2, "coffee":30, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", "digits":3, "coffee_unit": "g", "water_unit": "g", "temperature_unit": "C", "grind": 500, "temperature":93, "mode":"coffee-to-water"}
 >>> result_params = get_result(input_params)
 >>> print_result(result_params)
@@ -1061,7 +1059,7 @@ Mode: water-to-coffee
 <BLANKLINE>
 Message: V60 method
 >>> file.close()
->>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save-path', "save_test6.txt", "--mode", "coffee-to-water"])
+>>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save-path', "save_test6.txt", "--mode", "coffee-to-water", "--coffee", "30"])
 >>> run(args)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
@@ -1075,13 +1073,13 @@ Method: `v60`
 Cups: 1
 <BLANKLINE>
 Coffee:
-    - Cup:   15 g
-    - Total: 15 g
+    - Cup:   30 g
+    - Total: 30 g
 <BLANKLINE>
 Water:
 <BLANKLINE>
-    - Cup: 250 g
-    - Total: 250 g
+    - Cup: 500 g
+    - Total: 500 g
 <BLANKLINE>
 Ratio: 3/50 (0.06)
 <BLANKLINE>
@@ -1103,13 +1101,13 @@ Method: `v60`
 Cups: 1
 <BLANKLINE>
 Coffee:
-    - Cup:   15 g
-    - Total: 15 g
+    - Cup:   30 g
+    - Total: 30 g
 <BLANKLINE>
 Water:
 <BLANKLINE>
-    - Cup: 250 g
-    - Total: 250 g
+    - Cup: 500 g
+    - Total: 500 g
 <BLANKLINE>
 Ratio: 3/50 (0.06)
 <BLANKLINE>
@@ -1163,7 +1161,7 @@ Message: V60 method
 >>> save_test3_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"water-to-coffee", 'temperature': {'value':91, 'unit':'C'}, 'method': 'v60', 'coffee': {'total': 15, 'cup': 15, 'unit': 'g', 'ratio': 3}, 'cups': 1,'digits': 3, 'water': {'total':250, 'cup':250, 'unit':'g', 'ratio':50}, 'message': 'V60 method', 'grind': {'value':50, 'unit': 'um', 'type': get_grind_type(50)},"warnings":[], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
 >>> file.close()
->>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save-path', "save_test6.json", '--save-format', "json", "--mode", "coffee-to-water"])
+>>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save-path', "save_test6.json", '--save-format', "json", "--mode", "coffee-to-water", "--coffee", "30", "--cups", "2"])
 >>> run(args)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
@@ -1177,13 +1175,13 @@ Method: `v60`
 Cups: 1
 <BLANKLINE>
 Coffee:
-    - Cup:   15 g
-    - Total: 15 g
+    - Cup:   30 g
+    - Total: 60 g
 <BLANKLINE>
 Water:
 <BLANKLINE>
-    - Cup: 250 g
-    - Total: 250 g
+    - Cup: 500 g
+    - Total: 1000 g
 <BLANKLINE>
 Ratio: 3/50 (0.06)
 <BLANKLINE>
@@ -1200,7 +1198,7 @@ Message: V60 method
 [Info] File saved successfully!
 >>> file = open("save_test6.json", "r")
 >>> save_test3_object = json.load(file)
->>> save_test3_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"coffee-to-water", 'temperature': {'value':91, 'unit':'C'}, 'method': 'v60', 'coffee': {'total': 15, 'cup': 15, 'unit': 'g', 'ratio': 3}, 'cups': 1,'digits': 3, 'water': {'total':250, 'cup':250, 'unit':'g', 'ratio':50}, 'message': 'V60 method', 'grind': {'value':50, 'unit': 'um', 'type': get_grind_type(50)},"warnings":[], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
+>>> save_test3_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"coffee-to-water", 'temperature': {'value':91, 'unit':'C'}, 'method': 'v60', 'coffee': {'total': 60, 'cup': 30, 'unit': 'g', 'ratio': 3}, 'cups': 1,'digits': 3, 'water': {'total':1000, 'cup':500, 'unit':'g', 'ratio':50}, 'message': 'V60 method', 'grind': {'value':50, 'unit': 'um', 'type': get_grind_type(50)},"warnings":[], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
 >>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save-path', "f://", '--save-format', "json"])
