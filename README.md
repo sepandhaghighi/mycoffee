@@ -114,7 +114,7 @@ Repo : https://github.com/sepandhaghighi/mycoffee
 
 
 
-Mode: `Water --> Coffee`
+Mode: Water --> Coffee
 
 Method: `v60`
 
@@ -156,7 +156,7 @@ Message: V60 method
 
 
 
-Mode: `Water --> Coffee`
+Mode: Water --> Coffee
 
 Method: `v60`
 
@@ -193,7 +193,7 @@ Message: V60 method
 
 
 
-Mode: `Coffee --> Water`
+Mode: Coffee --> Water
 
 Method: `v60`
 
@@ -236,6 +236,8 @@ Message: V60 method
 
 
 
+Mode: Water --> Coffee
+
 Method: `chemex`
 
 Cups: 3
@@ -250,7 +252,9 @@ Water:
     - Cup: 20 fl oz
     - Total: 60 fl oz
 
-Ratio: 2/37
+Ratio: 2/37 (0.054)
+
+Strength: Medium
 
 Grind: 750 um (Medium)
 

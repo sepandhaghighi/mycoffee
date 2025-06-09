@@ -22,7 +22,7 @@ ensuring you brew your ideal cup every time-right from your terminal.
 '''
 MESSAGE_TEMPLATE = """
 
-Mode: `{mode}`
+Mode: {mode}
 
 Method: `{method}`
 
