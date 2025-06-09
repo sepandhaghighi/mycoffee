@@ -39,6 +39,8 @@
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
+Mode: `water-to-coffee`
+<BLANKLINE>
 Method: `v60`
 <BLANKLINE>
 Cups: 2
@@ -59,8 +61,6 @@ Strength: Medium
 Grind: 500 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 93 C
-<BLANKLINE>
-Mode: water-to-coffee
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -71,6 +71,8 @@ True
 True
 >>> file = open("save_test1.txt", "r")
 >>> print(file.read())
+Mode: `water-to-coffee`
+<BLANKLINE>
 Method: `v60`
 <BLANKLINE>
 Cups: 2
@@ -91,8 +93,6 @@ Strength: Medium
 Grind: 500 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 93 C
-<BLANKLINE>
-Mode: water-to-coffee
 <BLANKLINE>
 Message: V60 method
 >>> file.close()
@@ -116,6 +116,8 @@ True
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
+Mode: `coffee-to-water`
+<BLANKLINE>
 Method: `v60`
 <BLANKLINE>
 Cups: 2
@@ -136,8 +138,6 @@ Strength: Medium
 Grind: 500 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 93 C
-<BLANKLINE>
-Mode: coffee-to-water
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -148,6 +148,8 @@ True
 True
 >>> file = open("save_test4.txt", "r")
 >>> print(file.read())
+Mode: `coffee-to-water`
+<BLANKLINE>
 Method: `v60`
 <BLANKLINE>
 Cups: 2
@@ -168,8 +170,6 @@ Strength: Medium
 Grind: 500 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 93 C
-<BLANKLINE>
-Mode: coffee-to-water
 <BLANKLINE>
 Message: V60 method
 >>> file.close()
@@ -196,6 +196,8 @@ False
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
+Mode: `water-to-coffee`
+<BLANKLINE>
 Method: `v60`
 <BLANKLINE>
 Cups: 2
@@ -216,8 +218,6 @@ Strength: Medium
 Grind: 500 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 65 F
-<BLANKLINE>
-Mode: water-to-coffee
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -232,6 +232,8 @@ Message: V60 method
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
+Mode: `coffee-to-water`
+<BLANKLINE>
 Method: `v60`
 <BLANKLINE>
 Cups: 2
@@ -252,8 +254,6 @@ Strength: Medium
 Grind: 500 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 65 F
-<BLANKLINE>
-Mode: coffee-to-water
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -266,6 +266,8 @@ Message: V60 method
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
+Mode: `coffee-to-water`
+<BLANKLINE>
 Method: `v60`
 <BLANKLINE>
 Cups: 2
@@ -286,8 +288,6 @@ Strength: Medium
 Grind: 500 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 65 F
-<BLANKLINE>
-Mode: coffee-to-water
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -306,6 +306,8 @@ True
 (_/\/\_) (__)  \___)(_____)(__)  (__)  (____)(____)
 <BLANKLINE>
 <BLANKLINE>
+<BLANKLINE>
+Mode: `water-to-coffee`
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -328,8 +330,6 @@ Grind: 600 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 95 C
 <BLANKLINE>
-Mode: water-to-coffee
-<BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
 >>> input_params = {"method":"v60", "cups":2, "water":0.5, "coffee_ratio": 3, "water_ratio":50, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "kg", "grind": 700, "temperature":95, "temperature_unit": "C", "mode":"water-to-coffee"}
@@ -347,6 +347,8 @@ True
 (_/\/\_) (__)  \___)(_____)(__)  (__)  (____)(____)
 <BLANKLINE>
 <BLANKLINE>
+<BLANKLINE>
+Mode: `water-to-coffee`
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -369,8 +371,6 @@ Grind: 700 um (Medium)
 <BLANKLINE>
 Temperature: 95 C
 <BLANKLINE>
-Mode: water-to-coffee
-<BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
 >>> input_params = {"method":"v60", "cups":2, "water":500, "coffee_ratio": 6, "water_ratio":1000, "message":"", "digits":3, "coffee_unit": "g", "water_unit": "g", "grind": 500, "temperature":95, "temperature_unit": "C", "mode":"water-to-coffee"}
@@ -388,6 +388,8 @@ True
 (_/\/\_) (__)  \___)(_____)(__)  (__)  (____)(____)
 <BLANKLINE>
 <BLANKLINE>
+<BLANKLINE>
+Mode: `water-to-coffee`
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -410,8 +412,6 @@ Grind: 500 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 95 C
 <BLANKLINE>
-Mode: water-to-coffee
-<BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
 [Warning] The ratio is not within the recommended range. For `v60`, the ratio can be anywhere between `1/18` and `1/14`
@@ -430,6 +430,8 @@ True
 (_/\/\_) (__)  \___)(_____)(__)  (__)  (____)(____)
 <BLANKLINE>
 <BLANKLINE>
+<BLANKLINE>
+Mode: `water-to-coffee`
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -452,8 +454,6 @@ Grind: 1400 um (Extra-Coarse)
 <BLANKLINE>
 Temperature: 95 C
 <BLANKLINE>
-Mode: water-to-coffee
-<BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
 [Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
@@ -472,6 +472,8 @@ False
 (_/\/\_) (__)  \___)(_____)(__)  (__)  (____)(____)
 <BLANKLINE>
 <BLANKLINE>
+<BLANKLINE>
+Mode: `water-to-coffee`
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -494,8 +496,6 @@ Grind: 20 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 50.2 C
 <BLANKLINE>
-Mode: water-to-coffee
-<BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
 [Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
@@ -515,6 +515,8 @@ False
 (_/\/\_) (__)  \___)(_____)(__)  (__)  (____)(____)
 <BLANKLINE>
 <BLANKLINE>
+<BLANKLINE>
+Mode: `water-to-coffee`
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -536,8 +538,6 @@ Strength: Medium
 Grind: 20 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 122.36 F
-<BLANKLINE>
-Mode: water-to-coffee
 <BLANKLINE>
 Message: Nothing :)
 <BLANKLINE>
@@ -727,6 +727,8 @@ True
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
+Mode: `water-to-coffee`
+<BLANKLINE>
 Method: `v60`
 <BLANKLINE>
 Cups: 1
@@ -747,8 +749,6 @@ Strength: Medium
 Grind: 550 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 91 C
-<BLANKLINE>
-Mode: water-to-coffee
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -761,6 +761,8 @@ Message: V60 method
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
+Mode: `coffee-to-water`
+<BLANKLINE>
 Method: `v60`
 <BLANKLINE>
 Cups: 1
@@ -782,8 +784,6 @@ Grind: 550 um (Medium-Fine)
 <BLANKLINE>
 Temperature: 91 C
 <BLANKLINE>
-Mode: coffee-to-water
-<BLANKLINE>
 Message: V60 method
 <BLANKLINE>
 >>> args = parser.parse_args(["--method", 'V60', '--grind', '50', '--save-path', "save_test2.txt"])
@@ -795,6 +795,8 @@ Message: V60 method
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
+Mode: `water-to-coffee`
+<BLANKLINE>
 Method: `v60`
 <BLANKLINE>
 Cups: 1
@@ -815,8 +817,6 @@ Strength: Medium
 Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
-<BLANKLINE>
-Mode: water-to-coffee
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -824,6 +824,8 @@ Message: V60 method
 [Info] File saved successfully!
 >>> file = open("save_test2.txt", "r")
 >>> print(file.read())
+Mode: `water-to-coffee`
+<BLANKLINE>
 Method: `v60`
 <BLANKLINE>
 Cups: 1
@@ -844,8 +846,6 @@ Strength: Medium
 Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
-<BLANKLINE>
-Mode: water-to-coffee
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -859,6 +859,8 @@ Message: V60 method
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
+Mode: `coffee-to-water`
+<BLANKLINE>
 Method: `v60`
 <BLANKLINE>
 Cups: 1
@@ -879,8 +881,6 @@ Strength: Medium
 Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
-<BLANKLINE>
-Mode: coffee-to-water
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -888,6 +888,8 @@ Message: V60 method
 [Info] File saved successfully!
 >>> file = open("save_test5.txt", "r")
 >>> print(file.read())
+Mode: `coffee-to-water`
+<BLANKLINE>
 Method: `v60`
 <BLANKLINE>
 Cups: 1
@@ -908,8 +910,6 @@ Strength: Medium
 Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
-<BLANKLINE>
-Mode: coffee-to-water
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -924,6 +924,8 @@ Message: V60 method
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
+Mode: `water-to-coffee`
+<BLANKLINE>
 Method: `v60`
 <BLANKLINE>
 Cups: 1
@@ -944,8 +946,6 @@ Strength: Medium
 Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
-<BLANKLINE>
-Mode: water-to-coffee
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -965,6 +965,8 @@ True
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
+Mode: `coffee-to-water`
+<BLANKLINE>
 Method: `v60`
 <BLANKLINE>
 Cups: 1
@@ -985,8 +987,6 @@ Strength: Medium
 Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
-<BLANKLINE>
-Mode: coffee-to-water
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -1006,6 +1006,8 @@ True
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
+Mode: `water-to-coffee`
+<BLANKLINE>
 Method: `v60`
 <BLANKLINE>
 Cups: 1
@@ -1026,14 +1028,14 @@ Strength: Medium
 Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
-<BLANKLINE>
-Mode: water-to-coffee
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
 [Info] File saved successfully!
 >>> file = open("save_test3.txt", "r")
 >>> print(file.read())
+Mode: `water-to-coffee`
+<BLANKLINE>
 Method: `v60`
 <BLANKLINE>
 Cups: 1
@@ -1054,8 +1056,6 @@ Strength: Medium
 Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
-<BLANKLINE>
-Mode: water-to-coffee
 <BLANKLINE>
 Message: V60 method
 >>> file.close()
@@ -1068,6 +1068,8 @@ Message: V60 method
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
+Mode: `coffee-to-water`
+<BLANKLINE>
 Method: `v60`
 <BLANKLINE>
 Cups: 1
@@ -1088,14 +1090,14 @@ Strength: Medium
 Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
-<BLANKLINE>
-Mode: coffee-to-water
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
 [Info] File saved successfully!
 >>> file = open("save_test6.txt", "r")
 >>> print(file.read())
+Mode: `coffee-to-water`
+<BLANKLINE>
 Method: `v60`
 <BLANKLINE>
 Cups: 1
@@ -1116,8 +1118,6 @@ Strength: Medium
 Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
-<BLANKLINE>
-Mode: coffee-to-water
 <BLANKLINE>
 Message: V60 method
 >>> file.close()
@@ -1129,6 +1129,8 @@ Message: V60 method
 (_/\/\_) (__)  \___)(_____)(__)  (__)  (____)(____)
 <BLANKLINE>
 <BLANKLINE>
+<BLANKLINE>
+Mode: `water-to-coffee`
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -1150,8 +1152,6 @@ Strength: Medium
 Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
-<BLANKLINE>
-Mode: water-to-coffee
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
@@ -1169,6 +1169,8 @@ True
 (_/\/\_) (__)  \___)(_____)(__)  (__)  (____)(____)
 <BLANKLINE>
 <BLANKLINE>
+<BLANKLINE>
+Mode: `coffee-to-water`
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -1191,8 +1193,6 @@ Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
 <BLANKLINE>
-Mode: coffee-to-water
-<BLANKLINE>
 Message: V60 method
 <BLANKLINE>
 [Info] File saved successfully!
@@ -1209,6 +1209,8 @@ True
 (_/\/\_) (__)  \___)(_____)(__)  (__)  (____)(____)
 <BLANKLINE>
 <BLANKLINE>
+<BLANKLINE>
+Mode: `water-to-coffee`
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -1230,8 +1232,6 @@ Strength: Medium
 Grind: 50 um (Extra-Fine)
 <BLANKLINE>
 Temperature: 91 C
-<BLANKLINE>
-Mode: water-to-coffee
 <BLANKLINE>
 Message: V60 method
 <BLANKLINE>
