@@ -39,7 +39,7 @@
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
-Mode: `water-to-coffee`
+Mode: Water --> Coffee
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -71,7 +71,7 @@ True
 True
 >>> file = open("save_test1.txt", "r")
 >>> print(file.read())
-Mode: `water-to-coffee`
+Mode: Water --> Coffee
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -116,7 +116,7 @@ True
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
-Mode: `coffee-to-water`
+Mode: Coffee -> Water
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -148,7 +148,7 @@ True
 True
 >>> file = open("save_test4.txt", "r")
 >>> print(file.read())
-Mode: `coffee-to-water`
+Mode: Coffee -> Water
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -196,7 +196,7 @@ False
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
-Mode: `water-to-coffee`
+Mode: Water --> Coffee
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -232,7 +232,7 @@ Message: V60 method
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
-Mode: `coffee-to-water`
+Mode: Coffee -> Water
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -266,7 +266,7 @@ Message: V60 method
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
-Mode: `coffee-to-water`
+Mode: Coffee -> Water
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -307,7 +307,7 @@ True
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
-Mode: `water-to-coffee`
+Mode: Water --> Coffee
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -348,7 +348,7 @@ True
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
-Mode: `water-to-coffee`
+Mode: Water --> Coffee
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -389,7 +389,7 @@ True
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
-Mode: `water-to-coffee`
+Mode: Water --> Coffee
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -431,7 +431,7 @@ True
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
-Mode: `water-to-coffee`
+Mode: Water --> Coffee
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -473,7 +473,7 @@ False
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
-Mode: `water-to-coffee`
+Mode: Water --> Coffee
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -516,7 +516,7 @@ False
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
-Mode: `water-to-coffee`
+Mode: Water --> Coffee
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -727,7 +727,7 @@ True
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
-Mode: `water-to-coffee`
+Mode: Water --> Coffee
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -761,7 +761,7 @@ Message: V60 method
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
-Mode: `coffee-to-water`
+Mode: Coffee -> Water
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -795,7 +795,7 @@ Message: V60 method
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
-Mode: `water-to-coffee`
+Mode: Water --> Coffee
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -824,7 +824,7 @@ Message: V60 method
 [Info] File saved successfully!
 >>> file = open("save_test2.txt", "r")
 >>> print(file.read())
-Mode: `water-to-coffee`
+Mode: Water --> Coffee
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -859,7 +859,7 @@ Message: V60 method
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
-Mode: `coffee-to-water`
+Mode: Coffee -> Water
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -888,7 +888,7 @@ Message: V60 method
 [Info] File saved successfully!
 >>> file = open("save_test5.txt", "r")
 >>> print(file.read())
-Mode: `coffee-to-water`
+Mode: Coffee -> Water
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -924,7 +924,7 @@ Message: V60 method
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
-Mode: `water-to-coffee`
+Mode: Water --> Coffee
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -965,7 +965,7 @@ True
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
-Mode: `coffee-to-water`
+Mode: Coffee -> Water
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -1006,7 +1006,7 @@ True
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
-Mode: `water-to-coffee`
+Mode: Water --> Coffee
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -1034,7 +1034,7 @@ Message: V60 method
 [Info] File saved successfully!
 >>> file = open("save_test3.txt", "r")
 >>> print(file.read())
-Mode: `water-to-coffee`
+Mode: Water --> Coffee
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -1068,7 +1068,7 @@ Message: V60 method
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
-Mode: `coffee-to-water`
+Mode: Coffee -> Water
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -1096,7 +1096,7 @@ Message: V60 method
 [Info] File saved successfully!
 >>> file = open("save_test6.txt", "r")
 >>> print(file.read())
-Mode: `coffee-to-water`
+Mode: Coffee -> Water
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -1130,7 +1130,7 @@ Message: V60 method
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
-Mode: `water-to-coffee`
+Mode: Water --> Coffee
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -1170,7 +1170,7 @@ True
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
-Mode: `coffee-to-water`
+Mode: Coffee -> Water
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
@@ -1210,7 +1210,7 @@ True
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
-Mode: `water-to-coffee`
+Mode: Water --> Coffee
 <BLANKLINE>
 Method: `v60`
 <BLANKLINE>
