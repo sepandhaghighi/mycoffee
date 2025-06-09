@@ -99,9 +99,5 @@ out
 gen
 
 # Test files
-save_test1.txt
-save_test2.txt
-save_test3.txt
-save_test1.json
-save_test2.json
-save_test3.json
+save_test*.txt
+save_test*.json
