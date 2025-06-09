@@ -299,6 +299,12 @@ Message: Chemex method
       <td align="center">Positive float</td>
       <td align="center"><code>240</code></td>
     </tr>
+	<tr>
+      <td align="center"><code>--coffee</code></td>
+      <td align="center">Sets the amount of coffee in each cup</td>
+      <td align="center">Positive float</td>
+      <td align="center"><code>14.118</code></td>
+    </tr>
     <tr>
       <td align="center"><code>--cups</code></td>
       <td align="center">Indicates the number of cups</td>
