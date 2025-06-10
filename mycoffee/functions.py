@@ -11,7 +11,7 @@ from mycoffee.params import RATIO_WARNING_MESSAGE, GRIND_WARNING_MESSAGE, TEMPER
 from mycoffee.params import POSITIVE_INTEGER_ERROR_MESSAGE, POSITIVE_FLOAT_ERROR_MESSAGE
 from mycoffee.params import MY_COFFEE_OVERVIEW, MY_COFFEE_REPO
 from mycoffee.params import SAVE_FILE_ERROR_MESSAGE, SAVE_FILE_SUCCESS_MESSAGE
-from mycoffee.params import MODES_NAME_MAP
+from mycoffee.params import MODE_TO_NAME
 from art import tprint
 
 
@@ -80,7 +80,7 @@ def format_result(params: Dict[str, Union[str, int, float, dict]]) -> str:
         grind=params["grind"],
         temperature=params["temperature"],
         strength=params["strength"],
-        mode=MODES_NAME_MAP[params["mode"]])
+        mode=MODE_TO_NAME[params["mode"]])
     return result
 
 

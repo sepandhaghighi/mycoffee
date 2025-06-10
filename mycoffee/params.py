@@ -433,4 +433,4 @@ FILE_FORMATS_LIST = ["text", "json"]
 
 MODES_LIST = ["water-to-coffee", "coffee-to-water"]
 
-MODES_NAME_MAP = {"water-to-coffee": "Water --> Coffee", "coffee-to-water": "Coffee --> Water"}
+MODE_TO_NAME = {"water-to-coffee": "Water --> Coffee", "coffee-to-water": "Coffee --> Water"}
