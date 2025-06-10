@@ -1,6 +1,6 @@
 # Methods List
 
-**Last Update: 2025-05-23**
+**Last Update: 2025-06-09**
 
 <table>
 	<tr align="center">
@@ -14,6 +14,7 @@
 		<th>Temperature-LL(C)</th>
 		<th>Temperature-UL(C)</th>
 		<th>Water(g)</th>
+		<th>Coffee(g)</th>
 		<th>Version</th>
 	</tr>
 	<tr align="center">
@@ -27,6 +28,7 @@
 		<td>--</td>
 		<td>--</td>
 		<td>240</td>
+		<td>14.118</td>
 		<td>>=0.1</td>
 	</tr>
 	<tr align="center">
@@ -40,6 +42,7 @@
 		<td>85</td>
 		<td>95</td>
 		<td>250</td>
+		<td>15</td>
 		<td>>=0.1</td>
 	</tr>
 	<tr align="center">
@@ -53,6 +56,7 @@
 		<td>85</td>
 		<td>95</td>
 		<td>240</td>
+		<td>16</td>
 		<td>>=0.1</td>
 	</tr>
 	<tr align="center">
@@ -66,6 +70,7 @@
 		<td>85</td>
 		<td>95</td>
 		<td>36</td>
+		<td>18</td>
 		<td>>=0.1</td>
 	</tr>
 	<tr align="center">
@@ -79,6 +84,7 @@
 		<td>85</td>
 		<td>95</td>
 		<td>120</td>
+		<td>8</td>
 		<td>>=0.1</td>
 	</tr>
 	<tr align="center">
@@ -92,6 +98,7 @@
 		<td>91</td>
 		<td>94</td>
 		<td>240</td>
+		<td>16</td>
 		<td>>=0.1</td>
 	</tr>
 	<tr align="center">
@@ -105,6 +112,7 @@
 		<td>90</td>
 		<td>93</td>
 		<td>240</td>
+		<td>16</td>
 		<td>>=0.2</td>
 	</tr>
 	<tr align="center">
@@ -118,6 +126,7 @@
 		<td>90</td>
 		<td>96</td>
 		<td>128</td>
+		<td>8</td>
 		<td>>=0.2</td>
 	</tr>
 	<tr align="center">
@@ -131,6 +140,7 @@
 		<td>0</td>
 		<td>40</td>
 		<td>242</td>
+		<td>22</td>
 		<td>>=0.2</td>
 	</tr>
 	<tr align="center">
@@ -144,6 +154,7 @@
 		<td>0</td>
 		<td>40</td>
 		<td>120</td>
+		<td>24</td>
 		<td>>=0.2</td>
 	</tr>
 	<tr align="center">
@@ -157,6 +168,7 @@
 		<td>85</td>
 		<td>95</td>
 		<td>60</td>
+		<td>6</td>
 		<td>>=0.2</td>
 	</tr>
 	<tr align="center">
@@ -169,6 +181,7 @@
 		<td>380</td>
 		<td>85</td>
 		<td>95</td>
+		<td>18</td>
 		<td>18</td>
 		<td>>=0.3</td>
 	</tr>
@@ -183,6 +196,7 @@
 		<td>85</td>
 		<td>95</td>
 		<td>72</td>
+		<td>18</td>
 		<td>>=0.3</td>
 	</tr>
 	<tr align="center">
@@ -196,6 +210,7 @@
 		<td>90</td>
 		<td>95</td>
 		<td>50</td>
+		<td>5</td>
 		<td>>=0.3</td>
 	</tr>
 	<tr align="center">
@@ -209,6 +224,7 @@
 		<td>85</td>
 		<td>95</td>
 		<td>150</td>
+		<td>8.25</td>
 		<td>>=0.3</td>
 	</tr>
 	<tr align="center">
@@ -222,6 +238,7 @@
 		<td>90</td>
 		<td>95</td>
 		<td>135</td>
+		<td>9</td>
 		<td>>=0.4</td>
 	</tr>
 	<tr align="center">
@@ -235,6 +252,7 @@
 		<td>90</td>
 		<td>95</td>
 		<td>90</td>
+		<td>15</td>
 		<td>>=0.4</td>
 	</tr>
 	<tr align="center">
@@ -248,6 +266,7 @@
 		<td>90</td>
 		<td>95</td>
 		<td>132</td>
+		<td>11</td>
 		<td>>=0.4</td>
 	</tr>
 	<tr align="center">
@@ -261,6 +280,7 @@
 		<td>85</td>
 		<td>95</td>
 		<td>255</td>
+		<td>15.9375</td>
 		<td>>=0.4</td>
 	</tr>
 	<tr align="center">
@@ -274,6 +294,7 @@
 		<td>91</td>
 		<td>96</td>
 		<td>250</td>
+		<td>14.997</td>
 		<td>>=1.9</td>
 	</tr>
 	<tr align="center">
@@ -287,6 +308,7 @@
 		<td>90</td>
 		<td>96</td>
 		<td>72</td>
+		<td>36</td>
 		<td>>=1.9</td>
 	</tr>
 </table>

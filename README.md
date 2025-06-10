@@ -102,6 +102,7 @@ ensuring you brew your ideal cup every time-right from your terminal.
 Repo : https://github.com/sepandhaghighi/mycoffee
 ```
 
+
 ### Method
 
 ```console
@@ -112,6 +113,8 @@ Repo : https://github.com/sepandhaghighi/mycoffee
 (_/\/\_) (__)  \___)(_____)(__)  (__)  (____)(____)
 
 
+
+Mode: Water --> Coffee
 
 Method: `v60`
 
@@ -141,6 +144,82 @@ Message: V60 method
 * [Methods List](https://github.com/sepandhaghighi/mycoffee/blob/main/METHODS.md)
 * `mycoffee --methods-list`
 
+### Mode
+
+#### Water to Coffee
+```console
+> mycoffee --method=v60 --mode="water-to-coffee" --water=300
+ __  __  _  _   ___  _____  ____  ____  ____  ____
+(  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
+ )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
+(_/\/\_) (__)  \___)(_____)(__)  (__)  (____)(____)
+
+
+
+Mode: Water --> Coffee
+
+Method: `v60`
+
+Cups: 1
+
+Coffee:
+
+    - Cup:   18 g
+    - Total: 18 g
+
+Water:
+
+    - Cup: 300 g
+    - Total: 300 g
+
+Ratio: 3/50 (0.06)
+
+Strength: Medium
+
+Grind: 550 um (Medium-Fine)
+
+Temperature: 91 C
+
+Message: V60 method
+```
+
+#### Coffee to Water
+```console
+> mycoffee --method=v60 --mode="coffee-to-water" --coffee=12
+ __  __  _  _   ___  _____  ____  ____  ____  ____
+(  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
+ )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
+(_/\/\_) (__)  \___)(_____)(__)  (__)  (____)(____)
+
+
+
+Mode: Coffee --> Water
+
+Method: `v60`
+
+Cups: 1
+
+Coffee:
+
+    - Cup:   12 g
+    - Total: 12 g
+
+Water:
+
+    - Cup: 200 g
+    - Total: 200 g
+
+Ratio: 3/50 (0.06)
+
+Strength: Medium
+
+Grind: 550 um (Medium-Fine)
+
+Temperature: 91 C
+
+Message: V60 method
+```
+
 ### Customize
 
 ℹ️ You can run `mycoffee --coffee-units-list` to view the supported coffee units
@@ -157,6 +236,8 @@ Message: V60 method
 
 
 
+Mode: Water --> Coffee
+
 Method: `chemex`
 
 Cups: 3
@@ -171,7 +252,9 @@ Water:
     - Cup: 20 fl oz
     - Total: 60 fl oz
 
-Ratio: 2/37
+Ratio: 2/37 (0.054)
+
+Strength: Medium
 
 Grind: 750 um (Medium)
 
@@ -203,6 +286,12 @@ Message: Chemex method
   </thead>
   <tbody>
     <tr>
+      <td align="center"><code>--mode</code></td>
+      <td align="center">Specifies the conversion mode</td>
+      <td align="center">String</td>
+      <td align="center"><code>water-to-coffee</code></td>
+    </tr>
+    <tr>
       <td align="center"><code>--method</code></td>
       <td align="center">Specifies the coffee brewing method</td>
       <td align="center">String</td>
@@ -213,6 +302,12 @@ Message: Chemex method
       <td align="center">Sets the amount of water in each cup</td>
       <td align="center">Positive float</td>
       <td align="center"><code>240</code></td>
+    </tr>
+    <tr>
+      <td align="center"><code>--coffee</code></td>
+      <td align="center">Sets the amount of coffee in each cup</td>
+      <td align="center">Positive float</td>
+      <td align="center"><code>14.118</code></td>
     </tr>
     <tr>
       <td align="center"><code>--cups</code></td>

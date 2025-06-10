@@ -22,6 +22,8 @@ ensuring you brew your ideal cup every time-right from your terminal.
 '''
 MESSAGE_TEMPLATE = """
 
+Mode: {mode}
+
 Method: `{method}`
 
 Cups: {cups}
@@ -43,8 +45,6 @@ Strength: {strength}
 Grind: {grind[value]} {grind[unit]} ({grind[type]})
 
 Temperature: {temperature[value]} {temperature[unit]}
-
-Mode: {mode}
 
 Message: {message}
 """
@@ -432,3 +432,5 @@ TEMPERATURE_UNITS_MAP = {
 FILE_FORMATS_LIST = ["text", "json"]
 
 MODES_LIST = ["water-to-coffee", "coffee-to-water"]
+
+MODE_TO_NAME = {"water-to-coffee": "Water --> Coffee", "coffee-to-water": "Coffee --> Water"}
