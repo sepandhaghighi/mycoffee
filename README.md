@@ -54,13 +54,13 @@
 ## Installation		
 
 ### Source Code
-- Download [Version 1.8](https://github.com/sepandhaghighi/mycoffee/archive/v1.8.zip) or [Latest Source](https://github.com/sepandhaghighi/mycoffee/archive/dev.zip)
+- Download [Version 1.9](https://github.com/sepandhaghighi/mycoffee/archive/v1.9.zip) or [Latest Source](https://github.com/sepandhaghighi/mycoffee/archive/dev.zip)
 - `pip install .`				
 
 ### PyPI
 
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
-- `pip install mycoffee==1.8`						
+- `pip install mycoffee==1.9`						
 
 
 ## Usage
@@ -72,7 +72,7 @@
 ```console
 > mycoffee --version
 
-1.8
+1.9
 ```
 
 ### Info
@@ -88,10 +88,10 @@
          |___/
 
 __     __    _      ___
-\ \   / / _ / |    ( _ )
- \ \ / / (_)| |    / _ \
-  \ V /   _ | | _ | (_) |
-   \_/   (_)|_|(_) \___/
+\ \   / / _ / |    / _ \
+ \ \ / / (_)| |   | (_) |
+  \ V /   _ | | _  \__, |
+   \_/   (_)|_|(_)   /_/
 
 
 

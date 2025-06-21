@@ -716,7 +716,7 @@ True
 >>> _ = parser.add_argument('--save-format', help='file format', type=str.lower, choices=FILE_FORMATS_LIST, default="text")
 >>> args = parser.parse_args({"--version":True})
 >>> run(args)
-1.8
+1.9
 >>>
 >>> args = parser.parse_args(["--method", 'v60'])
 >>> run(args)
