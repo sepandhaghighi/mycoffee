@@ -101,3 +101,4 @@ gen
 # Test files
 save_test*.txt
 save_test*.json
+save_test*.yaml
