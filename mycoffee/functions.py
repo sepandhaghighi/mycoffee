@@ -118,6 +118,8 @@ def save_result(
     try:
         if file_format == "json":
             save_result_json(params, file_path, ignore_warnings)
+        elif file_format == "yaml":
+            save_result_yaml(params, file_path, ignore_warnings)
         else:
             save_result_text(params, file_path, ignore_warnings)
     except Exception as e:
