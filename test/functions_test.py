@@ -2,6 +2,7 @@
 """
 >>> import os
 >>> import json
+>>> import yaml
 >>> import argparse
 >>> from mycoffee.functions import *
 >>> from mycoffee.params import *
@@ -106,6 +107,16 @@ True
 >>> save_test1_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"water-to-coffee", 'temperature': {'value':93, 'unit':'C'}, 'method': 'v60', 'water': {'cup':500, 'total':1000, 'unit':'g','ratio':50}, 'cups': 2, 'digits': 3, 'coffee': {'total':60, 'cup': 30, 'unit': 'g', 'ratio': 3}, 'message': 'V60 method', 'grind': {'value':500, 'unit':'um', 'type':get_grind_type(500)},'warnings': [], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
 >>> file.close()
+>>> save_details = save_result(result_params, "save_test1.yaml", "yaml")
+>>> save_details["status"]
+True
+>>> save_details["message"] == "[Info] File saved successfully!"
+True
+>>> file = open("save_test1.yaml", "r")
+>>> save_test1_object = yaml.load(file)
+>>> save_test1_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"water-to-coffee", 'temperature': {'value':93, 'unit':'C'}, 'method': 'v60', 'water': {'cup':500, 'total':1000, 'unit':'g','ratio':50}, 'cups': 2, 'digits': 3, 'coffee': {'total':60, 'cup': 30, 'unit': 'g', 'ratio': 3}, 'message': 'V60 method', 'grind': {'value':500, 'unit':'um', 'type':get_grind_type(500)},'warnings': [], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
+True
+>>> file.close()
 >>> input_params = {"method":"v60", "cups":2, "coffee":30, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", "digits":3, "coffee_unit": "g", "water_unit": "g", "temperature_unit": "C", "grind": 500, "temperature":93, "mode":"coffee-to-water"}
 >>> result_params = get_result(input_params)
 >>> print_result(result_params)
@@ -178,8 +189,18 @@ Message: V60 method
 True
 >>> save_details["message"] == "[Info] File saved successfully!"
 True
->>> file = open("save_test4.json", "r")
+>>> file = open("save_test4.yaml", "r")
 >>> save_test4_object = json.load(file)
+>>> save_test4_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"coffee-to-water", 'temperature': {'value':93, 'unit':'C'}, 'method': 'v60', 'water': {'cup':500, 'total':1000, 'unit':'g','ratio':50}, 'cups': 2, 'digits': 3, 'coffee': {'total':60, 'cup': 30, 'unit': 'g', 'ratio': 3}, 'message': 'V60 method', 'grind': {'value':500, 'unit':'um', 'type':get_grind_type(500)},'warnings': [], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
+True
+>>> file.close()
+>>> save_details = save_result(result_params, "save_test4.yaml", "yaml")
+>>> save_details["status"]
+True
+>>> save_details["message"] == "[Info] File saved successfully!"
+True
+>>> file = open("save_test4.yaml", "r")
+>>> save_test4_object = yaml.load(file)
 >>> save_test4_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"coffee-to-water", 'temperature': {'value':93, 'unit':'C'}, 'method': 'v60', 'water': {'cup':500, 'total':1000, 'unit':'g','ratio':50}, 'cups': 2, 'digits': 3, 'coffee': {'total':60, 'cup': 30, 'unit': 'g', 'ratio': 3}, 'message': 'V60 method', 'grind': {'value':500, 'unit':'um', 'type':get_grind_type(500)},'warnings': [], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
 >>> file.close()
@@ -956,6 +977,47 @@ Message: V60 method
 >>> save_test2_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"water-to-coffee", 'temperature': {'value':91, 'unit':'C'}, 'method': 'v60', 'coffee': {'total':15, 'cup':15, 'unit':'g', 'ratio':3}, 'cups': 1,'digits': 3,'water': {'cup':250, 'total':250, 'unit':'g', 'ratio':50}, 'message': 'V60 method', 'grind': {'value':50, 'unit': 'um', 'type': get_grind_type(50)}, 'warnings': ['The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`'], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
 >>> file.close()
+>>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--save-path', "save_test2.yaml", '--save-format', "YaMl"])
+>>> run(args)
+ __  __  _  _   ___  _____  ____  ____  ____  ____
+(  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
+ )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
+(_/\/\_) (__)  \___)(_____)(__)  (__)  (____)(____)
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+Mode: Water --> Coffee
+<BLANKLINE>
+Method: `v60`
+<BLANKLINE>
+Cups: 1
+<BLANKLINE>
+Coffee:
+    - Cup:   15 g
+    - Total: 15 g
+<BLANKLINE>
+Water:
+<BLANKLINE>
+    - Cup: 250 g
+    - Total: 250 g
+<BLANKLINE>
+Ratio: 3/50 (0.06)
+<BLANKLINE>
+Strength: Medium
+<BLANKLINE>
+Grind: 50 um (Extra-Fine)
+<BLANKLINE>
+Temperature: 91 C
+<BLANKLINE>
+Message: V60 method
+<BLANKLINE>
+[Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
+[Info] File saved successfully!
+>>> file = open("save_test2.yaml", "r")
+>>> save_test2_object = yaml.load(file)
+>>> save_test2_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"water-to-coffee", 'temperature': {'value':91, 'unit':'C'}, 'method': 'v60', 'coffee': {'total':15, 'cup':15, 'unit':'g', 'ratio':3}, 'cups': 1,'digits': 3,'water': {'cup':250, 'total':250, 'unit':'g', 'ratio':50}, 'message': 'V60 method', 'grind': {'value':50, 'unit': 'um', 'type': get_grind_type(50)}, 'warnings': ['The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`'], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
+True
+>>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--save-path', "save_test5.json", '--save-format', "JsOn", "--mode", "coffee-to-water"])
 >>> run(args)
  __  __  _  _   ___  _____  ____  ____  ____  ____
@@ -992,8 +1054,49 @@ Message: V60 method
 <BLANKLINE>
 [Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
 [Info] File saved successfully!
->>> file = open("save_test5.json", "r")
+>>> file = open("save_test5.yaml", "r")
 >>> save_test5_object = json.load(file)
+>>> save_test5_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"coffee-to-water", 'temperature': {'value':91, 'unit':'C'}, 'method': 'v60', 'coffee': {'total':15, 'cup':15, 'unit':'g', 'ratio':3}, 'cups': 1,'digits': 3,'water': {'cup':250, 'total':250, 'unit':'g', 'ratio':50}, 'message': 'V60 method', 'grind': {'value':50, 'unit': 'um', 'type': get_grind_type(50)}, 'warnings': ['The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`'], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
+True
+>>> file.close()
+>>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--save-path', "save_test5.yaml", '--save-format', "YAML", "--mode", "coffee-to-water"])
+>>> run(args)
+ __  __  _  _   ___  _____  ____  ____  ____  ____
+(  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
+ )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
+(_/\/\_) (__)  \___)(_____)(__)  (__)  (____)(____)
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+Mode: Coffee --> Water
+<BLANKLINE>
+Method: `v60`
+<BLANKLINE>
+Cups: 1
+<BLANKLINE>
+Coffee:
+    - Cup:   15 g
+    - Total: 15 g
+<BLANKLINE>
+Water:
+<BLANKLINE>
+    - Cup: 250 g
+    - Total: 250 g
+<BLANKLINE>
+Ratio: 3/50 (0.06)
+<BLANKLINE>
+Strength: Medium
+<BLANKLINE>
+Grind: 50 um (Extra-Fine)
+<BLANKLINE>
+Temperature: 91 C
+<BLANKLINE>
+Message: V60 method
+<BLANKLINE>
+[Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
+[Info] File saved successfully!
+>>> file = open("save_test5.yaml", "r")
+>>> save_test5_object = yaml.load(file)
 >>> save_test5_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"coffee-to-water", 'temperature': {'value':91, 'unit':'C'}, 'method': 'v60', 'coffee': {'total':15, 'cup':15, 'unit':'g', 'ratio':3}, 'cups': 1,'digits': 3,'water': {'cup':250, 'total':250, 'unit':'g', 'ratio':50}, 'message': 'V60 method', 'grind': {'value':50, 'unit': 'um', 'type': get_grind_type(50)}, 'warnings': ['The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`'], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
 >>> file.close()
@@ -1156,8 +1259,48 @@ Temperature: 91 C
 Message: V60 method
 <BLANKLINE>
 [Info] File saved successfully!
->>> file = open("save_test3.json", "r")
+>>> file = open("save_test3.yaml", "r")
 >>> save_test3_object = json.load(file)
+>>> save_test3_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"water-to-coffee", 'temperature': {'value':91, 'unit':'C'}, 'method': 'v60', 'coffee': {'total': 15, 'cup': 15, 'unit': 'g', 'ratio': 3}, 'cups': 1,'digits': 3, 'water': {'total':250, 'cup':250, 'unit':'g', 'ratio':50}, 'message': 'V60 method', 'grind': {'value':50, 'unit': 'um', 'type': get_grind_type(50)},"warnings":[], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
+True
+>>> file.close()
+>>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save-path', "save_test3.yaml", '--save-format', "yaml"])
+>>> run(args)
+ __  __  _  _   ___  _____  ____  ____  ____  ____
+(  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
+ )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
+(_/\/\_) (__)  \___)(_____)(__)  (__)  (____)(____)
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+Mode: Water --> Coffee
+<BLANKLINE>
+Method: `v60`
+<BLANKLINE>
+Cups: 1
+<BLANKLINE>
+Coffee:
+    - Cup:   15 g
+    - Total: 15 g
+<BLANKLINE>
+Water:
+<BLANKLINE>
+    - Cup: 250 g
+    - Total: 250 g
+<BLANKLINE>
+Ratio: 3/50 (0.06)
+<BLANKLINE>
+Strength: Medium
+<BLANKLINE>
+Grind: 50 um (Extra-Fine)
+<BLANKLINE>
+Temperature: 91 C
+<BLANKLINE>
+Message: V60 method
+<BLANKLINE>
+[Info] File saved successfully!
+>>> file = open("save_test3.yaml", "r")
+>>> save_test3_object = yaml.load(file)
 >>> save_test3_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"water-to-coffee", 'temperature': {'value':91, 'unit':'C'}, 'method': 'v60', 'coffee': {'total': 15, 'cup': 15, 'unit': 'g', 'ratio': 3}, 'cups': 1,'digits': 3, 'water': {'total':250, 'cup':250, 'unit':'g', 'ratio':50}, 'message': 'V60 method', 'grind': {'value':50, 'unit': 'um', 'type': get_grind_type(50)},"warnings":[], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
 >>> file.close()
@@ -1196,8 +1339,49 @@ Temperature: 91 C
 Message: V60 method
 <BLANKLINE>
 [Info] File saved successfully!
->>> file = open("save_test6.json", "r")
+>>> file = open("save_test6.yaml", "r")
 >>> save_test6_object = json.load(file)
+>>> save_test6_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"coffee-to-water", 'temperature': {'value':91, 'unit':'C'}, 'method': 'v60', 'coffee': {'total': 60, 'cup': 30, 'unit': 'g', 'ratio': 3}, 'cups': 2,'digits': 3, 'water': {'total':1000, 'cup':500, 'unit':'g', 'ratio':50}, 'message': 'V60 method', 'grind': {'value':50, 'unit': 'um', 'type': get_grind_type(50)},"warnings":[], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
+True
+>>> file.close()
+>>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save-path', "save_test6.yaml", '--save-format', "YamL", "--mode", "coffee-to-water", "--coffee", "30",
+"--cups", "2"])
+>>> run(args)
+ __  __  _  _   ___  _____  ____  ____  ____  ____
+(  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
+ )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
+(_/\/\_) (__)  \___)(_____)(__)  (__)  (____)(____)
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+Mode: Coffee --> Water
+<BLANKLINE>
+Method: `v60`
+<BLANKLINE>
+Cups: 2
+<BLANKLINE>
+Coffee:
+    - Cup:   30 g
+    - Total: 60 g
+<BLANKLINE>
+Water:
+<BLANKLINE>
+    - Cup: 500 g
+    - Total: 1000 g
+<BLANKLINE>
+Ratio: 3/50 (0.06)
+<BLANKLINE>
+Strength: Medium
+<BLANKLINE>
+Grind: 50 um (Extra-Fine)
+<BLANKLINE>
+Temperature: 91 C
+<BLANKLINE>
+Message: V60 method
+<BLANKLINE>
+[Info] File saved successfully!
+>>> file = open("save_test6.yaml", "r")
+>>> save_test6_object = yaml.load(file)
 >>> save_test6_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"coffee-to-water", 'temperature': {'value':91, 'unit':'C'}, 'method': 'v60', 'coffee': {'total': 60, 'cup': 30, 'unit': 'g', 'ratio': 3}, 'cups': 2,'digits': 3, 'water': {'total':1000, 'cup':500, 'unit':'g', 'ratio':50}, 'message': 'V60 method', 'grind': {'value':50, 'unit': 'um', 'type': get_grind_type(50)},"warnings":[], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
 >>> file.close()
@@ -1534,4 +1718,10 @@ argparse.ArgumentTypeError: invalid positive float value: 'a'
 >>> os.remove("save_test4.json")
 >>> os.remove("save_test5.json")
 >>> os.remove("save_test6.json")
+>>> os.remove("save_test1.yaml")
+>>> os.remove("save_test2.yaml")
+>>> os.remove("save_test3.yaml")
+>>> os.remove("save_test4.yaml")
+>>> os.remove("save_test5.yaml")
+>>> os.remove("save_test6.yaml")
 """
