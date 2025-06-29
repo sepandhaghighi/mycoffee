@@ -429,7 +429,7 @@ TEMPERATURE_UNITS_MAP = {
     "K": {"name": "Kelvin"}
 }
 
-FILE_FORMATS_LIST = ["text", "json"]
+FILE_FORMATS_LIST = ["text", "json", "yaml"]
 
 MODES_LIST = ["water-to-coffee", "coffee-to-water"]
 
