@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- `YAML` format
+### Changed
+- Test system modified
+- `README.md` updated
 ## [1.9] - 2025-06-21
 ### Added
 - 2 new methods

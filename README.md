@@ -265,7 +265,7 @@ Message: Chemex method
 
 ### Save
 
-ℹ️ File format valid choices: [`text`, `json`]
+ℹ️ File format valid choices: [`text`, `json`, `yaml`]
 
 ℹ️ The default file format is `text`
 

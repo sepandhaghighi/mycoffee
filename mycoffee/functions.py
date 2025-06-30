@@ -2,6 +2,7 @@
 """mycoffee functions."""
 from typing import Union, Dict, List
 import json
+import yaml
 import math
 import argparse
 from mycoffee.params import MESSAGE_TEMPLATE, METHODS_LIST_TEMPLATE, EMPTY_MESSAGE
@@ -117,6 +118,8 @@ def save_result(
     try:
         if file_format == "json":
             save_result_json(params, file_path, ignore_warnings)
+        elif file_format == "yaml":
+            save_result_yaml(params, file_path, ignore_warnings)
         else:
             save_result_text(params, file_path, ignore_warnings)
     except Exception as e:
@@ -160,6 +163,23 @@ def save_result_json(params: Dict[str, Union[str, int, float, dict]],
         result["warnings"] = []
     with open(file_path, "w") as file:
         json.dump(result, file)
+
+
+def save_result_yaml(params: Dict[str, Union[str, int, float, dict]],
+                     file_path: str, ignore_warnings: bool = False) -> None:
+    """
+    Save result as a YAML file.
+
+    :param params: parameters
+    :param file_path: file path
+    :param ignore_warnings: ignore warnings flag
+    """
+    result = params.copy()
+    result["mycoffee_version"] = MY_COFFEE_VERSION
+    if ignore_warnings:
+        result["warnings"] = []
+    with open(file_path, "w") as file:
+        yaml.safe_dump(result, file, default_flow_style=False)
 
 
 def get_warnings(params: Dict[str, Union[str, int, float]]) -> List[str]:
