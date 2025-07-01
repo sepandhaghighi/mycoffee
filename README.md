@@ -369,6 +369,18 @@ Message: Chemex method
       <td align="center">String</td>
       <td align="center"><code>C</code></td>
     </tr>
+    <tr>
+      <td align="center"><code>--save-path</code></td>
+      <td align="center">File path to save the output</td>
+      <td align="center">String</td>
+      <td align="center">--</td>
+    </tr>
+    <tr>
+      <td align="center"><code>--save-format</code></td>
+      <td align="center">Format to save the output</td>
+      <td align="center">String</td>
+      <td align="center"><code>text</code></td>
+    </tr>
   </tbody>
 </table>
 
