@@ -373,7 +373,7 @@ Message: Chemex method
       <td align="center"><code>--save-path</code></td>
       <td align="center">File path to save the output</td>
       <td align="center">String</td>
-      <td align="center"><code>None</code></td>
+      <td align="center">--</td>
     </tr>
     <tr>
       <td align="center"><code>--save-format</code></td>
