@@ -628,7 +628,7 @@ def get_result(params: Dict[str, Union[str, int, float]],
     return result_params
 
 
-def run(args: argparse.Namespace) -> None:
+def run_program(args: argparse.Namespace) -> None:
     """
     Run program.
 

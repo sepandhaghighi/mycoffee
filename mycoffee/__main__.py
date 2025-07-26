@@ -2,7 +2,7 @@
 """mycoffee main."""
 from mycoffee.params import METHODS_MAP, EXIT_MESSAGE, FILE_FORMATS_LIST, MODES_LIST
 from mycoffee.params import COFFEE_UNITS_MAP, WATER_UNITS_MAP, TEMPERATURE_UNITS_MAP
-from mycoffee.functions import run, validate_positive_int, validate_positive_float
+from mycoffee.functions import run_program, validate_positive_int, validate_positive_float
 import argparse
 
 
@@ -59,7 +59,7 @@ def main() -> None:
     parser.add_argument('--save-format', help='file format', type=str.lower, choices=FILE_FORMATS_LIST, default="text")
     args = parser.parse_args()
     try:
-        run(args)
+        run_program(args)
     except (KeyboardInterrupt, EOFError):
         print(EXIT_MESSAGE)
 
