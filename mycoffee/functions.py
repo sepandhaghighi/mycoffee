@@ -497,7 +497,7 @@ def convert_water(water: float, unit: str, reverse: bool = False) -> Union[float
     return water
 
 
-def calc_coffee(ratio: float, water: float, water_unit: str, coffee_unit: str) -> float:
+def calculate_coffee(ratio: float, water: float, water_unit: str, coffee_unit: str) -> float:
     """
     Calculate coffee.
 
@@ -512,7 +512,7 @@ def calc_coffee(ratio: float, water: float, water_unit: str, coffee_unit: str) -
     return coffee
 
 
-def calc_water(ratio: float, coffee: float, water_unit: str, coffee_unit: str) -> float:
+def calculate_water(ratio: float, coffee: float, water_unit: str, coffee_unit: str) -> float:
     """
     Calculate water.
 
@@ -539,7 +539,7 @@ def get_result_by_water(params: Dict[str, Union[str, int, float]],
     result_params["ratio"] = params["coffee_ratio"] / params["water_ratio"]
     result_params["coffee"] = {
         "total": None,
-        "cup": calc_coffee(
+        "cup": calculate_coffee(
             ratio=result_params["ratio"],
             water=params["water"],
             water_unit=params["water_unit"],
@@ -587,7 +587,7 @@ def get_result_by_coffee(params: Dict[str, Union[str, int, float]],
         "unit": params["coffee_unit"]}
     result_params["water"] = {
         "total": None,
-        "cup": calc_water(
+        "cup": calculate_water(
             ratio=result_params["ratio"],
             coffee=params["coffee"],
             water_unit=params["water_unit"],
