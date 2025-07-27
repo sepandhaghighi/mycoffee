@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - Test system modified
 - `README.md` updated
+- `calc_coffee` function renamed to `calculate_coffee`
+- `calc_water` function renamed to `calculate_water`
+- `run` function renamed to `run_program`
 ## [1.9] - 2025-06-21
 ### Added
 - 2 new methods

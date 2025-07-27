@@ -664,10 +664,10 @@ Temperature units list:
 2. `F` - Fahrenheit
 3. `K` - Kelvin
 >>> test_params = {"method":"v60", "cups":1, "water":335, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", 'coffee_unit': 'g', 'water_unit': 'g', "ratio": 3/50}
->>> calc_coffee(ratio=test_params["ratio"], water=test_params["water"], water_unit=test_params["water_unit"], coffee_unit=test_params["coffee_unit"])
+>>> calculate_coffee(ratio=test_params["ratio"], water=test_params["water"], water_unit=test_params["water_unit"], coffee_unit=test_params["coffee_unit"])
 20.099999999999998
 >>> test_params = {"method":"v60", "cups":2, "water":335, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", 'coffee_unit': 'g', 'water_unit': 'g', "ratio": 3/50}
->>> calc_coffee(ratio=test_params["ratio"], water=test_params["water"], water_unit=test_params["water_unit"], coffee_unit=test_params["coffee_unit"])
+>>> calculate_coffee(ratio=test_params["ratio"], water=test_params["water"], water_unit=test_params["water_unit"], coffee_unit=test_params["coffee_unit"])
 20.099999999999998
 >>> test_params = {"method":"v60", "ratio": 3/50, "cups":2, "coffee":{"total":40.2, "cup":20.1, "ratio":3.0, "unit":'g'}, "water":{"cup":335.0, "total":670, "ratio":50.0}, "message":"", "digits":3, "temperature":{"value":94.0, "unit": "C"}}
 >>> test_params = filter_params(test_params)
@@ -736,11 +736,11 @@ True
 >>> _ = parser.add_argument('--save-path', help='file path to save', type=str)
 >>> _ = parser.add_argument('--save-format', help='file format', type=str.lower, choices=FILE_FORMATS_LIST, default="text")
 >>> args = parser.parse_args({"--version":True})
->>> run(args)
+>>> run_program(args)
 1.9
 >>>
 >>> args = parser.parse_args(["--method", 'v60'])
->>> run(args)
+>>> run_program(args)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
  )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
@@ -774,7 +774,7 @@ Temperature: 91 C
 Message: V60 method
 <BLANKLINE>
 >>> args = parser.parse_args(["--method", 'v60', "--mode", 'coffee-to-water'])
->>> run(args)
+>>> run_program(args)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
  )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
@@ -808,7 +808,7 @@ Temperature: 91 C
 Message: V60 method
 <BLANKLINE>
 >>> args = parser.parse_args(["--method", 'V60', '--grind', '50', '--save-path', "save_test2.txt"])
->>> run(args)
+>>> run_program(args)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
  )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
@@ -872,7 +872,7 @@ Message: V60 method
 <BLANKLINE>
 [Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
 >>> args = parser.parse_args(["--method", 'V60', '--grind', '50', '--save-path', "save_test5.txt", '--mode', 'coffee-to-water'])
->>> run(args)
+>>> run_program(args)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
  )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
@@ -937,7 +937,7 @@ Message: V60 method
 [Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
 >>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--save-path', "save_test2.json", '--save-format', "JsOn"])
->>> run(args)
+>>> run_program(args)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
  )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
@@ -978,7 +978,7 @@ Message: V60 method
 True
 >>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--save-path', "save_test2.yaml", '--save-format', "YaMl"])
->>> run(args)
+>>> run_program(args)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
  )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
@@ -1019,7 +1019,7 @@ Message: V60 method
 True
 >>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--save-path', "save_test5.json", '--save-format', "JsOn", "--mode", "coffee-to-water"])
->>> run(args)
+>>> run_program(args)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
  )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
@@ -1060,7 +1060,7 @@ Message: V60 method
 True
 >>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--save-path', "save_test5.yaml", '--save-format', "YAML", "--mode", "coffee-to-water"])
->>> run(args)
+>>> run_program(args)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
  )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
@@ -1101,7 +1101,7 @@ Message: V60 method
 True
 >>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save-path', "save_test3.txt"])
->>> run(args)
+>>> run_program(args)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
  )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
@@ -1163,7 +1163,7 @@ Temperature: 91 C
 Message: V60 method
 >>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save-path', "save_test6.txt", "--mode", "coffee-to-water", "--coffee", "30"])
->>> run(args)
+>>> run_program(args)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
  )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
@@ -1225,7 +1225,7 @@ Temperature: 91 C
 Message: V60 method
 >>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save-path', "save_test3.json", '--save-format', "json"])
->>> run(args)
+>>> run_program(args)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
  )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
@@ -1265,7 +1265,7 @@ Message: V60 method
 True
 >>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save-path', "save_test3.yaml", '--save-format', "yaml"])
->>> run(args)
+>>> run_program(args)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
  )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
@@ -1305,7 +1305,7 @@ Message: V60 method
 True
 >>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save-path', "save_test6.json", '--save-format', "json", "--mode", "coffee-to-water", "--coffee", "30", "--cups", "2"])
->>> run(args)
+>>> run_program(args)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
  )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
@@ -1345,7 +1345,7 @@ Message: V60 method
 True
 >>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save-path', "save_test6.yaml", '--save-format', "YamL", "--mode", "coffee-to-water", "--coffee", "30", "--cups", "2"])
->>> run(args)
+>>> run_program(args)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
  )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
@@ -1385,7 +1385,7 @@ Message: V60 method
 True
 >>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', '--grind', '50', '--ignore-warnings',  '--save-path', "f://", '--save-format', "json"])
->>> run(args)
+>>> run_program(args)
  __  __  _  _   ___  _____  ____  ____  ____  ____
 (  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
  )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
@@ -1482,7 +1482,7 @@ Message: V60 method
 >>> args = parser.parse_args(["--method", 'steep-and-release', "--digits", '1', "--water-unit", "mg"])
 >>> params = load_params(args)
 >>> ratio = params["coffee_ratio"] / params["water_ratio"]
->>> params["coffee"] = calc_coffee(ratio=ratio, water=params["water"], water_unit=params["water_unit"], coffee_unit=params["coffee_unit"])
+>>> params["coffee"] = calculate_coffee(ratio=ratio, water=params["water"], water_unit=params["water_unit"], coffee_unit=params["coffee_unit"])
 >>> params["water"]
 255000
 >>> params["coffee"]
@@ -1598,7 +1598,7 @@ Message: V60 method
 >>> params["cups"]
 3
 >>> args = parser.parse_args(["--methods-list"])
->>> run(args)
+>>> run_program(args)
 Methods list:
 <BLANKLINE>
 1. `aero-press` - AeroPress standard method
@@ -1623,7 +1623,7 @@ Methods list:
 20. `turkish` - Turkish method
 21. `v60` - V60 method
 >>> args = parser.parse_args(["--coffee-units-list"])
->>> run(args)
+>>> run_program(args)
 Coffee units list:
 <BLANKLINE>
 1. `cb` - coffee bean
@@ -1642,7 +1642,7 @@ Coffee units list:
 14. `tbsp` - tablespoon
 15. `tsp` - teaspoon
 >>> args = parser.parse_args(["--water-units-list"])
->>> run(args)
+>>> run_program(args)
 Water units list:
 <BLANKLINE>
 1. `cc` - cubic centimeter
@@ -1667,7 +1667,7 @@ Water units list:
 20. `tbsp` - tablespoon
 21. `tsp` - teaspoon
 >>> args = parser.parse_args(["--temperature-units-list"])
->>> run(args)
+>>> run_program(args)
 Temperature units list:
 <BLANKLINE>
 1. `C` - Celsius
