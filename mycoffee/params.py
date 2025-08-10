@@ -433,4 +433,7 @@ FILE_FORMATS_LIST = ["text", "json", "yaml"]
 
 MODES_LIST = ["water-to-coffee", "coffee-to-water", "ratio"]
 
-MODE_TO_NAME = {"water-to-coffee": "Water --> Coffee", "coffee-to-water": "Coffee --> Water", "ratio": "Water & Coffee --> Ratio"}
+MODE_TO_NAME = {
+    "water-to-coffee": "Water --> Coffee",
+    "coffee-to-water": "Coffee --> Water",
+    "ratio": "Water & Coffee --> Ratio"}

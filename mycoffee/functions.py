@@ -630,7 +630,7 @@ def get_result_by_coffee(params: Dict[str, Union[str, int, float]],
 
 
 def get_result_by_coffee_and_water(params: Dict[str, Union[str, int, float]],
-                         enable_filter: bool = True) -> Dict[str, Union[str, int, float, dict]]:
+                                   enable_filter: bool = True) -> Dict[str, Union[str, int, float, dict]]:
     """
     Get result by coffee and water.
 
@@ -638,7 +638,11 @@ def get_result_by_coffee_and_water(params: Dict[str, Union[str, int, float]],
     :param enable_filter: filter flag
     """
     result_params = params.copy()
-    result_params["ratio"] = calculate_ratio(result_params["coffee"], result_params["water"], result_params["coffee_unit"], result_params["water_unit"])
+    result_params["ratio"] = calculate_ratio(
+        result_params["coffee"],
+        result_params["water"],
+        result_params["coffee_unit"],
+        result_params["water_unit"])
     ratio_fraction = fractions.Fraction(result_params["ratio"]).limit_denominator()
     result_params["coffee"] = {
         "total": result_params["cups"] * params["coffee"],
