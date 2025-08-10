@@ -679,8 +679,10 @@ def get_result(params: Dict[str, Union[str, int, float]],
     """
     if params["mode"] == "water-to-coffee":
         result_params = get_result_by_water(params=params, enable_filter=enable_filter)
-    else:
+    elif params["mode"] == "coffee-to-water":
         result_params = get_result_by_coffee(params=params, enable_filter=enable_filter)
+    else:
+        result_params = get_result_by_coffee_and_water(params=params, enable_filter=enable_filter)
     return result_params
 
 
