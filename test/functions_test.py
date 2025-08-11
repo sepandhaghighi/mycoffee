@@ -1545,13 +1545,6 @@ Message: V60 method
 <BLANKLINE>
 >>> file = open("save_test8.txt", "r")
 >>> print(file.read())
- __  __  _  _   ___  _____  ____  ____  ____  ____
-(  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
- )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
-(_/\/\_) (__)  \___)(_____)(__)  (__)  (____)(____)
-<BLANKLINE>
-<BLANKLINE>
-<BLANKLINE>
 Mode: Water & Coffee --> Ratio
 <BLANKLINE>
 Method: `v60`
@@ -1579,7 +1572,6 @@ Temperature: 91 C
 Message: V60 method
 <BLANKLINE>
 [Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
-[Info] File saved successfully!
 <BLANKLINE>
 >>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', "--water-ratio", '500', "--coffee-ratio", '23', "--water", '5000'])
