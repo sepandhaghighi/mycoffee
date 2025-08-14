@@ -219,6 +219,43 @@ Temperature: 91 C
 Message: V60 method
 ```
 
+#### Ratio
+```console
+> mycoffee --method=v60 --mode="ratio" --coffee=18 --water=300
+ __  __  _  _   ___  _____  ____  ____  ____  ____
+(  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
+ )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
+(_/\/\_) (__)  \___)(_____)(__)  (__)  (____)(____)
+
+
+
+Mode: Water & Coffee --> Ratio
+
+Method: `v60`
+
+Cups: 1
+
+Coffee:
+
+    - Cup:   18 g
+    - Total: 18 g
+
+Water:
+
+    - Cup: 300 g
+    - Total: 300 g
+
+Ratio: 3/50 (0.06)
+
+Strength: Medium
+
+Grind: 550 um (Medium-Fine)
+
+Temperature: 91 C
+
+Message: V60 method
+```
+
 ### Customize
 
 ℹ️ You can run `mycoffee --coffee-units-list` to view the supported coffee units

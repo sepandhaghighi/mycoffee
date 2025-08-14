@@ -117,6 +117,92 @@ True
 >>> save_test1_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"water-to-coffee", 'temperature': {'value':93, 'unit':'C'}, 'method': 'v60', 'water': {'cup':500, 'total':1000, 'unit':'g','ratio':50}, 'cups': 2, 'digits': 3, 'coffee': {'total':60, 'cup': 30, 'unit': 'g', 'ratio': 3}, 'message': 'V60 method', 'grind': {'value':500, 'unit':'um', 'type':get_grind_type(500)},'warnings': [], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
 >>> file.close()
+>>> input_params = {"method":"v60", "cups":2, "coffee":30, "water":500, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", "digits":3, "coffee_unit": "g", "water_unit": "g", "temperature_unit": "C", "grind": 500, "temperature":93, "mode":"ratio"}
+>>> result_params = get_result(input_params)
+>>> print_result(result_params)
+ __  __  _  _   ___  _____  ____  ____  ____  ____
+(  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
+ )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
+(_/\/\_) (__)  \___)(_____)(__)  (__)  (____)(____)
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+Mode: Water & Coffee --> Ratio
+<BLANKLINE>
+Method: `v60`
+<BLANKLINE>
+Cups: 2
+<BLANKLINE>
+Coffee:
+    - Cup:   30 g
+    - Total: 60 g
+<BLANKLINE>
+Water:
+<BLANKLINE>
+    - Cup: 500 g
+    - Total: 1000 g
+<BLANKLINE>
+Ratio: 3/50 (0.06)
+<BLANKLINE>
+Strength: Medium
+<BLANKLINE>
+Grind: 500 um (Medium-Fine)
+<BLANKLINE>
+Temperature: 93 C
+<BLANKLINE>
+Message: V60 method
+<BLANKLINE>
+>>> save_details = save_result(result_params, "save_test7.txt")
+>>> save_details["status"]
+True
+>>> save_details["message"] == "[Info] File saved successfully!"
+True
+>>> file = open("save_test7.txt", "r")
+>>> print(file.read())
+Mode: Water & Coffee --> Ratio
+<BLANKLINE>
+Method: `v60`
+<BLANKLINE>
+Cups: 2
+<BLANKLINE>
+Coffee:
+    - Cup:   30 g
+    - Total: 60 g
+<BLANKLINE>
+Water:
+<BLANKLINE>
+    - Cup: 500 g
+    - Total: 1000 g
+<BLANKLINE>
+Ratio: 3/50 (0.06)
+<BLANKLINE>
+Strength: Medium
+<BLANKLINE>
+Grind: 500 um (Medium-Fine)
+<BLANKLINE>
+Temperature: 93 C
+<BLANKLINE>
+Message: V60 method
+>>> file.close()
+>>> save_details = save_result(result_params, "save_test7.json", "json")
+>>> save_details["status"]
+True
+>>> save_details["message"] == "[Info] File saved successfully!"
+True
+>>> file = open("save_test7.json", "r")
+>>> save_test4_object = json.load(file)
+>>> save_test4_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"ratio", 'temperature': {'value':93, 'unit':'C'}, 'method': 'v60', 'water': {'cup':500, 'total':1000, 'unit':'g','ratio':50}, 'cups': 2, 'digits': 3, 'coffee': {'total':60, 'cup': 30, 'unit': 'g', 'ratio': 3}, 'message': 'V60 method', 'grind': {'value':500, 'unit':'um', 'type':get_grind_type(500)},'warnings': [], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
+True
+>>> file.close()
+>>> save_details = save_result(result_params, "save_test7.yaml", "yaml")
+>>> save_details["status"]
+True
+>>> save_details["message"] == "[Info] File saved successfully!"
+True
+>>> file = open("save_test7.yaml", "r")
+>>> save_test4_object = yaml.safe_load(file)
+>>> save_test4_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"ratio", 'temperature': {'value':93, 'unit':'C'}, 'method': 'v60', 'water': {'cup':500, 'total':1000, 'unit':'g','ratio':50}, 'cups': 2, 'digits': 3, 'coffee': {'total':60, 'cup': 30, 'unit': 'g', 'ratio': 3}, 'message': 'V60 method', 'grind': {'value':500, 'unit':'um', 'type':get_grind_type(500)},'warnings': [], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
+True
 >>> input_params = {"method":"v60", "cups":2, "coffee":30, "coffee_ratio": 3, "water_ratio":50, "message":"V60 method", "digits":3, "coffee_unit": "g", "water_unit": "g", "temperature_unit": "C", "grind": 500, "temperature":93, "mode":"coffee-to-water"}
 >>> result_params = get_result(input_params)
 >>> print_result(result_params)
@@ -1419,6 +1505,75 @@ Temperature: 91 C
 Message: V60 method
 <BLANKLINE>
 [Error] Failed to save file!
+>>> args = parser.parse_args(["--method", 'V60', '--grind', '50', '--save-path', "save_test8.txt", '--mode', 'ratio'])
+>>> run_program(args)
+ __  __  _  _   ___  _____  ____  ____  ____  ____
+(  \/  )( \/ ) / __)(  _  )( ___)( ___)( ___)( ___)
+ )    (  \  / ( (__  )(_)(  )__)  )__)  )__)  )__)
+(_/\/\_) (__)  \___)(_____)(__)  (__)  (____)(____)
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+Mode: Water & Coffee --> Ratio
+<BLANKLINE>
+Method: `v60`
+<BLANKLINE>
+Cups: 1
+<BLANKLINE>
+Coffee:
+<BLANKLINE>
+    - Cup:   15 g
+    - Total: 15 g
+<BLANKLINE>
+Water:
+<BLANKLINE>
+    - Cup: 250 g
+    - Total: 250 g
+<BLANKLINE>
+Ratio: 3/50 (0.06)
+<BLANKLINE>
+Strength: Medium
+<BLANKLINE>
+Grind: 50 um (Extra-Fine)
+<BLANKLINE>
+Temperature: 91 C
+<BLANKLINE>
+Message: V60 method
+<BLANKLINE>
+[Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
+[Info] File saved successfully!
+<BLANKLINE>
+>>> file = open("save_test8.txt", "r")
+>>> print(file.read())
+Mode: Water & Coffee --> Ratio
+<BLANKLINE>
+Method: `v60`
+<BLANKLINE>
+Cups: 1
+<BLANKLINE>
+Coffee:
+<BLANKLINE>
+    - Cup:   15 g
+    - Total: 15 g
+<BLANKLINE>
+Water:
+<BLANKLINE>
+    - Cup: 250 g
+    - Total: 250 g
+<BLANKLINE>
+Ratio: 3/50 (0.06)
+<BLANKLINE>
+Strength: Medium
+<BLANKLINE>
+Grind: 50 um (Extra-Fine)
+<BLANKLINE>
+Temperature: 91 C
+<BLANKLINE>
+Message: V60 method
+<BLANKLINE>
+[Warning] The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`
+<BLANKLINE>
+>>> file.close()
 >>> args = parser.parse_args(["--method", 'v60', "--water-ratio", '500', "--coffee-ratio", '23', "--water", '5000'])
 >>> params = load_params(args)
 >>> params = get_result(params, enable_filter=False)
@@ -1469,6 +1624,34 @@ Message: V60 method
 230
 >>> params["cups"]
 1
+>>> args = parser.parse_args(["--method", 'v60', "--water", '500', "--coffee", '230', "--mode", "ratio", "--cup", "2"])
+>>> params = load_params(args)
+>>> params = get_result(params, enable_filter=False)
+>>> params["coffee"]["cup"]
+230.0
+>>> params["coffee"]["total"]
+460.0
+>>> params["water"]["cup"]
+500.0
+>>> params["water"]["total"]
+1000.0
+>>> params["water"]["ratio"]
+50
+>>> params["coffee"]["ratio"]
+23
+>>> params["method"]
+'v60'
+>>> params = filter_params(params)
+>>> params["water"]["ratio"]
+50
+>>> params["coffee"]["ratio"]
+23
+>>> params["water"]["total"]
+1000
+>>> params["coffee"]["total"]
+460
+>>> params["cups"]
+2
 >>> args = parser.parse_args(["--method", 'v60', "--water-ratio", '500', "--coffee-ratio", '23', "--water", '5000000', "--water-unit", "mg"])
 >>> params = load_params(args)
 >>> params["water"]
@@ -1711,16 +1894,20 @@ argparse.ArgumentTypeError: invalid positive float value: 'a'
 >>> os.remove("save_test4.txt")
 >>> os.remove("save_test5.txt")
 >>> os.remove("save_test6.txt")
+>>> os.remove("save_test7.txt")
+>>> os.remove("save_test8.txt")
 >>> os.remove("save_test1.json")
 >>> os.remove("save_test2.json")
 >>> os.remove("save_test3.json")
 >>> os.remove("save_test4.json")
 >>> os.remove("save_test5.json")
 >>> os.remove("save_test6.json")
+>>> os.remove("save_test7.json")
 >>> os.remove("save_test1.yaml")
 >>> os.remove("save_test2.yaml")
 >>> os.remove("save_test3.yaml")
 >>> os.remove("save_test4.yaml")
 >>> os.remove("save_test5.yaml")
 >>> os.remove("save_test6.yaml")
+>>> os.remove("save_test7.yaml")
 """
