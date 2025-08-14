@@ -665,7 +665,6 @@ def get_result_by_coffee_and_water(params: Dict[str, Union[str, int, float]],
     }
     for item in ["temperature_unit", "water_ratio", "coffee_ratio", "coffee_unit", "water_unit"]:
         del result_params[item]
-    result_params["water"]["total"] = result_params["cups"] * result_params["water"]["cup"]
     result_params["strength"] = get_brew_strength(ratio=result_params["ratio"])
     if enable_filter:
         result_params = filter_params(result_params)
