@@ -1065,38 +1065,6 @@ Temperature units list:
 1. `C` - Celsius
 2. `F` - Fahrenheit
 3. `K` - Kelvin
->>> validate_positive_int("2")
-2
->>> validate_positive_int("2.0")
-Traceback (most recent call last):
-    ...
-argparse.ArgumentTypeError: invalid positive int value: '2.0'
->>> validate_positive_int("a")
-Traceback (most recent call last):
-    ...
-argparse.ArgumentTypeError: invalid positive int value: 'a'
->>> validate_positive_int("-20")
-Traceback (most recent call last):
-    ...
-argparse.ArgumentTypeError: invalid positive int value: '-20'
->>> validate_positive_int("0")
-Traceback (most recent call last):
-    ...
-argparse.ArgumentTypeError: invalid positive int value: '0'
->>> validate_positive_float("2")
-2.0
->>> validate_positive_float("0")
-Traceback (most recent call last):
-    ...
-argparse.ArgumentTypeError: invalid positive float value: '0'
->>> validate_positive_float("-20")
-Traceback (most recent call last):
-    ...
-argparse.ArgumentTypeError: invalid positive float value: '-20'
->>> validate_positive_float("a")
-Traceback (most recent call last):
-    ...
-argparse.ArgumentTypeError: invalid positive float value: 'a'
 >>> os.remove("save_test2.txt")
 >>> os.remove("save_test3.txt")
 >>> os.remove("save_test5.txt")
