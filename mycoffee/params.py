@@ -378,6 +378,21 @@ METHODS_MAP = {
         "water": 72,
         "coffee": 36,
         "message": "Phin filter method"
+    },
+    "kalita-wave": {
+        "coffee_ratio": 1,
+        "water_ratio": 16,
+        "grind": 900,
+        "temperature": 93,
+        "temperature_lower_limit": 90,
+        "temperature_upper_limit": 96,
+        "grind_lower_limit": 800,
+        "grind_upper_limit": 1000,
+        "ratio_lower_limit": Fraction(1, 17),
+        "ratio_upper_limit": Fraction(1, 15),
+        "water": 400,
+        "coffee": 25,
+        "message": "Kalita wave method"
     }
 }
 
