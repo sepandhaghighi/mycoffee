@@ -641,6 +641,8 @@ True
 True
 >>> METHODS_MAP["phin-filter"]["temperature_lower_limit"] == 90 # https://cafely.com/blogs/coffee-brew-guide/vietnamese-phin-drip
 True
+>>> phin_filter_params["temperature"] == 93 # https://cafely.com/blogs/coffee-brew-guide/vietnamese-phin-drip
+True
 >>> kalita_wave_params = load_method_params("kalita-wave")
 >>> kalita_wave_params["coffee_ratio"] == 1
 True
@@ -665,13 +667,13 @@ True
 True
 >>> METHODS_MAP["kalita-wave"]["grind_lower_limit"] == 800
 True
->>> phin_filter_params["grind"] == 900 # https://littlewaves.coffee/products/pour-over-brew-guide
+>>> kalita_wave_params["grind"] == 900 # https://littlewaves.coffee/products/pour-over-brew-guide
 True
 >>> METHODS_MAP["kalita-wave"]["temperature_upper_limit"] == 96 # https://littlewaves.coffee/products/pour-over-brew-guide
 True
 >>> METHODS_MAP["kalita-wave"]["temperature_lower_limit"] == 90 # https://littlewaves.coffee/products/pour-over-brew-guide
 True
->>> phin_filter_params["temperature"] == 93 # https://cafely.com/blogs/coffee-brew-guide/vietnamese-phin-drip
+>>> kalita_wave_params["temperature"] == 93 # https://littlewaves.coffee/products/pour-over-brew-guide
 True
 >>> custom_params = load_method_params("custom")
 >>> custom_params["coffee_ratio"] == 1

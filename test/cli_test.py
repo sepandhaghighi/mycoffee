@@ -1005,15 +1005,16 @@ Methods list:
 10. `custom` - Custom brewing method
 11. `espresso` - Espresso method
 12. `french-press` - French press method
-13. `lungo` - Lungo method
-14. `moka-pot` - Moka pot method
-15. `phin-filter` - Phin filter method
-16. `pour-over` - Pour-over method
-17. `ristretto` - Ristretto method
-18. `siphon` - Siphon method
-19. `steep-and-release` - Steep-and-release method
-20. `turkish` - Turkish method
-21. `v60` - V60 method
+13. `kalita-wave` - Kalita wave method
+14. `lungo` - Lungo method
+15. `moka-pot` - Moka pot method
+16. `phin-filter` - Phin filter method
+17. `pour-over` - Pour-over method
+18. `ristretto` - Ristretto method
+19. `siphon` - Siphon method
+20. `steep-and-release` - Steep-and-release method
+21. `turkish` - Turkish method
+22. `v60` - V60 method
 >>> args = parser.parse_args(["--coffee-units-list"])
 >>> run_program(args)
 Coffee units list:
