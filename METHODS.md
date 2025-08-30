@@ -1,6 +1,6 @@
 # Methods List
 
-**Last Update: 2025-06-09**
+**Last Update: 2025-08-28**
 
 <table>
 	<tr align="center">
@@ -310,6 +310,20 @@
 		<td>72</td>
 		<td>36</td>
 		<td>>=1.9</td>
+	</tr>
+	<tr align="center">
+		<td>Kalita wave</td>
+		<td><code>kalita-wave</code></td>
+		<td>1/16</td>
+		<td>1/17</td>
+		<td>1/15</td>
+		<td>800</td>
+		<td>1000</td>
+		<td>90</td>
+		<td>96</td>
+		<td>400</td>
+		<td>25</td>
+		<td>>=2.1</td>
 	</tr>
 </table>
 

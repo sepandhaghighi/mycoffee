@@ -643,6 +643,38 @@ True
 True
 >>> phin_filter_params["temperature"] == 93 # https://cafely.com/blogs/coffee-brew-guide/vietnamese-phin-drip
 True
+>>> kalita_wave_params = load_method_params("kalita-wave")
+>>> kalita_wave_params["coffee_ratio"] == 1
+True
+>>> kalita_wave_params["water_ratio"] == 16
+True
+>>> kalita_wave_params["water"] == 400
+True
+>>> kalita_wave_params["ratio"] = kalita_wave_params["coffee_ratio"] / kalita_wave_params["water_ratio"]
+>>> kalita_wave_coffee = calculate_coffee(ratio=kalita_wave_params["ratio"], water=kalita_wave_params["water"], water_unit=kalita_wave_params["water_unit"], coffee_unit=kalita_wave_params["coffee_unit"])
+>>> kalita_wave_coffee == 25
+True
+>>> kalita_wave_water = round(calculate_water(ratio=kalita_wave_params["ratio"], coffee=kalita_wave_coffee, water_unit=kalita_wave_params["water_unit"], coffee_unit=kalita_wave_params["coffee_unit"]), 3)
+>>> kalita_wave_water == kalita_wave_params["water"]
+True
+>>> kalita_wave_coffee == METHODS_MAP["kalita-wave"]["coffee"]
+True
+>>> METHODS_MAP["kalita-wave"]["ratio_upper_limit"] == Fraction(1, 15) # https://littlewaves.coffee/products/pour-over-brew-guide
+True
+>>> METHODS_MAP["kalita-wave"]["ratio_lower_limit"] == Fraction(1, 17) # https://littlewaves.coffee/products/pour-over-brew-guide
+True
+>>> METHODS_MAP["kalita-wave"]["grind_upper_limit"] == 1000
+True
+>>> METHODS_MAP["kalita-wave"]["grind_lower_limit"] == 800
+True
+>>> kalita_wave_params["grind"] == 900 # https://littlewaves.coffee/products/pour-over-brew-guide
+True
+>>> METHODS_MAP["kalita-wave"]["temperature_upper_limit"] == 96 # https://littlewaves.coffee/products/pour-over-brew-guide
+True
+>>> METHODS_MAP["kalita-wave"]["temperature_lower_limit"] == 90 # https://littlewaves.coffee/products/pour-over-brew-guide
+True
+>>> kalita_wave_params["temperature"] == 93 # https://littlewaves.coffee/products/pour-over-brew-guide
+True
 >>> custom_params = load_method_params("custom")
 >>> custom_params["coffee_ratio"] == 1
 True
