@@ -290,7 +290,7 @@ Message: V60 method
 [Info] File saved successfully!
 >>> file = open("save_test2.json", "r")
 >>> save_test2_object = json.load(file)
->>> _ = display_date(save_test2_object["date"])
+>>> _ = format_date(save_test2_object["date"])
 >>> del save_test2_object["date"]
 >>> save_test2_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"water-to-coffee", 'temperature': {'value':91, 'unit':'C'}, 'method': 'v60', 'coffee': {'total':15, 'cup':15, 'unit':'g', 'ratio':3}, 'cups': 1,'digits': 3,'water': {'cup':250, 'total':250, 'unit':'g', 'ratio':50}, 'message': 'V60 method', 'grind': {'value':50, 'unit': 'um', 'type': get_grind_type(50)}, 'warnings': ['The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`'], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
@@ -336,7 +336,7 @@ Message: V60 method
 [Info] File saved successfully!
 >>> file = open("save_test2.yaml", "r")
 >>> save_test2_object = yaml.safe_load(file)
->>> _ = display_date(save_test2_object["date"])
+>>> _ = format_date(save_test2_object["date"])
 >>> del save_test2_object["date"]
 >>> save_test2_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"water-to-coffee", 'temperature': {'value':91, 'unit':'C'}, 'method': 'v60', 'coffee': {'total':15, 'cup':15, 'unit':'g', 'ratio':3}, 'cups': 1,'digits': 3,'water': {'cup':250, 'total':250, 'unit':'g', 'ratio':50}, 'message': 'V60 method', 'grind': {'value':50, 'unit': 'um', 'type': get_grind_type(50)}, 'warnings': ['The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`'], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
@@ -382,7 +382,7 @@ Message: V60 method
 [Info] File saved successfully!
 >>> file = open("save_test5.json", "r")
 >>> save_test5_object = json.load(file)
->>> _ = display_date(save_test5_object["date"])
+>>> _ = format_date(save_test5_object["date"])
 >>> del save_test5_object["date"]
 >>> save_test5_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"coffee-to-water", 'temperature': {'value':91, 'unit':'C'}, 'method': 'v60', 'coffee': {'total':15, 'cup':15, 'unit':'g', 'ratio':3}, 'cups': 1,'digits': 3,'water': {'cup':250, 'total':250, 'unit':'g', 'ratio':50}, 'message': 'V60 method', 'grind': {'value':50, 'unit': 'um', 'type': get_grind_type(50)}, 'warnings': ['The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`'], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
@@ -428,7 +428,7 @@ Message: V60 method
 [Info] File saved successfully!
 >>> file = open("save_test5.yaml", "r")
 >>> save_test5_object = yaml.safe_load(file)
->>> _ = display_date(save_test5_object["date"])
+>>> _ = format_date(save_test5_object["date"])
 >>> del save_test5_object["date"]
 >>> save_test5_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"coffee-to-water", 'temperature': {'value':91, 'unit':'C'}, 'method': 'v60', 'coffee': {'total':15, 'cup':15, 'unit':'g', 'ratio':3}, 'cups': 1,'digits': 3,'water': {'cup':250, 'total':250, 'unit':'g', 'ratio':50}, 'message': 'V60 method', 'grind': {'value':50, 'unit': 'um', 'type': get_grind_type(50)}, 'warnings': ['The grind size is not within the recommended range. For `v60`, the grind size can be anywhere between `400 um` and `700 um`'], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
@@ -609,7 +609,7 @@ Message: V60 method
 [Info] File saved successfully!
 >>> file = open("save_test3.json", "r")
 >>> save_test3_object = json.load(file)
->>> _ = display_date(save_test3_object["date"])
+>>> _ = format_date(save_test3_object["date"])
 >>> del save_test3_object["date"]
 >>> save_test3_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"water-to-coffee", 'temperature': {'value':91, 'unit':'C'}, 'method': 'v60', 'coffee': {'total': 15, 'cup': 15, 'unit': 'g', 'ratio': 3}, 'cups': 1,'digits': 3, 'water': {'total':250, 'cup':250, 'unit':'g', 'ratio':50}, 'message': 'V60 method', 'grind': {'value':50, 'unit': 'um', 'type': get_grind_type(50)},"warnings":[], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
@@ -654,7 +654,7 @@ Message: V60 method
 [Info] File saved successfully!
 >>> file = open("save_test3.yaml", "r")
 >>> save_test3_object = yaml.safe_load(file)
->>> _ = display_date(save_test3_object["date"])
+>>> _ = format_date(save_test3_object["date"])
 >>> del save_test3_object["date"]
 >>> save_test3_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"water-to-coffee", 'temperature': {'value':91, 'unit':'C'}, 'method': 'v60', 'coffee': {'total': 15, 'cup': 15, 'unit': 'g', 'ratio': 3}, 'cups': 1,'digits': 3, 'water': {'total':250, 'cup':250, 'unit':'g', 'ratio':50}, 'message': 'V60 method', 'grind': {'value':50, 'unit': 'um', 'type': get_grind_type(50)},"warnings":[], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
@@ -699,7 +699,7 @@ Message: V60 method
 [Info] File saved successfully!
 >>> file = open("save_test6.json", "r")
 >>> save_test6_object = json.load(file)
->>> _ = display_date(save_test6_object["date"])
+>>> _ = format_date(save_test6_object["date"])
 >>> del save_test6_object["date"]
 >>> save_test6_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"coffee-to-water", 'temperature': {'value':91, 'unit':'C'}, 'method': 'v60', 'coffee': {'total': 60, 'cup': 30, 'unit': 'g', 'ratio': 3}, 'cups': 2,'digits': 3, 'water': {'total':1000, 'cup':500, 'unit':'g', 'ratio':50}, 'message': 'V60 method', 'grind': {'value':50, 'unit': 'um', 'type': get_grind_type(50)},"warnings":[], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
@@ -744,7 +744,7 @@ Message: V60 method
 [Info] File saved successfully!
 >>> file = open("save_test6.yaml", "r")
 >>> save_test6_object = yaml.safe_load(file)
->>> _ = display_date(save_test6_object["date"])
+>>> _ = format_date(save_test6_object["date"])
 >>> del save_test6_object["date"]
 >>> save_test6_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"coffee-to-water", 'temperature': {'value':91, 'unit':'C'}, 'method': 'v60', 'coffee': {'total': 60, 'cup': 30, 'unit': 'g', 'ratio': 3}, 'cups': 2,'digits': 3, 'water': {'total':1000, 'cup':500, 'unit':'g', 'ratio':50}, 'message': 'V60 method', 'grind': {'value':50, 'unit': 'um', 'type': get_grind_type(50)},"warnings":[], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True

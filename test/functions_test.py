@@ -110,7 +110,7 @@ True
 True
 >>> file = open("save_test1.json", "r")
 >>> save_test1_object = json.load(file)
->>> _ = display_date(save_test1_object["date"])
+>>> _ = format_date(save_test1_object["date"])
 >>> del save_test1_object["date"]
 >>> save_test1_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"water-to-coffee", 'temperature': {'value':93, 'unit':'C'}, 'method': 'v60', 'water': {'cup':500, 'total':1000, 'unit':'g','ratio':50}, 'cups': 2, 'digits': 3, 'coffee': {'total':60, 'cup': 30, 'unit': 'g', 'ratio': 3}, 'message': 'V60 method', 'grind': {'value':500, 'unit':'um', 'type':get_grind_type(500)},'warnings': [], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
@@ -122,7 +122,7 @@ True
 True
 >>> file = open("save_test1.yaml", "r")
 >>> save_test1_object = yaml.safe_load(file)
->>> _ = display_date(save_test1_object["date"])
+>>> _ = format_date(save_test1_object["date"])
 >>> del save_test1_object["date"]
 >>> save_test1_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"water-to-coffee", 'temperature': {'value':93, 'unit':'C'}, 'method': 'v60', 'water': {'cup':500, 'total':1000, 'unit':'g','ratio':50}, 'cups': 2, 'digits': 3, 'coffee': {'total':60, 'cup': 30, 'unit': 'g', 'ratio': 3}, 'message': 'V60 method', 'grind': {'value':500, 'unit':'um', 'type':get_grind_type(500)},'warnings': [], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
@@ -207,7 +207,7 @@ True
 True
 >>> file = open("save_test7.json", "r")
 >>> save_test4_object = json.load(file)
->>> _ = display_date(save_test4_object["date"])
+>>> _ = format_date(save_test4_object["date"])
 >>> del save_test4_object["date"]
 >>> save_test4_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"ratio", 'temperature': {'value':93, 'unit':'C'}, 'method': 'v60', 'water': {'cup':500, 'total':1000, 'unit':'g','ratio':50}, 'cups': 2, 'digits': 3, 'coffee': {'total':60, 'cup': 30, 'unit': 'g', 'ratio': 3}, 'message': 'V60 method', 'grind': {'value':500, 'unit':'um', 'type':get_grind_type(500)},'warnings': [], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
@@ -219,7 +219,7 @@ True
 True
 >>> file = open("save_test7.yaml", "r")
 >>> save_test4_object = yaml.safe_load(file)
->>> _ = display_date(save_test4_object["date"])
+>>> _ = format_date(save_test4_object["date"])
 >>> del save_test4_object["date"]
 >>> save_test4_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"ratio", 'temperature': {'value':93, 'unit':'C'}, 'method': 'v60', 'water': {'cup':500, 'total':1000, 'unit':'g','ratio':50}, 'cups': 2, 'digits': 3, 'coffee': {'total':60, 'cup': 30, 'unit': 'g', 'ratio': 3}, 'message': 'V60 method', 'grind': {'value':500, 'unit':'um', 'type':get_grind_type(500)},'warnings': [], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
@@ -304,7 +304,7 @@ True
 >>> file = open("save_test4.json", "r")
 >>> save_test4_object = json.load(file)
 
->>> _ = display_date(save_test4_object["date"])
+>>> _ = format_date(save_test4_object["date"])
 >>> del save_test4_object["date"]
 >>> save_test4_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"coffee-to-water", 'temperature': {'value':93, 'unit':'C'}, 'method': 'v60', 'water': {'cup':500, 'total':1000, 'unit':'g','ratio':50}, 'cups': 2, 'digits': 3, 'coffee': {'total':60, 'cup': 30, 'unit': 'g', 'ratio': 3}, 'message': 'V60 method', 'grind': {'value':500, 'unit':'um', 'type':get_grind_type(500)},'warnings': [], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True
@@ -316,7 +316,7 @@ True
 True
 >>> file = open("save_test4.yaml", "r")
 >>> save_test4_object = yaml.safe_load(file)
->>> _ = display_date(save_test4_object["date"])
+>>> _ = format_date(save_test4_object["date"])
 >>> del save_test4_object["date"]
 >>> save_test4_object == {'mycoffee_version': MY_COFFEE_VERSION, "mode":"coffee-to-water", 'temperature': {'value':93, 'unit':'C'}, 'method': 'v60', 'water': {'cup':500, 'total':1000, 'unit':'g','ratio':50}, 'cups': 2, 'digits': 3, 'coffee': {'total':60, 'cup': 30, 'unit': 'g', 'ratio': 3}, 'message': 'V60 method', 'grind': {'value':500, 'unit':'um', 'type':get_grind_type(500)},'warnings': [], 'ratio': 0.06, 'strength': get_brew_strength(0.06)}
 True

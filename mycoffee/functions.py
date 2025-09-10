@@ -33,11 +33,11 @@ def get_date_now() -> str:
     return utc_now.strftime(DATE_ISO_8601_FORMAT)
 
 
-def display_date(input_date: str) -> str:
+def format_date(input_date: str) -> str:
     """
-    Convert an ISO 8601 datetime string into local time and format it for display.
+    Convert an ISO 8601 datetime string (UTC) into local time and format it for display.
 
-    :param input_date: input ISO 8601 datetime string
+    :param input_date: a datetime string in ISO 8601 format (UTC)
     """
     utc_date = datetime.strptime(input_date, DATE_ISO_8601_FORMAT).replace(tzinfo=timezone.utc)
     local_date = utc_date.astimezone()
@@ -92,7 +92,7 @@ def format_result(params: Dict[str, Union[str, int, float, dict]]) -> str:
     :param params: parameters
     """
     result = MESSAGE_TEMPLATE.format(
-        date=display_date(params["date"]),
+        date=format_date(params["date"]),
         method=params["method"],
         cups=params["cups"],
         coffee=params["coffee"],
