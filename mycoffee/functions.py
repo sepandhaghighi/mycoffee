@@ -6,6 +6,7 @@ import yaml
 import math
 import fractions
 import argparse
+from datetime import datetime, timezone
 from mycoffee.params import MESSAGE_TEMPLATE, METHODS_LIST_TEMPLATE, EMPTY_MESSAGE
 from mycoffee.params import MY_COFFEE_VERSION, DEFAULT_PARAMS
 from mycoffee.params import METHODS_MAP, COFFEE_UNITS_MAP, WATER_UNITS_MAP, TEMPERATURE_UNITS_MAP
@@ -23,6 +24,12 @@ def mycoffee_info() -> None:  # pragma: no cover
     tprint("V:" + MY_COFFEE_VERSION)
     print(MY_COFFEE_OVERVIEW)
     print("Repo : " + MY_COFFEE_REPO)
+
+
+def get_date_now() -> str:
+    """Return the current UTC datetime as an ISO 8601 string."""
+    utc_now = datetime.utcnow().replace(tzinfo=timezone.utc)
+    return utc_now.strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
 def validate_positive_int(string: str) -> int:
@@ -583,6 +590,7 @@ def get_result_by_water(params: Dict[str, Union[str, int, float]],
     if enable_filter:
         result_params = filter_params(result_params)
     result_params["warnings"] = get_warnings(result_params)
+    result_params["date"] = get_date_now()
     return result_params
 
 
@@ -626,6 +634,7 @@ def get_result_by_coffee(params: Dict[str, Union[str, int, float]],
     if enable_filter:
         result_params = filter_params(result_params)
     result_params["warnings"] = get_warnings(result_params)
+    result_params["date"] = get_date_now()
     return result_params
 
 
@@ -669,6 +678,7 @@ def get_result_by_coffee_and_water(params: Dict[str, Union[str, int, float]],
     if enable_filter:
         result_params = filter_params(result_params)
     result_params["warnings"] = get_warnings(result_params)
+    result_params["date"] = get_date_now()
     return result_params
 
 
