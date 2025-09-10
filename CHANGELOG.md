@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 	1. Kalita wave
 - `get_date_now` function
 - `display_date` function
+### Changed
+- Test system modified
+- `README.md` updated
 ## [2.0] - 2025-08-27
 ### Added
 - `YAML` format
