@@ -92,6 +92,7 @@ def format_result(params: Dict[str, Union[str, int, float, dict]]) -> str:
     :param params: parameters
     """
     result = MESSAGE_TEMPLATE.format(
+        date=display_date(params["date"]),
         method=params["method"],
         cups=params["cups"],
         coffee=params["coffee"],

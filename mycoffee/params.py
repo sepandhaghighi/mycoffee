@@ -26,6 +26,8 @@ DATE_DISPLAY_FORMAT = "%Y-%m-%d %H:%M"
 
 MESSAGE_TEMPLATE = """
 
+Date: {date}
+
 Mode: {mode}
 
 Method: `{method}`
