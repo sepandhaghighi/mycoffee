@@ -15,7 +15,7 @@ from mycoffee.params import POSITIVE_INTEGER_ERROR_MESSAGE, POSITIVE_FLOAT_ERROR
 from mycoffee.params import MY_COFFEE_OVERVIEW, MY_COFFEE_REPO
 from mycoffee.params import SAVE_FILE_ERROR_MESSAGE, SAVE_FILE_SUCCESS_MESSAGE
 from mycoffee.params import MODE_TO_NAME
-from mycoffee.params import DATE_ISO_8601_FORMAT
+from mycoffee.params import DATE_ISO_8601_FORMAT, DATE_DISPLAY_FORMAT
 from art import tprint
 
 
@@ -31,6 +31,17 @@ def get_date_now() -> str:
     """Return the current UTC datetime as an ISO 8601 string."""
     utc_now = datetime.utcnow().replace(tzinfo=timezone.utc)
     return utc_now.strftime(DATE_ISO_8601_FORMAT)
+
+
+def display_date(input_date: str) -> str:
+    """
+    Convert an ISO 8601 datetime string into local time and format it for display.
+
+    :param input_date: input ISO 8601 datetime string
+    """
+    utc_date = datetime.strptime(input_date, DATE_ISO_8601_FORMAT).replace(tzinfo=timezone.utc)
+    local_date = utc_date.astimezone()
+    return local_date.strftime(DATE_DISPLAY_FORMAT)
 
 
 def validate_positive_int(string: str) -> int:
