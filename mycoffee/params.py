@@ -20,6 +20,10 @@ MyCoffee is a command-line tool for coffee enthusiasts who love brewing with pre
 It helps you calculate the perfect coffee-to-water ratio for various brewing methods,
 ensuring you brew your ideal cup every time-right from your terminal.
 '''
+
+DATE_ISO_8601_FORMAT = "%Y-%m-%dT%H:%M:%SZ"
+DATE_DISPLAY_FORMAT = "%Y-%m-%d %H:%M"
+
 MESSAGE_TEMPLATE = """
 
 Mode: {mode}
