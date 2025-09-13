@@ -6,6 +6,7 @@ import yaml
 import math
 import fractions
 import argparse
+from datetime import datetime, timezone
 from mycoffee.params import MESSAGE_TEMPLATE, METHODS_LIST_TEMPLATE, EMPTY_MESSAGE
 from mycoffee.params import MY_COFFEE_VERSION, DEFAULT_PARAMS
 from mycoffee.params import METHODS_MAP, COFFEE_UNITS_MAP, WATER_UNITS_MAP, TEMPERATURE_UNITS_MAP
@@ -14,6 +15,7 @@ from mycoffee.params import POSITIVE_INTEGER_ERROR_MESSAGE, POSITIVE_FLOAT_ERROR
 from mycoffee.params import MY_COFFEE_OVERVIEW, MY_COFFEE_REPO
 from mycoffee.params import SAVE_FILE_ERROR_MESSAGE, SAVE_FILE_SUCCESS_MESSAGE
 from mycoffee.params import MODE_TO_NAME
+from mycoffee.params import DATE_ISO_8601_FORMAT, DATE_DISPLAY_FORMAT
 from art import tprint
 
 
@@ -23,6 +25,23 @@ def mycoffee_info() -> None:  # pragma: no cover
     tprint("V:" + MY_COFFEE_VERSION)
     print(MY_COFFEE_OVERVIEW)
     print("Repo : " + MY_COFFEE_REPO)
+
+
+def get_date_now() -> str:
+    """Return the current UTC datetime as an ISO 8601 string."""
+    utc_now = datetime.utcnow().replace(tzinfo=timezone.utc)
+    return utc_now.strftime(DATE_ISO_8601_FORMAT)
+
+
+def format_date(input_date: str) -> str:
+    """
+    Convert an ISO 8601 datetime string (UTC) into local time and format it for display.
+
+    :param input_date: a datetime string in ISO 8601 format (UTC)
+    """
+    utc_date = datetime.strptime(input_date, DATE_ISO_8601_FORMAT).replace(tzinfo=timezone.utc)
+    local_date = utc_date.astimezone()
+    return local_date.strftime(DATE_DISPLAY_FORMAT)
 
 
 def validate_positive_int(string: str) -> int:
@@ -73,6 +92,7 @@ def format_result(params: Dict[str, Union[str, int, float, dict]]) -> str:
     :param params: parameters
     """
     result = MESSAGE_TEMPLATE.format(
+        date=format_date(params["date"]),
         method=params["method"],
         cups=params["cups"],
         coffee=params["coffee"],
@@ -583,6 +603,7 @@ def get_result_by_water(params: Dict[str, Union[str, int, float]],
     if enable_filter:
         result_params = filter_params(result_params)
     result_params["warnings"] = get_warnings(result_params)
+    result_params["date"] = get_date_now()
     return result_params
 
 
@@ -626,6 +647,7 @@ def get_result_by_coffee(params: Dict[str, Union[str, int, float]],
     if enable_filter:
         result_params = filter_params(result_params)
     result_params["warnings"] = get_warnings(result_params)
+    result_params["date"] = get_date_now()
     return result_params
 
 
@@ -669,6 +691,7 @@ def get_result_by_coffee_and_water(params: Dict[str, Union[str, int, float]],
     if enable_filter:
         result_params = filter_params(result_params)
     result_params["warnings"] = get_warnings(result_params)
+    result_params["date"] = get_date_now()
     return result_params
 
 
