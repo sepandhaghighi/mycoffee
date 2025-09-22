@@ -695,7 +695,7 @@ True
 True
 >>> METHODS_MAP["instant-coffee"]["ratio_lower_limit"] == Fraction(1, 50)
 True
->>> v60_params["grind"] == 0
+>>> instant_coffee_params["grind"] == 0
 True
 >>> METHODS_MAP["instant-coffee"]["temperature_upper_limit"] == 93
 True
