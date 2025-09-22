@@ -1,6 +1,6 @@
 # Methods List
 
-**Last Update: 2025-08-28**
+**Last Update: 2025-09-22**
 
 <table>
 	<tr align="center">
@@ -323,6 +323,20 @@
 		<td>96</td>
 		<td>400</td>
 		<td>25</td>
+		<td>>=2.1</td>
+	</tr>
+	<tr align="center">
+		<td>Instant coffee</td>
+		<td><code>instant-coffee</code></td>
+		<td>1/35</td>
+		<td>1/50</td>
+		<td>1/15</td>
+		<td>--</td>
+		<td>--</td>
+		<td>80</td>
+		<td>93</td>
+		<td>175</td>
+		<td>5</td>
 		<td>>=2.1</td>
 	</tr>
 </table>
