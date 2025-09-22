@@ -675,6 +675,34 @@ True
 True
 >>> kalita_wave_params["temperature"] == 93 # https://littlewaves.coffee/products/pour-over-brew-guide
 True
+>>> instant_coffee_params = load_method_params("instant-coffee")
+>>> instant_coffee_params["coffee_ratio"] == 1 # https://athome.starbucks.com/brewing-guide/how-make-perfect-instant-coffee-hot-or-iced
+True
+>>> instant_coffee_params["water_ratio"] == 35 # https://athome.starbucks.com/brewing-guide/how-make-perfect-instant-coffee-hot-or-iced
+True
+>>> instant_coffee_params["water"] == 175
+True
+>>> instant_coffee_params["ratio"] = instant_coffee_params["coffee_ratio"] / instant_coffee_params["water_ratio"]
+>>> instant_coffee_coffee = calculate_coffee(ratio=instant_coffee_params["ratio"], water=instant_coffee_params["water"], water_unit=instant_coffee_params["water_unit"], coffee_unit=instant_coffee_params["coffee_unit"])
+>>> instant_coffee_coffee == 5
+True
+>>> instant_coffee_coffee == METHODS_MAP["instant-coffee"]["coffee"]
+True
+>>> instant_coffee_water = round(calculate_water(ratio=instant_coffee_params["ratio"], coffee=instant_coffee_coffee, water_unit=instant_coffee_params["water_unit"], coffee_unit=instant_coffee_params["coffee_unit"]), 3)
+>>> instant_coffee_water == instant_coffee_params["water"]
+True
+>>> METHODS_MAP["instant-coffee"]["ratio_upper_limit"] == Fraction(1, 15)
+True
+>>> METHODS_MAP["instant-coffee"]["ratio_lower_limit"] == Fraction(1, 50)
+True
+>>> v60_params["grind"] == 0
+True
+>>> METHODS_MAP["instant-coffee"]["temperature_upper_limit"] == 93
+True
+>>> METHODS_MAP["instant-coffee"]["temperature_lower_limit"] == 80
+True
+>>> instant_coffee_params["temperature"] == 85 # https://athome.starbucks.com/brewing-guide/how-make-perfect-instant-coffee-hot-or-iced
+True
 >>> custom_params = load_method_params("custom")
 >>> custom_params["coffee_ratio"] == 1
 True
