@@ -6,8 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
-- 1 new method
+- 2 new methods
 	1. Kalita wave
+	2. Instant coffee
 - `get_date_now` function
 - `format_date` function
 ### Changed
