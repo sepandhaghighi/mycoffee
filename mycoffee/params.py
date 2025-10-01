@@ -399,7 +399,20 @@ METHODS_MAP = {
         "water": 400,
         "coffee": 25,
         "message": "Kalita wave method"
-    }
+    },
+    "instant-coffee": {
+        "coffee_ratio": 1,
+        "water_ratio": 35,
+        "grind": 0,
+        "temperature": 85,
+        "temperature_lower_limit": 80,
+        "temperature_upper_limit": 93,
+        "ratio_lower_limit": Fraction(1, 50),
+        "ratio_upper_limit": Fraction(1, 15),
+        "water": 175,
+        "coffee": 5,
+        "message": "Instant coffee"
+    },
 }
 
 COFFEE_UNITS_MAP = {
