@@ -32,7 +32,7 @@
 >>> _ = parser.add_argument('--save-format', help='file format', type=str.lower, choices=FILE_FORMATS_LIST, default="text")
 >>> args = parser.parse_args({"--version":True})
 >>> run_program(args)
-2.0
+2.1
 >>>
 >>> args = parser.parse_args(["--method", 'v60'])
 >>> run_program(args)

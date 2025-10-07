@@ -53,13 +53,13 @@
 ## Installation		
 
 ### Source Code
-- Download [Version 2.0](https://github.com/sepandhaghighi/mycoffee/archive/v2.0.zip) or [Latest Source](https://github.com/sepandhaghighi/mycoffee/archive/dev.zip)
+- Download [Version 2.1](https://github.com/sepandhaghighi/mycoffee/archive/v2.1.zip) or [Latest Source](https://github.com/sepandhaghighi/mycoffee/archive/dev.zip)
 - `pip install .`				
 
 ### PyPI
 
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
-- `pip install mycoffee==2.0`						
+- `pip install mycoffee==2.1`						
 
 
 ## Usage
@@ -71,14 +71,13 @@
 ```console
 > mycoffee --version
 
-2.0
+2.1
 ```
 
 ### Info
 
 ```console
 > mycoffee --info
-
  __  __          ____          __   __
 |  \/  | _   _  / ___|  ___   / _| / _|  ___   ___
 | |\/| || | | || |     / _ \ | |_ | |_  / _ \ / _ \
@@ -86,12 +85,11 @@
 |_|  |_| \__, | \____| \___/ |_|  |_|   \___| \___|
          |___/
 
-__     __    _      ___
-\ \   / / _ / |    / _ \
- \ \ / / (_)| |   | (_) |
-  \ V /   _ | | _  \__, |
-   \_/   (_)|_|(_)   /_/
-
+__     __    ____      _
+\ \   / / _ |___ \    / |
+ \ \ / / (_)  __) |   | |
+  \ V /   _  / __/  _ | |
+   \_/   (_)|_____|(_)|_|
 
 
 MyCoffee is a command-line tool for coffee enthusiasts who love brewing with precision.
