@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Changed
 - `Python 3.14` added to `test.yml`
+- `mycoffee_info` function renamed to `print_mycoffee_info`
+- Test system modified
 ## [2.1] - 2025-10-08
 ### Added
 - 2 new methods
