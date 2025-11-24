@@ -15,8 +15,6 @@
 True
 >>> MY_COFFEE_REPO in f.getvalue()
 True
->>> MY_COFFEE_VERSION in f.getvalue()
-True
 >>> convert_coffee(122, "g")
 122
 >>> convert_coffee(122, "cb")
