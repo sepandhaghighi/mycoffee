@@ -19,7 +19,7 @@ from mycoffee.params import DATE_ISO_8601_FORMAT, DATE_DISPLAY_FORMAT
 from art import tprint
 
 
-def print_mycoffee_info() -> None:  # pragma: no cover
+def print_mycoffee_info() -> None:
     """Print mycoffee details."""
     tprint("MyCoffee")
     tprint("V:" + MY_COFFEE_VERSION)
