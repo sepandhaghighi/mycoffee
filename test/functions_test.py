@@ -3,9 +3,18 @@
 >>> import os
 >>> import json
 >>> import yaml
+>>> import io
+>>> import contextlib
 >>> import argparse
 >>> from mycoffee.functions import *
 >>> from mycoffee.params import *
+>>> f = io.StringIO()
+>>> with contextlib.redirect_stdout(f):
+...	    print_mycoffee_info()
+>>> MY_COFFEE_OVERVIEW in f.getvalue()
+True
+>>> MY_COFFEE_REPO in f.getvalue()
+True
 >>> convert_coffee(122, "g")
 122
 >>> convert_coffee(122, "cb")

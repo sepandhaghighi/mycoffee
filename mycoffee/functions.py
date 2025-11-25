@@ -19,7 +19,7 @@ from mycoffee.params import DATE_ISO_8601_FORMAT, DATE_DISPLAY_FORMAT
 from art import tprint
 
 
-def mycoffee_info() -> None:  # pragma: no cover
+def print_mycoffee_info() -> None:
     """Print mycoffee details."""
     tprint("MyCoffee")
     tprint("V:" + MY_COFFEE_VERSION)
@@ -721,7 +721,7 @@ def run_program(args: argparse.Namespace) -> None:
     if args.version:
         print(MY_COFFEE_VERSION)
     elif args.info:  # pragma: no cover
-        mycoffee_info()
+        print_mycoffee_info()
     elif args.methods_list:
         show_methods_list()
     elif args.coffee_units_list:
