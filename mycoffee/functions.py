@@ -720,7 +720,7 @@ def run_program(args: argparse.Namespace) -> None:
     """
     if args.version:
         print(MY_COFFEE_VERSION)
-    elif args.info:  # pragma: no cover
+    elif args.info:
         print_mycoffee_info()
     elif args.methods_list:
         show_methods_list()
