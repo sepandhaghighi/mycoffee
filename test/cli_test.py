@@ -2,6 +2,8 @@
 """
 >>> import os
 >>> import json
+>>> import io
+>>> import contextlib
 >>> import yaml
 >>> import argparse
 >>> from mycoffee.functions import *
@@ -33,7 +35,14 @@
 >>> args = parser.parse_args({"--version":True})
 >>> run_program(args)
 2.1
->>>
+>>> args = parser.parse_args({"--info":True})
+>>> f = io.StringIO()
+>>> with contextlib.redirect_stdout(f):
+...     run_program(args)
+>>> MY_COFFEE_OVERVIEW in f.getvalue()
+True
+>>> MY_COFFEE_REPO in f.getvalue()
+True
 >>> args = parser.parse_args(["--method", 'v60'])
 >>> run_program(args)
  __  __  _  _   ___  _____  ____  ____  ____  ____
