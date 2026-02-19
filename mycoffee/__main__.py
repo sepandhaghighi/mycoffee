@@ -5,6 +5,7 @@ from mycoffee.params import COFFEE_UNITS_MAP, WATER_UNITS_MAP, TEMPERATURE_UNITS
 from mycoffee.functions import run_program, validate_positive_int, validate_positive_float
 import argparse
 
+
 def parse_args() -> argparse.Namespace:
     """Parse arguments."""
     parser = argparse.ArgumentParser()
