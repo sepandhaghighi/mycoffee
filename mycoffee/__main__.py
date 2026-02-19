@@ -3,6 +3,7 @@
 from mycoffee.params import METHODS_MAP, EXIT_MESSAGE, FILE_FORMATS_LIST, MODES_LIST
 from mycoffee.params import COFFEE_UNITS_MAP, WATER_UNITS_MAP, TEMPERATURE_UNITS_MAP
 from mycoffee.functions import run_program, validate_positive_int, validate_positive_float
+import sys
 import argparse
 
 
@@ -68,6 +69,7 @@ def main() -> None:
         run_program(args)
     except (KeyboardInterrupt, EOFError):
         print(EXIT_MESSAGE)
+        sys.exit(1)
 
 
 if __name__ == "__main__":
