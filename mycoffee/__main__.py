@@ -5,9 +5,8 @@ from mycoffee.params import COFFEE_UNITS_MAP, WATER_UNITS_MAP, TEMPERATURE_UNITS
 from mycoffee.functions import run_program, validate_positive_int, validate_positive_float
 import argparse
 
-
-def main() -> None:
-    """CLI main function."""
+def parse_args() -> argparse.Namespace:
+    """Parse arguments."""
     parser = argparse.ArgumentParser()
     parser.add_argument(
         '--method',
@@ -58,7 +57,13 @@ def main() -> None:
     parser.add_argument('--save-path', help='file path to save', type=str)
     parser.add_argument('--save-format', help='file format', type=str.lower, choices=FILE_FORMATS_LIST, default="text")
     args = parser.parse_args()
+    return args
+
+
+def main() -> None:
+    """CLI main function."""
     try:
+        args = parse_args()
         run_program(args)
     except (KeyboardInterrupt, EOFError):
         print(EXIT_MESSAGE)
