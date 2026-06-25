@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `mycoffee_info` function renamed to `print_mycoffee_info`
 - CLI functions modified
 - Test system modified
+- Dependencies structure modified
 ## [2.1] - 2025-10-08
 ### Added
 - 2 new methods

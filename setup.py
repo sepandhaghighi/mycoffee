@@ -1,16 +1,6 @@
 # -*- coding: utf-8 -*-
 """Setup module."""
-from typing import List
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
-
-
-def get_requires() -> List[str]:
-    """Read requirements.txt."""
-    requirements = open("requirements.txt", "r").read()
-    return list(filter(lambda x: x != "", requirements.split()))
+from setuptools import setup
 
 
 def read_description() -> str:
@@ -39,11 +29,14 @@ setup(
     author_email='me@sepand.tech',
     url='https://github.com/sepandhaghighi/mycoffee',
     download_url='https://github.com/sepandhaghighi/mycoffee/tarball/v2.1',
-    keywords="coffee ratio terminal brew calculator cli",
+    keywords='coffee ratio terminal brew calculator cli',
     project_urls={
         'Source': 'https://github.com/sepandhaghighi/mycoffee'
     },
-    install_requires=get_requires(),
+    install_requires=[
+        'pyyaml>=3.12',
+        'art>=5.3'
+    ],
     python_requires='>=3.7',
     classifiers=[
         'Development Status :: 5 - Production/Stable',
