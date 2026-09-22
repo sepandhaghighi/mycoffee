@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - `Python 3.14` added to `test.yml`
 - `mycoffee_info` function renamed to `print_mycoffee_info`
+- CLI arguments modified
 - CLI functions modified
 - Test system modified
 - Dependencies structure modified
