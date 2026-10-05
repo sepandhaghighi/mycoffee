@@ -35,7 +35,8 @@ setup(
     },
     install_requires=[
         'pyyaml>=3.12',
-        'art>=5.3'
+        'art>=5.3',
+        'typio>=0.4'
     ],
     python_requires='>=3.7',
     classifiers=[
