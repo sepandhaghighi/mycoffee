@@ -16,15 +16,16 @@ from mycoffee.params import MY_COFFEE_OVERVIEW, MY_COFFEE_REPO
 from mycoffee.params import SAVE_FILE_ERROR_MESSAGE, SAVE_FILE_SUCCESS_MESSAGE
 from mycoffee.params import MODE_TO_NAME
 from mycoffee.params import DATE_ISO_8601_FORMAT, DATE_DISPLAY_FORMAT
-from art import tprint
+from art import tprint, text2art
+from typio import type_print, TypeMode
 
 
 def print_mycoffee_info() -> None:
     """Print mycoffee details."""
-    tprint("MyCoffee")
-    tprint("V:" + MY_COFFEE_VERSION)
-    print(MY_COFFEE_OVERVIEW)
-    print("Repo : " + MY_COFFEE_REPO)
+    type_print(text2art("MyCoffee"), mode=TypeMode.LINE, delay=0.1)
+    type_print(text2art("V:" + MY_COFFEE_VERSION), mode=TypeMode.LINE, delay=0.1)
+    type_print(MY_COFFEE_OVERVIEW, mode=TypeMode.CHAR, delay=0.05)
+    type_print("Repo : " + MY_COFFEE_REPO, mode=TypeMode.CHAR, delay=0.05)
 
 
 def get_date_now() -> str:
