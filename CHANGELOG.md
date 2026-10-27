@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - CLI functions modified
 - Test system modified
 - Dependencies structure modified
+- Build system modified
 - `Python 3.7` support dropped
 ## [2.1] - 2025-10-08
 ### Added
